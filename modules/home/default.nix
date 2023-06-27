@@ -1,3 +1,3 @@
 {...}: {
-    imports = [(import ./git)];
+    imports = [(import ./git)] ++ [(import ./codium)];
 }

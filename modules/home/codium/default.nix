@@ -2,8 +2,17 @@
     programs.vscode = {
         enable = true;
         package = pkgs.vscodium;
+        userSettings = {
+            "workbench.colorTheme": "One Dark";
+            "workbench.productIconTheme": "material-product-icons";
+            "window.zoomLevel": "0.3";
+            "window.menuBarVisibility": "hidden";
+            "editor.mouseWheelZoom": "false";
+        };
         extensions = with pkgs.vscode-extensions;[
             jnoortheen.nix-ide
+            mskelton.one-dark-theme
+            pkief.material-product-icons
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
                 name = "min-theme";
