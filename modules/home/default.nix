@@ -1,3 +1,3 @@
 {...}: {
-    
+    imports = [(import ./git)];
 }
