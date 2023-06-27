@@ -1,3 +1,8 @@
 {...}: {
-    imports = [(import ./git)] ++ [(import ./codium)];
+  imports =
+    [(import ./git)]
+    ++ [(import ./codium)]
+    ++ [(import ./waybar)]
+    ++ [(import ./wofi)]
+    ++ [(import ./hyprland)];
 }

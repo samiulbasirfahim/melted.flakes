@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -52,7 +54,7 @@
   users.users.xenoxanite = {
     isNormalUser = true;
     description = "Xenoxanite";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [kitty firefox neovim pavucontrol];
   };
 
@@ -68,12 +70,12 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
- }; 
-
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    inputs.alejandra.defaultPackage.${system}
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -101,8 +103,8 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
- system.stateVersion = "23.05"; # Did you read the comment?
- nix.settings.experimental-features = ["nix-command" "flakes"];
- programs.hyprland.enable = true;
- programs.sway.enable = true;
+  system.stateVersion = "23.05"; # Did you read the comment?
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  programs.hyprland.enable = true;
+  programs.sway.enable = true;
 }
