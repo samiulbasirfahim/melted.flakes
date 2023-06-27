@@ -53,7 +53,7 @@
     isNormalUser = true;
     description = "Xenoxanite";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [kitty firefox neovim pavucontrol vscodium];
+    packages = with pkgs; [kitty firefox neovim pavucontrol];
   };
 
   # Allow unfree packages
