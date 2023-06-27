@@ -1,17 +1,17 @@
 { inputs, ...}: {
-    imports = [inputs.home-manager.nixosModules.home-manager];
-    home-manager = {
-        useUserPackage = true;
-        useGlobalPackage = true;
-        extraSpecialArgs = {inherit inputs;};
-        user.xenoxanite = {
-            imports = [(import ./../home/default.nix)];
-            home = {
-                username = "xenoxanite";
-                homeDirectory = "/home/xenoxanite/";
-                stateVersion = "23.05";
-            };
-            programs.home-manager.enable = true;
-        };
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.xenoxanite = {
+      imports = [ (import ./../home) ];
+      home = {
+        username = "xenoxanite";
+        homeDirectory = "/home/xenoxanite";
+        stateVersion = "22.11";
+      };
+      programs.home-manager.enable = true;
     };
+  };
 }
