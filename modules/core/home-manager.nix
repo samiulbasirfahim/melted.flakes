@@ -5,13 +5,13 @@
         useGlobalPackage = true;
         extraSpecialArgs = {inherit inputs;};
         user.xenoxanite = {
-            imports = [(import ./../home/default.nix)]
+            imports = [(import ./../home/default.nix)];
             home = {
-                username = xenoxanite;
+                username = "xenoxanite";
                 homeDirectory = "/home/xenoxanite/";
                 stateVersion = "23.05";
             };
             programs.home-manager.enable = true;
         };
     };
-};
+}
