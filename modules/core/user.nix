@@ -4,6 +4,6 @@
     description = "Xenoxanite";
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
-    packages = with pkgs; [kitty firefox neovim pavucontrol];
+    packages = with pkgs; [firefox neovim pavucontrol];
   };
 }

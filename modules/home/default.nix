@@ -8,5 +8,6 @@
     ++ [(import ./gtk)]
     ++ [(import ./starship)]
     ++ [(import ./zsh)]
+    ++ [(import ./foot)]
     ++ [(import ./hyprland)];
 }
