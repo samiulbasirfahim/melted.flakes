@@ -20,7 +20,7 @@
     };
   };
   home.pointerCursor = {
-    package = pkgs.cattpuccin-red-cursor;
+    package = pkgs.cattpuccin-dark-cursor;
     name = "Catppuccin-Frappe-Red";
     size = 15;
   };
