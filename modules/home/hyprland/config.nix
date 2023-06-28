@@ -188,7 +188,7 @@
 
       
       # autostart
-      exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16
+      exec-once = hyprctl setcursor Catppuccin-Latte-Dark 16
       exec-once = systemctl --user import-environment &
       exec-once = hash dbus-update-activation-environment 2>/dev/null &
       exec-once = dbus-update-activation-environment --systemd &

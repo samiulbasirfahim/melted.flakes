@@ -6,10 +6,10 @@
 }:
 stdenv.mkDerivation rec {
   pname = "cattpuccin-dark-cursor";
-  version = "1";
+  version = "111";
   src = fetchzip {
     url = "https://github.com/catppuccin/cursors/raw/main/cursors/Catppuccin-Latte-Dark-Cursors.zip";
-    sha256 = "nes6ADEqEv4g7knF0FBXE6FEIIpQR3nLH2aRFsReyh4=";
+    sha256 = "m2Cgl93tPnecx3StULF3JirU7lPSMVH49BkPAxapaAk=";
   };
   installPhase = ''
     mkdir -p $out/share/icons/Catppuccin-Latte-Dark
