@@ -55,13 +55,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  sound.enable = false;
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     inputs.alejandra.defaultPackage.${system}
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  programs.hyprland.enable = true;
-  programs.sway.enable = true;
+  system.stateVersion = "23.05"; # Did you read the comment?
 }
