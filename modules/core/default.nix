@@ -16,6 +16,7 @@ in {
     system = "x86_64-linux";
     modules =
       [(import ./../../hosts/nixos/configuration.nix)]
+      ++ [./bootloader.nix]
       ++ [./home-manager.nix]
       ++ [./wayland.nix]
       ++ [./pipewire.nix]
