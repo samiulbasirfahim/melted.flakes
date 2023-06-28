@@ -55,11 +55,13 @@
 
 
       decoration {
-          rounding = 0
+          rounding = 2
           multisample_edges = true
           blur_new_optimizations = 1
-          active_opacity = 0.8500;
-          inactive_opacity = 0.76;
+          active_opacity = 1
+          inactive_opacity = 1
+        #   active_opacity = 0.8500;
+        #   inactive_opacity = 0.76;
           blur = 1
           blur_size = 2
           blur_passes = 2
@@ -80,8 +82,8 @@
 
       # ----------------------------------------------------------------
       # keybindings
-      bind = $mainMod, Return, exec, foot
-      bind = $mainMod SHIFT, Return, exec, foot --fullscreen
+      bind = $mainMod, Return, exec, kitty
+      bind = $mainMod SHIFT, Return, exec, kitty --fullscreen
       bind = $mainMod, Q, killactive,
       bind = $mainMod, T, killactive,
       bind = $mainMod, F, fullscreen,

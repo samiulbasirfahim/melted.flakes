@@ -19,6 +19,7 @@ in {
       ++ [./home-manager.nix]
       ++ [./wayland.nix]
       ++ [./pipewire.nix]
+      ++ [./service.nix]
       ++ [./user.nix];
   };
 }
