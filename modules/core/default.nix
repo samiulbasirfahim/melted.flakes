@@ -20,6 +20,8 @@ in {
       ++ [./wayland.nix]
       ++ [./pipewire.nix]
       ++ [./services.nix]
+      ++ [./xserver.nix]
+      ++ [./programs.nix]
       ++ [./user.nix];
   };
 }

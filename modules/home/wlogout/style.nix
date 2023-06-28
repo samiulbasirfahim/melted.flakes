@@ -4,7 +4,7 @@
         font-family: JetBrainsMono Nerd Font;
         font-size: 14pt;
         color: #CED7F4; /* text */
-        background-color: #2E3440;
+        background-color: rgba(46, 52, 64, 0.5);
     }
     button {
         background-repeat: no-repeat;
@@ -16,10 +16,10 @@
         transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     }
     button:hover {
-        background-color: rgba(49, 50, 68, 0.5);
+        background-color: rgba(49, 50, 68, 0);
     }
     button:focus {
-        background-color: #595959;
+        background-color: #2E3440;
         color:#1F1F1F;
     }
     #lock {
