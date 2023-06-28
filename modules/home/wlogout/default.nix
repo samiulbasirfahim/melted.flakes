@@ -1,5 +1,5 @@
 {...}: {
-  imports = [(import ./style.nix)];
+  # imports = [(import ./style.nix)];
   programs.wlogout = {
     enable = true;
     layout = [

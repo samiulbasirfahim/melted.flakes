@@ -1,12 +1,19 @@
 {pkgs, ...}: {
+  fonts.fontconfig.enable = true;
+  home.packages = [
+    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+  ];
   gtk = {
     enable = true;
     theme = {
-      name = "Tokyonight-Dark-BL";
+      name = "Nordic-darker";
+      package = pkgs.nordic;
     };
-    font = {
-      name = "Operator Mono Lig";
-      size = 11;
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
     };
+    font.name = "JetbrainsMono nerd font";
+    font.size = 11;
   };
 }

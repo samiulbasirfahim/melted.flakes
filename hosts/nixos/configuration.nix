@@ -59,6 +59,9 @@
 
   environment.systemPackages = with pkgs; [
     inputs.alejandra.defaultPackage.${system}
+    nix-prefetch-github
+    xfce.thunar
+    lxappearance
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   system.stateVersion = "23.05"; # Did you read the comment?
