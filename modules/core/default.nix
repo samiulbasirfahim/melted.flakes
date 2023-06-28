@@ -17,6 +17,7 @@ in {
     modules =
       [(import ./../../hosts/nixos/configuration.nix)]
       ++ [./bootloader.nix]
+      ++ [./hardware.nix]
       ++ [./home-manager.nix]
       ++ [./wayland.nix]
       ++ [./pipewire.nix]
