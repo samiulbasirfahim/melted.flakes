@@ -4,7 +4,7 @@
         font-family: JetBrainsMono Nerd Font;
         font-size: 14pt;
         color: #CED7F4; /* text */
-        background-color: rgba(31, 31, 31, 0.7);
+        background-color: #2E3440;
     }
     button {
         background-repeat: no-repeat;

@@ -1,5 +1,6 @@
 {...}: {
-  # imports = [(import ./style.nix)];
+  imports = [(import ./style.nix)];
+  xdg.configFile."wlogout/assets".source = ./assets;
   programs.wlogout = {
     enable = true;
     layout = [

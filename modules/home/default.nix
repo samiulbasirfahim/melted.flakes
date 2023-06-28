@@ -6,5 +6,7 @@
     ++ [(import ./wofi)]
     ++ [(import ./wlogout)]
     ++ [(import ./gtk)]
+    ++ [(import ./starship)]
+    ++ [(import ./zsh)]
     ++ [(import ./hyprland)];
 }
