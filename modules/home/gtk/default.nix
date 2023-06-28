@@ -15,5 +15,13 @@
     };
     font.name = "JetbrainsMono nerd font";
     font.size = 11;
+    cursorTheme = {
+      name = "Catppuccin-Frappe-Dark";
+    };
+  };
+  home.pointerCursor = {
+    package = pkgs.cattpuccin-red-cursor;
+    name = "Catppuccin-Frappe-Red";
+    size = 15;
   };
 }

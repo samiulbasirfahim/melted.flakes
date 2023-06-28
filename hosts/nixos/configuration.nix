@@ -5,13 +5,19 @@
   inputs,
   config,
   pkgs,
+  self,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-
+  nixpkgs = {
+    overlays = [
+      self.overlays.default
+      # inputs.nur.overlay
+    ];
+  };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
