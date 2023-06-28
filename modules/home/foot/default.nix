@@ -4,16 +4,12 @@
     server.enable = false;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=7:line-height=16px";
+        font = "JetBrainsMono Nerd Font:size=12:line-height=10px";
         pad = "12x12";
       };
       colors = {
         foreground = "D8DEE9";
         background = "2E3440";
-        selection_foreground = "000000";
-        selection_background = "FFFACD";
-        url_color = "0087BD";
-        cursor = "81A1C1";
         regular0 = "3B4252"; # black
         regular1 = "BF616A";
         regular2 = "A3BE8C";
