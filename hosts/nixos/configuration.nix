@@ -18,9 +18,12 @@
       # inputs.nur.overlay
     ];
   };
-  # Bootloader.
-
-  networking.hostName = "nixos"; # Define your hostname.
+  environment.systemPackages = with pkgs; [
+    inputs.alejandra.defaultPackage.${system}
+    nix-prefetch-github
+    xfce.thunar
+    lxappearance
+  ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -28,7 +31,6 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Dhaka";
@@ -60,13 +62,6 @@
   nixpkgs.config.allowUnfree = true;
 
   security.rtkit.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    inputs.alejandra.defaultPackage.${system}
-    nix-prefetch-github
-    xfce.thunar
-    lxappearance
-  ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   system.stateVersion = "23.05"; # Did you read the comment?
 }

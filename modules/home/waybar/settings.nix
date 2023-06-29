@@ -19,7 +19,7 @@
         "cpu"
         "disk"
         "network"
-        "cava"
+        # "cava"
         "tray"
       ];
       "custom/launcher" = {

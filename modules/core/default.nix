@@ -19,6 +19,7 @@ in {
       ++ [./bootloader.nix]
       ++ [./hardware.nix]
       ++ [./home-manager.nix]
+      ++ [./network.nix]
       ++ [./wayland.nix]
       ++ [./pipewire.nix]
       ++ [./services.nix]

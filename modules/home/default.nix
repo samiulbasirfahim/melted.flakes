@@ -8,6 +8,8 @@
     ++ [(import ./gtk)]
     ++ [(import ./starship)]
     ++ [(import ./zsh)]
+    ++ [(import ./firefox)]
+    # ++ [(import ./grimblast)]
     ++ [(import ./foot)]
     ++ [(import ./hyprland)];
 }
