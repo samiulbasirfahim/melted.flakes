@@ -22,6 +22,7 @@ in {
       ++ [./network.nix]
       ++ [./wayland.nix]
       ++ [./security.nix]
+      ++ [./programs.nix]
       ++ [./pipewire.nix]
       ++ [./services.nix]
       ++ [./xserver.nix]
