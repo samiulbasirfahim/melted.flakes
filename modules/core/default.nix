@@ -21,6 +21,7 @@ in {
       ++ [./home-manager.nix]
       ++ [./network.nix]
       ++ [./wayland.nix]
+      ++ [./security.nix]
       ++ [./pipewire.nix]
       ++ [./services.nix]
       ++ [./xserver.nix]
