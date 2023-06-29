@@ -5,7 +5,6 @@
   inputs,
   ...
 }: {
-  imports = [inputs.nix-gaming.nixosModules.default];
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -20,7 +19,7 @@
   nixpkgs = {
     overlays = [
       self.overlays.default
-      inputs.nur.overlay
+      #   inputs.nur.overlay
     ];
   };
 
