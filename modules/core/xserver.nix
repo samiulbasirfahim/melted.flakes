@@ -2,6 +2,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
+    xkbVariant = "";
     videoDrivers = ["amdgpu"];
     libinput.enable = true;
     libinput.mouse.accelProfile = "flat";

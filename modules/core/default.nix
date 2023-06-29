@@ -15,7 +15,7 @@ in {
     specialArgs = {inherit self inputs;};
     system = "x86_64-linux";
     modules =
-      [(import ./../../hosts/nixos/configuration.nix)]
+      [(import ./../../hosts/nixos/hardware-configuration.nix)]
       ++ [./bootloader.nix]
       ++ [./hardware.nix]
       ++ [./home-manager.nix]
@@ -27,6 +27,7 @@ in {
       ++ [./services.nix]
       ++ [./xserver.nix]
       ++ [./programs.nix]
+      ++ [./system.nix]
       ++ [./user.nix];
   };
 }
