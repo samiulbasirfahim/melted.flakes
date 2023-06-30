@@ -9,7 +9,9 @@
     ++ [(import ./starship)]
     ++ [(import ./zsh)]
     ++ [(import ./firefox)]
-    # ++ [(import ./grimblast)]
+    ++ [(import ./mako)]
+    ++ [(import ./swaylock)]
+    ++ [(import ./packages)]
     ++ [(import ./foot)]
     ++ [(import ./hyprland)];
 }

@@ -9,7 +9,13 @@
 
   home.packages = with pkgs; [
     hyprpicker
+    xdg-utils
     swww
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    inputs.hyprland-contrib.packages.${pkgs.system}.shellevents
+    inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
+    inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
+    inputs.hyprland-contrib.packages.${pkgs.system}.try_swap_workspace
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
@@ -46,6 +52,5 @@
     XDG_SESSION_TYPE = "wayland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
-    GTK_THEME = "Nordic-darker";
   };
 }

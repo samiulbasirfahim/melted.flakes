@@ -26,6 +26,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    lxappearance
   ];
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";

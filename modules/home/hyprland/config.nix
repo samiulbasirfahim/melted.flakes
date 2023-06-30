@@ -68,7 +68,7 @@
 
 
       animations {
-          enabled = 1
+          enabled = 0
           bezier = overshot, 0, 0, 0, 0
           animation = windows, 1, 3, overshot, slide
           animation = windowsOut, 1, 3, overshot, popin 80%
