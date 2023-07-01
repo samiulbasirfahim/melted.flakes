@@ -7,6 +7,8 @@
     [inputs.nixvim.homeManagerModules.nixvim]
     ++ [(import ./telescope.nix)]
     ++ [(import ./lsp.nix)]
+    ++ [(import ./nvimtree.nix)]
+    ++ [(import ./options.nix)]
     ++ [(import ./colorscheme.nix)];
   programs.neovim = {
     defaultEditor = true;
@@ -21,23 +23,7 @@
 
   programs.nixvim = {
     enable = true;
-    options = {
-      number = true;
-      relativenumber = true;
-      shiftwidth = 2;
-    };
     globals.mapleader = " ";
     maps.normalVisualOp.";" = ":";
-    maps.normal = {
-      "<leader>n" = {
-        silent = true;
-        action = "<cmd>NvimTreeToggle<CR>";
-      };
-    };
-    plugins = {
-      nvim-tree = {
-        enable = true;
-      };
-    };
   };
 }
