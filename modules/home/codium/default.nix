@@ -21,6 +21,7 @@
       "terminal.integrated.fontSize" = 16;
       "workbench.startupEditor" = "none";
       "editor.mouseWheelZoom" = false;
+      "workbench.iconTheme" = "catppuccin-mocha";
     };
     keybindings = [
       {
@@ -34,6 +35,7 @@
       catppuccin.catppuccin-vsc
       bbenoist.nix
       pkief.material-product-icons
+      catppuccin.catppuccin-vsc-icons
     ];
     #++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
   };
