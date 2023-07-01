@@ -1,8 +1,10 @@
 {...}: {
   programs.nixvim.plugins.nvim-tree = {
     enable = true;
+    actions.changeDir.enable = true;
   };
-  maps.normal = {
+  programs.nixvim.maps.normal = {
     "<leader>n" = "<cmd>NvimTreeToggle<CR>";
+    "<leader>e" = "<cmd>NvimTreeFocus<CR>";
   };
 }

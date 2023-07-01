@@ -25,5 +25,6 @@
     enable = true;
     globals.mapleader = " ";
     maps.normalVisualOp.";" = ":";
+    clipboard.providers.wl-copy.enable = true;
   };
 }

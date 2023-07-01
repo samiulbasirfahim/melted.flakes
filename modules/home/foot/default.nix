@@ -4,8 +4,8 @@
     server.enable = false;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=12:line-height=10px";
-        pad = "12x12";
+        font = "JetBrainsMono Nerd Font:size=12:line-height=0px";
+        pad = "0x0";
       };
       colors = {
         foreground = "cdd6f4"; # Text

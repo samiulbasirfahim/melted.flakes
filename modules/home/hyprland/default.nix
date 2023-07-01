@@ -29,8 +29,6 @@
     systemdIntegration = true;
   };
 
-  services.network-manager-applet.enable = true;
-
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     __GL_GSYNC_ALLOWED = "0";
