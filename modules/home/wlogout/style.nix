@@ -16,42 +16,31 @@
         transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     }
     button:hover {
-        background-color: rgba(49, 50, 68, 0);
+        background-color: rgba(29, 29, 44, 0.5);
     }
     button:focus {
         background-color: #1e1e2e;
-        color:#1F1F1F;
+        color:#E2C0C0;
     }
     #lock {
         background-image: image(url("./assets/lock.png"));
     }
-    #lock:focus {
-        background-image: image(url("./assets/lock-hover.png"));
-    }
+
     #logout {
         background-image: image(url("./assets/logout.png"));
     }
-    #logout:focus {
-        background-image: image(url("./assets/logout-hover.png"));
-    }
+
     #suspend {
         background-image: image(url("./assets/sleep.png"));
     }
-    #suspend:focus {
-        background-image: image(url("./assets/sleep-hover.png"));
-    }
+
 
     #shutdown {
         background-image: image(url("./assets/power.png"));
     }
-    #shutdown:focus {
-        background-image: image(url("./assets/power-hover.png"));
-    }
+
     #reboot {
         background-image: image(url("./assets/restart.png"));
-    }
-    #reboot:focus {
-        background-image: image(url("./assets/restart-hover.png"));
     }
 
   '';
