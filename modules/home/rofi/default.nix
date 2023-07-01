@@ -20,7 +20,7 @@ in {
         grey = mkLiteral "#6c7086";
 
         width = 600;
-        font = "JetBrainsMono Nerd Font 12";
+        font = "JetBrainsMono Nerd Font 11";
       };
 
       "element-text" = {

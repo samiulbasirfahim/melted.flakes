@@ -87,10 +87,10 @@
       bind = $mainMod, T, killactive,
       bind = $mainMod, F, fullscreen,
       bind = $mainMod, Space, togglefloating,
-      bind = $mainMod, Z, exec, pkill wofi || wofi --show drun
+      bind = $mainMod, Z, exec, pkill rofi || rofi -show drun
       bind = $mainMod, X, exec, pkill wlogout || wlogout -b 4
       bind = $mainMod, C, exec, hyprctl dispatch centerwindow none
-      bind = SUPER, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy
+      bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
       bind = $mainMod, P, pseudo,
       bind = $mainMod, Y, pin,
       bind = $mainMod, J, togglesplit,
@@ -98,7 +98,7 @@
       bind = $mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped
       bind = $mainMod SHIFT, c ,exec, hyprpicker -a
       bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
-      bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
+      bind = $mainMod, W,exec, pkill rofi || wallpaper-picker
       bind = $mainMod, O,exec, toggle-opacity
       bind = $mainMod, A,exec, toggle-animation
       bind = $mainMod, D,exec, toggle-blur
@@ -161,11 +161,8 @@
       bindm = $mainMod, mouse:273, resizewindow
       # windowrule
       windowrule = float,wlogout
-      windowrule = float,wofi
+      windowrule = float,rofi
       windowrule = noanim,wlogout
-      windowrule = noanim,wofi
-      windowrule = pin,wofi
-      windowrule = noborder,wofi
       windowrule = tile, neovide
       windowrule = idleinhibit focus,mpv
       windowrule = float,udiskie
