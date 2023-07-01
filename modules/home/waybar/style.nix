@@ -19,7 +19,7 @@
         margin-top: 8px;
         border: 2px solid #2F2D3E;
         border-radius: 4px;
-        background-color: #1D1D2C;
+        background-color: #1e1e2e;
     }
 
     #workspaces {

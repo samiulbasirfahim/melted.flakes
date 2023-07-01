@@ -12,7 +12,7 @@
       defaultTimeout = 5000;
       borderSize = 2;
       borderRadius = 2;
-      backgroundColor = "#1D1D2C";
+      backgroundColor = "#1e1e2e";
       borderColor = "#2F2D3E";
       progressColor = "over #313244";
       textColor = "#cdd6f4";

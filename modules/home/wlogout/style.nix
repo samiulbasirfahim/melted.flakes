@@ -19,7 +19,7 @@
         background-color: rgba(49, 50, 68, 0);
     }
     button:focus {
-        background-color: #2E3440;
+        background-color: #1e1e2e;
         color:#1F1F1F;
     }
     #lock {
