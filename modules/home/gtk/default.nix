@@ -6,13 +6,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["pink"];
-        size = "compact";
-        tweaks = ["rimless" "black"];
-        variant = "macchiato";
-      };
+      name = "Catppuccin-Mocha-BL-LB";
+      package = pkgs.cattpuccin-mocha-gtk;
     };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
@@ -30,6 +25,6 @@
     size = 15;
   };
   home.sessionVariables = {
-    GTK_THEME = "Catppuccin-Macchiato-Compact-Pink-Dark";
+    GTK_THEME = "Catppuccin-Mocha-BL-LB";
   };
 }

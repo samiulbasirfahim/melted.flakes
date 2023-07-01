@@ -17,6 +17,7 @@
     selfPkgs = import ./pkgs;
   in {
     overlays.default = selfPkgs.overlay;
+    formatter.x86_64-linux = inputs.alejandra.defaultPackage.x86_64-linux;
     nixosConfigurations = import ./modules/core/default.nix {
       inherit self nixpkgs inputs;
     };

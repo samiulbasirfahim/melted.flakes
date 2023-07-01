@@ -5,5 +5,6 @@
     neovim
     pavucontrol
     xfce.thunar
+    pkgs.gnome3.gnome-tweaks
   ];
 }

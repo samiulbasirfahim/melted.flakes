@@ -29,14 +29,13 @@
         "when" = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
       }
     ];
-    extensions = with pkgs.vscode-extensions;
-      [
-        kamadorueda.alejandra
-        catppuccin.catppuccin-vsc
-        bbenoist.nix
-        pkief.material-product-icons
-      ];
-      #++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
+    extensions = with pkgs.vscode-extensions; [
+      kamadorueda.alejandra
+      catppuccin.catppuccin-vsc
+      bbenoist.nix
+      pkief.material-product-icons
+    ];
+    #++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
   };
   home.packages = with pkgs; [
     inputs.alejandra.defaultPackage.${system}
