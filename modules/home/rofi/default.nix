@@ -1,59 +1,65 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  inherit (config.lib.formats.rasi) mkLiteral;
+in {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland-unwrapped;
     theme = {
       "*" = {
-        bg-col = "#1e1e2e";
-        bg-col-light = "#1e1e2e";
-        border-col = "#1e1e2e";
-        selected-col = "#1e1e2e";
-        blue = "#89b4fa";
-        fg-col = "#cdd6f4";
-        fg-col2 = "#f38ba8";
-        grey = "#6c7086";
+        bg-col = mkLiteral "#1e1e2e";
+        bg-col-light = mkLiteral "#1e1e2e";
+        border-col = mkLiteral "#1e1e2e";
+        selected-col = mkLiteral "#1e1e2e";
+        blue = mkLiteral "#89b4fa";
+        fg-col = mkLiteral "#cdd6f4";
+        fg-col2 = mkLiteral "#f38ba8";
+        grey = mkLiteral "#6c7086";
 
         width = 600;
         font = "JetBrainsMono Nerd Font 12";
       };
 
       "element-text" = {
-        background-color = "inherit";
-        text-color = "inherit";
+        background-color = mkLiteral "inherit";
+        text-color = mkLiteral "inherit";
       };
 
       "element-icon" = {
-        background-color = "inherit";
-        text-color = "inherit";
+        background-color = mkLiteral "inherit";
+        text-color = mkLiteral "inherit";
       };
       "mode-switcher" = {
-        background-color = "inherit";
-        text-color = "inherit";
+        background-color = mkLiteral "inherit";
+        text-color = mkLiteral "inherit";
       };
       "window" = {
-        height = "360px";
-        border = "3px";
-        border-color = "@border-col";
-        background-color = "@bg-col";
+        height = mkLiteral "360px";
+        border = mkLiteral "3px";
+        border-color = mkLiteral "@border-col";
+        background-color = mkLiteral "@bg-col";
       };
 
       "mainbox" = {
-        background-color = "@bg-col";
+        background-color = mkLiteral "@bg-col";
       };
 
       "inputbar" = {
-        children = ["prompt" "entry"];
-        background-color = "@bg-col";
-        border-radius = "5px";
-        padding = "2px";
+        children = map mkLiteral ["prompt" "entry"];
+        background-color = mkLiteral "@bg-col";
+        border-radius = mkLiteral "5px";
+        padding = mkLiteral "2px";
       };
 
       "prompt" = {
-        background-color = "@blue";
-        padding = "6px";
-        text-color = "@bg-col";
-        border-radius = "3px";
-        margin = "20px 0px 0px 20px";
+        background-color = mkLiteral "@blue";
+        padding = mkLiteral "6px";
+        text-color = mkLiteral "@bg-col";
+        border-radius = mkLiteral "3px";
+        margin = mkLiteral "20px 0px 0px 20px";
       };
 
       "textbox-prompt-colon" = {
@@ -62,34 +68,34 @@
       };
 
       "entry" = {
-        padding = "6px";
-        margin = "20px 0px 0px 10px";
-        text-color = "@fg-col";
-        background-color = "@bg-col";
+        padding = mkLiteral "6px";
+        margin = mkLiteral "20px 0px 0px 10px";
+        text-color = mkLiteral "@fg-col";
+        background-color = mkLiteral "@bg-col";
       };
 
       "listview" = {
-        border = "0px 0px 0px";
-        padding = "6px 0px 0px";
-        margin = "10px 0px 0px 20px";
+        border = mkLiteral "0px 0px 0px";
+        padding = mkLiteral "6px 0px 0px";
+        margin = mkLiteral "10px 0px 0px 20px";
         columns = 2;
         lines = 5;
-        background-color = "@bg-col";
+        background-color = mkLiteral "@bg-col";
       };
 
       "element" = {
-        padding = "5px";
-        background-color = "@bg-col";
-        text-color = "@fg-col";
+        padding = mkLiteral "5px";
+        background-color = mkLiteral "@bg-col";
+        text-color = mkLiteral "@fg-col";
       };
 
       "element-icon" = {
-        size = "25px";
+        size = mkLiteral "25px";
       };
 
       "element selected" = {
-        background-color = "@selected-col";
-        text-color = "@fg-col2";
+        background-color = mkLiteral "@selected-col";
+        text-color = mkLiteral "@fg-col2";
       };
 
       "mode-switcher" = {
@@ -97,33 +103,46 @@
       };
 
       "button" = {
-        padding = "10px";
-        background-color = "@bg-col-light";
-        text-color = "@grey";
-        vertical-align = "0.5";
-        horizontal-align = "0.5";
+        padding = mkLiteral "10px";
+        background-color = mkLiteral "@bg-col-light";
+        text-color = mkLiteral "@grey";
+        vertical-align = mkLiteral "0.5";
+        horizontal-align = mkLiteral "0.5";
       };
 
       "button selected" = {
-        background-color = "@bg-col";
-        text-color = "@blue";
+        background-color = mkLiteral "@bg-col";
+        text-color = mkLiteral "@blue";
       };
 
       "message" = {
-        background-color = "@bg-col-light";
-        margin = "2px";
-        padding = "2px";
-        border-radius = "5px";
+        background-color = mkLiteral "@bg-col-light";
+        margin = mkLiteral "2px";
+        padding = mkLiteral "2px";
+        border-radius = mkLiteral "5px";
       };
 
       "textbox" = {
-        padding = "6px";
-        margin = "20px 0px 0px 20px";
-        text-color = "@blue";
-        background-color = "@bg-col-light";
+        padding = mkLiteral "6px";
+        margin = mkLiteral "20px 0px 0px 20px";
+        text-color = mkLiteral "@blue";
+        background-color = mkLiteral "@bg-col-light";
       };
     };
     extraConfig = {
+      modi = "drun";
+      icon-theme = "Oranchelo";
+      show-icon = true;
+      terminal = "alacritty";
+      drun-display-format = "{icon} {name}";
+      location = 0;
+      disable-history = false;
+      hide-scrollbar = true;
+      display-drun = "   Apps ";
+      display-run = "   Run ";
+      display-window = " 﩯  Window";
+      display-Network = " 󰤨  Network";
+      sidebar-mode = true;
     };
   };
 }
