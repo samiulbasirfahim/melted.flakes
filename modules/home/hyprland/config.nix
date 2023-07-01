@@ -68,13 +68,14 @@
 
 
       animations {
-          enabled = 0
-          bezier = overshot, 0, 0, 0, 0
-          animation = windows, 1, 3, overshot, slide
-          animation = windowsOut, 1, 3, overshot, popin 80%
-          animation = border, 1, 3, overshot
-          animation = fade, 1, 4, overshot
-          animation = workspaces, 1, 3, overshot, slidevert
+          enabled = 1
+          bezier = overshot, 0.05, 0.9, 0.1, 1.0
+            animation = windows, 1, 5, overshot
+            animation = windowsOut, 1, 5, overshot, popin 80%
+            animation = border, 1, 10, overshot
+            animation = borderangle, 1, 6, overshot
+            animation = fade, 1, 5, overshot
+            animation = workspaces, 1, 5, overshot
       }
 
 

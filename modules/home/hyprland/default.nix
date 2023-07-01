@@ -10,12 +10,21 @@
   home.packages = with pkgs; [
     hyprpicker
     xdg-utils
-    swww
-    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     inputs.hyprland-contrib.packages.${pkgs.system}.shellevents
     inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
     inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
     inputs.hyprland-contrib.packages.${pkgs.system}.try_swap_workspace
+
+    # Wallpaper deamon
+    swww
+
+    # Screenshot and screen-record utility
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    wf-recorder
+
+    # Clipboard manager
+    wl-clipboard
+    cliphist
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];

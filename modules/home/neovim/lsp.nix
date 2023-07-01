@@ -10,6 +10,9 @@
         enable = true;
         package = pkgs.rnix-lsp;
       };
+      tsserver = {
+        enable = true;
+      };
     };
   };
 }

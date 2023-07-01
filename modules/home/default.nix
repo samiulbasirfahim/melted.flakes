@@ -3,7 +3,7 @@
     [(import ./git)]
     ++ [(import ./codium)]
     ++ [(import ./waybar)]
-    ++ [(import ./wofi)]
+    ++ [(import ./rofi)]
     ++ [(import ./wlogout)]
     ++ [(import ./gtk)]
     ++ [(import ./starship)]
