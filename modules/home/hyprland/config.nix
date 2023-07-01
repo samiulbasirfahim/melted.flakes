@@ -30,7 +30,7 @@
           gaps_in = 6
           gaps_out = 10
           border_size = 2
-          col.active_border = rgba(595959ff)
+          col.active_border = rgba(2F2D3Eff)
           col.inactive_border = rgba(00140e10)
           apply_sens_to_raw = 1
       }

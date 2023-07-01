@@ -8,24 +8,24 @@
         pad = "12x12";
       };
       colors = {
-        foreground = "D8DEE9";
-        background = "2E3440";
-        regular0 = "3B4252"; # black
-        regular1 = "BF616A";
-        regular2 = "A3BE8C";
-        regular3 = "EBCB8B";
-        regular4 = "81A1C1";
-        regular5 = "B48EAD";
-        regular6 = "88C0D0";
-        regular7 = "E5E9F0";
-        bright0 = "4C566A"; # bright black
-        bright1 = "BF616A"; # bright red
-        bright2 = "A3BE8C"; # bright green
-        bright3 = "EBCB8B"; # bright yellow
-        bright4 = "81A1C1";
-        bright5 = "B48EAD"; # bright magenta
-        bright6 = "88C0D0"; # bright cyan
-        bright7 = "E5E9F0"; # bright white
+        foreground = "cdd6f4"; # Text
+        background = "1e1e2e"; # Base
+        regular0 = "45475a"; # Surface 1
+        regular1 = "f38ba8"; # red
+        regular2 = "a6e3a1"; # green
+        regular3 = "f9e2af"; # yellow
+        regular4 = "89b4fa"; # blue
+        regular5 = "f5c2e7"; # pink
+        regular6 = "94e2d5"; # teal
+        regular7 = "bac2de"; # Subtext 1
+        bright0 = "585b70"; # Surface 2
+        bright1 = "f38ba8"; # red
+        bright2 = "a6e3a1"; # green
+        bright3 = "f9e2af"; # yellow
+        bright4 = "89b4fa"; # blue
+        bright5 = "f5c2e7"; # pink
+        bright6 = "94e2d5"; # teal
+        bright7 = "a6adc8"; # Subtext 0
       };
     };
   };

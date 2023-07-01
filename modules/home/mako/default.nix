@@ -12,14 +12,14 @@
       defaultTimeout = 5000;
       borderSize = 2;
       borderRadius = 2;
-      backgroundColor = "#2D333E";
-      borderColor = "#242932";
+      backgroundColor = "#1D1D2C";
+      borderColor = "#2F2D3E";
       progressColor = "over #313244";
       textColor = "#cdd6f4";
       extraConfig = ''
         text-alignment=center
         [urgency=high]
-        border-color=#B45C65
+        border-color=#E1BFBF
       '';
     };
   };
