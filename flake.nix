@@ -7,6 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     hyprland-contrib.url = "github:hyprwm/contrib";
+    nixvim.url = "github:pta2002/nixvim";
   };
 
   outputs = {

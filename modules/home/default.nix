@@ -13,5 +13,6 @@
     ++ [(import ./swaylock)]
     ++ [(import ./packages)]
     ++ [(import ./foot)]
+    ++ [(import ./neovim)]
     ++ [(import ./hyprland)];
 }
