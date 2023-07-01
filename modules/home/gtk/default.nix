@@ -25,6 +25,7 @@
     size = 15;
   };
   home.sessionVariables = {
+    GTK_USE_PORTAL = 1;
     GTK_THEME = "Catppuccin-Mocha-BL-LB";
   };
 }

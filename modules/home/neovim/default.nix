@@ -3,7 +3,11 @@
   pkgs,
   ...
 }: {
-  imports = [inputs.nixvim.homeManagerModules.nixvim];
+  imports =
+    [inputs.nixvim.homeManagerModules.nixvim]
+    ++ [(import ./telescope.nix)]
+    ++ [(import ./lsp.nix)]
+    ++ [(import ./colorscheme.nix)];
   programs.neovim = {
     defaultEditor = true;
   };
@@ -11,28 +15,21 @@
     EDITOR = "nvim";
   };
 
+  home.packages = with pkgs; [
+    ripgrep
+  ];
+
   programs.nixvim = {
     enable = true;
-    # extraPlugins = [pkgs.vimPlugins.catppuccin-nvim];
-    # colorscheme = "catppuccin-mocha";
-    colorschemes.catppuccin = {
-      enable = true;
-      # transparentBackground = true;
-      background = {
-        dark = "mocha";
-        light = "mocha";
-      };
-    };
-
     options = {
       number = true;
       relativenumber = true;
       shiftwidth = 2;
     };
     globals.mapleader = " ";
-    maps = {
-      normalVisualOp.";" = ":";
-      normal."<leader>n" = {
+    maps.normalVisualOp.";" = ":";
+    maps.normal = {
+      "<leader>n" = {
         silent = true;
         action = "<cmd>NvimTreeToggle<CR>";
       };
