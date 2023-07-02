@@ -8,6 +8,7 @@
     ++ [(import ./gtk)]
     ++ [(import ./starship)]
     ++ [(import ./zsh)]
+    ++ [(import ./scripts)]
     ++ [(import ./firefox)]
     ++ [(import ./mako)]
     ++ [(import ./swaylock)]

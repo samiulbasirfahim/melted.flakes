@@ -26,23 +26,17 @@
     #lock {
         background-image: image(url("./assets/lock.png"));
     }
-
     #logout {
         background-image: image(url("./assets/logout.png"));
     }
-
     #suspend {
         background-image: image(url("./assets/sleep.png"));
     }
-
-
     #shutdown {
         background-image: image(url("./assets/power.png"));
     }
-
     #reboot {
         background-image: image(url("./assets/restart.png"));
     }
-
   '';
 }
