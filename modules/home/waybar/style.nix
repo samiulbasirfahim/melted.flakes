@@ -17,7 +17,7 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 8px;
-        border: 2px solid #2F2D3E;
+        border: 2px solid #964B61;
         border-radius: 4px;
         background-color: #1e1e2e;
     }
@@ -37,7 +37,7 @@
     }
 
     #workspaces button.active {
-        background-color: #2F2D3E;
+        background-color: #964B61;
         color: rgb(23, 23, 23);
     }
 

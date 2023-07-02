@@ -10,6 +10,7 @@
   home.packages = with pkgs; [
     hyprpicker
     xdg-utils
+    eww-wayland
     inputs.hyprland-contrib.packages.${pkgs.system}.shellevents
     inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
     inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop

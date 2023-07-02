@@ -7,6 +7,9 @@
     pavucontrol
     xfce.thunar
 
+    # utilites
+    btop
+
     # Multimedia
     mpv
     imv

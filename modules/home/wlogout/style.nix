@@ -1,9 +1,9 @@
 {...}: {
   programs.wlogout.style = ''
-      window {
+    window {
         font-family: JetBrainsMono Nerd Font;
-        font-size: 14px;
-        color: #CED7F4; /* text */
+        font-size: 15px;
+        color: #CED7F4;
         background-color: rgba(46, 52, 64, 0.5);
     }
     button {
@@ -20,6 +20,7 @@
     }
     button:focus {
         background-color: #1e1e2e;
+        border: 2px solid #964B61;
         color:#E2C0C0;
     }
     #lock {

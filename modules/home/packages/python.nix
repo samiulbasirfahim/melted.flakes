@@ -1,5 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    python
+    (python3.withPackages (ps:
+      with ps; [
+        pandas
+        numpy
+        requests
+      ]))
   ];
 }
