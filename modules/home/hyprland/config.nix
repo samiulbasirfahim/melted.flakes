@@ -69,13 +69,13 @@
 
       animations {
           enabled = 1
-          bezier = overshot, 0.05, 0.9, 0.1, 1.0
-            animation = windows, 1, 5, overshot
-            animation = windowsOut, 1, 5, overshot, popin 80%
-            animation = border, 1, 10, overshot
-            animation = borderangle, 1, 6, overshot
-            animation = fade, 1, 5, overshot
-            animation = workspaces, 1, 5, overshot
+          bezier = overshot, 0.1, 0.5, 0.9, 1.0
+            animation = windows, 1, 2, overshot
+            animation = windowsOut, 1, 2, overshot, popin 80%
+            animation = border, 1, 5, overshot
+            animation = borderangle, 1, 2, overshot
+            animation = fade, 1, 3, overshot
+            animation = workspaces, 1, 3, overshot
       }
 
 
@@ -159,30 +159,45 @@
       # mouse binding
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
-      # windowrule
+
+
+      # windowrule -------------------------------------
+
+      # wlogout
       windowrule = float,wlogout
-      windowrule = float,rofi
       windowrule = noanim,wlogout
-      windowrule = tile, neovide
-      windowrule = idleinhibit focus,mpv
-      windowrule = float,udiskie
-      windowrule = float,title:^(Transmission)$
-      windowrule = float,title:^(Volume Control)$
-      windowrule = float,title:^(Firefox — Sharing Indicator)$
-      windowrule = move 0 0,title:^(Firefox — Sharing Indicator)$
-      windowrule = size 700 450,title:^(Volume Control)$
-      windowrule = move 40 55%,title:^(Volume Control)$
-      windowrulev2 = float, title:^(Picture-in-Picture)$
-      windowrulev2 = opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$
-      windowrulev2 = pin, title:^(Picture-in-Picture)$
-      windowrule = float,imv
-      windowrule = move 510 290,imv
-      windowrule = size 900 500,imv
+      
+      # rofi
+      windowrule = float,rofi
+      windowrule = noanim,rofi
+
+      # mpv
       windowrule = float,mpv
       windowrule = move 510 290,mpv
       windowrule = size 900 500,mpv
+      windowrule = idleinhibit focus,mpv
       windowrulev2 = idleinhibit focus, class:^(mpv)$
+
+      # imv
+      windowrule = float,imv
+      windowrule = move 510 290,imv
+      windowrule = size 900 500,imv
+
+      # firefox
+      windowrule = float,title:^(Firefox — Sharing Indicator)$
+      windowrule = move 0 0,title:^(Firefox — Sharing Indicator)$
+      windowrulev2 = float, title:^(Picture-in-Picture)$
+      windowrulev2 = opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$
+      windowrulev2 = pin, title:^(Picture-in-Picture)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
+
+      # pavucontrol
+      windowrule = size 700 450, pavucontrol
+      windowrule = move 40 55%, pavucontrol
+
+      # utilities
+      windowrule = float,title:^(Transmission)$
+      windowrule = float,title:^(Volume Control)$
 
       
       # autostart

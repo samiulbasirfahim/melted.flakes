@@ -2,7 +2,7 @@
   programs.wlogout.style = ''
       window {
         font-family: JetBrainsMono Nerd Font;
-        font-size: 11px;
+        font-size: 14px;
         color: #CED7F4; /* text */
         background-color: rgba(46, 52, 64, 0.5);
     }
