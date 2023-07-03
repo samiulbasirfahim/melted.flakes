@@ -26,5 +26,9 @@
     globals.mapleader = " ";
     maps.normalVisualOp.";" = ":";
     clipboard.providers.wl-copy.enable = true;
+    plugins.treesitter = {
+      enable = true;
+      ensureInstalled = ["nix" "python"];
+    };
   };
 }

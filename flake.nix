@@ -8,6 +8,7 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     hyprland-contrib.url = "github:hyprwm/contrib";
     nixvim.url = "github:pta2002/nixvim";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {

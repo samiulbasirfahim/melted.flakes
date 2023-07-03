@@ -11,10 +11,7 @@
     hyprpicker
     xdg-utils
     eww-wayland
-    inputs.hyprland-contrib.packages.${pkgs.system}.shellevents
-    inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
     inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
-    inputs.hyprland-contrib.packages.${pkgs.system}.try_swap_workspace
 
     # Wallpaper deamon
     swww
@@ -37,6 +34,7 @@
     };
     nvidiaPatches = false;
     systemdIntegration = true;
+    disableAutoreload = true;
   };
 
   home.sessionVariables = {
@@ -63,4 +61,11 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
   };
+
+  # xdg.configFile."hypr/keybindings.conf".text = ''
+  #   bind = SUPER ALT, left, moveactive,  -80 0
+  #   bind = SUPER ALT, right, moveactive, 80 0
+  #   bind = SUPER ALT, up, moveactive, 0 -80
+  #   bind = SUPER ALT, down, moveactive, 0 80
+  # '';
 }

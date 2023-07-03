@@ -29,11 +29,9 @@
     }
 
     #workspaces button {
-        padding-top: 5px;
-        border-radius: 0px;
-        padding-bottom: 5px;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding: 4px 6px;
+        margin: 3px 0px;
+        border-radius: 2px;
     }
 
     #workspaces button.active {
@@ -47,6 +45,7 @@
 
     tooltip {
         background: rgb(48, 45, 65);
+        border: 2px solid #964B61;
     }
 
     tooltip label {
@@ -57,7 +56,7 @@
         font-size: 16px;
         padding-left: 10px;
         padding-right: 6px;
-        color: #6896BA;
+        color: #89B4FA;
     }
 
     #clock,

@@ -147,8 +147,8 @@ bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 # windowrule -------------------------------------
 # wlogout
-windowrule = float,wlogout
-windowrule = noanim,wlogout
+windowrule = float, wlogout
+windowrule = noanim, wlogout
 
 # rofi
 windowrule = float,rofi
