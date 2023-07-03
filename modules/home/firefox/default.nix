@@ -1,5 +1,7 @@
 {pkgs, ...}: {
-  imports = [(import ./userChrome.nix)];
+  imports =
+    [(import ./userChrome.nix)]
+    ++ [(import ./userContent.nix)];
 
   programs.firefox = {
     enable = true;
@@ -51,14 +53,18 @@
         "browser.toolbars.bookmarks.visibility" = "never";
         "privacy.webrtc.legacyGlobalIndicator" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "layers.acceleration.force-enabled" = true;
+        "gfx.webrender.all" = true;
+        "svg.context-properties.content.enabled" = true;
         "browser.compactmode.show" = true;
       };
-      # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      #   ublock-origin
-      #   languagetool
-      #   news-feed-eradicator
-      #   videospeed
-      # ];
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        languagetool
+        news-feed-eradicator
+        tabliss
+        videospeed
+      ];
     };
   };
 }

@@ -9,6 +9,7 @@
     hyprland-contrib.url = "github:hyprwm/contrib";
     nixvim.url = "github:pta2002/nixvim";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nur.url = github:nix-community/NUR;
   };
 
   outputs = {

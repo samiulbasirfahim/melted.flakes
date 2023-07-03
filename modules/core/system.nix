@@ -20,7 +20,7 @@
     overlays = [
       self.overlays.default
       inputs.neovim-nightly-overlay.overlay
-      #   inputs.nur.overlay
+      inputs.nur.overlay
     ];
   };
 
