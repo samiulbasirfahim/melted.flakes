@@ -21,6 +21,7 @@ in {
       ++ [./home-manager.nix]
       ++ [./network.nix]
       ++ [./wayland.nix]
+      ++ [./virtualization.nix]
       ++ [./warp.nix]
       ++ [./security.nix]
       ++ [./programs.nix]

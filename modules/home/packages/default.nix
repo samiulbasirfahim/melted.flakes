@@ -9,9 +9,13 @@
 
     # utilites
     btop
+    bleachbit
 
     # Multimedia
     mpv
     imv
+
+    # Chrome
+    chromium
   ];
 }

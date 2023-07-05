@@ -2,7 +2,7 @@
   programs.firefox.profiles.default.userChrome = ''
     :root {
         /* Dark Theme Colors */
-        --window-colour: #24273a;
+        --window-colour: #1e1e2e;
         --secondary-colour: #363a4f;
         --inverted-colour: #cad3f5;
 
@@ -12,13 +12,12 @@
         --inverted-colour:             #1E2021;
         */
 
-
         /* Containter Tab Colours */
         --uc-identity-color-blue: #8aadf4;
         --uc-identity-color-turquoise: #91d7e3;
         --uc-identity-color-green: #a6da95;
         --uc-identity-color-yellow: #eed49f;
-        --uc-identity-color-orange: #f5a97f;
+        --uc-identity-color-orange: #964B61;
         --uc-identity-color-red: #ed8796;
         --uc-identity-color-pink: #ee99a0;
         --uc-identity-color-purple: #c6a0f6;
@@ -71,7 +70,7 @@
     }
 
     #stop-button {
-        display: none !important;
+        display: -moz-inline-box !important;
     }
 
     #reload-button {
@@ -107,9 +106,9 @@
         display: none !important;
     }
 
-    /* only hides permission items */
+    #identity-box { display: none !important }
 
-    /* e.g. playing indicator (secondary - not icon) */
+    /* e.g. playing indicator (secondary - not icon)  */
     .tab-secondary-label {
         display: none !important;
     }
@@ -121,7 +120,6 @@
     #page-action-buttons {
         display: none !important;
     }
-
 
 
 
@@ -244,7 +242,7 @@
     /* active tab background */
     .tabbrowser-tab[selected]>.tab-stack>.tab-background {
         background: var(--uc-hover-colour) !important;
-        border: 1px solid #f5a97f !important;
+        border: 1px solid #964B61 !important;
     }
 
 
@@ -494,6 +492,94 @@
     .identity-color-purple {
         --identity-tab-color: var(--uc-identity-color-purple) !important;
         --identity-icon-color: var(--uc-identity-color-purple) !important;
+    }
+
+    #identity-box.extensionPage
+    #identity-icon[tooltiptext="Loaded by extension: Tabliss"],
+    #urlbar[pageproxystate="invalid"] #identity-box #identity-icon,
+    #tracking-protection-icon-container[hidden]
+      ~ #identity-box[pageproxystate="valid"].notSecure:not(.chromeUI, .localResource)
+      #identity-icon {
+      display: none !important;
+    }
+
+    #back-button,
+    #forward-button {
+      display: none !important;
+    }
+
+    #star-button {
+      display: none !important;
+    }
+    #urlbar-zoom-button {
+      display: none !important;
+    }
+    #reader-mode-button {
+      display: none !important;
+    }
+
+    /* tracking protection shield icon */
+    #tracking-protection-icon-container {
+      display: none !important;
+    }
+
+    /* #identity-box { display: none !important } /* hides encryption AND permission items */
+    #identity-permission-box {
+      display: none !important;
+    } /* only hodes permission items */
+
+    /* e.g. playing indicator (secondary - not icon) */
+    .tab-secondary-label {
+      display: none !important;
+    }
+
+    #pageActionButton {
+      display: none !important;
+    }
+    #page-action-buttons {
+      display: none !important;
+    }
+
+    #urlbar-go-button {
+      display: none !important;
+    }
+
+    /* Hide Extension Name Unless Site Identity Area is Hovered */
+    #identity-box.extensionPage:not(:hover) #identity-icon-labels {
+      display: none !important;
+    }
+    #identity-box.extensionPage:hover #identity-icon-labels {
+      display: none !important;
+    }
+    #identity-box.extensionPage #identity-icon-label {
+      display: none !important;
+    }
+    #identity-box.extensionPage
+      #identity-icon[tooltiptext="Loaded by extension: Tabliss"]
+      ~ #identity-icon-label {
+      display: none !important;
+    }
+    #identity-box.extensionPage
+      #identity-icon[tooltiptext="Loaded by extension: Tabliss"],
+    #urlbar[pageproxystate="invalid"] #identity-box #identity-icon,
+    #tracking-protection-icon-container[hidden]
+      ~ #identity-box[pageproxystate="valid"].notSecure:not(.chromeUI, .localResource)
+      #identity-icon {
+      fill-opacity: var(--urlbar-icon-fill-opacity) !important;
+      list-style-image: url(chrome://userchrome/content/engines/google.svg) !important;
+    }
+    #PanelUI-menu-button {
+      padding: 0px !important;
+      max-height: 1px;
+      list-style-image: none !important;
+    }
+
+    #PanelUI-menu-button .toolbarbutton-icon {
+      width: 1px !important;
+
+    }
+    #PanelUI-menu-button .toolbarbutton-badge-stack {
+      padding: 0px !important;
     }
   '';
 }
