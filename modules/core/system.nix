@@ -19,7 +19,6 @@
   nixpkgs = {
     overlays = [
       self.overlays.default
-      inputs.neovim-nightly-overlay.overlay
       inputs.nur.overlay
     ];
   };
@@ -27,6 +26,8 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    polkit
+    polkit_gnome
   ];
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -43,5 +44,4 @@
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.05";
-  virtualisation.anbox.enable = true;
 }

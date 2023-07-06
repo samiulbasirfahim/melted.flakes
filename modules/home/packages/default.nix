@@ -17,5 +17,8 @@
 
     # Chrome
     chromium
+
+    # Email client
+    evolution
   ];
 }

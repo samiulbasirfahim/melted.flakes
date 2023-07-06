@@ -1,34 +1,12 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports =
-    [inputs.nixvim.homeManagerModules.nixvim]
-    ++ [(import ./telescope.nix)]
-    ++ [(import ./lsp.nix)]
-    ++ [(import ./nvimtree.nix)]
-    ++ [(import ./options.nix)]
-    ++ [(import ./colorscheme.nix)];
+{pkgs, ...}: {
   programs.neovim = {
+    enable = true;
     defaultEditor = true;
   };
+  home.packages = with pkgs; [
+    rnix-lsp
+  ];
   home.sessionVariables = {
     EDITOR = "nvim";
-  };
-
-  home.packages = with pkgs; [
-    ripgrep
-  ];
-
-  programs.nixvim = {
-    enable = true;
-    globals.mapleader = " ";
-    maps.normalVisualOp.";" = ":";
-    clipboard.providers.wl-copy.enable = true;
-    plugins.treesitter = {
-      enable = true;
-      ensureInstalled = ["nix" "python"];
-    };
   };
 }
