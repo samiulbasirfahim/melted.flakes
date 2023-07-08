@@ -5,6 +5,8 @@
 }: {
   imports =
     [(import ./config.nix)]
+    ++ [(import ./keybindings.nix)]
+    ++ [(import ./windowrules.nix)]
     ++ [inputs.hyprland.homeManagerModules.default];
 
   home.packages = with pkgs; [
@@ -61,11 +63,4 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
   };
-
-  # xdg.configFile."hypr/keybindings.conf".text = ''
-  #   bind = SUPER ALT, left, moveactive,  -80 0
-  #   bind = SUPER ALT, right, moveactive, 80 0
-  #   bind = SUPER ALT, up, moveactive, 0 -80
-  #   bind = SUPER ALT, down, moveactive, 0 80
-  # '';
 }
