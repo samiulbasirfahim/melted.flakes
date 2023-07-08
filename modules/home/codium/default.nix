@@ -9,19 +9,20 @@
     userSettings = {
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.productIconTheme" = "material-product-icons";
-      "editor.fontFamily" = "JetbrainsMono nerd font";
-      "editor.fontSize" = 16;
+      "editor.fontFamily" = "OperatorMono Nerd Font";
+      "editor.fontSize" = 18;
       "editor.lineHeight" = 2;
       "window.menuBarVisibility" = "toggle";
       "window.zoomLevel" = 0.1;
       "workbench.statusBar.visible" = false;
       "editor.minimap.enabled" = false;
       "git.autofetch" = true;
-      "terminal.integrated.fontFamily" = "JetbrainsMono nerd font";
-      "terminal.integrated.fontSize" = 16;
+      "terminal.integrated.fontFamily" = "OperatorMono Nerd Font";
+      "terminal.integrated.fontSize" = 18;
       "workbench.startupEditor" = "none";
       "editor.mouseWheelZoom" = false;
       "workbench.iconTheme" = "catppuccin-mocha";
+      "workbench.sideBar.location" = "left";
     };
     keybindings = [
       {

@@ -13,8 +13,8 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
-    font.name = "JetbrainsMono nerd font";
-    font.size = 11;
+    font.name = "OperatorMono Nerd Font";
+    font.size = 12;
     cursorTheme = {
       name = "Catppuccin-Latte-Dark";
     };

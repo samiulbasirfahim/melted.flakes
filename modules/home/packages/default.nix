@@ -10,6 +10,7 @@
     # utilites
     btop
     bleachbit
+    exa
 
     # Multimedia
     mpv
