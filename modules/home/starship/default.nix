@@ -1,12 +1,20 @@
 {pkgs, ...}: {
   programs.starship = let
-    flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
+    flavour = "mocha";
   in {
     enable = true;
+    enableZshIntegration = true;
     settings =
       {
-        # Other config here
-        format = "$all"; # Remove this line to disable the default prompt format
+        character = {
+          success_symbol = "[](bold green)";
+          error_symbol = "[✗](bold red) ";
+        };
+        git_branch = {
+          format = " [$symbol$branch]($style) ";
+          symbol = "";
+          style = "bold yellow";
+        };
         palette = "catppuccin_${flavour}";
       }
       // builtins.fromTOML (builtins.readFile

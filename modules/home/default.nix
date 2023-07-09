@@ -12,6 +12,7 @@
     ++ [(import ./firefox)]
     ++ [(import ./mako)]
     ++ [(import ./swaylock)]
+    ++ [(import ./spotify)]
     ++ [(import ./packages)]
     ++ [(import ./foot)]
     ++ [(import ./neovim)]

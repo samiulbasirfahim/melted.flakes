@@ -4,8 +4,8 @@
     server.enable = false;
     settings = {
       main = {
-        font = "OperatorMono Nerd Font:size=12:line-height=0px";
-        pad = "0x0";
+        font = "OperatorMono Nerd Font:size=12:line-height=10";
+        pad = "8x8";
       };
       colors = {
         foreground = "cdd6f4"; # Text

@@ -11,6 +11,8 @@
     btop
     bleachbit
     exa
+    joplin-desktop
+    playerctl
 
     # Multimedia
     mpv
@@ -22,7 +24,7 @@
     # Email client
     evolution
 
-    # nixos
+    # Nixos
     nix-prefetch-github
   ];
 }
