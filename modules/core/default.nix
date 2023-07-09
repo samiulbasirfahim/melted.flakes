@@ -27,7 +27,6 @@ in {
       ++ [./programs.nix]
       ++ [./pipewire.nix]
       ++ [./services.nix]
-      ++ [./greetd.nix]
       ++ [./programs.nix]
       ++ [./system.nix]
       ++ [./user.nix];

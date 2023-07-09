@@ -1,5 +1,5 @@
 {...}: {
-  xdg.configFile."hypr/windowrules.nix".text = "
+  xdg.configFile."hypr/windowrules.conf".text = "
 # windowrule -------------------------------------
 # wlogout
 windowrule = float, wlogout

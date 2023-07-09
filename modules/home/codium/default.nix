@@ -7,22 +7,26 @@
     enable = true;
     package = pkgs.vscodium;
     userSettings = {
-      "workbench.colorTheme" = "Catppuccin Mocha";
-      "workbench.productIconTheme" = "material-product-icons";
+      "editor.cursorBlinking" = "expand";
+      "editor.cursorSmoothCaretAnimation" = "on";
+      "editor.cursorStyle" = "line";
+      "editor.cursorSurroundingLines" = 20;
       "editor.fontFamily" = "OperatorMono Nerd Font";
       "editor.fontSize" = 18;
-      "editor.lineHeight" = 2;
-      "window.menuBarVisibility" = "toggle";
-      "window.zoomLevel" = 0.1;
-      "workbench.statusBar.visible" = false;
+      "editor.lineHeight" = 2.3;
       "editor.minimap.enabled" = false;
-      "git.autofetch" = true;
+      "editor.mouseWheelZoom" = false;
+      "tabnine.experimentalAutoImports" = true;
       "terminal.integrated.fontFamily" = "OperatorMono Nerd Font";
       "terminal.integrated.fontSize" = 18;
-      "workbench.startupEditor" = "none";
-      "editor.mouseWheelZoom" = false;
+      "window.menuBarVisibility" = "hidden";
+      "window.zoomLevel" = 0.3;
+      "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-mocha";
+      "workbench.productIconTheme" = "material-product-icons";
       "workbench.sideBar.location" = "left";
+      "workbench.startupEditor" = "none";
+      "workbench.statusBar.visible" = false;
     };
     keybindings = [
       {
@@ -37,6 +41,8 @@
       bbenoist.nix
       pkief.material-product-icons
       catppuccin.catppuccin-vsc-icons
+      tabnine.tabnine-vscode
+      ms-python.python
     ];
     #++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
   };

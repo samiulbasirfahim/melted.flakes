@@ -12,7 +12,7 @@
         };
         git_branch = {
           format = " [$symbol$branch]($style) ";
-          symbol = "";
+          symbol = " ";
           style = "bold yellow";
         };
         palette = "catppuccin_${flavour}";
