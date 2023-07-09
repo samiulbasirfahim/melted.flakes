@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   sound.enable = false;
   hardware.pulseaudio.enable = false;
   services.pipewire = {

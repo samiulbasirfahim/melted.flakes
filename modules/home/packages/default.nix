@@ -13,6 +13,7 @@
     exa
     joplin-desktop
     playerctl
+    gparted
 
     # Multimedia
     mpv
@@ -26,5 +27,10 @@
 
     # Nixos
     nix-prefetch-github
+
+    # Games
+    # osu-lazer
+    # xonotic
+    # gamescope
   ];
 }

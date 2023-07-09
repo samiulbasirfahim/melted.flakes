@@ -23,6 +23,7 @@ in {
       ++ [./wayland.nix]
       ++ [./virtualization.nix]
       ++ [./warp.nix]
+      ++ [./gaming.nix]
       ++ [./security.nix]
       ++ [./programs.nix]
       ++ [./pipewire.nix]
