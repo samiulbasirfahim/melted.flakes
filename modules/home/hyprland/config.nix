@@ -62,6 +62,11 @@ animations {
     animation = workspaces, 1, 6, myBezier
 }
 
+# import files
+source = ./keybindings.conf
+source = ./windowrules.conf
+
+
 # autostart
 exec-once = hyprctl setcursor Catppuccin-Latte-Dark 16
 exec-once = systemctl --user import-environment &

@@ -21,5 +21,8 @@
 
     # Email client
     evolution
+
+    # nixos
+    nix-prefetch-github
   ];
 }
