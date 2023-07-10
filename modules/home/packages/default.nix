@@ -14,7 +14,8 @@
     joplin-desktop
     playerctl
     gparted
-
+    etcher
+    unetbootin
     # Multimedia
     mpv
     imv
@@ -31,6 +32,7 @@
     # Games
     # osu-lazer
     # xonotic
-    # gamescope
+    gamescope
+    gamemode
   ];
 }

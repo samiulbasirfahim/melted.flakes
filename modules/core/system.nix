@@ -43,5 +43,8 @@
   time.timeZone = "Asia/Dhaka";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-12.2.3"
+  ];
   system.stateVersion = "23.05";
 }

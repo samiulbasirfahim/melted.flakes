@@ -5,6 +5,7 @@
         pandas
         numpy
         requests
+        tkinter
       ]))
   ];
 }
