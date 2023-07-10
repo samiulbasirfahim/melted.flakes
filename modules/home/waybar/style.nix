@@ -1,9 +1,9 @@
 {...}: {
   programs.waybar.style = ''
     * {
-        font-family: JetbrinsMono nerd font;
+        font-family: JetbrainsMono nerd font;
         font-weight: normal;
-        font-size: 15px;
+        font-size: 14px;
         min-height: 0;
         transition-property: background-color;
         transition-duration: 0.5s;

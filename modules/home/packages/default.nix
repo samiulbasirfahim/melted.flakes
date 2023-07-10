@@ -15,8 +15,7 @@
     playerctl
     gparted
     pamixer
-    
-    
+
     # Multimedia
     mpv
     imv
@@ -25,7 +24,7 @@
     chromium
 
     # Email client
-    evolution
+    # evolution
 
     # Nixos
     nix-prefetch-github

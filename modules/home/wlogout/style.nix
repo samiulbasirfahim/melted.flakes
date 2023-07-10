@@ -1,7 +1,7 @@
-{...}: {
+{
   programs.wlogout.style = ''
     window {
-        font-family: JetbrinsMono nerd font;
+        font-family: JetbrainsMono nerd font;
         font-size: 18px;
         color: #CED7F4;
         background-color: rgba(46, 52, 64, 0.5);
