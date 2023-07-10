@@ -1,4 +1,4 @@
-{...}: {
+{
   xdg.configFile."hypr/windowrules.conf".text = "
 # windowrule -------------------------------------
 # wlogout

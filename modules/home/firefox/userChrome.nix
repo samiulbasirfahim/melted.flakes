@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.firefox.profiles.default.userChrome = ''
     :root {
         /* Dark Theme Colors */

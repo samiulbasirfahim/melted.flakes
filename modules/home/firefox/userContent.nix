@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.firefox.profiles.default.userContent = ''
     @-moz-document url(about:home),
     url(about:newtab),

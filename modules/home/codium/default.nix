@@ -11,13 +11,13 @@
       "editor.cursorSmoothCaretAnimation" = "on";
       "editor.cursorStyle" = "line";
       "editor.cursorSurroundingLines" = 20;
-      "editor.fontFamily" = "OperatorMono Nerd Font";
+      "editor.fontFamily" = "JetbrinsMono nerd font";
       "editor.fontSize" = 18;
       "editor.lineHeight" = 2.3;
       "editor.minimap.enabled" = false;
       "editor.mouseWheelZoom" = false;
       "tabnine.experimentalAutoImports" = true;
-      "terminal.integrated.fontFamily" = "OperatorMono Nerd Font";
+      "terminal.integrated.fontFamily" = "JetbrinsMono nerd font";
       "terminal.integrated.fontSize" = 18;
       "window.menuBarVisibility" = "hidden";
       "window.zoomLevel" = 0.3;

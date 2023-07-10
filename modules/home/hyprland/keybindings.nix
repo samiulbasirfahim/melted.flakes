@@ -1,4 +1,4 @@
-{...}: {
+{
   xdg.configFile."hypr/keybindings.conf".text = "
 # basic
 bind = $mainMod, Q, killactive,

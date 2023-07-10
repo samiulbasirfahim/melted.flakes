@@ -1,10 +1,10 @@
-{pkgs, ...}: {
+{
   programs.foot = {
     enable = true;
     server.enable = false;
     settings = {
       main = {
-        font = "OperatorMono Nerd Font:size=12:line-height=10";
+        font = "JetbrinsMono nerd font:size=12:line-height=10";
         pad = "8x8";
       };
       colors = {

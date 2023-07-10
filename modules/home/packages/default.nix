@@ -14,8 +14,9 @@
     joplin-desktop
     playerctl
     gparted
-    etcher
-    unetbootin
+    pamixer
+    
+    
     # Multimedia
     mpv
     imv

@@ -7,8 +7,12 @@
     settings =
       {
         character = {
-          success_symbol = "[](bold green)";
-          error_symbol = "[✗](bold red) ";
+          success_symbol = "[](green)";
+          error_symbol = "[✗](red)";
+        };
+        directory = {
+          truncation_length = 4;
+          style = "bold blue";
         };
         git_branch = {
           format = " [$symbol$branch]($style) ";
