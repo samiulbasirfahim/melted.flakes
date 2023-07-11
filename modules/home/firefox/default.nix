@@ -20,7 +20,7 @@
           Search = false;
           Pocket = false;
           Snippets = false;
-          TopSites = false;
+          TopSites = true;
           Highlights = false;
         };
         UserMessaging = {
@@ -57,6 +57,9 @@
         "gfx.webrender.all" = true;
         "svg.context-properties.content.enabled" = true;
         "browser.compactmode.show" = true;
+        "browser.search.region" = "us";
+        "distribution.searchplugins.defaultLocale" = "en-US";
+        "general.useragent.locale" = "en-US";
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin

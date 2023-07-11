@@ -15,6 +15,7 @@
     playerctl
     gparted
     pamixer
+    obsidian
 
     # Multimedia
     mpv
@@ -28,11 +29,5 @@
 
     # Nixos
     nix-prefetch-github
-
-    # Games
-    # osu-lazer
-    # xonotic
-    gamescope
-    gamemode
   ];
 }

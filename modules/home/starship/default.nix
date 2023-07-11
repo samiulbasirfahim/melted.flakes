@@ -14,6 +14,12 @@
           truncation_length = 4;
           style = "bold blue";
         };
+        git_status = {
+          deleted = "✗";
+          modified = "✶";
+          staged = "✓";
+          stashed = "≡";
+        };
         git_branch = {
           format = " [$symbol$branch]($style) ";
           symbol = " ";

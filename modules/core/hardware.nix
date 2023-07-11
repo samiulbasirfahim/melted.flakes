@@ -5,5 +5,6 @@
   hardware.opengl.extraPackages = with pkgs; [
     amdvlk
   ];
+  powerManagement.enable = true;
   powerManagement.cpuFreqGovernor = "performance";
 }
