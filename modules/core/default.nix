@@ -3,14 +3,7 @@
   nixpkgs,
   self,
   ...
-}: let
-  system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-  lib = nixpkgs.lib;
-in {
+}:{
   nixos = nixpkgs.lib.nixosSystem {
     specialArgs = {inherit self inputs;};
     system = "x86_64-linux";
@@ -21,7 +14,6 @@ in {
       ++ [./home-manager.nix]
       ++ [./network.nix]
       ++ [./wayland.nix]
-      ++ [./gaming.nix]
       ++ [./warp.nix]
       ++ [./security.nix]
       ++ [./programs.nix]
@@ -29,6 +21,7 @@ in {
       ++ [./services.nix]
       ++ [./programs.nix]
       ++ [./system.nix]
-      ++ [./user.nix];
+      ++ [./user.nix]
+      ++ [./xserver.nix];
   };
 }

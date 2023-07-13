@@ -9,6 +9,9 @@
     bind = $mainMod, Y, pin,
     bind = $mainMod, J, togglesplit,
     bind = $mainMod, C, exec, hyprctl dispatch centerwindow none
+    bind = SUPER, M, movetoworkspace, special
+    bind = $mainMod SHIFT, M, togglespecialworkspace
+
     # shortcut
     bind = $mainMod, Return, exec, foot
     bind = $mainMod SHIFT, Return, exec, foot --fullscreen

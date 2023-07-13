@@ -16,5 +16,6 @@
     ++ [(import ./packages)]
     ++ [(import ./foot)]
     ++ [(import ./neovim)]
-    ++ [(import ./hyprland)];
+    ++ [(import ./hyprland)]
+    ++ [(import ./bat)];
 }

@@ -11,7 +11,7 @@ input {
 }
 
 misc {
-    disable_autoreload = true
+    disable_autoreload = false
     disable_hyprland_logo = true
     always_follow_on_dnd = true
     layers_hog_keyboard_focus = true
@@ -60,6 +60,7 @@ animations {
     animation = borderangle, 1, 8, myBezier
     animation = fade, 1, 7, myBezier
     animation = workspaces, 1, 6, myBezier
+    animation = specialWorkspace, 1, 6, myBezier, slidevert
 }
 
 # import files

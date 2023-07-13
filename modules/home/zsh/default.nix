@@ -12,6 +12,7 @@
       nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/Flakes/.#nixos";
       ncg = "nix-collect-garbage && nix-collect-garbage -d && sudo nix-collect-garbage && nix-collect-garbage -d &&  sudo rm /nix/var/nix/gcroots/auto/*";
       ls = "exa -l --icons";
+      cat = "bat -p";
     };
   };
 }

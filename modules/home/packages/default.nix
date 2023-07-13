@@ -16,6 +16,7 @@
     gparted
     pamixer
     obsidian
+    bat
 
     # Multimedia
     mpv
@@ -29,5 +30,6 @@
 
     # Nixos
     nix-prefetch-github
+    gcc
   ];
 }
