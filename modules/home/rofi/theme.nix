@@ -43,7 +43,7 @@ in {
     "inputbar" = {
       children = map mkLiteral ["prompt" "entry"];
       background-color = mkLiteral "@bg-col";
-      border-radius = mkLiteral "5px";
+      border-radius = mkLiteral "4px";
       padding = mkLiteral "2px";
     };
 
@@ -77,7 +77,7 @@ in {
     };
 
     "element" = {
-      padding = mkLiteral "5px";
+      padding = mkLiteral "4px";
       background-color = mkLiteral "@bg-col";
       text-color = mkLiteral "@fg-col";
     };
@@ -112,7 +112,7 @@ in {
       background-color = mkLiteral "@bg-col-light";
       margin = mkLiteral "2px";
       padding = mkLiteral "2px";
-      border-radius = mkLiteral "5px";
+      border-radius = mkLiteral "4px";
     };
 
     "textbox" = {

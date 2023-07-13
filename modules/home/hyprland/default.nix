@@ -34,6 +34,7 @@
       enable = true;
       hidpi = true;
     };
+
     nvidiaPatches = false;
     systemdIntegration = true;
     disableAutoreload = true;

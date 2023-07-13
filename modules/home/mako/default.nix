@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [pkgs.libnotify];
   services = {
     mako = {
@@ -10,8 +6,9 @@
       font = "JetbrainsMono nerd font 12";
       padding = "20";
       defaultTimeout = 5000;
-      borderSize = 2;
-      borderRadius = 2;
+      borderSize = 1;
+      # borderRadius = 2;
+      borderRadius = 0;
       backgroundColor = "#1e1e2e";
       borderColor = "#2F2D3E";
       progressColor = "over #313244";

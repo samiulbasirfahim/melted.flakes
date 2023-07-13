@@ -23,7 +23,7 @@ misc {
 general {
     gaps_in = 6
     gaps_out = 10
-    border_size = 2
+    border_size = 1
     col.active_border = 0xaaeb6f92
     col.inactive_border = 0xaa6e6a86
     apply_sens_to_raw = 1
@@ -40,7 +40,8 @@ master {
 }
 
 decoration {
-    rounding = 2
+    # rounding = 2
+    rounding = 0
     multisample_edges = true
     blur_new_optimizations = 1
     active_opacity = 0.94

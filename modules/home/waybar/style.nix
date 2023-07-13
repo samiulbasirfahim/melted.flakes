@@ -17,8 +17,8 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 8px;
-        border: 2px solid #964B61;
-        border-radius: 4px;
+        border: 1px solid #964B61;
+        border-radius: 0px;
         background-color: #1e1e2e;
     }
 
