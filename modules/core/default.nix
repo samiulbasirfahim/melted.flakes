@@ -3,7 +3,7 @@
   nixpkgs,
   self,
   ...
-}:{
+}: {
   nixos = nixpkgs.lib.nixosSystem {
     specialArgs = {inherit self inputs;};
     system = "x86_64-linux";
@@ -21,7 +21,6 @@
       ++ [./services.nix]
       ++ [./programs.nix]
       ++ [./system.nix]
-      ++ [./user.nix]
-      ++ [./xserver.nix];
+      ++ [./user.nix];
   };
 }

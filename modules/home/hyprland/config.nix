@@ -73,7 +73,7 @@ exec-once = hyprctl setcursor Catppuccin-Latte-Dark 16
 exec-once = systemctl --user import-environment &
 exec-once = hash dbus-update-activation-environment 2>/dev/null &
 exec-once = dbus-update-activation-environment --systemd &
-exec-once = swww init && sleep 0.5 && swaylock && notify-send 'Hey $USER, Welcome back' && load-env 
+exec-once = swww init && notify-send 'Hey $USER, Welcome back' && load-env 
 exec-once = wl-paste --type text --watch cliphist store && wl-paste --type image --watch cliphist store && mako &
 exec-once = waybar &
     ";
