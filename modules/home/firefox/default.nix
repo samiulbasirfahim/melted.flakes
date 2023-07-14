@@ -36,13 +36,28 @@
         force = true;
         default = "Google";
         engines = {
-          "Nixos Search" = {
-            urls = [{template = "https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query={searchTerms}";}];
-            iconUpdateURL = "https://nixos.wiki/favicon.png";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@ns"];
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+
+            icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@np"];
           };
           "Wikipedia (en)".metaData.alias = "@wiki";
+          "Google".metaData.alias = "@g";
           "Amazon.com".metaData.hidden = true;
           "Bing".metaData.hidden = true;
           "eBay".metaData.hidden = true;
