@@ -44,8 +44,8 @@ decoration {
     rounding = 0
     multisample_edges = true
     blur_new_optimizations = 1
-    active_opacity = 0.94
-    inactive_opacity = 0.92
+    active_opacity = 0.96
+    inactive_opacity = 0.94
     blur = 1
     blur_size = 2
     blur_passes = 2

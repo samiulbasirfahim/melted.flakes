@@ -26,8 +26,8 @@
   environment.systemPackages = with pkgs; [
     wget
     git
-    polkit
-    polkit_gnome
+    dmenu
+    st
   ];
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";

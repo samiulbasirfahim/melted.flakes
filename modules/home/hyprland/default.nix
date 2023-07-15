@@ -12,7 +12,6 @@
   home.packages = with pkgs; [
     hyprpicker
     xdg-utils
-    eww-wayland
     inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
 
     # Wallpaper deamon

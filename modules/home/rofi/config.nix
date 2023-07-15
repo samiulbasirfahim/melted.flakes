@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.rofi.extraConfig = {
     modi = "drun";
     icon-theme = "Oranchelo";
@@ -8,7 +8,7 @@
     location = 0;
     disable-history = false;
     hide-scrollbar = true;
-    display-drun = "   Apps ";
+    display-drun = "  Apps ";
     display-run = "   Run ";
     display-window = " 﩯  Window";
     display-Network = " 󰤨  Network";
