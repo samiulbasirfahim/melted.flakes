@@ -45,9 +45,6 @@
     ];
     #++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
   };
-  programs.zsh.shellAliases = {
-    code = "codium -ozone-platform-hint";
-  };
   home.packages = with pkgs; [
     inputs.alejandra.defaultPackage.${system}
   ];
