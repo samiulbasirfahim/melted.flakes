@@ -22,6 +22,11 @@
 </div>
 
 ---
+## Info
+- Window Manager: Hyprland
+- Bar: Waybar
+- Launcher: Rofi
+- Terminal: Foot
 
 ## Gallery
 <p align="center">

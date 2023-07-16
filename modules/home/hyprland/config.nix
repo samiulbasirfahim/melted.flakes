@@ -53,16 +53,15 @@ decoration {
 }
 
 animations {
-    enabled = yes
-    bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-    animation = windows, 1, 7, myBezier
-    animation = windowsOut, 1, 7, myBezier, popin 80%
-    animation = border, 1, 10, myBezier
-    animation = borderangle, 1, 8, myBezier
-    animation = fade, 1, 7, myBezier
-    animation = workspaces, 1, 6, myBezier
-    animation = specialWorkspace, 1, 6, myBezier, slidevert
+    enabled=1
+    bezier = overshot, 0.13, 0.99, 0.29, 1.1
+    animation = windows, 1, 4, overshot, slide
+    animation = windowsOut, 1, 5, default, popin 80%
+    animation = border, 1, 5, default
+    animation = fade, 1, 8, default
+    animation = workspaces, 1, 6, overshot, slidevert
 }
+
 
 # import files
 source = ./keybindings.conf
