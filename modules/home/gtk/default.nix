@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   fonts.fontconfig.enable = true;
   home.packages = [
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka" "RobotoMono" "AnonymousPro"];})
+    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
   gtk = {
     enable = true;

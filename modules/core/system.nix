@@ -26,8 +26,6 @@
   environment.systemPackages = with pkgs; [
     wget
     git
-    dmenu
-    st
   ];
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
