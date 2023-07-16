@@ -24,6 +24,9 @@
     # Clipboard manager
     wl-clipboard
     cliphist
+
+    #Security
+    mate.mate-polkit
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
