@@ -45,9 +45,9 @@ decoration {
     multisample_edges = true
     blur_new_optimizations = 1
     active_opacity = 0.96
-    inactive_opacity = 0.94
+    inactive_opacity = 0.95
     blur = 1
-    blur_size = 2
+    blur_size = 1
     blur_passes = 2
     drop_shadow = 0
 }
@@ -55,10 +55,10 @@ decoration {
 animations {
     enabled=1
     bezier = overshot, 0.13, 0.99, 0.29, 1.1
-    animation = windows, 1, 4, overshot, slide
-    animation = windowsOut, 1, 5, default, popin 80%
-    animation = border, 1, 5, default
-    animation = fade, 1, 8, default
+    animation = windows, 1, 5, overshot, slide
+    animation = windowsOut, 1, 5, overshot, popin 80%
+    animation = border, 1, 5, overshot
+    animation = fade, 1, 8, overshot
     animation = workspaces, 1, 6, overshot, slidevert
 }
 
