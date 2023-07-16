@@ -10,7 +10,7 @@
       # borderRadius = 2;
       borderRadius = 0;
       backgroundColor = "#1e1e2e";
-      borderColor = "#2F2D3E";
+      borderColor = "#964B61";
       progressColor = "over #313244";
       textColor = "#cdd6f4";
       extraConfig = ''
