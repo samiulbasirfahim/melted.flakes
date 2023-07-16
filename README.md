@@ -1,4 +1,3 @@
-# Flakes
 <p align="center">
   <img width="130px" style="border-radius:50%" src="https://github.com/xenoxanite.png" />
 </p>
@@ -17,7 +16,7 @@
       <img src="https://img.shields.io/github/repo-size/xenoxanite/flakes?color=ea999c&labelColor=303446&style=for-the-badge">
    </a>
    <a href="https://github.com/xenoxanite/flakes/blob/main/LICENSE">
-    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
+    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
    </a>
    <br>
 </div>
