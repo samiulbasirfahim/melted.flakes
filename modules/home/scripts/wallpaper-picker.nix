@@ -11,6 +11,8 @@
         elif [[ -f $wallpaper_folder/$temp_dir/$wallpaper_location ]]; then
             echo "its a file"
             $wallpaper_daemon $wallpaper_folder/$temp_dir/$wallpaper_location
+            xdotool key super+F5
+            echo "xwallpaper --center  $wallpaper_folder/$temp_dir/$wallpaper_location && wal -i  $wallpaper_folder/$temp_dir/$wallpaper_location" > ~/.local/bin/wallpaper &
         else
             exit 1
         fi
