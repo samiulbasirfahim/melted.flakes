@@ -21,7 +21,6 @@
       ++ [./services.nix]
       ++ [./programs.nix]
       ++ [./system.nix]
-      ++ [./user.nix]
-      ++ [./xserver.nix];
+      ++ [./user.nix];
   };
 }

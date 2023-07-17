@@ -15,7 +15,7 @@
     ++ [(import ./spotify)]
     ++ [(import ./packages)]
     ++ [(import ./foot)]
-    ++ [(import ./webcord)]
+    ++ [(import ./discord)]
     ++ [(import ./neovim)]
     ++ [(import ./hyprland)]
     ++ [(import ./bat)];

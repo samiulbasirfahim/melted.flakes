@@ -1,12 +1,9 @@
 {pkgs, ...}: let
   random-wall = pkgs.writeShellScriptBin "random-wall" ''
     wall=$(find ~/Pictures/wallpapers -type f -name "*.png" -o -name "*.jpg"| shuf -n 1)
-  
-    xwallpaper --zoom $wall &
-    wal -i $wall &
-    xdotool key super+F5 &
- 
 
+    swww img $wall &
+    wal -i $wall &
   '';
 in {
   home.packages = with pkgs; [

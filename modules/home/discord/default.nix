@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [webcord];
+  home.packages = with pkgs; [webcord discord];
   xdg.configFile."WebCord/Themes/mocha".text = ''
     * {
         font-family: JetbrainsMono Nerd font;
