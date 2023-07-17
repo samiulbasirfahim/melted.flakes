@@ -1,8 +1,8 @@
 {pkgs, ...}: let
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" ''
     launcher="rofi -dmenu"
-    wallpaper_daemon="swww img"
-    wallpaper_folder=$HOME/Pictures
+    wallpaper_daemon="wal -i"
+    wallpaper_folder=$HOME/Pictures/wallpapers
     setWallpaper() {
        wallpaper_location="$(ls $wallpaper_folder/$temp_dir | $launcher)"
         if [[ -d $wallpaper_folder/$wallpaper_location ]]; then

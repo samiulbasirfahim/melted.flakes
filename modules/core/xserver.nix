@@ -37,5 +37,6 @@
     xorg.libXinerama
     xwallpaper
     xcompmgr
+    pywal
   ];
 }
