@@ -3,9 +3,15 @@
   lib,
   ...
 }: {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
-  boot.initrd.kernelModules = ["amdgpu"];
-  boot.initrd.systemd.enable = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd = {
+      kernelModules = ["amdgpu"];
+      systemd.enable = true;
+    };
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
+  };
 }

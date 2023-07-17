@@ -20,7 +20,6 @@ in {
       fullAppDisplay
       hidePodcasts
       adblock
-      history
     ];
   };
 }

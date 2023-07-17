@@ -4,7 +4,6 @@
     ++ [(import ./rust.nix)]
     ++ [(import ./javascript.nix)];
   home.packages = with pkgs; [
-    webcord
     pavucontrol
     xfce.thunar
 
@@ -32,5 +31,8 @@
     # Nixos
     nix-prefetch-github
     gcc
+
+    # Amd gpu
+    radeontop
   ];
 }
