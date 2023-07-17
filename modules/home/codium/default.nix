@@ -26,6 +26,8 @@
       "workbench.sideBar.location" = "left";
       "workbench.startupEditor" = "none";
       "workbench.statusBar.visible" = false;
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nil";
     };
     keybindings = [
       {
@@ -38,6 +40,7 @@
       kamadorueda.alejandra
       catppuccin.catppuccin-vsc
       bbenoist.nix
+      jnoortheen.nix-ide
       pkief.material-product-icons
       catppuccin.catppuccin-vsc-icons
       tabnine.tabnine-vscode

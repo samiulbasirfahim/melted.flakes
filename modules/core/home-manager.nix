@@ -1,5 +1,7 @@
 {inputs, ...}: {
   imports = [inputs.home-manager.nixosModules.home-manager];
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.joypixels.acceptLicense = true;
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
