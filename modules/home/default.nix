@@ -1,13 +1,13 @@
 {
   imports =
     [(import ./git)]
-    ++ [(import ./codium)]
+    ++ [(import ./editor)]
     ++ [(import ./waybar)]
     ++ [(import ./rofi)]
     ++ [(import ./wlogout)]
     ++ [(import ./gtk)]
     ++ [(import ./starship)]
-    ++ [(import ./zsh)]
+    ++ [(import ./fish)]
     ++ [(import ./scripts)]
     ++ [(import ./firefox)]
     ++ [(import ./mako)]
@@ -16,7 +16,6 @@
     ++ [(import ./packages)]
     ++ [(import ./foot)]
     ++ [(import ./discord)]
-    ++ [(import ./neovim)]
     ++ [(import ./hyprland)]
     ++ [(import ./bat)];
 }

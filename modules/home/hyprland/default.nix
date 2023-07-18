@@ -13,6 +13,7 @@
     hyprpicker
     xdg-utils
     inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
+    xwaylandvideobridge
 
     # Wallpaper deamon
     swww
@@ -27,6 +28,10 @@
 
     #Security
     mate.mate-polkit
+
+    # qt
+    # qt6-wayland
+    # qt5-wayland
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];

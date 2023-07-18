@@ -1,13 +1,11 @@
 {pkgs, ...}: {
-  programs.zsh = {
+  programs.fish = {
     enable = true;
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git"];
-    };
+    loginShellInit = ''
+      if [[ "$(tty)" == "/dev/tty1" ]]
+      then
+          exec Hyprland &
+      fi'';
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/Flakes/.#nixos --impure";
       ncg = "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";

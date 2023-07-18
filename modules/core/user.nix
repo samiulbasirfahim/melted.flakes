@@ -3,6 +3,6 @@
     isNormalUser = true;
     description = "Xenoxanite";
     extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 }

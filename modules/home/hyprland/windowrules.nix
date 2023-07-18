@@ -31,5 +31,11 @@ windowrule = move 40 55%, pavucontrol
 # utilities
 windowrule = float,title:^(Transmission)$
 windowrule = float,title:^(Volume Control)$
+
+#xwaylandvideobridge
+# windowrulev2 = opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$
+# windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+# windowrulev2 = nofocus,class:^(xwaylandvideobridge)$
+# windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
   ";
 }
