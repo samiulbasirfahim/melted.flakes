@@ -8,6 +8,7 @@
     ++ [(import ./gtk)]
     ++ [(import ./starship)]
     ++ [(import ./fish)]
+    ++ [(import ./pywal)]
     ++ [(import ./scripts)]
     ++ [(import ./firefox)]
     ++ [(import ./mako)]

@@ -1,17 +1,9 @@
 {config, ...}: let
   inherit (config.lib.formats.rasi) mkLiteral;
 in {
+  programs.rofi.theme."@import" = "${config.xdg.cacheHome}/wal/colors-rofi-dark.rasi";
   programs.rofi.theme = {
     "*" = {
-      bg-col = mkLiteral "#1e1e2e";
-      bg-col-light = mkLiteral "#1e1e2e";
-      border-col = mkLiteral "#1e1e2e";
-      selected-col = mkLiteral "#1e1e2e";
-      blue = mkLiteral "#89b4fa";
-      fg-col = mkLiteral "#cdd6f4";
-      fg-col2 = mkLiteral "#f38ba8";
-      grey = mkLiteral "#6c7086";
-
       width = 600;
       font = "JetbrainsMono nerd font 12";
     };
@@ -32,25 +24,25 @@ in {
     "window" = {
       height = mkLiteral "360px";
       border = mkLiteral "3px";
-      border-color = mkLiteral "@border-col";
-      background-color = mkLiteral "@bg-col";
+      border-coloror = mkLiteral "@border-color";
+      background-color = mkLiteral "@background";
     };
 
     "mainbox" = {
-      background-color = mkLiteral "@bg-col";
+      background-color = mkLiteral "@background";
     };
 
     "inputbar" = {
       children = map mkLiteral ["prompt" "entry"];
-      background-color = mkLiteral "@bg-col";
+      background-color = mkLiteral "@background";
       border-radius = mkLiteral "4px";
       padding = mkLiteral "2px";
     };
 
     "prompt" = {
-      background-color = mkLiteral "@blue";
+      background-color = mkLiteral "@foreground";
       padding = mkLiteral "6px";
-      text-color = mkLiteral "@bg-col";
+      text-color = mkLiteral "@background";
       border-radius = mkLiteral "3px";
       margin = mkLiteral "20px 0px 0px 20px";
     };
@@ -63,8 +55,8 @@ in {
     "entry" = {
       padding = mkLiteral "6px";
       margin = mkLiteral "20px 0px 0px 10px";
-      text-color = mkLiteral "@fg-col";
-      background-color = mkLiteral "@bg-col";
+      text-color = mkLiteral "@urgent-foreground";
+      background-color = mkLiteral "@background";
     };
 
     "listview" = {
@@ -73,13 +65,13 @@ in {
       margin = mkLiteral "10px 0px 0px 20px";
       columns = 2;
       lines = 5;
-      background-color = mkLiteral "@bg-col";
+      background-color = mkLiteral "@background";
     };
 
     "element" = {
       padding = mkLiteral "4px";
-      background-color = mkLiteral "@bg-col";
-      text-color = mkLiteral "@fg-col";
+      background-color = mkLiteral "@background";
+      text-color = mkLiteral "@urgent-foreground";
     };
 
     "element-icon" = {
@@ -87,8 +79,8 @@ in {
     };
 
     "element selected" = {
-      background-color = mkLiteral "@selected-col";
-      text-color = mkLiteral "@fg-col2";
+      background-color = mkLiteral "@selected-active-background";
+      text-color = mkLiteral "@selected-active-foreground";
     };
 
     "mode-switcher" = {
@@ -97,19 +89,19 @@ in {
 
     "button" = {
       padding = mkLiteral "10px";
-      background-color = mkLiteral "@bg-col-light";
-      text-color = mkLiteral "@grey";
+      background-color = mkLiteral "@urgent-background";
+      text-color = mkLiteral "@selected-urgent-foreground";
       vertical-align = mkLiteral "0.5";
       horizontal-align = mkLiteral "0.5";
     };
 
     "button selected" = {
-      background-color = mkLiteral "@bg-col";
-      text-color = mkLiteral "@blue";
+      background-color = mkLiteral "@background";
+      text-color = mkLiteral "@foreground";
     };
 
     "message" = {
-      background-color = mkLiteral "@bg-col-light";
+      background-color = mkLiteral "@urgent-background";
       margin = mkLiteral "2px";
       padding = mkLiteral "2px";
       border-radius = mkLiteral "4px";
@@ -118,8 +110,8 @@ in {
     "textbox" = {
       padding = mkLiteral "6px";
       margin = mkLiteral "20px 0px 0px 20px";
-      text-color = mkLiteral "@blue";
-      background-color = mkLiteral "@bg-col-light";
+      text-color = mkLiteral "@foreground";
+      background-color = mkLiteral "@urgent-background";
     };
   };
 }
