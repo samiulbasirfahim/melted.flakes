@@ -1,34 +1,8 @@
 {
   programs.firefox.profiles.default.userChrome = ''
+    @import "../../../../.cache/wal/colors.css";
+
     :root {
-        /* Dark Theme Colors */
-        --window-colour: #1e1e2e;
-        --secondary-colour: #363a4f;
-        --inverted-colour: #cad3f5;
-
-        /* Light Theme Colors
-        --window-colour:               #eff1f5;
-        --secondary-colour:            #EAEAEC;
-        --inverted-colour:             #1E2021;
-        */
-
-        /* Containter Tab Colours */
-        --uc-identity-color-blue: #8aadf4;
-        --uc-identity-color-turquoise: #91d7e3;
-        --uc-identity-color-green: #a6da95;
-        --uc-identity-color-yellow: #eed49f;
-        --uc-identity-color-orange: #964B61;
-        --uc-identity-color-red: #ed8796;
-        --uc-identity-color-pink: #ee99a0;
-        --uc-identity-color-purple: #c6a0f6;
-
-        /* URL colour in URL bar suggestions */
-        --urlbar-popup-url-color: var(--uc-identity-color-orange) !important;
-
-        /*---+---+---+---+---+---+---+
-         | V | I | S | U | A | L | S |
-         +---+---+---+---+---+---+---*/
-
         /* global border radius */
         --uc-border-radius: 0px !important;
         --uc-temp-border-radius: 0px !important;
@@ -107,10 +81,9 @@
     /* No need to change anything below this comment.
      * Just tweak it if you want to tweak the overall layout. c: */
     :root {
-
-        --uc-theme-colour: var(--window-colour);
-        --uc-hover-colour: var(--secondary-colour);
-        --uc-inverted-colour: var(--inverted-colour);
+        --uc-theme-colour: var(--background);
+        --uc-hover-colour: var(--color8);
+        --uc-inverted-colour: var(--foreground);
 
         --button-bgcolor: var(--uc-theme-colour) !important;
         --button-hover-bgcolor: var(--uc-hover-colour) !important;
@@ -122,7 +95,7 @@
         --toolbarbutton-border-radius: var(--uc-border-radius) !important;
         --lwt-toolbar-field-focus: var(--uc-theme-colour) !important;
         --toolbarbutton-icon-fill: var(--uc-inverted-colour) !important;
-        --toolbar-field-focus-background-color: var(--secondary-colour) !important;
+        --toolbar-field-focus-background-color: var(--background) !important;
         --toolbar-field-color: var(--uc-inverted-colour) !important;
         --toolbar-field-focus-color: var(--uc-inverted-colour) !important;
 
@@ -199,7 +172,7 @@
     /* active tab background */
     .tabbrowser-tab[selected]>.tab-stack>.tab-background {
         background: var(--uc-hover-colour) !important;
-        border: 1px solid #964B61 !important;
+        border: 1px solid var(--color11) !important;
     }
 
     /* tab close button options */
@@ -222,11 +195,8 @@
 
     /* container tabs indicator */
     .tabbrowser-tab[usercontextid]>.tab-stack>.tab-background>.tab-context-line {
-
         margin: -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
-
         border-radius: var(--tab-border-radius) !important;
-
     }
 
     /* show favicon when media is playing but tab is hovered */
@@ -237,41 +207,30 @@
     /* Makes the speaker icon to always appear if the tab is playing (not only on hover) */
     .tab-icon-overlay:not([crashed]),
     .tab-icon-overlay[pinned][crashed][selected] {
-
         top: 5px !important;
         z-index: 1 !important;
-
         padding: 1.5px !important;
         inset-inline-end: -8px !important;
         width: 16px !important;
         height: 16px !important;
-
-        # border-radius: 4px !important;
         border-radius: 0px !important;
-
     }
 
     /* style and position speaker icon */
     .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
         stroke: transparent !important;
         background: transparent !important;
         opacity: 1 !important;
         fill-opacity: 0.8 !important;
-
         color: currentColor !important;
-
         stroke: var(--uc-theme-colour) !important;
         background-color: var(--uc-theme-colour) !important;
-
     }
 
     /* change the colours of the speaker icon on active tab to match tab colours */
     .tabbrowser-tab[selected] .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
         stroke: var(--uc-hover-colour) !important;
         background-color: var(--uc-hover-colour) !important;
-
     }
 
     .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
@@ -279,24 +238,19 @@
     }
 
     .tabbrowser-tab:not([image]) .tab-icon-overlay:not([pinned], [sharing], [crashed]) {
-
         top: 0 !important;
-
         padding: 0 !important;
         margin-inline-end: 5.5px !important;
         inset-inline-end: 0 !important;
-
     }
 
     .tab-icon-overlay:not([crashed])[soundplaying]:hover,
     .tab-icon-overlay:not([crashed])[muted]:hover,
     .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
         color: currentColor !important;
         stroke: var(--uc-inverted-colour) !important;
         background-color: var(--uc-inverted-colour) !important;
         fill-opacity: 0.95 !important;
-
     }
 
     .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
@@ -325,25 +279,28 @@
     }
 
     #nav-bar {
-
         border: none !important;
         box-shadow: none !important;
         background: transparent !important;
-
+        background: var(--uc-theme-colour) !important;
     }
 
     /* remove border below whole nav */
     #navigator-toolbox {
         border-bottom: none !important;
+        background: var(--uc-theme-colour) !important;
     }
 
     #urlbar,
     #urlbar * {
         box-shadow: none !important;
     }
+    #urlbar {
+        background: var(--uc-theme-colour) !important;
+    }
 
     #urlbar-background {
-        border: var(--uc-hover-colour) !important;
+        border: 0px solid var(--uc-hover-colour) !important;
     }
 
     #urlbar[focused="true"]>#urlbar-background,
@@ -374,10 +331,6 @@
         }
 
     }
-
-    /* end media query */
-
-
 
     .identity-color-blue {
         --identity-tab-color: var(--uc-identity-color-blue) !important;

@@ -5,6 +5,11 @@ $mainMod = SUPER
 monitor = ,highres, auto, auto
 monitor = ,highrr,auto,auto
 
+# import files
+source = ./keybindings.conf
+source = ./windowrules.conf
+source = /home/xenoxanite/.cache/wal/colors-hyprland.conf
+
 input {
     kb_layout = us
     numlock_by_default = true
@@ -26,7 +31,7 @@ general {
     gaps_in = 6
     gaps_out = 10
     border_size = 1
-    col.active_border = 0xaaeb6f92
+    col.active_border = $color11
     col.inactive_border = 0xaa6e6a86
     apply_sens_to_raw = 1
     layout = dwindle
@@ -56,18 +61,16 @@ decoration {
 
 animations {
     enabled=1
-    bezier = overshot, 0.13, 0.99, 0.29, 1.1
-    animation = windows, 1, 4, overshot, slide
-    animation = windowsOut, 1, 4, overshot, slide #popin 80%
-    animation = border, 1, 4, overshot
-    animation = fade, 1, 7, overshot
-    animation = workspaces, 1, 5, overshot, slidevert
+    bezier = overshot, 1, 1, 1, 1
+    animation = windows, 1, 2, overshot, slide
+    animation = windowsOut, 1, 2, overshot, popin 80%
+    animation = border, 1, 2, overshot
+    animation = fade, 1, 2, overshot
+    animation = workspaces, 1, 2, overshot, slidevert
 }
 
 
-# import files
-source = ./keybindings.conf
-source = ./windowrules.conf
+
 
 
 # autostart
