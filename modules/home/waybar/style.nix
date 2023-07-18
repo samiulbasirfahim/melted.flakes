@@ -36,7 +36,7 @@
 
     #workspaces button.active {
         background-color: #964B61;
-        color: rgb(23, 23, 23);
+        color: #1e1e2e;
     }
 
     #workspaces button.urgent {
@@ -44,8 +44,9 @@
     }
 
     tooltip {
-        background: rgb(48, 45, 65);
-        border: 2px solid #964B61;
+        background-color: #1e1e2e;
+        border-radius: 0px;
+        border: 1px solid #964B61;
     }
 
     tooltip label {
@@ -77,10 +78,6 @@
         padding-top: 0px;
         padding-bottom: 0px;
         color: #B9B9B9;
-    }
-    #cava {
-      padding-left: 10px;
-      padding-right: 10px;
     }
     #tray {
         padding-right: 8px;

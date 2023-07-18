@@ -46,11 +46,11 @@ decoration {
     rounding = 0
     multisample_edges = true
     blur_new_optimizations = 1
-    active_opacity = 0.96
-    inactive_opacity = 0.95
+    active_opacity = 0.92
+    inactive_opacity = 0.90
     blur = 1
     blur_size = 1
-    blur_passes = 2
+    blur_passes = 3
     drop_shadow = 0
 }
 
@@ -77,7 +77,9 @@ exec-once = hash dbus-update-activation-environment 2>/dev/null &
 exec-once = dbus-update-activation-environment --systemd &
 exec-once = /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 & 
 exec-once = swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' && load-env 
-exec-once = wl-paste --type text --watch cliphist store && wl-paste --type image --watch cliphist store && mako &
+exec-once = wl-paste --type text --watch cliphist store
+exec-once = wl-paste --type image --watch cliphist store
+exec-once = xwaylandvideobridge &
 exec-once = waybar &
     ";
   };

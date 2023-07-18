@@ -1,8 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    python311
-    # (python311.withPackages (ps:
-    # with ps; [
-    # ]))
+    (python311.withPackages (ps:
+      with ps; [
+        requests
+        datetime
+      ]))
   ];
 }

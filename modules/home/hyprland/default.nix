@@ -13,7 +13,7 @@
     hyprpicker
     xdg-utils
     inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
-    xwaylandvideobridge
+    # xwaylandvideobridge
 
     # Wallpaper deamon
     swww
