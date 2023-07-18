@@ -13,8 +13,8 @@
     bind = $mainMod SHIFT, M, togglespecialworkspace
 
     # shortcut
-    bind = $mainMod, Return, exec, foot
-    bind = $mainMod SHIFT, Return, exec, foot --fullscreen
+    bind = $mainMod, Return, exec, alacritty
+    bind = $mainMod SHIFT, Return, exec, alacritty --fullscreen
     bind = $mainMod, Z, exec, pkill rofi || rofi -show drun
     bind = $mainMod, X, exec, pkill wlogout || wlogout -b 4
     bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy

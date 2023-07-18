@@ -9,7 +9,8 @@
             temp_dir=$wallpaper_location
             setWallpaper
         elif [[ -f $wallpaper_folder/$temp_dir/$wallpaper_location ]]; then
-            $wallpaper_daemon $wallpaper_folder/$temp_dir/$wallpaper_location
+            $wallpaper_daemon $wallpaper_folder/$temp_dir/$wallpaper_location &
+            wal -i $wallpaper_folder/$temp_dir/$wallpaper_location 
         else
             exit 1
         fi

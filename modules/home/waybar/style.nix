@@ -1,87 +1,89 @@
 {...}: {
   programs.waybar.style = ''
-    * {
-        font-family: JetbrainsMono nerd font;
-        font-weight: normal;
-        font-size: 14px;
-        min-height: 0;
-        transition-property: background-color;
-        transition-duration: 0.5s;
-    }
+@import '../../.cache/wal/colors-waybar.css';
 
-    window#waybar {
-        background-color: transparent;
-    }
+* {
+    font-family: JetbrainsMono nerd font;
+    font-weight: normal;
+    font-size: 14px;
+    min-height: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
 
-    window>box {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 8px;
-        border: 1px solid #964B61;
-        border-radius: 0px;
-        background-color: #1e1e2e;
-    }
+window#waybar {
+    background-color: transparent;
+}
 
-    #workspaces {
-        padding-left: 0px;
-        padding-right: 4px;
-        border-radius: 0px;
-    }
+window>box {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 8px;
+    border: 1px solid @color11;
+    border-radius: 0px;
+    background-color: @background;
+}
 
-    #workspaces button {
-        padding: 4px 6px;
-        margin: 3px 0px;
-        border-radius: 2px;
-    }
+#workspaces {
+    padding-left: 0px;
+    padding-right: 4px;
+    border-radius: 0px;
+}
 
-    #workspaces button.active {
-        background-color: #964B61;
-        color: #1e1e2e;
-    }
+#workspaces button {
+    padding: 4px 6px;
+    margin: 3px 0px;
+    border-radius: 2px;
+}
 
-    #workspaces button.urgent {
-        color: #fff000;
-    }
+#workspaces button.active {
+    background-color: @color11;
+    color: #1e1e2e;
+}
 
-    tooltip {
-        background-color: #1e1e2e;
-        border-radius: 0px;
-        border: 1px solid #964B61;
-    }
+#workspaces button.urgent {
+    color: @color14;
+}
 
-    tooltip label {
-        color: rgb(217, 224, 238);
-    }
+tooltip {
+    background-color: @background;
+    border-radius: 0px;
+    border: 1px solid @color11;
+}
 
-    #custom-launcher {
-        font-size: 16px;
-        padding-left: 10px;
-        padding-right: 6px;
-        color: #89B4FA;
-    }
+tooltip label {
+    color: @foreground;
+}
 
-    #clock,
-    #memory,
-    #temperature,
-    #cpu,
-    #mpd,
-    #custom-wall,
-    #temperature,
-    #backlight,
-    #pulseaudio,
-    #network,
-    #battery,
-    #disk,
-    #idle_inhibitor {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        color: #B9B9B9;
-    }
-    #tray {
-        padding-right: 8px;
-        padding-left: 10px;
-    }
-  '';
+#custom-launcher {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 6px;
+    color: @foreground;
+}
+
+#clock,
+#memory,
+#temperature,
+#cpu,
+#mpd,
+#custom-wall,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#disk,
+#idle_inhibitor {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: @foreground;
+}
+#tray {
+    padding-right: 8px;
+    padding-left: 10px;
+}
+ '';
 }

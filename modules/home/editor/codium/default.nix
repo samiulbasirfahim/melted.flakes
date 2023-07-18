@@ -20,7 +20,7 @@
       "terminal.integrated.fontSize" = 16;
       "window.menuBarVisibility" = "hidden";
       "window.zoomLevel" = 0.3;
-      "workbench.colorTheme" = "Catppuccin Mocha";
+      "workbench.colorTheme" = "Wal";
       "workbench.iconTheme" = "catppuccin-mocha";
       "workbench.productIconTheme" = "material-product-icons";
       "workbench.sideBar.location" = "left";
@@ -36,17 +36,24 @@
         "when" = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
       }
     ];
-    extensions = with pkgs.vscode-extensions; [
-      kamadorueda.alejandra
-      catppuccin.catppuccin-vsc
-      bbenoist.nix
-      jnoortheen.nix-ide
-      pkief.material-product-icons
-      catppuccin.catppuccin-vsc-icons
-      tabnine.tabnine-vscode
-      ms-python.python
-    ];
-    #++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
+    extensions = with pkgs.vscode-extensions;
+      [
+        kamadorueda.alejandra
+        bbenoist.nix
+        jnoortheen.nix-ide
+        pkief.material-product-icons
+        catppuccin.catppuccin-vsc-icons
+        tabnine.tabnine-vscode
+        ms-python.python
+      ]
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          publisher = "dlasagno";
+          name = "wal-theme";
+          version = "1.1.2";
+          sha256 = "vO9FjzA3+5VTgnBY12eawPCfDzKap07Tgf5jqz/IgN0=";
+        }
+      ];
   };
   home.packages = with pkgs; [
     inputs.alejandra.defaultPackage.${system}

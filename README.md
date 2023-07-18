@@ -26,7 +26,7 @@
 - Window Manager: Hyprland
 - Bar: Waybar
 - Launcher: Rofi
-- Terminal: Foot
+- Terminal: alacritty
 
 ## Gallery
 <p align="center">

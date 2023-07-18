@@ -5,6 +5,6 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland-unwrapped;
-    terminal = "foot";
+    terminal = "alacritty";
   };
 }

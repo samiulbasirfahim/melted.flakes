@@ -32,6 +32,9 @@
     nix-prefetch-github
     gcc
 
+    # Terminal
+    kitty
+
     # Amd gpu
     radeontop
   ];

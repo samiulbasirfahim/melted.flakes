@@ -3,7 +3,7 @@
     modi = "drun";
     icon-theme = "Oranchelo";
     show-icon = true;
-    terminal = "foot";
+    terminal = "alacritty";
     drun-display-format = "{icon} {name}";
     location = 0;
     disable-history = false;

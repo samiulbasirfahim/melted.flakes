@@ -15,7 +15,7 @@
     ++ [(import ./swaylock)]
     ++ [(import ./spotify)]
     ++ [(import ./packages)]
-    ++ [(import ./foot)]
+    ++ [(import ./alacritty)]
     ++ [(import ./discord)]
     ++ [(import ./hyprland)]
     ++ [(import ./bat)];
