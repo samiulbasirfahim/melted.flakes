@@ -94,7 +94,7 @@
       --elevation-high: 0 8px 16px rgba(0, 0, 0, 0.24);
       --logo-primary: #fff;
       --guild-header-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-      --channeltextarea-background: var(--color8);
+      --channeltextarea-background: var(--darkbg);
       --activity-card-background: var(--background);
       --textbox-markdown-syntax: var(--foreground);
       --deprecated-card-bg: rgba(32, 34, 37, 0.6);
@@ -162,7 +162,7 @@
       --elevation-high: 0 8px 16px rgba(0, 0, 0, 0.24);
       --logo-primary: #fff;
       --guild-header-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-      --channeltextarea-background: var(--foreground);
+       --channeltextarea-background: var(--darkbg);
       --activity-card-background: var(--background);
       --textbox-markdown-syntax: var(--color8);
       --deprecated-card-bg: rgba(32, 34, 37, 0.6);

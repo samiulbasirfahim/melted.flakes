@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  imports =
-    [(import ./userChrome.nix)]
-    ++ [(import ./userContent.nix)];
+  # imports =
+  # [(import ./userChrome.nix)]
+  # ++ [(import ./userContent.nix)];
 
   programs.firefox = {
     enable = true;
@@ -82,6 +82,7 @@
         news-feed-eradicator
         tabliss
         videospeed
+        pywalfox
       ];
     };
   };
