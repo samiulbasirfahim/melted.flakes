@@ -6,7 +6,7 @@
 
     /* firends page */
     .peopleList-2VBrVI, .inner-2pOSmK {
-        background: var(--darkbg);
+        background: var(--background);
     }
 
     .peopleColumn-1wMU14{

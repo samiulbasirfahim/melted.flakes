@@ -30,9 +30,9 @@ misc {
 general {
     gaps_in = 6
     gaps_out = 10
-    border_size = 1
-    col.active_border = $color11
-    col.inactive_border = 0xaa6e6a86
+    border_size = 2
+    col.active_border = $color2
+    col.inactive_border = rgba(000000ee) 
     apply_sens_to_raw = 1
     layout = dwindle
 }
@@ -48,7 +48,7 @@ master {
 
 decoration {
     # rounding = 2
-    rounding = 0
+    rounding = 1
     multisample_edges = true
     blur_new_optimizations = 1
     active_opacity = 0.97

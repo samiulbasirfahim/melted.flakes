@@ -1,11 +1,11 @@
 {
   programs.firefox.profiles.default.userChrome = ''
-    @import "../../../../.cache/wal/colors.css";
+       @import "../../../../.cache/wal/colors.css";
 
     :root {
         /* global border radius */
-        --uc-border-radius: 0px !important;
-        --uc-temp-border-radius: 0px !important;
+        --uc-border-radius: 4px !important;
+        --uc-temp-border-radius: 4px !important;
 
         /* dynamic url bar width settings */
         --uc-urlbar-width: clamp(250px, 50vw, 600px);
@@ -82,7 +82,9 @@
      * Just tweak it if you want to tweak the overall layout. c: */
     :root {
         --uc-theme-colour: var(--background);
-        --uc-hover-colour: var(--color8);
+        --uc-hover-colour: linear-gradient(rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.06)),
+      var(--background);
         --uc-inverted-colour: var(--foreground);
 
         --button-bgcolor: var(--uc-theme-colour) !important;
@@ -172,7 +174,7 @@
     /* active tab background */
     .tabbrowser-tab[selected]>.tab-stack>.tab-background {
         background: var(--uc-hover-colour) !important;
-        border: 1px solid var(--color11) !important;
+        border: 2px solid var(--color2) !important;
     }
 
     /* tab close button options */
@@ -213,7 +215,7 @@
         inset-inline-end: -8px !important;
         width: 16px !important;
         height: 16px !important;
-        border-radius: 0px !important;
+        border-radius: 4px !important;
     }
 
     /* style and position speaker icon */
@@ -319,57 +321,14 @@
 
     /* transition to oneline */
     @media (min-width: 1000px) {
-
         /* move tabs bar over */
         #TabsToolbar {
             margin-left: var(--uc-urlbar-width) !important;
         }
-
         /* move entire nav bar  */
         #nav-bar {
             margin: calc((var(--urlbar-min-height) * -1) - 8px) calc(100vw - var(--uc-urlbar-width)) 0 0 !important;
         }
-
-    }
-
-    .identity-color-blue {
-        --identity-tab-color: var(--uc-identity-color-blue) !important;
-        --identity-icon-color: var(--uc-identity-color-blue) !important;
-    }
-
-    .identity-color-turquoise {
-        --identity-tab-color: var(--uc-identity-color-turquoise) !important;
-        --identity-icon-color: var(--uc-identity-color-turquoise) !important;
-    }
-
-    .identity-color-green {
-        --identity-tab-color: var(--uc-identity-color-green) !important;
-        --identity-icon-color: var(--uc-identity-color-green) !important;
-    }
-
-    .identity-color-yellow {
-        --identity-tab-color: var(--uc-identity-color-yellow) !important;
-        --identity-icon-color: var(--uc-identity-color-yellow) !important;
-    }
-
-    .identity-color-orange {
-        --identity-tab-color: var(--uc-identity-color-orange) !important;
-        --identity-icon-color: var(--uc-identity-color-orange) !important;
-    }
-
-    .identity-color-red {
-        --identity-tab-color: var(--uc-identity-color-red) !important;
-        --identity-icon-color: var(--uc-identity-color-red) !important;
-    }
-
-    .identity-color-pink {
-        --identity-tab-color: var(--uc-identity-color-pink) !important;
-        --identity-icon-color: var(--uc-identity-color-pink) !important;
-    }
-
-    .identity-color-purple {
-        --identity-tab-color: var(--uc-identity-color-purple) !important;
-        --identity-icon-color: var(--uc-identity-color-purple) !important;
     }
   '';
 }

@@ -20,7 +20,7 @@
         black:   '{color8}'
         red:     '{color9}'
         green:   '{color10}'
-        yellow:  '{color11}'
+        yellow:  '{color2}'
         blue:    '{color12}'
         magenta: '{color13}'
         cyan:    '{color14}'

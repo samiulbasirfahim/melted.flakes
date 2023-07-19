@@ -1,10 +1,5 @@
 {
-  config,
-  pkgs,
-  ...
-}: let
-in {
-  imports = [(import ./rofi.nix)] ++ [(import ./alacritty.nix)] ++ [(./mako.nix)];
+  imports = [(import ./rofi.nix)] ++ [(import ./alacritty.nix)];
   programs.pywal = {
     enable = true;
   };

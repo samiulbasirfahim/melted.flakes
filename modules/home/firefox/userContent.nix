@@ -29,7 +29,7 @@
     }
 
     main button {
-        border: 1px solid var(--color11) !important;
+        border: 2px solid var(--color2) !important;
         border-radius: 50px !important;
         box-shadow: none !important;
         outline: none !important;
