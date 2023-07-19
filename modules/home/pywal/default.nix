@@ -4,11 +4,7 @@
   ...
 }: let
 in {
-  imports = [(import ./rofi.nix)] ++ [(import ./alacritty.nix)];
-  programs.kitty.enable = true;
-  programs.kitty.extraConfig = ''
-    include ${config.xdg.cacheHome}/wal/colors-kitty.conf
-  '';
+  imports = [(import ./rofi.nix)] ++ [(import ./alacritty.nix)] ++ [(./mako.nix)];
   programs.pywal = {
     enable = true;
   };

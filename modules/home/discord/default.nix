@@ -52,6 +52,7 @@
       buildInputs = [kpipewire qtx11extras ki18n kwidgetsaddons knotifications kcoreaddons];
     };
 in {
+  imports = [(import ./theme-template.nix)];
   home.packages = [
     pkgs.xdg-utils
     discocss

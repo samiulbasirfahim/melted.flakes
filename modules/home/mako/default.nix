@@ -1,24 +1,25 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.libnotify];
-  services = {
-    mako = {
-      enable = true;
-      font = "JetbrainsMono nerd font 12";
-      padding = "20";
-      defaultTimeout = 5000;
-      borderSize = 1;
-      # borderRadius = 2;
-      borderRadius = 0;
-      backgroundColor = "#1e1e2e";
-      borderColor = "#2F2D3E";
-      progressColor = "over #313244";
-      textColor = "#cdd6f4";
-      extraConfig = ''
-        text-alignment=center
-        [urgency=high]
-        border-color=#E1BFBF
-      '';
-    };
-  };
-
+  home.packages = [pkgs.libnotify pkgs.mako];
+  xdg.configFile."wal/templates/mako.conf".text = ''
+    max-visible=1
+    sort=-time
+    output=""
+    layer=top
+    font=JetbrainsMono nerd font 12
+    background-color={color0}
+    text-color={color7}
+    padding=20
+    border-size=1
+    border-color={color2}
+    progress-color=over {color8}
+    icons=1
+    max-icon-size=64
+    markup=1
+    actions=1
+    format=%s
+    default-timeout=2400
+    ignore-timeout=0
+    group-by=none
+    invisible=0
+  '';
 }
