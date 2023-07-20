@@ -12,6 +12,6 @@
       kernelModules = ["amdgpu"];
       systemd.enable = true;
     };
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_stable;
   };
 }
