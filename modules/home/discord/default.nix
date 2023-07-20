@@ -1,31 +1,4 @@
 {pkgs, ...}: let
-  discord = pkgs.discord;
-  discord-name = "Discord";
-  discocss = with pkgs;
-    stdenvNoCC.mkDerivation rec {
-      pname = "discocss";
-      version = "0.2.3";
-
-      src = fetchFromGitHub {
-        owner = "mlvzk";
-        repo = pname;
-        rev = "v${version}";
-        sha256 = "sha256-of7OMgbuwebnFmbefGD1/dOhyTX1Hy7TccnWSRCweW0=";
-      };
-
-      dontBuild = true;
-
-      nativeBuildInputs = [makeWrapper];
-
-      installPhase = ''
-        install -Dm755 discocss $out/bin/discocss
-        wrapProgram $out/bin/discocss --set DISCOCSS_DISCORD_BIN ${discord}/bin/${discord-name}
-        ln -s $out/bin/discocss $out/bin/Discord
-        ln -s $out/bin/discocss $out/bin/discord
-        mkdir -p $out/share
-        ln -s ${discord}/share/* $out/share
-      '';
-    };
   xwaylandvideobridge = with pkgs;
   with libsForQt5;
     stdenv.mkDerivation {
@@ -53,9 +26,9 @@
     };
 in {
   imports = [(import ./theme-template.nix)];
-  home.packages = [
-    pkgs.xdg-utils
-    discocss
+  home.packages = with pkgs; [
+    xdg-utils
+    discord
     xwaylandvideobridge
   ];
 }

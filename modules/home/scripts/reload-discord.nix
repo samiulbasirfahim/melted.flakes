@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   reload-discord = pkgs.writeShellScriptBin "reload-discord" ''
     #!/bin/sh
-    path="$HOME/.config/discocss/"
+    path="$HOME/.config/BetterDiscord/themes//"
     config="$HOME/.config/pywal-discord-themes"
     usrconfig="$HOME/.config/pywal-discord"
 
@@ -11,7 +11,7 @@
       themefile=$config/pywal-discord-default.css
     fi
 
-    newfile=$path/custom.css
+    newfile=$path/pywal.theme.css
 
     # Adapt metadata to theme
     sed "s/@name Pywal-Discord/@name Pywal-Discord-$theme/" "$config/meta.css" > /tmp/pywal-discord-meta
