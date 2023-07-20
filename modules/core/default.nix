@@ -18,7 +18,6 @@
       ++ [./security.nix]
       ++ [./programs.nix]
       ++ [./pipewire.nix]
-      ++ [./gaming.nix]
       ++ [./services.nix]
       ++ [./programs.nix]
       ++ [./system.nix]
