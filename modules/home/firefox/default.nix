@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  # imports =
-  # [(import ./userChrome.nix)]
-  # ++ [(import ./userContent.nix)];
+  imports =
+    [(import ./userChrome.nix)]
+    ++ [(import ./userContent.nix)];
 
   programs.firefox = {
     enable = true;
@@ -20,7 +20,7 @@
           Search = false;
           Pocket = false;
           Snippets = false;
-          TopSites = true;
+          TopSites = false;
           Highlights = false;
         };
         UserMessaging = {
@@ -34,7 +34,7 @@
       name = "xenoxanite";
       search = {
         force = true;
-        default = "Google";
+        default = "DuckDuckGo";
         engines = {
           "Nix Packages" = {
             urls = [
@@ -83,6 +83,7 @@
         tabliss
         videospeed
         pywalfox
+        duckduckgo-privacy-essentials
       ];
     };
   };

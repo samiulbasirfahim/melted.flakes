@@ -17,6 +17,7 @@
     pamixer
     obsidian
     bat
+    lsix
 
     # Multimedia
     mpv
@@ -31,7 +32,6 @@
     # Nixos
     nix-prefetch-github
     gcc
-
 
     # Amd gpu
     radeontop

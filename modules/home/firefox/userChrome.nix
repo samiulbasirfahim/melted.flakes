@@ -1,6 +1,94 @@
 {
   programs.firefox.profiles.default.userChrome = ''
-       @import "../../../../.cache/wal/colors.css";
+    /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
+    #main-window {
+      --pywalfox-font-size: 13px;
+      --pywalfox-font-size-sm: calc(var(--pywalfox-font-size) * 0.9);
+      --pywalfox-background: var(--lwt-accent-color);
+      --pywalfox-background-light: var(--arrowpanel-background);
+      --pywalfox-text: var(--arrowpanel-color);
+      --pywalfox-text-focus: var(--toolbar-color);
+      --pywalfox-unselected-tab-opacity: 0.8;
+      --pywalfox-darker-background: rgba(0, 0, 0, 0.4);
+      --pywalfox-padding: 4px 8px;
+      font-size: var(--pywalfox-font-size) !important;
+    }
+
+    /* Disable default appearance of certain elements to be able to override shadow DOM attributes */
+    menupopup, menuseparator, button, search-textbox {
+      -moz-appearance: none !important;
+    }
+
+    /* Override the default appearance of buttons and textboxes to match the pywalfox theme */
+    button, search-textbox, menuseparator {
+      background-color: var(--pywalfox-darker-background) !important;
+    }
+
+    /* Background color on hover in right-click context menus */
+    menu[_moz-menuactive="true"], menuitem[_moz-menuactive="true"] {
+      -moz-appearance: none !important;
+      background-color: var(--pywalfox-background) !important;
+      color: var(--pywalfox-text-focus) !important;
+      padding: 4px 4px !important;
+    }
+
+    /* Separators in dropwdown menus */
+    menuseparator {
+      height: 1px;
+    }
+
+    /* Elements where we set appearance to none, we need to set padding manually */
+    notification, button, search-textbox {
+      padding: var(--pywalfox-padding) !important;
+    }
+
+    /* Fix background color of elements that can not be targeted via the Theme API */
+    notification, menupopup {
+      background: var(--pywalfox-background-light) !important;
+      color: var(--pywalfox-text) !important;
+    }
+
+    /* Apply bold text to elements */
+    textbox, panelview, .tabbrowser-tab, #sidebar-header,
+    .findbar-container, toolbar[overflowable] > .customization-target {
+      font-weight: bold !important;
+    }
+
+    /* Decrease opacity of unselected tabs to match the default Firefox theme */
+    .tabbrowser-tab:not([visuallyselected="true"]) {
+      opacity: var(--pywalfox-unselected-tab-opacity) !important;
+    }
+
+    /* Hide unnecessary borders */
+    .sidebar-splitter, notification {
+      border: 0px !important;
+    }
+
+    /* Change the background color of the resize splitter on the right side of the sidebar */
+    .sidebar-splitter {
+      background-color: transparent !important;
+    }
+
+    /* Smaller font size in panel dropdown menus */
+    panelmultiview {
+      font-size: var(--pywalfox-font-size-sm) !important;
+    }
+
+    /* Change the grey background color seen e.g. when opening a bookmark in a newtab */
+    #tabbrowser-tabpanels {
+      background-color: var(--pywalfox-background) !important;
+    }
+
+    /* Theme the status panel at the bottom */
+    #statuspanel-label {
+      background: var(--pywalfox-background-light) !important;
+      border-color: var(--pywalfox-background) !important;
+      color: var(--pywalfox-text) !important;
+    }
+    /********************* END PYWALFOX CUSTOM CSS *********************/
+
+
+    @import "../../../../.cache/wal/colors.css";
 
     :root {
         /* global border radius */
@@ -77,51 +165,6 @@
       display: none !important;
     }
 
-
-    /* No need to change anything below this comment.
-     * Just tweak it if you want to tweak the overall layout. c: */
-    :root {
-        --uc-theme-colour: var(--background);
-        --uc-hover-colour: linear-gradient(rgba(255, 255, 255, 0.06),
-        rgba(255, 255, 255, 0.06)),
-      var(--background);
-        --uc-inverted-colour: var(--foreground);
-
-        --button-bgcolor: var(--uc-theme-colour) !important;
-        --button-hover-bgcolor: var(--uc-hover-colour) !important;
-        --button-active-bgcolor: var(--uc-hover-colour) !important;
-
-        --toolbar-bgcolor: var(--uc-theme-colour) !important;
-        --toolbarbutton-hover-background: var(--uc-hover-colour) !important;
-        --toolbarbutton-active-background: var(--uc-hover-colour) !important;
-        --toolbarbutton-border-radius: var(--uc-border-radius) !important;
-        --lwt-toolbar-field-focus: var(--uc-theme-colour) !important;
-        --toolbarbutton-icon-fill: var(--uc-inverted-colour) !important;
-        --toolbar-field-focus-background-color: var(--background) !important;
-        --toolbar-field-color: var(--uc-inverted-colour) !important;
-        --toolbar-field-focus-color: var(--uc-inverted-colour) !important;
-
-        --tabs-border-color: var(--uc-theme-colour) !important;
-        --tab-border-radius: var(--uc-temp-border-radius) !important;
-        --lwt-text-color: var(--uc-inverted-colour) !important;
-        --lwt-tab-text: var(--uc-inverted-colour) !important;
-
-        --lwt-sidebar-background-color: var(--uc-hover-colour) !important;
-        --lwt-sidebar-text-color: var(--uc-inverted-colour) !important;
-
-        --arrowpanel-border-color: var(--uc-theme-colour) !important;
-        --arrowpanel-border-radius: var(--uc-border-radius) !important;
-        --arrowpanel-background: var(--uc-theme-colour) !important;
-        --arrowpanel-color: var(--inverted-colour) !important;
-
-        --autocomplete-popup-highlight-background: var(--uc-inverted-colour) !important;
-        --autocomplete-popup-highlight-color: var(--uc-inverted-colour) !important;
-        --autocomplete-popup-hover-background: var(--uc-inverted-colour) !important;
-
-        --tab-block-margin: 2px !important;
-
-    }
-
     window,
     #main-window,
     #toolbar-menubar,
@@ -130,13 +173,9 @@
     #navigator-toolbox,
     #sidebar-box,
     #nav-bar {
-
         -moz-appearance: none !important;
-
         border: none !important;
         box-shadow: none !important;
-        background: var(--uc-theme-colour) !important;
-
     }
 
     /* grey out ccons inside the toolbar to make it
@@ -166,24 +205,19 @@
         box-shadow: none !important;
     }
 
-    /* tab background */
-    .tabbrowser-tab>.tab-stack>.tab-background {
-        background: var(--uc-theme-colour) !important;
-    }
 
     /* active tab background */
     .tabbrowser-tab[selected]>.tab-stack>.tab-background {
-        background: var(--uc-hover-colour) !important;
         border: 2px solid var(--color2) !important;
     }
 
     /* tab close button options */
     .tabbrowser-tab:not([pinned]) .tab-close-button {
-        display: var(--show-tab-close-button) !important;
+        display: none !important;
     }
 
     .tabbrowser-tab:not([pinned]):hover .tab-close-button {
-        display: var(--show-tab-close-button-hover) !important
+        display: -moz-inline-box !important
     }
 
     /* adaptive tab width */
@@ -218,22 +252,6 @@
         border-radius: 4px !important;
     }
 
-    /* style and position speaker icon */
-    .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-        stroke: transparent !important;
-        background: transparent !important;
-        opacity: 1 !important;
-        fill-opacity: 0.8 !important;
-        color: currentColor !important;
-        stroke: var(--uc-theme-colour) !important;
-        background-color: var(--uc-theme-colour) !important;
-    }
-
-    /* change the colours of the speaker icon on active tab to match tab colours */
-    .tabbrowser-tab[selected] .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-        stroke: var(--uc-hover-colour) !important;
-        background-color: var(--uc-hover-colour) !important;
-    }
 
     .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
         margin-inline-end: 9.5px !important;
@@ -246,78 +264,16 @@
         inset-inline-end: 0 !important;
     }
 
-    .tab-icon-overlay:not([crashed])[soundplaying]:hover,
-    .tab-icon-overlay:not([crashed])[muted]:hover,
-    .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-        color: currentColor !important;
-        stroke: var(--uc-inverted-colour) !important;
-        background-color: var(--uc-inverted-colour) !important;
-        fill-opacity: 0.95 !important;
-    }
-
-    .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
-    .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[muted]:hover,
-    .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
-        color: currentColor !important;
-        stroke: var(--uc-inverted-colour) !important;
-        background-color: var(--uc-inverted-colour) !important;
-        fill-opacity: 0.95 !important;
-
-    }
-
-    /* speaker icon colour fix */
-    #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying],
-    #TabsToolbar .tab-icon-overlay:not([crashed])[muted],
-    #TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked] {
-        color: var(--uc-inverted-colour) !important;
-    }
-
-    /* speaker icon colour fix on hover */
-    #TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying]:hover,
-    #TabsToolbar .tab-icon-overlay:not([crashed])[muted]:hover,
-    #TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-        color: var(--uc-theme-colour) !important;
-    }
-
     #nav-bar {
         border: none !important;
         box-shadow: none !important;
-        background: transparent !important;
-        background: var(--uc-theme-colour) !important;
     }
 
     /* remove border below whole nav */
     #navigator-toolbox {
         border-bottom: none !important;
-        background: var(--uc-theme-colour) !important;
     }
 
-    #urlbar,
-    #urlbar * {
-        box-shadow: none !important;
-    }
-    #urlbar {
-        background: var(--uc-theme-colour) !important;
-    }
-
-    #urlbar-background {
-        border: 0px solid var(--uc-hover-colour) !important;
-    }
-
-    #urlbar[focused="true"]>#urlbar-background,
-    #urlbar:not([open])>#urlbar-background {
-        background: transparent !important;
-    }
-
-    #urlbar[open]>#urlbar-background {
-        background: var(--uc-theme-colour) !important;
-    }
-
-    .urlbarView-row:hover>.urlbarView-row-inner,
-    .urlbarView-row[selected]>.urlbarView-row-inner {
-        background: var(--uc-hover-colour) !important;
-    }
 
     /* transition to oneline */
     @media (min-width: 1000px) {

@@ -1,7 +1,8 @@
-{
+{pkgs,...}:{
   programs.alacritty = {
     enable = true;
   };
+  programs.foot.enable = true;
   xdg.configFile."alacritty/alacritty.yml".text = ''
     import:
       - ~/.cache/wal/colors-alacritty.yml
