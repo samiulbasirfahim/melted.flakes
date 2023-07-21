@@ -13,6 +13,7 @@
         border: none;
         background-color: rgba(30, 30, 46, 0);
         margin: 5px;
+        border-radius: 0px;
         transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     }
     button:hover {
@@ -20,7 +21,7 @@
     }
     button:focus {
         background-color: #1e1e2e;
-        border: 2px solid #964B61;
+        border: 3px solid #964B61;
         color:#E2C0C0;
     }
     #lock {

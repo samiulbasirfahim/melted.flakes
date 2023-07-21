@@ -92,7 +92,7 @@
 
       :root {
           /* global border radius */
-          --uc-border-radius: 4px !important;
+          --uc-border-radius: 0px !important;
           --uc-temp-border-radius: 4px !important;
 
           /* dynamic url bar width settings */
@@ -249,7 +249,7 @@
           inset-inline-end: -8px !important;
           width: 16px !important;
           height: 16px !important;
-          border-radius: 4px !important;
+          border-radius: 0px !important;
       }
 
 

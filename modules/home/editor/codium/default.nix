@@ -9,7 +9,7 @@
     userSettings = {
       "editor.cursorBlinking" = "expand";
       "editor.cursorSmoothCaretAnimation" = "on";
-      "editor.cursorStyle" = "underline";
+      "editor.cursorStyle" = "line";
       "editor.fontFamily" = "JetbrainsMono nerd font";
       "editor.fontSize" = 16;
       "editor.lineHeight" = 2.3;

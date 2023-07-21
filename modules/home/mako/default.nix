@@ -9,8 +9,8 @@
     background-color={color0}
     text-color={color7}
     padding=20
-    border-size=2
-    border-radius=4
+    border-size=3
+    border-radius=0
     border-color={color2}
     progress-color=over {color8}
     icons=1

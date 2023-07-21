@@ -19,21 +19,21 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 8px;
-        border: 2px solid @color2;
-        border-radius: 4px;
+        border: 3px solid @color2;
+        border-radius: 0px;
         background-color: @background;
     }
 
     #workspaces {
         padding-left: 0px;
         padding-right: 4px;
-        border-radius: 4px;
+        border-radius: 0px;
     }
 
     #workspaces button {
         padding: 4px 6px;
         margin: 3px 0px;
-        border-radius: 4px;
+        border-radius: 0px;
     }
 
     #workspaces button.active {
@@ -47,8 +47,8 @@
 
     tooltip {
         background-color: @background;
-        border-radius: 4px;
-        border: 2px solid @color2;
+        border-radius: 0px;
+        border: 3px solid @color2;
     }
 
     tooltip label {

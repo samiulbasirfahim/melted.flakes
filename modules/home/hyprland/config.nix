@@ -30,7 +30,7 @@ misc {
 general {
     gaps_in = 6
     gaps_out = 10
-    border_size = 2
+    border_size = 3
     col.active_border = $color2
     col.inactive_border = rgba(000000ee) 
     apply_sens_to_raw = 1
@@ -48,11 +48,11 @@ master {
 
 decoration {
     # rounding = 2
-    rounding = 1
+    rounding = 0
     multisample_edges = true
     blur_new_optimizations = 1
-    active_opacity = 0.97
-    inactive_opacity = 0.95
+    active_opacity = 0.9
+    inactive_opacity = 0.9
     blur = 1
     blur_size = 1
     blur_passes = 3
@@ -82,7 +82,6 @@ exec-once = /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | 
 exec-once = swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' && load-env 
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
-exec-once = xwaylandvideobridge &
 exec-once = waybar &
 exec-once = mako -c /home/xenoxanite/.cache/wal/mako.conf
     ";

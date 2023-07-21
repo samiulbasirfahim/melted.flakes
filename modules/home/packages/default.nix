@@ -35,5 +35,7 @@
 
     # Amd gpu
     radeontop
+
+    mongodb-compass
   ];
 }
