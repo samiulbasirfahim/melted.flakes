@@ -54,7 +54,7 @@ decoration {
     active_opacity = 0.9
     inactive_opacity = 0.9
     blur = 1
-    blur_size = 1
+    blur_size = 4
     blur_passes = 3
     drop_shadow = 0
 }

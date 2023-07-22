@@ -1,4 +1,8 @@
-{pkgs,inputs,  ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [(import ./settings.nix)] ++ [(import ./style.nix)];
 
   programs.waybar = {
