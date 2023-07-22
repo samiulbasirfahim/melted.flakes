@@ -1,16 +1,28 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
+  inputs = [inputs.darkmatter.nixosModule];
   boot = {
     loader = {
-        systemd-boot.enable = lib.mkForce  false;
+      systemd-boot.enable = lib.mkForce false;
       grub = {
         enable = lib.mkForce true;
         efiSupport = true;
-        # efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
         device = "nodev";
+        theme = pkgs.stdenv.mkDerivation {
+          pname = "distro-grub-themes";
+          version = "3.1";
+          src = pkgs.fetchFromGitHub {
+            owner = "AdisonCavani";
+            repo = "distro-grub-themes";
+            rev = "v3.1";
+            hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
+          };
+          installPhase = "cp -r customize/nixos $out";
+        };
       };
 
       efi.canTouchEfiVariables = true;
