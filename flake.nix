@@ -9,7 +9,6 @@
     hyprland-contrib.url = "github:hyprwm/contrib";
     nur.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    flake-utils.url = "github:numtide/flake-utils";
     darkmatter.url = "gitlab:VandalByte/darkmatter-grub-theme";
   };
 

@@ -2,8 +2,6 @@
   fonts.fontconfig.enable = true;
   home.packages = [
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
-    pkgs.joypixels
-    pkgs.font-awesome
   ];
   gtk = {
     enable = true;

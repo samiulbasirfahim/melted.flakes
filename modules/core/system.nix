@@ -5,6 +5,13 @@
   inputs,
   ...
 }: {
+  nixpkgs = {
+    overlays = [
+      self.overlays.default
+      inputs.nur.overlay
+    ];
+  };
+  systemd.network.wait-online.enable = false;
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -15,12 +22,6 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-  };
-  nixpkgs = {
-    overlays = [
-      self.overlays.default
-      inputs.nur.overlay
-    ];
   };
 
   i18n.extraLocaleSettings = {
@@ -36,6 +37,7 @@
   };
   time.timeZone = "Asia/Dhaka";
   i18n.defaultLocale = "en_US.UTF-8";
+
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.05";
 }

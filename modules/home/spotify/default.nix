@@ -13,8 +13,6 @@ in {
   imports = [inputs.spicetify-nix.homeManagerModule];
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.catppuccin-mocha;
-    colorScheme = "red";
 
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
