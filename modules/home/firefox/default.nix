@@ -20,7 +20,7 @@
           Search = false;
           Pocket = false;
           Snippets = false;
-          TopSites = false;
+          TopSites = true;
           Highlights = false;
         };
         UserMessaging = {

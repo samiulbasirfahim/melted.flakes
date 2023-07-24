@@ -7,15 +7,14 @@
     pavucontrol
     xfce.thunar
 
-    # utilites
+    # utilites 
+    unzip
     btop
     bleachbit
     exa
-    joplin-desktop
     playerctl
     gparted
     pamixer
-    obsidian
     bat
     lsix
 

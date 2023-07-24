@@ -19,7 +19,7 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 8px;
-        border: 3px solid @color2;
+        border: 2px solid @color2;
         border-radius: 0px;
         background-color: @background;
     }
@@ -48,7 +48,7 @@
     tooltip {
         background-color: @background;
         border-radius: 0px;
-        border: 3px solid @color2;
+        border: 2px solid @color2;
     }
 
     tooltip label {

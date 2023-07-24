@@ -30,7 +30,7 @@ misc {
 general {
     gaps_in = 6
     gaps_out = 10
-    border_size = 3
+    border_size = 2
     col.active_border = $color2
     col.inactive_border = rgba(000000ee) 
     apply_sens_to_raw = 1
@@ -54,19 +54,19 @@ decoration {
     active_opacity = 0.9
     inactive_opacity = 0.9
     blur = 1
-    blur_size = 4
-    blur_passes = 3
+    blur_size = 3
+    blur_passes = 2
     drop_shadow = 0
 }
 
 animations {
     enabled=1
-    bezier = overshot, 1, 1, 1, 1
-    animation = windows, 1, 2, overshot, slide
-    animation = windowsOut, 1, 2, overshot, popin 80%
-    animation = border, 1, 2, overshot
-    animation = fade, 1, 2, overshot
-    animation = workspaces, 1, 2, overshot, slidevert
+    bezier = overshot, 0.13, 0.99, 0.29, 1.1
+    animation = windows, 1, 4, overshot, slide
+    animation = windowsOut, 1, 4, overshot, popin 80%
+    animation = border, 1, 4, overshot
+    animation = fade, 1, 4, overshot
+    animation = workspaces, 1, 4, overshot, slidevert
 }
 
 
@@ -78,7 +78,7 @@ exec-once = hyprctl setcursor Catppuccin-Latte-Dark 16
 exec-once = systemctl --user import-environment &
 exec-once = hash dbus-update-activation-environment 2>/dev/null &
 exec-once = dbus-update-activation-environment --systemd &
-exec-once = /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 & 
+exec-once = /nix/store/h09h484z1ghqgc8pl9syzfdh529gg9yz-mate-polkit-1.26.1/libexec/polkit-mate-authentication-agent-1 & 
 exec-once = swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' && load-env 
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store

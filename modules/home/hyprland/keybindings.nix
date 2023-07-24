@@ -16,6 +16,7 @@
     bind = $mainMod, Return, exec, alacritty
     bind = $mainMod SHIFT, Return, exec, alacritty --fullscreen
     bind = $mainMod, Z, exec, pkill rofi || rofi -show drun
+    bind = $mainMod, W, exec, pkill rofi || wallpaper-picker
     bind = $mainMod, X, exec, pkill wlogout || wlogout -b 4
     bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
     bind = $mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped

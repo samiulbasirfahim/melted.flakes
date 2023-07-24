@@ -23,7 +23,7 @@ in {
     };
     "window" = {
       height = mkLiteral "360px";
-      border = mkLiteral "3px";
+      border = mkLiteral "2px";
       border-coloror = mkLiteral "@border-color";
       background-color = mkLiteral "@background";
     };

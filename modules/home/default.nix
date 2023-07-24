@@ -15,6 +15,7 @@
     ./rofi
     ./scripts
     ./spotify
+    ./starship
     ./swaylock
     ./waybar
     ./wlogout

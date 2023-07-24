@@ -21,7 +21,7 @@
     }
     button:focus {
         background-color: #1e1e2e;
-        border: 3px solid #964B61;
+        border: 2px solid #964B61;
         color:#E2C0C0;
     }
     #lock {

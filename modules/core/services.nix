@@ -1,3 +1,5 @@
-{pkgs, ...}: {
-  services = {};
+{
+  services = {
+      getty.autologinUser = "xenoxanite";
+  };
 }
