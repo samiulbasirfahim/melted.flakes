@@ -30,7 +30,10 @@
 
     # Nixos
     nix-prefetch-github
+
+    # Programming
     gcc
+    php
 
     # Amd gpu
     radeontop

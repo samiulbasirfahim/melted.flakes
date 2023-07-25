@@ -93,7 +93,7 @@
       :root {
           /* global border radius */
           --uc-border-radius: 0px !important;
-          --uc-temp-border-radius: 4px !important;
+          --uc-temp-border-radius: 0px !important;
 
           /* dynamic url bar width settings */
           --uc-urlbar-width: clamp(250px, 50vw, 600px);

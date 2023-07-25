@@ -4,6 +4,12 @@
     defaultEditor = true;
   };
   home.packages = with pkgs; [
+    stylua
+    python311Packages.flake8
+    nodePackages.eslint
+    nodePackages.prettier
+    python311Packages.black
+
     rnix-lsp
     nil
     nodePackages_latest.typescript-language-server

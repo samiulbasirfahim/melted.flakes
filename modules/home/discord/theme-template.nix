@@ -8,6 +8,10 @@
     .peopleList-2VBrVI, .inner-2pOSmK {
         background: var(--background);
     }
+    
+    * {
+        font-family: "JetbrainsMono nerd font";
+    }
 
     .peopleColumn-1wMU14{
         background: var(--color0);
