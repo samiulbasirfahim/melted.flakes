@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   reload-discord = pkgs.writeShellScriptBin "reload-discord" ''
     #!/bin/sh
-    path="$HOME/.config/BetterDiscord/themes//"
+    path="$HOME/.config/BetterDiscord/themes/"
     config="$HOME/.config/pywal-discord-themes"
     usrconfig="$HOME/.config/pywal-discord"
 

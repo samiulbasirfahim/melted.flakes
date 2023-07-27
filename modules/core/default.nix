@@ -5,7 +5,7 @@
   ...
 }: {
   nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self inputs;};
+    specialArgs = {inherit self inputs;};
     system = "x86_64-linux";
     modules = [
       ./../../hosts/nixos/hardware-configuration.nix
