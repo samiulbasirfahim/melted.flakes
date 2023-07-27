@@ -28,7 +28,6 @@ in {
   imports = [(import ./theme-template.nix)];
   home.packages = with pkgs; [
     xdg-utils
-    discord
     xwaylandvideobridge
   ];
 }
