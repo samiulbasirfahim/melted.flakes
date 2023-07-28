@@ -4,11 +4,25 @@
 
     * {
         font-family: JetbrainsMono nerd font;
-        font-weight: normal;
+        font-weight: bold;
         font-size: 14px;
         min-height: 0;
         transition-property: background-color;
         transition-duration: 0.5s;
+    }
+
+    @keyframes blink_red {
+        to {
+          background-color: rgb(242, 143, 173);
+          color: rgb(26, 24, 38);
+        }
+    }
+    .warning, .critical, .urgent {
+      animation-name: blink_red;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
 
     window#waybar {
@@ -41,9 +55,6 @@
         color: #1e1e2e;
     }
 
-    #workspaces button.urgent {
-        color: @color14;
-    }
 
     tooltip {
         background-color: @background;

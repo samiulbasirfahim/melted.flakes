@@ -6,8 +6,12 @@
   ...
 }: {
   nixpkgs = {
-    overlays = [
+    overlays = let
+    myOverlay = self: super: {
+      discord = super.discord.override { withVencord = true;  withOpenASAR = true;};
+    }; in [
       self.overlays.default
+      myOverlay
       inputs.nur.overlay
     ];
   };
@@ -39,5 +43,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
   system.stateVersion = "23.05";
 }

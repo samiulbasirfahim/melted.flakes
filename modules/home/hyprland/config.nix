@@ -1,4 +1,4 @@
-{
+{pkgs,...}:{
   wayland.windowManager.hyprland = {
     extraConfig = "
 $mainMod = SUPER
@@ -47,15 +47,14 @@ master {
 }
 
 decoration {
-    # rounding = 2
     rounding = 0
     multisample_edges = true
     blur_new_optimizations = 1
-    active_opacity = 0.9
-    inactive_opacity = 0.9
+    active_opacity = 0.95
+    inactive_opacity = 0.93
     blur = 1
     blur_size = 3
-    blur_passes = 2
+    blur_passes = 1
     drop_shadow = 0
 }
 
@@ -63,12 +62,11 @@ animations {
     enabled=1
     bezier = overshot, 0.13, 0.99, 0.29, 1.1
     animation = windows, 1, 4, overshot, slide
-    animation = windowsOut, 1, 4, overshot, popin 80%
+    animation = windowsOut, 1, 4, overshot, slide
     animation = border, 1, 4, overshot
     animation = fade, 1, 4, overshot
-    animation = workspaces, 1, 4, overshot, slidevert
+    animation = workspaces, 1, 4, overshot
 }
-
 
 
 
@@ -79,11 +77,13 @@ exec-once = systemctl --user import-environment &
 exec-once = hash dbus-update-activation-environment 2>/dev/null &
 exec-once = dbus-update-activation-environment --systemd &
 exec-once = /nix/store/h09h484z1ghqgc8pl9syzfdh529gg9yz-mate-polkit-1.26.1/libexec/polkit-mate-authentication-agent-1 & 
-exec-once = swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' && load-env 
+exec-once = swww init &
+exec-once = sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 exec-once = waybar &
 exec-once = mako -c /home/xenoxanite/.cache/wal/mako.conf
+exec-once = ${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &
     ";
   };
 }

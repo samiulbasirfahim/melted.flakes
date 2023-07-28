@@ -1,17 +1,17 @@
 {pkgs, ...}: let
   reload-discord = pkgs.writeShellScriptBin "reload-discord" ''
     #!/bin/sh
-    path="$HOME/.config/BetterDiscord/themes/"
-    config="$HOME/.config/pywal-discord-themes"
-    usrconfig="$HOME/.config/pywal-discord"
+    path="$HOME/.config/Vencord/settings/"
+    config="$HOME/.config/Vencord/settings/"
+    usrconfig="$HOME/.config/Vencord/settings/"
 
     # Try to use a user defined theme if it exists
     themefile=$usrconfig/pywal-discord-default.css
     if [ ! -f "$themefile" ]; then
-      themefile=$config/pywal-discord-default.css
+      themefile=$config/pywal-discord.css
     fi
 
-    newfile=$path/pywal.theme.css
+    newfile=$path/quickCss.css
 
     # Adapt metadata to theme
     sed "s/@name Pywal-Discord/@name Pywal-Discord-$theme/" "$config/meta.css" > /tmp/pywal-discord-meta

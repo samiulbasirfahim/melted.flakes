@@ -39,5 +39,7 @@
     radeontop
 
     mongodb-compass
+
+    bettercap
   ];
 }

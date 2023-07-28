@@ -17,7 +17,7 @@
         "pulseaudio#microphone"
         "memory"
         "cpu"
-        "disk"
+        # "disk"
         "network"
         "tray"
       ];
@@ -82,14 +82,14 @@
         "tooltip-format" = "<tt>{calendar}</tt>";
       };
       "memory" = {
-        "interval" = 1;
+        "interval" = 3;
         "format" = "󰟜 {percentage}%";
         "states" = {
           "warning" = 85;
         };
       };
       "cpu" = {
-        "interval" = 1;
+        "interval" = 3;
         "format" = "⠀{usage}%";
       };
       "network" = {

@@ -29,5 +29,6 @@ in {
   home.packages = with pkgs; [
     xdg-utils
     xwaylandvideobridge
+    discord
   ];
 }

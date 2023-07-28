@@ -1,5 +1,5 @@
 {
-  xdg.configFile."pywal-discord-themes/pywal-discord-default.css".text = ''
+  xdg.configFile."Vencord/settings/pywal-discord.css".text = ''
     /**  colors will come from .cache/wal/colors.css as variables defined in :root
      *  see: cat $HOME/.cache/wal/colors.css
     */
@@ -8,7 +8,7 @@
     .peopleList-2VBrVI, .inner-2pOSmK {
         background: var(--background);
     }
-    
+
     * {
         font-family: "JetbrainsMono nerd font";
     }
@@ -639,7 +639,7 @@
     }
 
   '';
-  xdg.configFile."pywal-discord-themes/meta.css".text = ''
+  xdg.configFile."Vencord/settings/meta.css".text = ''
     /**
      * @name Pywal-Discord
      * @author contributors to https://github.com/FilipLitwora/pywal-discord
