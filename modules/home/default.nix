@@ -8,7 +8,6 @@
     ./fish
     ./git
     ./gtk
-    ./hyprland
     ./mako
     ./packages
     ./pywal
@@ -17,7 +16,6 @@
     ./spotify
     ./starship
     ./swaylock
-    ./waybar
     ./wlogout
   ];
 }

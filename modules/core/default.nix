@@ -20,7 +20,8 @@
       ./system.nix
       ./user.nix
       ./warp.nix
-      ./wayland.nix
+      ./../hyprland
+      ./../waybar
     ];
   };
 }
