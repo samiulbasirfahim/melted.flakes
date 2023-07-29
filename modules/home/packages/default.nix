@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     pavucontrol
 
-    # utilites 
+    # utilites
     unzip
     btop
     bleachbit

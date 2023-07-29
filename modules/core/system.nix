@@ -7,9 +7,13 @@
 }: {
   nixpkgs = {
     overlays = let
-    myOverlay = self: super: {
-      discord = super.discord.override { withVencord = true;  withOpenASAR = true;};
-    }; in [
+      myOverlay = self: super: {
+        discord = super.discord.override {
+          withVencord = true;
+          withOpenASAR = true;
+        };
+      };
+    in [
       self.overlays.default
       myOverlay
       inputs.nur.overlay

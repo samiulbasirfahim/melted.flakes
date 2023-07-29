@@ -1,9 +1,15 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   home-manager.users.xenoxanite.programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oa: {
-      mesonFlags = (oa.mesonFlags or []) ++ ["-Dexperimental=true"];
-    });
+    package = inputs.hyprland.packages.${pkgs.system}.waybar-hyprland;
+    systemd = {
+      enable = false;
+      target = "graphical-session.target";
+    };
     settings = [
       {
         layer = "top";
@@ -39,6 +45,18 @@
         "wlr/workspaces" = {
           "format" = "{icon}";
           "on-click" = "activate";
+          "format-icons" = {
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+            "6" = "6";
+            "7" = "7";
+            "8" = "8";
+            "9" = "9";
+            "10" = "10";
+          };
         };
         "pulseaudio" = {
           "scroll-step" = 5;
