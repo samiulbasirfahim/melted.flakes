@@ -50,11 +50,11 @@ decoration {
     rounding = 0
     multisample_edges = true
     blur_new_optimizations = 1
-    active_opacity = 0.95
-    inactive_opacity = 0.93
+    active_opacity = 0.9
+    inactive_opacity = 0.9
     blur = 1
-    blur_size = 3
-    blur_passes = 1
+    blur_size = 5
+    blur_passes = 2
     drop_shadow = 0
 }
 
@@ -77,8 +77,7 @@ exec-once = systemctl --user import-environment &
 exec-once = hash dbus-update-activation-environment 2>/dev/null &
 exec-once = dbus-update-activation-environment --systemd &
 exec-once = /nix/store/h09h484z1ghqgc8pl9syzfdh529gg9yz-mate-polkit-1.26.1/libexec/polkit-mate-authentication-agent-1 & 
-exec-once = swww init &
-exec-once = sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &
+exec-once = sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 exec-once = waybar &

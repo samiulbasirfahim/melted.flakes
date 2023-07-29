@@ -5,7 +5,6 @@
     ++ [(import ./javascript.nix)];
   home.packages = with pkgs; [
     pavucontrol
-    xfce.thunar
 
     # utilites 
     unzip
@@ -15,8 +14,7 @@
     playerctl
     gparted
     pamixer
-    bat
-    lsix
+    gnome.nautilus
 
     # Multimedia
     mpv

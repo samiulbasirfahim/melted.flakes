@@ -31,6 +31,7 @@ windowrule = move 40 55%, pavucontrol
 # utilities
 windowrule = float,title:^(Transmission)$
 windowrule = float,title:^(Volume Control)$
+windowrule = float, Nautilus
 
 #xwaylandvideobridge
 windowrulev2 = opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$

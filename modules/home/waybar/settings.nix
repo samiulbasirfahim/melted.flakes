@@ -63,7 +63,7 @@
         "on-click" = "pamixer -t";
         "on-click-right" = "pavucontrol";
         "on-click-middle" = "$HOME/.local/bin/toggle_sound_output";
-        "tooltip" = false;
+        "tooltip" = true;
       };
       "pulseaudio#microphone" = {
         "format" = "{format_source}";
@@ -97,10 +97,8 @@
         "format" = "󰣺 Connected";
         "format-alt" = " {bandwidthUpBytes} -  {bandwidthDownBytes}";
         "format-disconnected" = "󰣼 Disconnected";
-        "tooltip" = false;
       };
       "temperature" = {
-        "tooltip" = false;
         "thermal-zone" = 2;
         "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
         "format" = " {temperatureC}°C";

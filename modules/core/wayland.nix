@@ -6,7 +6,7 @@
     [
     xdg-desktop-portal
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
+    xdg-desktop-portal-hyprland
     ];
   };
 }
