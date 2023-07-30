@@ -38,6 +38,9 @@
         hidpi = true;
       };
       settings = {
+        "$mainMod" = "SUPER";
+        "monitor" = ",highrr,auto,auto";
+        "source" = "/home/xenoxanite/.cache/wal/colors-hyprland.conf";
         input = {
           kb_layout = "us";
           numlock_by_default = true;
@@ -77,9 +80,7 @@
         };
       };
       extraConfig = ''
-        $mainMod = SUPER
         monitor = ,highres, auto, auto
-        monitor = ,highrr,auto,auto
         source = /home/xenoxanite/.cache/wal/colors-hyprland.conf
         general {
             col.active_border = $color2

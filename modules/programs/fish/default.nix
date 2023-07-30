@@ -1,13 +1,13 @@
 {
-  programs.fish = {
+  programs.fish.enable = true;
+  home-manager.users.xenoxanite.programs.fish = {
     enable = true;
     loginShellInit = ''
       set TTY1 (tty)
       [ "$TTY1" = "/dev/tty1" ] && exec Hyprland
     '';
     shellInit = ''
-      set PATH $PATH ~/.cargo/bin
-      set PATH $PATH ~/.local/bin
+      set --universal fish_greeting " "
     '';
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/Flakes/.#nixos";

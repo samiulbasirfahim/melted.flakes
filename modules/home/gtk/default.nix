@@ -7,7 +7,7 @@
     enable = true;
     theme = {
       name = "Catppuccin-Mocha-BL-LB";
-      # package = pkgs.cattpuccin-mocha-gtk;
+      package = pkgs.cattpuccin-mocha-gtk;
     };
     iconTheme = {
       package = pkgs.papirus-icon-theme;

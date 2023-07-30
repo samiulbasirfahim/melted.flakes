@@ -1,14 +1,11 @@
 {
   imports = [
-    ./alacritty
     ./bat
     ./discord
     ./editor
     ./firefox
-    ./fish
     ./git
     ./gtk
-    ./mako
     ./packages
     ./pywal
     ./rofi

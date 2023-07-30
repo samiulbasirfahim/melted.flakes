@@ -1,8 +1,8 @@
-{pkgs, ...}: {
-  programs.alacritty = {
+{
+  home-manager.users.xenoxanite.programs.alacritty = {
     enable = true;
   };
-  xdg.configFile."alacritty/alacritty.yml".text = ''
+  home-manager.users.xenoxanite.xdg.configFile."alacritty/alacritty.yml".text = ''
     import:
       - ~/.cache/wal/colors-alacritty.yml
 

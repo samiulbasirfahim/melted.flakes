@@ -1,11 +1,17 @@
 {
-  inputs,
-  pkgs,
-  ...
-}: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      waybar = prev.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+        postPatch =
+          (oldAttrs.postPatch or "")
+          + ''
+            sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp'';
+      });
+    })
+  ];
   home-manager.users.xenoxanite.programs.waybar = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.waybar-hyprland;
     systemd = {
       enable = false;
       target = "graphical-session.target";
@@ -16,7 +22,7 @@
         position = "top";
         modules-left = [
           "custom/launcher"
-          "wlr/workspace"
+          "wlr/workspaces"
           "temperature"
           "idle_inhibitor"
         ];
@@ -45,6 +51,8 @@
         "wlr/workspaces" = {
           "format" = "{icon}";
           "on-click" = "activate";
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
           "format-icons" = {
             "1" = "1";
             "2" = "2";
