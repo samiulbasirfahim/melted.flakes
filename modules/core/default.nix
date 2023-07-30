@@ -24,6 +24,7 @@
       ./../programs/fish
       ./../programs/alacritty
       ./../programs/mako
+      ./../programs/pywal
       ./../hyprland
     ];
   };

@@ -96,12 +96,11 @@
         }
 
         bind = $mainMod, Q, killactive,
-        bind = $mainMod, T, killactive,
         bind = $mainMod, F, fullscreen,
         bind = $mainMod, Space, togglefloating,
         bind = $mainMod, P, pseudo,
         bind = $mainMod, Y, pin,
-        bind = $mainMod, J, togglesplit,
+        bind = $mainMod, T, togglesplit,
         bind = $mainMod, C, exec, hyprctl dispatch centerwindow none
         bind = SUPER, M, movetoworkspace, special
         bind = $mainMod SHIFT, M, togglespecialworkspace
@@ -117,11 +116,7 @@
         # screenshot
         bind = ,Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png
         bind = $mainMod, Print, exec, grimblast --notify --cursor  copy area
-        # switch focus
-        bind = $mainMod, left, movefocus, l
-        bind = $mainMod, right, movefocus, r
-        bind = $mainMod, up, movefocus, u
-        bind = $mainMod, down, movefocus, d
+
         # switch workspace
         bind = $mainMod, 1, workspace, 1
         bind = $mainMod, 2, workspace, 2
@@ -142,21 +137,26 @@
         bind = $mainMod SHIFT, 7, movetoworkspace, 7
         bind = $mainMod SHIFT, 8, movetoworkspace, 8
         bind = $mainMod SHIFT, 9, movetoworkspace, 9
+        # switch focus
+        bind = $mainMod, h, movefocus, l
+        bind = $mainMod, l, movefocus, r
+        bind = $mainMod, k, movefocus, u
+        bind = $mainMod, j, movefocus, d
         # window move
-        bind = SUPER SHIFT, left, movewindow, l
-        bind = SUPER SHIFT, right, movewindow, r
-        bind = SUPER SHIFT, up, movewindow, u
-        bind = SUPER SHIFT, down, movewindow, d
+        bind = SUPER SHIFT, h, movewindow, l
+        bind = SUPER SHIFT, l, movewindow, r
+        bind = SUPER SHIFT, k, movewindow, u
+        bind = SUPER SHIFT, j, movewindow, d
         # window resize
-        bind = SUPER CTRL, left, resizeactive, -80 0
-        bind = SUPER CTRL, right, resizeactive, 80 0
-        bind = SUPER CTRL, up, resizeactive, 0 -80
-        bind = SUPER CTRL, down, resizeactive, 0 80
+        bind = SUPER CTRL, h, resizeactive, -80 0
+        bind = SUPER CTRL, l, resizeactive, 80 0
+        bind = SUPER CTRL, k, resizeactive, 0 -80
+        bind = SUPER CTRL, j, resizeactive, 0 80
         # window move position
-        bind = SUPER ALT, left, moveactive,  -80 0
-        bind = SUPER ALT, right, moveactive, 80 0
-        bind = SUPER ALT, up, moveactive, 0 -80
-        bind = SUPER ALT, down, moveactive, 0 80
+        bind = SUPER SHIFT, h, moveactive,  -80 0
+        bind = SUPER SHIFT, l, moveactive, 80 0
+        bind = SUPER SHIFT, k, moveactive, 0 -80
+        bind = SUPER SHIFT, j, moveactive, 0 80
         # media and volume controls
         bind = ,XF86AudioRaiseVolume,exec, pamixer -i 5
         bind = ,XF86AudioLowerVolume,exec, pamixer -d 5
