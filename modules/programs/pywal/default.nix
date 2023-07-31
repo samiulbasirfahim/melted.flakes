@@ -4,19 +4,6 @@
     ${pywalfox-native}/bin/pywalfox start
   '';
 in {
-  nixpkgs.overlays = [
-    (self: super: {
-      pywal = super.pywal.overrideAttrs (oldAttrs: {
-        propagatedBuildInputs =
-          oldAttrs.propagatedBuildInputs
-          ++ [
-            (
-              super.python3Packages.toPythonModule super.colorz
-            )
-          ];
-      });
-    })
-  ];
   home-manager.users.xenoxanite = {
     programs.pywal = {
       enable = true;

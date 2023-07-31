@@ -10,7 +10,7 @@
             setWallpaper
         elif [[ -f $wallpaper_folder/$temp_dir/$wallpaper_location ]]; then
             $wallpaper_daemon $wallpaper_folder/$temp_dir/$wallpaper_location &
-            wal --backend colorz -i $wallpaper_folder/$temp_dir/$wallpaper_location  && reload &
+            wal -i $wallpaper_folder/$temp_dir/$wallpaper_location  && reload &
         else
             exit 1
         fi

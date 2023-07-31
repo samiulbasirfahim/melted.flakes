@@ -20,10 +20,10 @@
       ./system.nix
       ./user.nix
       ./warp.nix
-      ./../programs/waybar
       ./../programs/fish
       ./../programs/alacritty
-      ./../programs/mako
+      ./../programs/wayland/waybar
+      ./../programs/wayland/mako
       ./../programs/pywal
       ./../hyprland
     ];
