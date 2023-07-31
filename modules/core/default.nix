@@ -30,6 +30,10 @@
       ./../programs/wayland/swaylock
       ./../programs/wayland/waybar
       ./../programs/wayland/wlogout
+
+      # utility based programs
+      ./../programs/utilities/git
+      ./../programs/utilities/bat
     ];
   };
 }

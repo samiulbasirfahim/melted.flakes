@@ -11,14 +11,16 @@
     fi
   '';
 in {
-  programs.git = {
-    enable = true;
-    userName = "xenoxanite";
-    userEmail = "xenoxanite@gmail.com";
-  };
+  home-manager.users.xenoxanite = {
+    programs.git = {
+      enable = true;
+      userName = "xenoxanite";
+      userEmail = "xenoxanite@gmail.com";
+    };
 
-  home.packages = with pkgs; [
-    gh
-    push
-  ];
+    home.packages = with pkgs; [
+      gh
+      push
+    ];
+  };
 }

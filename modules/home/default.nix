@@ -1,10 +1,8 @@
 {
   imports = [
-    ./bat
     ./discord
     ./editor
     ./firefox
-    ./git
     ./gtk
     ./packages
     ./pywal
