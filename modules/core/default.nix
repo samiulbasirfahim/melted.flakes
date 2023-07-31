@@ -22,10 +22,14 @@
       ./warp.nix
       ./../programs/fish
       ./../programs/alacritty
-      ./../programs/wayland/waybar
-      ./../programs/wayland/mako
       ./../programs/pywal
       ./../hyprland
+
+      # wayland based programs for hyprland
+      ./../programs/wayland/mako
+      ./../programs/wayland/swaylock
+      ./../programs/wayland/waybar
+      ./../programs/wayland/wlogout
     ];
   };
 }

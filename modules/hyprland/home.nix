@@ -93,6 +93,7 @@
             animation = border, 1, 4, overshot
             animation = fade, 1, 4, overshot
             animation = workspaces, 1, 4, overshot
+            animation = specialWorkspace, 1, 5, overshot, slidevert
         }
 
         bind = $mainMod, Q, killactive,

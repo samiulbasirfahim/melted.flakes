@@ -12,7 +12,5 @@
     ./scripts
     ./spotify
     ./starship
-    ./swaylock
-    ./wlogout
   ];
 }
