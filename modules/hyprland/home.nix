@@ -39,8 +39,13 @@
       };
       settings = {
         "$mainMod" = "SUPER";
-        "monitor" = ",highrr,auto,auto";
-        "source" = "/home/xenoxanite/.cache/wal/colors-hyprland.conf";
+        monitor = [
+          ",highres, auto, auto"
+          ",highrr,auto,auto"
+        ];
+        source = [
+          "/home/xenoxanite/.cache/wal/colors-hyprland.conf"
+        ];
         input = {
           kb_layout = "us";
           numlock_by_default = true;
@@ -78,99 +83,112 @@
           blur_new_optimizations = true;
           drop_shadow = false;
         };
+        animations = {
+          enabled = true;
+          bezier = "overshot, 0.13, 0.99, 0.29, 1.1";
+          animation = [
+            "windows, 1, 4, overshot, slide"
+            "windowsOut, 1, 4, overshot, slide"
+            "border, 1, 4, overshot"
+            "fade, 1, 4, overshot"
+            "workspaces, 1, 4, overshot"
+            "specialWorkspace, 1, 5, overshot, slidevert"
+          ];
+        };
+        bind = [
+          # basic bindings
+          "$mainMod, Q, killactive,"
+          "$mainMod, F, fullscreen,"
+          "$mainMod, Space, togglefloating,"
+          "$mainMod, P, pseudo,"
+          "$mainMod, Y, pin,"
+          "$mainMod, T, togglesplit,"
+          "$mainMod, C, exec, hyprctl dispatch centerwindow none"
+          "SUPER, M, movetoworkspace, special"
+          "$mainMod SHIFT, M, togglespecialworkspace"
+          "$mainMod, mouse_down, workspace, e-1"
+          "$mainMod, mouse_up, workspace, e+1"
+          # shortcuts bindings
+          "$mainMod, Return, exec, alacritty"
+          "$mainMod SHIFT, Return, exec, alacritty --fullscreen"
+          "$mainMod, Z, exec, pkill rofi || rofi -show drun"
+          "$mainMod, W, exec, pkill rofi || wallpaper-picker"
+          "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "$mainMod, X, exec, pkill wlogout || wlogout -b 4"
+          "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped"
+          "$mainMod SHIFT, c ,exec, hyprpicker -a"
+          # screenshots bindings
+          '',Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png''
+          "$mainMod, Print, exec, grimblast --notify --cursor  copy area"
+          # switch workspaces bindings
+          "$mainMod, 1, workspace, 1"
+          "$mainMod, 2, workspace, 2"
+          "$mainMod, 3, workspace, 3"
+          "$mainMod, 4, workspace, 4"
+          "$mainMod, 5, workspace, 5"
+          "$mainMod, 6, workspace, 6"
+          "$mainMod, 7, workspace, 7"
+          "$mainMod, 8, workspace, 8"
+          "$mainMod, 9, workspace, 9"
+          # move windows to workspace bindings
+          "$mainMod SHIFT, 1, movetoworkspace, 1"
+          "$mainMod SHIFT, 2, movetoworkspace, 2"
+          "$mainMod SHIFT, 3, movetoworkspace, 3"
+          "$mainMod SHIFT, 4, movetoworkspace, 4"
+          "$mainMod SHIFT, 5, movetoworkspace, 5"
+          "$mainMod SHIFT, 6, movetoworkspace, 6"
+          "$mainMod SHIFT, 7, movetoworkspace, 7"
+          "$mainMod SHIFT, 8, movetoworkspace, 8"
+          "$mainMod SHIFT, 9, movetoworkspace, 9"
+          # switch focus bindings
+          "$mainMod, h, movefocus, l"
+          "$mainMod, l, movefocus, r"
+          "$mainMod, k, movefocus, u"
+          "$mainMod, j, movefocus, d"
+          # window move bindings
+          "SUPER SHIFT, h, movewindow, l"
+          "SUPER SHIFT, l, movewindow, r"
+          "SUPER SHIFT, k, movewindow, u"
+          "SUPER SHIFT, j, movewindow, d"
+          # window reposition bindings
+          "SUPER SHIFT, h, moveactive,  -80 0"
+          "SUPER SHIFT, l, moveactive, 80 0"
+          "SUPER SHIFT, k, moveactive, 0 -80"
+          "SUPER SHIFT, j, moveactive, 0 80"
+          # window resize bindings
+          "SUPER CTRL, h, resizeactive, -80 0"
+          "SUPER CTRL, l, resizeactive, 80 0"
+          "SUPER CTRL, k, resizeactive, 0 -80"
+          "SUPER CTRL, j, resizeactive, 0 80"
+          # volume control bindings
+          ",XF86AudioRaiseVolume,exec, pamixer -i 5"
+          ",XF86AudioLowerVolume,exec, pamixer -d 5"
+          ",XF86AudioMute,exec, pamixer -t"
+          # music control bindings
+          ",XF86AudioPlay,exec, playerctl play-pause"
+          ",XF86AudioNext,exec, playerctl next"
+          ",XF86AudioPrev,exec, playerctl previous"
+          ", XF86AudioStop, exec, playerctl stop"
+        ];
+        bindm = [
+          "$mainMod, mouse:272, movewindow"
+          "$mainMod, mouse:273, resizewindow"
+        ];
+        exec-once = [
+          "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
+          "dbus-update-activation-environment --systemd &"
+          "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
+          "wl-paste --type text --watch cliphist store &"
+          "wl-paste --type image --watch cliphist store &"
+          "waybar &"
+          "mako -c /home/xenoxanite/.cache/wal/mako.conf"
+          "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
+        ];
       };
       extraConfig = ''
-        monitor = ,highres, auto, auto
-        source = /home/xenoxanite/.cache/wal/colors-hyprland.conf
         general {
-            col.active_border = $color2
+          col.active_border = $color2
         }
-        animations {
-            enabled=1
-            bezier = overshot, 0.13, 0.99, 0.29, 1.1
-            animation = windows, 1, 4, overshot, slide
-            animation = windowsOut, 1, 4, overshot, slide
-            animation = border, 1, 4, overshot
-            animation = fade, 1, 4, overshot
-            animation = workspaces, 1, 4, overshot
-            animation = specialWorkspace, 1, 5, overshot, slidevert
-        }
-
-        bind = $mainMod, Q, killactive,
-        bind = $mainMod, F, fullscreen,
-        bind = $mainMod, Space, togglefloating,
-        bind = $mainMod, P, pseudo,
-        bind = $mainMod, Y, pin,
-        bind = $mainMod, T, togglesplit,
-        bind = $mainMod, C, exec, hyprctl dispatch centerwindow none
-        bind = SUPER, M, movetoworkspace, special
-        bind = $mainMod SHIFT, M, togglespecialworkspace
-        # shortcut
-        bind = $mainMod, Return, exec, alacritty
-        bind = $mainMod SHIFT, Return, exec, alacritty --fullscreen
-        bind = $mainMod, Z, exec, pkill rofi || rofi -show drun
-        bind = $mainMod, W, exec, pkill rofi || wallpaper-picker
-        bind = $mainMod, X, exec, pkill wlogout || wlogout -b 4
-        bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
-        bind = $mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped
-        bind = $mainMod SHIFT, c ,exec, hyprpicker -a
-        # screenshot
-        bind = ,Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png
-        bind = $mainMod, Print, exec, grimblast --notify --cursor  copy area
-
-        # switch workspace
-        bind = $mainMod, 1, workspace, 1
-        bind = $mainMod, 2, workspace, 2
-        bind = $mainMod, 3, workspace, 3
-        bind = $mainMod, 4, workspace, 4
-        bind = $mainMod, 5, workspace, 5
-        bind = $mainMod, 6, workspace, 6
-        bind = $mainMod, 7, workspace, 7
-        bind = $mainMod, 8, workspace, 8
-        bind = $mainMod, 9, workspace, 9
-        # same as above, but switch to the workspace
-        bind = $mainMod SHIFT, 1, movetoworkspace, 1
-        bind = $mainMod SHIFT, 2, movetoworkspace, 2
-        bind = $mainMod SHIFT, 3, movetoworkspace, 3
-        bind = $mainMod SHIFT, 4, movetoworkspace, 4
-        bind = $mainMod SHIFT, 5, movetoworkspace, 5
-        bind = $mainMod SHIFT, 6, movetoworkspace, 6
-        bind = $mainMod SHIFT, 7, movetoworkspace, 7
-        bind = $mainMod SHIFT, 8, movetoworkspace, 8
-        bind = $mainMod SHIFT, 9, movetoworkspace, 9
-        # switch focus
-        bind = $mainMod, h, movefocus, l
-        bind = $mainMod, l, movefocus, r
-        bind = $mainMod, k, movefocus, u
-        bind = $mainMod, j, movefocus, d
-        # window move
-        bind = SUPER SHIFT, h, movewindow, l
-        bind = SUPER SHIFT, l, movewindow, r
-        bind = SUPER SHIFT, k, movewindow, u
-        bind = SUPER SHIFT, j, movewindow, d
-        # window resize
-        bind = SUPER CTRL, h, resizeactive, -80 0
-        bind = SUPER CTRL, l, resizeactive, 80 0
-        bind = SUPER CTRL, k, resizeactive, 0 -80
-        bind = SUPER CTRL, j, resizeactive, 0 80
-        # window move position
-        bind = SUPER SHIFT, h, moveactive,  -80 0
-        bind = SUPER SHIFT, l, moveactive, 80 0
-        bind = SUPER SHIFT, k, moveactive, 0 -80
-        bind = SUPER SHIFT, j, moveactive, 0 80
-        # media and volume controls
-        bind = ,XF86AudioRaiseVolume,exec, pamixer -i 5
-        bind = ,XF86AudioLowerVolume,exec, pamixer -d 5
-        bind = ,XF86AudioMute,exec, pamixer -t
-        bind = ,XF86AudioPlay,exec, playerctl play-pause
-        bind = ,XF86AudioNext,exec, playerctl next
-        bind = ,XF86AudioPrev,exec, playerctl previous
-        bind = , XF86AudioStop, exec, playerctl stop
-        bind = $mainMod, mouse_down, workspace, e-1
-        bind = $mainMod, mouse_up, workspace, e+1
-        # mouse binding
-        bindm = $mainMod, mouse:272, movewindow
-        bindm = $mainMod, mouse:273, resizewindow
         windowrule = float, wlogout
         windowrule = noanim, wlogout
         windowrule = float,mpv
@@ -192,16 +210,6 @@
         windowrule = float,title:^(Transmission)$
         windowrule = float,title:^(Volume Control)$
         windowrule = float, Nautilus
-
-        # autostart
-        exec-once = hyprctl setcursor Catppuccin-Latte-Dark 16 &
-        exec-once = dbus-update-activation-environment --systemd &
-        exec-once = sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &
-        exec-once = wl-paste --type text --watch cliphist store &
-        exec-once = wl-paste --type image --watch cliphist store &
-        exec-once = waybar &
-        exec-once = mako -c /home/xenoxanite/.cache/wal/mako.conf
-        exec-once = ${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &
       '';
     };
   };
