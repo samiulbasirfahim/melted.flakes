@@ -5,7 +5,7 @@
 }: {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    # package = pkgs.vscodium;
     userSettings = {
       "editor.cursorBlinking" = "expand";
       "editor.cursorSmoothCaretAnimation" = "on";

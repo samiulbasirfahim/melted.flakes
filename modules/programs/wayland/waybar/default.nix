@@ -39,7 +39,7 @@
         ];
         "custom/launcher" = {
           "format" = " ";
-          "on-click" = "pkill rofi || rofi";
+          "on-click" = "pkill rofi || rofi -show drun";
         };
         "idle_inhibitor" = {
           "format" = "{icon}";
