@@ -14,7 +14,7 @@
     playerctl
     gparted
     pamixer
-    gnome.nautilus
+    pcmanfm
 
     # Multimedia
     mpv
