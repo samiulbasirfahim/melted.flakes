@@ -10,7 +10,6 @@
       myOverlay = self: super: {
         discord = super.discord.override {
           withVencord = true;
-          withOpenASAR = true;
         };
       };
     in [

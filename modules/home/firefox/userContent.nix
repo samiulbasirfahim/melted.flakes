@@ -2,9 +2,6 @@
   programs.firefox.profiles.default.userContent = ''
     /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
     /* Hide page scrollbars */
-    html {
-      scrollbar-width: none !important;
-    }
 
     @-moz-document url(about:blank), url(about:newtab), url(about:home) {
       body {

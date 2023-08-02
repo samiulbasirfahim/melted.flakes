@@ -173,6 +173,18 @@
           color: #1e1e2e;
       }
 
+      #workspaces button:hover {
+      	color: @color2;
+      	background: @background;
+      	border: 1px solid @color2;
+      	box-shadow: inherit;
+      	text-shadow: inherit;
+      }
+
+      #workspaces button.active:hover {
+          background-color: @color2;
+          color: #1e1e2e;
+      }
 
       tooltip {
           background-color: @background;
