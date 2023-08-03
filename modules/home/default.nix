@@ -1,7 +1,6 @@
 {
   imports = [
     ./discord
-    ./editor
     ./firefox
     ./gtk
     ./packages

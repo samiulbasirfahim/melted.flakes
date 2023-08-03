@@ -31,6 +31,10 @@
       ./../programs/wayland/waybar
       ./../programs/wayland/wlogout
 
+      # editors
+      ./../programs/editors/vscode
+      ./../programs/editors/neovim
+
       # utility based programs
       ./../programs/utilities/git
       ./../programs/utilities/bat
