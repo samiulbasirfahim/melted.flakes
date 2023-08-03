@@ -15,7 +15,7 @@
     gparted
     pamixer
     xfce.thunar
-
+    neofetch
 
     # Multimedia
     mpv

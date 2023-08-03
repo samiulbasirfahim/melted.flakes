@@ -75,7 +75,6 @@
           };
           "on-click" = "pamixer -t";
           "on-click-right" = "pavucontrol";
-          "on-click-middle" = "$HOME/.local/bin/toggle_sound_output";
         };
         "pulseaudio#microphone" = {
           "format" = "{format_source}";
@@ -118,114 +117,102 @@
       }
     ];
 
-    style = ''
-      @import '../../.cache/wal/colors-waybar.css';
-      * {
-          font-family: JetbrainsMono nerd font;
-          font-weight: bold;
-          font-size: 14px;
-          min-height: 0;
-          transition-property: background-color;
-          transition-duration: 0.5s;
-      }
-
-      @keyframes blink_red {
-          to {
-            background-color: rgb(242, 143, 173);
-            color: rgb(26, 24, 38);
-          }
-      }
-      .warning, .critical, .urgent {
-        animation-name: blink_red;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      window#waybar {
-          background-color: transparent;
-      }
-
-      window>box {
-          margin-left: 10px;
-          margin-right: 10px;
-          margin-top: 8px;
-          border: 2px solid @color2;
-          border-radius: 0px;
-          background-color: @background;
-      }
-
-      #workspaces {
-          padding-left: 0px;
-          padding-right: 4px;
-          border-radius: 0px;
-      }
-
-      #workspaces button {
-          padding: 4px 6px;
-          margin: 3px 0px;
-          border-radius: 0px;
-      }
-
-      #workspaces button.active {
-          background-color: @color2;
-          color: #1e1e2e;
-      }
-
-      #workspaces button:hover {
-      	color: @color2;
-      	background: @background;
-      	border: 1px solid @color2;
-      	box-shadow: inherit;
-      	text-shadow: inherit;
-      }
-
-      #workspaces button.active:hover {
-          background-color: @color2;
-          color: #1e1e2e;
-      }
-
-      tooltip {
-          background-color: @background;
-          border-radius: 0px;
-          border: 2px solid @color2;
-      }
-
-      tooltip label {
-          color: @foreground;
-      }
-
-      #custom-launcher {
-          font-size: 16px;
-          padding-left: 10px;
-          padding-right: 6px;
-          color: @foreground;
-      }
-
-      #clock,
-      #memory,
-      #temperature,
-      #cpu,
-      #mpd,
-      #custom-wall,
-      #temperature,
-      #backlight,
-      #pulseaudio,
-      #network,
-      #battery,
-      #disk,
-      #idle_inhibitor {
-          padding-left: 10px;
-          padding-right: 10px;
-          padding-top: 0px;
-          padding-bottom: 0px;
-          color: @foreground;
-      }
-      #tray {
-          padding-right: 8px;
-          padding-left: 10px;
-      }
-    '';
+    style = "
+@import '../../.cache/wal/colors-waybar.css';
+* {
+  font-family: JetbrainsMono nerd font;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+@keyframes blink_red {
+  to {
+    background-color: rgb(242, 143, 173);
+    color: rgb(26, 24, 38);
+  }
+}
+.warning, .critical, .urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+window#waybar {
+  background-color: transparent;
+}
+window>box {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 8px;
+  border: 2px solid @color2;
+  border-radius: 0px;
+  background-color: @background;
+}
+#workspaces {
+  padding-left: 0px;
+  padding-right: 4px;
+  border-radius: 0px;
+}
+#workspaces button {
+  padding: 4px 6px;
+  margin: 3px 0px;
+  border-radius: 0px;
+}
+#workspaces button.active {
+  background-color: @color2;
+  color: @foreground;
+}
+#workspaces button:hover {
+  color: @color2;
+  background: @background;
+  border: 0px solid @color2;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+#workspaces button.active:hover {
+  background-color: @color2;
+  color: @foreground;
+}
+tooltip {
+  background-color: @background;
+  border-radius: 0px;
+  border: 2px solid @color2;
+}
+tooltip label {
+  color: @foreground;
+}
+#custom-launcher {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 6px;
+  color: @foreground;
+}
+#clock,
+#memory,
+#temperature,
+#cpu,
+#mpd,
+#custom-wall,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#disk,
+#idle_inhibitor {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: @foreground;
+}
+#tray {
+  padding-right: 8px;
+  padding-left: 10px;
+}
+    ";
   };
 }

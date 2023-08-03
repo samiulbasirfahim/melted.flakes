@@ -183,6 +183,7 @@
           "waybar &"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
+          "discord --start-minimized &"
         ];
       };
       extraConfig = ''
