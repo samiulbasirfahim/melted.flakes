@@ -6,6 +6,10 @@
   ];
   gtk = {
     enable = true;
+    theme = {
+      name = "Catppuccin-Mocha-BL-LB";
+      package = pkgs.cattpuccin-mocha-gtk;
+    };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
@@ -23,6 +27,6 @@
   };
   home.sessionVariables = {
     GTK_USE_PORTAL = 1;
-    # GTK_THEME = "Catppuccin-Mocha-BL-LB";
+    GTK_THEME = "Catppuccin-Mocha-BL-LB";
   };
 }

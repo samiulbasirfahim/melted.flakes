@@ -14,7 +14,8 @@
     playerctl
     gparted
     pamixer
-    pcmanfm
+    xfce.thunar
+
 
     # Multimedia
     mpv
