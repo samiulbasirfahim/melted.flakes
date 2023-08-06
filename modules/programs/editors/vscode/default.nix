@@ -29,6 +29,12 @@
         "workbench.statusBar.visible" = false;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nil";
+        "[typescriptreact]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[typescript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
       };
       keybindings = [
         {

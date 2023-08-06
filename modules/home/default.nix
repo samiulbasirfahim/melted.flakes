@@ -10,4 +10,9 @@
     ./spotify
     ./starship
   ];
+
+   home.sessionPath = [ 
+    "$HOME/.yarn/bin"
+    "$HOME/.local/bin"
+ ];
 }

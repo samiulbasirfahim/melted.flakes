@@ -176,7 +176,7 @@
         ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
-          "dbus-update-activation-environment --systemd &"
+          "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"

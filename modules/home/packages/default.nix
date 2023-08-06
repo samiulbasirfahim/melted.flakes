@@ -16,6 +16,7 @@
     pamixer
     xfce.thunar
     neofetch
+    zathura
 
     # Multimedia
     mpv
