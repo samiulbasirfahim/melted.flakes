@@ -25,6 +25,7 @@
 
       #Security
       mate.mate-polkit
+      foot
 
       # qt
       # qt6-wayland
@@ -109,8 +110,8 @@
           "$mainMod, mouse_down, workspace, e-1"
           "$mainMod, mouse_up, workspace, e+1"
           # shortcuts bindings
-          "$mainMod, Return, exec, alacritty"
-          "$mainMod SHIFT, Return, exec, alacritty --fullscreen"
+          "$mainMod, Return, exec, foot"
+          "$mainMod SHIFT, Return, exec, foot --fullscreen"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"

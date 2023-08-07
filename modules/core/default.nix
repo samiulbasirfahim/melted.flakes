@@ -21,7 +21,6 @@
       ./user.nix
       ./warp.nix
       ./../programs/fish
-      ./../programs/alacritty
       ./../programs/pywal
       ./../hyprland
 
@@ -30,6 +29,7 @@
       ./../programs/wayland/swaylock
       ./../programs/wayland/waybar
       ./../programs/wayland/wlogout
+      ./../programs/wayland/foot
 
       # editors
       ./../programs/editors/vscode

@@ -4,7 +4,6 @@
     ./firefox
     ./gtk
     ./packages
-    ./pywal
     ./rofi
     ./scripts
     ./spotify
