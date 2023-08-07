@@ -38,9 +38,29 @@
       };
       keybindings = [
         {
-          "key" = "ctrl+shift+i";
+          "key" = "ctrl+shift+s";
           "command" = "editor.action.formatDocument";
           "when" = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
+        }
+        {
+          "key" = "shift+ctrl+down";
+          "command" = "editor.action.insertCursorBelow";
+          "when" = "editorTextFocus";
+        }
+        {
+          "key" = "shift+ctrl+up";
+          "command" = "editor.action.insertCursorAbove";
+          "when" = "editorTextFocus";
+        }
+        {
+          "key" = "shift+alt+down";
+          "command" = "editor.action.copyLinesDownAction";
+          "when" = "editorTextFocus";
+        }
+        {
+          "key" = "shift+alt+up";
+          "command" = "editor.action.copyLinesUpAction";
+          "when" = "editorTextFocus";
         }
       ];
       extensions = with pkgs.vscode-extensions;
