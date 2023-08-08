@@ -25,7 +25,6 @@
 
       #Security
       mate.mate-polkit
-      foot
 
       # qt
       # qt6-wayland
@@ -113,6 +112,7 @@
           "$mainMod, Return, exec, foot"
           "$mainMod SHIFT, Return, exec, foot --fullscreen"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
+          "$mainMod SHIFT, Z, exec, pkill rofi || rofi -show run"
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, X, exec, pkill wlogout || wlogout -b 4"
@@ -175,6 +175,31 @@
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
         ];
+        windowrule = [
+          "size 700 450, pavucontrol"
+          "move 40 55%, pavucontrol"
+          "float,title:^(Transmission)$"
+          "float,title:^(Volume Control)$"
+          "float, Nautilus"
+          "float, wlogout"
+          "noanim, wlogout"
+          "float,mpv"
+          "move 510 290,mpv"
+          "size 900 500,mpv"
+          "idleinhibit focus,mpv"
+          "float,imv"
+          "move 510 290,imv"
+          "size 900 500,imv"
+          "float,title:^(Firefox — Sharing Indicator)$"
+          "move 0 0,title:^(Firefox — Sharing Indicator)$"
+        ];
+        windowrulev2 = [
+          "float, title:^(Picture-in-Picture)$"
+          "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
+          "pin, title:^(Picture-in-Picture)$"
+          "idleinhibit fullscreen, class:^(firefox)$"
+          "idleinhibit focus, class:^(mpv)$"
+        ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -187,32 +212,7 @@
           "discord --start-minimized &"
         ];
       };
-      extraConfig = ''
-        general {
-          col.active_border = $color2
-        }
-        windowrule = float, wlogout
-        windowrule = noanim, wlogout
-        windowrule = float,mpv
-        windowrule = move 510 290,mpv
-        windowrule = size 900 500,mpv
-        windowrule = idleinhibit focus,mpv
-        windowrulev2 = idleinhibit focus, class:^(mpv)$
-        windowrule = float,imv
-        windowrule = move 510 290,imv
-        windowrule = size 900 500,imv
-        windowrule = float,title:^(Firefox — Sharing Indicator)$
-        windowrule = move 0 0,title:^(Firefox — Sharing Indicator)$
-        windowrulev2 = float, title:^(Picture-in-Picture)$
-        windowrulev2 = opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$
-        windowrulev2 = pin, title:^(Picture-in-Picture)$
-        windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
-        windowrule = size 700 450, pavucontrol
-        windowrule = move 40 55%, pavucontrol
-        windowrule = float,title:^(Transmission)$
-        windowrule = float,title:^(Volume Control)$
-        windowrule = float, Nautilus
-      '';
+      extraConfig = "general:col.active_border = $color2";
     };
   };
 }
