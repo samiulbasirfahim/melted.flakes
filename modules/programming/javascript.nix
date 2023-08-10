@@ -1,11 +1,12 @@
 {pkgs, ...}: {
   home-manager.users.xenoxanite = {
     home.packages = with pkgs; [
-      cargo
-      rustc
+      yarn
+      nodejs
+      vite
     ];
     home.sessionPath = [
-      "$HOME/.cargo/bin"
+      "$HOME/.yarn/bin"
     ];
   };
 }

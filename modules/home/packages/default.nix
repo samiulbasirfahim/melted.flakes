@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  imports =
-    [(import ./python.nix)]
-    ++ [(import ./rust.nix)]
-    ++ [(import ./javascript.nix)];
   home.packages = with pkgs; [
     pavucontrol
 

@@ -29,6 +29,8 @@
       # qt
       # qt6-wayland
       # qt5-wayland
+
+      eww-wayland
     ];
     wayland.windowManager.hyprland = {
       enable = true;
