@@ -152,14 +152,18 @@ window>box {
   background-color: @background;
 }
 #workspaces {
-  padding-left: 0px;
-  padding-right: 4px;
+  padding: 0px;
+  margin: 4px;
   border-radius: 0px;
+  margin: 3px 0px;
+  background-color: @color1;
+  border-radius: 2px;
 }
 #workspaces button {
   padding: 4px 6px;
-  margin: 3px 0px;
+  margin: 0px;
   border-radius: 0px;
+  border-radius: 2px;
 }
 #workspaces button.active {
   background-color: @color2;
@@ -202,16 +206,49 @@ tooltip label {
 #network,
 #battery,
 #disk,
-#idle_inhibitor {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+#idle_inhibitor
+{
+  padding-left: 8px;
+  padding-right: 8px;
   color: @foreground;
 }
+
+#cava {
+  margin-left: 10px;
+  color: @color1;
+}
+
+#memory, #cpu, #clock, #tray, #pulseaudio, #network {
+  background-color: @color1;
+  border-radius: 2px;
+  padding: 0px 8px;
+  margin: 4px;
+}
+
 #tray {
-  padding-right: 8px;
-  padding-left: 10px;
+  margin-right: 10px;
+  background-color: @color1;
+}
+
+#memory {
+  border-radius: 2px 0px 0px 2px;
+  margin-right: 0px;
+}
+
+#cpu {
+  border-radius: 0px 2px 2px 0px;
+  margin-left: 0px;
+}
+
+#pulseaudio {
+  border-radius: 2px 0px 0px 2px;
+  margin-right: 0px;
+}
+
+#pulseaudio.microphone {
+  border-radius: 0px 2px 2px 0px;
+  margin-left: 0px;
+  margin-right: 4px;
 }
     ";
   };

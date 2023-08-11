@@ -13,6 +13,7 @@
     xfce.thunar
     neofetch
     zathura
+    pcmanfm
 
     # Multimedia
     mpv
