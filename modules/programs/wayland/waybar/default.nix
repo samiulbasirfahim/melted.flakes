@@ -25,6 +25,7 @@
           "wlr/workspaces"
           "temperature"
           "idle_inhibitor"
+          "cava"
         ];
         modules-center = [
           "clock"
@@ -66,6 +67,33 @@
             "10" = "10";
           };
         };
+        "cava" = {
+          "framerate" = 30;
+          "autosens" = 1;
+          "sensitivity" = 100;
+          "bars" = 14;
+          "lower_cutoff_freq" = 50;
+          "higher_cutoff_freq" = 10000;
+          "method" = "pulse";
+          "source" = "auto";
+          "stereo" = true;
+          "reverse" = false;
+          "bar_delimiter" = 0;
+          "monstercat" = false;
+          "waves" = false;
+          "noise_reduction" = 0.77;
+          "input_delay" = 2;
+          "format-icons" = [
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
+        };
         "pulseaudio" = {
           "scroll-step" = 5;
           "format" = "{icon} {volume}%";
@@ -88,7 +116,8 @@
         };
         "clock" = {
           "interval" = 1;
-          "format" = "{:%I:%M %p  %A %b %d}";
+          # "format" = "{:%I:%M %p  %A %b %d}";
+          "format" = "{:%A %d %b - %I:%M %p}";
           "tooltip-format" = "<tt>{calendar}</tt>";
         };
         "memory" = {
@@ -153,15 +182,10 @@ window>box {
 }
 #workspaces {
   padding: 0px;
-  margin: 4px;
-  border-radius: 0px;
-  margin: 3px 0px;
-  background-color: @color1;
-  border-radius: 2px;
 }
 #workspaces button {
   padding: 4px 6px;
-  margin: 0px;
+  margin: 3px 0px;
   border-radius: 0px;
   border-radius: 2px;
 }
@@ -192,7 +216,7 @@ tooltip label {
   font-size: 16px;
   padding-left: 10px;
   padding-right: 6px;
-  color: @foreground;
+  color: @color2;
 }
 #clock,
 #memory,
@@ -215,19 +239,19 @@ tooltip label {
 
 #cava {
   margin-left: 10px;
-  color: @color1;
+  color: @color2;
 }
 
-#memory, #cpu, #clock, #tray, #pulseaudio, #network {
-  background-color: @color1;
+#memory, #cpu, #clock, #pulseaudio, #network {
+  background-color: @color2;
   border-radius: 2px;
   padding: 0px 8px;
   margin: 4px;
+  color: @background;
 }
 
 #tray {
-  margin-right: 10px;
-  background-color: @color1;
+  margin: 0px 10px 0px 4px;
 }
 
 #memory {

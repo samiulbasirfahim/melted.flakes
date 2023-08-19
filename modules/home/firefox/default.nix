@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports =
     [(import ./userChrome.nix)]
     ++ [(import ./userContent.nix)];
@@ -86,5 +90,8 @@
         duckduckgo-privacy-essentials
       ];
     };
+  };
+  home.sessionVariables = {
+    MOZ_DISABLE_CONTENT_SANDBOX = 1;
   };
 }

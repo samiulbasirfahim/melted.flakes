@@ -15,6 +15,7 @@
       nodePackages.eslint
       nodePackages.prettier
       python311Packages.black
+      rustfmt
 
       rnix-lsp
       nil

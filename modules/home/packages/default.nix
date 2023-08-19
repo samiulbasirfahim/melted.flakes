@@ -38,5 +38,7 @@
     mongodb-compass
 
     bettercap
+
+    nodePackages_latest.peerflix
   ];
 }

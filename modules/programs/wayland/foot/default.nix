@@ -5,7 +5,7 @@
       settings = {
         main = {
           font = "JetbrainsMono nerd font:size=12:line-height=10";
-          pad = "8x8";
+          pad = "10x10";
           include = "~/.cache/wal/colors-foot.ini";
         };
       };
