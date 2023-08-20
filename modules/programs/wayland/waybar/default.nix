@@ -70,19 +70,10 @@
         "cava" = {
           "framerate" = 30;
           "autosens" = 1;
-          "sensitivity" = 100;
-          "bars" = 14;
-          "lower_cutoff_freq" = 50;
-          "higher_cutoff_freq" = 10000;
           "method" = "pulse";
+          "bars" = 14;
           "source" = "auto";
-          "stereo" = true;
-          "reverse" = false;
           "bar_delimiter" = 0;
-          "monstercat" = false;
-          "waves" = false;
-          "noise_reduction" = 0.77;
-          "input_delay" = 2;
           "format-icons" = [
             "▁"
             "▂"
