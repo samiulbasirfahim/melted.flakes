@@ -147,6 +147,7 @@
     ];
 
     style = "
+
 @import '../../.cache/wal/colors-waybar.css';
 * {
   font-family: JetbrainsMono nerd font;
@@ -155,6 +156,7 @@
   min-height: 0;
   transition-property: background-color;
   transition-duration: 0.5s;
+  transition: all linear 0.5s;
 }
 @keyframes blink_red {
   to {
@@ -185,12 +187,14 @@ window>box {
 }
 #workspaces button {
   padding: 4px 6px;
-  margin: 3px 0px;
-  border-radius: 0px;
-  border-radius: 2px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  background-color: @background;
+  color: @foreground;
 }
 #workspaces button.active {
   background-color: @color2;
+  border-radius: 2px;
   color: @foreground;
 }
 #workspaces button:hover {

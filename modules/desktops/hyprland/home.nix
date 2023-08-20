@@ -37,7 +37,7 @@
       systemdIntegration = true;
       xwayland = {
         enable = true;
-        hidpi = true;
+        #       hidpi = true;
       };
       settings = {
         "$mainMod" = "SUPER";
@@ -55,10 +55,12 @@
           sensitivity = 0;
         };
         misc = {
+          vfr = true;
+          vrr = 0;
+          layers_hog_keyboard_focus = true;
           disable_autoreload = false;
           disable_hyprland_logo = true;
           always_follow_on_dnd = true;
-          layers_hog_keyboard_focus = true;
           animate_manual_resizes = false;
           enable_swallow = true;
           focus_on_activate = true;
@@ -78,12 +80,17 @@
           rounding = 0;
           active_opacity = 0.9;
           inactive_opacity = 0.9;
-          blur = true;
-          blur_size = 5;
-          blur_passes = 2;
           multisample_edges = true;
-          blur_new_optimizations = true;
           drop_shadow = false;
+          blur = {
+            enabled = true;
+            size = 5;
+            passes = 3;
+            noise = 0.25;
+            contrast = 1.2;
+            brightness = 1.2;
+            new_optimizations = true;
+          };
         };
         animations = {
           enabled = true;
@@ -214,7 +221,7 @@
           "sleep 5 && discord --start-minimized &"
         ];
       };
-      extraConfig = "general:col.active_border = $color2";
+      extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
     };
   };
 }
