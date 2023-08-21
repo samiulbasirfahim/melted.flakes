@@ -40,5 +40,9 @@
     bettercap
 
     nodePackages_latest.peerflix
+
+    # monkeytype
+    ttyper
   ];
 }
+
