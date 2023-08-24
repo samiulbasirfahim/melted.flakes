@@ -26,7 +26,7 @@
   '';
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" ''
     wallpaper_daemon="swww img"
-    wallpaper_location=$(ls /home/xenoxanite/Pictures/wallpapers/* | sxiv -tio)
+    wallpaper_location=$(find $HOME/Pictures/wallpapers -name "*.png" -o -name "*.jpg" | sxiv -tio)
     $wallpaper_daemon $wallpaper_location
     wal -i $wallpaper_location && reload &
   '';
@@ -34,5 +34,6 @@ in {
   home.packages = with pkgs; [
     wallpaper-picker-dmenu
     wallpaper-picker
+    sxiv
   ];
 }

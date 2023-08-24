@@ -31,7 +31,6 @@
         color: var(--pywalfox-text-focus) !important;
         padding: 4px 4px !important;
       }
-
       /* Separators in dropwdown menus */
       menuseparator {
         height: 1px;
