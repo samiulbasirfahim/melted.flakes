@@ -43,6 +43,8 @@
 
     # monkeytype
     ttyper
+    cbonsai
+    wofi
   ];
 }
 

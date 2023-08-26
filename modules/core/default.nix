@@ -43,6 +43,7 @@
       # utility based programs
       ./../programs/utilities/git
       ./../programs/utilities/bat
+      ./../programs/utilities/neofetch
     ];
   };
 }
