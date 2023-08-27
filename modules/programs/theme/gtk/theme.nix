@@ -11379,6 +11379,8 @@
     }
   '';
 in {
-  xdg.configFile."gtk-3.0/gtk.css".text = theme;
-  xdg.configFile."gtk-4.0/gtk.css".text = theme;
+  home-manager.users.xenoxanite = {
+    xdg.configFile."gtk-3.0/gtk.css".text = theme;
+    xdg.configFile."gtk-4.0/gtk.css".text = theme;
+  };
 }

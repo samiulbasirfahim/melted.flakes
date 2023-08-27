@@ -18,6 +18,7 @@
         "editor.mouseWheelZoom" = false;
         "tabnine.experimentalAutoImports" = true;
         "terminal.integrated.fontFamily" = "JetbrainsMono nerd font";
+        "editor.fontLigatures" = true;
         "terminal.integrated.fontSize" = 16;
         "window.menuBarVisibility" = "hidden";
         "window.zoomLevel" = 0.3;

@@ -45,6 +45,6 @@
     ttyper
     cbonsai
     wofi
+    yt-dlp
   ];
 }
-

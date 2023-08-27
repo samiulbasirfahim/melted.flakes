@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [(import ./theme.nix)];
-  programs.rofi = {
+  home-manager.users.xenoxanite.programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
     terminal = "alacritty";

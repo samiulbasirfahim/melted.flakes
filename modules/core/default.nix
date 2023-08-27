@@ -20,8 +20,6 @@
       ./system.nix
       ./user.nix
       ./warp.nix
-      ./../programs/fish
-      ./../programs/pywal
       ./../desktops/hyprland
 
       # wayland based programs for hyprland
@@ -30,11 +28,12 @@
       ./../programs/wayland/waybar
       ./../programs/wayland/wlogout
       ./../programs/wayland/foot
+      ./../programs/wayland/rofi
 
       # Packages for programming
-      ./../programming/javascript.nix
-      ./../programming/python.nix
-      ./../programming/rust.nix
+      ./../development/javascript.nix
+      ./../development/python.nix
+      ./../development/rust.nix
 
       # editors
       ./../programs/editors/vscode
@@ -43,7 +42,13 @@
       # utility based programs
       ./../programs/utilities/git
       ./../programs/utilities/bat
+      ./../programs/utilities/fish
       ./../programs/utilities/neofetch
+      ./../programs/utilities/starship
+
+      # theme based programs
+      ./../programs/theme/pywal
+      ./../programs/theme/gtk
     ];
   };
 }
