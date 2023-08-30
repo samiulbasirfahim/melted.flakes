@@ -53,7 +53,8 @@
         }
         button:focus {
             background-color: @background;
-            border: 2px solid @color2;
+            border: 3px solid @color2;
+            border-radius: 4px;
             color:#E2C0C0;
         }
         /** ********** Icons ********** **/

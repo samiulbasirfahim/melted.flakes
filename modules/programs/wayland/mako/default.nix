@@ -6,12 +6,13 @@
       sort=-time
       output=""
       layer=top
+      margin=22,20
       font=JetbrainsMono nerd font 12
       background-color={color0}
       text-color={color7}
       padding=20
-      border-size=2
-      border-radius=0
+      border-size=3
+      border-radius=4
       border-color={color2}
       progress-color=over {color8}
       icons=1

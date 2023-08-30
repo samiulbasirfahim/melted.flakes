@@ -113,11 +113,11 @@
         };
         "memory" = {
           "interval" = 3;
-          "format" = "󰟜 {percentage}%";
+          "format" = " {percentage}%";
         };
         "cpu" = {
           "interval" = 3;
-          "format" = "⠀{usage}%";
+          "format" = " {usage}%";
         };
         "network" = {
           "interval" = 1;
@@ -170,7 +170,7 @@ window>box {
   margin-right: 20px;
   margin-top: 12px;
   border: 3px solid @color2;
-  border-radius: 1px;
+  border-radius: 4px;
   background-color: @background;
 }
 #workspaces {
