@@ -21,7 +21,7 @@
         "editor.fontLigatures" = true;
         "terminal.integrated.fontSize" = 16;
         "window.menuBarVisibility" = "hidden";
-        "window.zoomLevel" = 0.3;
+        "window.zoomLevel" = 1.4;
         "workbench.colorTheme" = "Wal";
         "workbench.iconTheme" = "catppuccin-mocha";
         "workbench.productIconTheme" = "material-product-icons";

@@ -62,9 +62,9 @@
           focus_on_activate = true;
         };
         general = {
-          gaps_in = 6;
-          gaps_out = 10;
-          border_size = 2;
+          gaps_in = 12;
+          gaps_out = 20;
+          border_size = 3;
           "col.inactive_border" = "rgba(000000ee)";
           apply_sens_to_raw = 1;
         };
@@ -73,7 +73,7 @@
           preserve_split = true;
         };
         decoration = {
-          rounding = 0;
+          rounding = 1;
           active_opacity = 0.9;
           inactive_opacity = 0.9;
           multisample_edges = true;

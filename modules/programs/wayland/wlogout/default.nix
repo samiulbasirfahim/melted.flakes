@@ -1,6 +1,6 @@
 {...}: {
   home-manager.users.xenoxanite = {
-    xdg.configFile."wlogout/assets".source = ./assets;
+    xdg.configFile."wlogout/icons".source = ./assets;
     programs.wlogout = {
       enable = true;
       layout = [
@@ -56,22 +56,30 @@
             border: 2px solid @color2;
             color:#E2C0C0;
         }
+        /** ********** Icons ********** **/
         #lock {
-            background-image: image(url("./assets/lock.png"));
-        }
-        #logout {
-            background-image: image(url("./assets/logout.png"));
-        }
-        #suspend {
-            background-image: image(url("./assets/sleep.png"));
-        }
-        #shutdown {
-            background-image: image(url("./assets/power.png"));
-        }
-        #reboot {
-            background-image: image(url("./assets/restart.png"));
+            background-image: image(url("icons/lock.png"), url("/usr/share/wlogout/icons/lock.png"));
         }
 
+        #logout {
+            background-image: image(url("icons/logout.png"), url("/usr/share/wlogout/icons/logout.png"));
+        }
+
+        #suspend {
+            background-image: image(url("icons/suspend.png"), url("/usr/share/wlogout/icons/suspend.png"));
+        }
+
+        #hibernate {
+            background-image: image(url("icons/hibernate.png"), url("/usr/share/wlogout/icons/hibernate.png"));
+        }
+
+        #shutdown {
+            background-image: image(url("icons/shutdown.png"), url("/usr/share/wlogout/icons/shutdown.png"));
+        }
+
+        #reboot {
+            background-image: image(url("icons/reboot.png"), url("/usr/share/wlogout/icons/reboot.png"));
+        }
       '';
     };
   };

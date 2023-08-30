@@ -60,7 +60,7 @@
             icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@np"];
           };
-          "Wikipedia (en)".metaData.alias = "@wiki";
+          "Wikipedia".metaData.alias = "@wiki";
           "Google".metaData.alias = "@g";
           "Amazon.com".metaData.hidden = true;
           "Bing".metaData.hidden = true;

@@ -43,12 +43,12 @@
   # LC_TIME = "en_US.UTF-8";
   # };
 
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      openbangla-keyboard
-    ];
-  };
+  # i18n.inputMethod = {
+    # enabled = "fcitx5";
+    # fcitx5.addons = with pkgs; [
+      # openbangla-keyboard
+    # ];
+  # };
 
   time.timeZone = "Asia/Dhaka";
   time.hardwareClockInLocalTime = false;

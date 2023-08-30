@@ -46,5 +46,6 @@
     cbonsai
     wofi
     yt-dlp
+    youtube-tui
   ];
 }

@@ -71,7 +71,7 @@
           "framerate" = 30;
           "autosens" = 1;
           "method" = "pulse";
-          "bars" = 14;
+          "bars" = 8;
           "source" = "auto";
           "bar_delimiter" = 0;
           "format-icons" = [
@@ -166,11 +166,11 @@ window#waybar {
   background-color: transparent;
 }
 window>box {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 8px;
-  border: 2px solid @color2;
-  border-radius: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 12px;
+  border: 3px solid @color2;
+  border-radius: 1px;
   background-color: @background;
 }
 #workspaces {
