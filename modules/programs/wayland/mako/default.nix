@@ -6,7 +6,7 @@
       sort=-time
       output=""
       layer=top
-      margin=22,20
+      margin=19,16
       font=JetbrainsMono nerd font 12
       background-color={color0}
       text-color={color7}

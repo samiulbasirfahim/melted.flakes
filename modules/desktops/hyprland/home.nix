@@ -62,8 +62,8 @@
           focus_on_activate = true;
         };
         general = {
-          gaps_in = 12;
-          gaps_out = 20;
+          gaps_in = 8;
+          gaps_out = 16;
           border_size = 3;
           "col.inactive_border" = "rgba(000000ee)";
           apply_sens_to_raw = 1;
