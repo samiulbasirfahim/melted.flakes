@@ -119,7 +119,7 @@
             "format-disconnected" = "󰣼 Disconnected";
           };
           "custom/weather" = {
-            "exec" = "python3 ~/.config/waybar/dev/weather.py";
+            "exec" = "python3 ~/.config/waybar/weather.py";
             "restart-interval" = 300;
             "return-type" = "json";
           };

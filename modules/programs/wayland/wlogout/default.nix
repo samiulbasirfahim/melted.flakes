@@ -34,7 +34,7 @@
 
         window {
             font-family: JetbrainsMono nerd font;
-            font-size: 18px;
+            font-size: 14px;
             color: #CED7F4;
             background-color: rgba(0, 0, 0, 0.5);
         }

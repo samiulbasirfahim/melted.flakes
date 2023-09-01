@@ -120,7 +120,7 @@
           "$mainMod SHIFT, Z, exec, pkill rofi || rofi -show run"
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-          "$mainMod, X, exec, pkill wlogout || wlogout -b 4"
+          "$mainMod, X, exec, pkill wlogout || launch-wlogout"
           "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped"
           "$mainMod SHIFT, c ,exec, hyprpicker -a"
           # screenshots bindings
