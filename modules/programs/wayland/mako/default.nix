@@ -18,7 +18,7 @@
       font=JetbrainsMono nerd font 10
       width=300
       height=100
-      margin=18,16
+      margin=17,16
       padding=20
       border-size=3
       border-radius=4
