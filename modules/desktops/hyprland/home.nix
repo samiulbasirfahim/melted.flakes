@@ -54,12 +54,14 @@
           vfr = true;
           vrr = 0;
           layers_hog_keyboard_focus = true;
-          disable_autoreload = false;
+          disable_autoreload = true;
           disable_hyprland_logo = true;
           always_follow_on_dnd = true;
           animate_manual_resizes = false;
           enable_swallow = true;
           focus_on_activate = true;
+          disable_splash_rendering = true;
+          animate_mouse_windowdragging = false;
         };
         general = {
           gaps_in = 8;
@@ -74,18 +76,31 @@
         };
         decoration = {
           rounding = 1;
-          active_opacity = 0.9;
-          inactive_opacity = 0.9;
+          active_opacity = 0.86;
+          inactive_opacity = 0.83;
           multisample_edges = true;
-          drop_shadow = false;
+          drop_shadow = true;
+          shadow_ignore_window = true;
+          shadow_offset = "0 8";
+          shadow_range = 50;
+          shadow_render_power = 3;
+          "col.shadow" = "rgba(00000099)";
           blur = {
-            enabled = true;
-            size = 5;
+            # enabled = true;
+            # size = 5;
+            # passes = 3;
+            # noise = 0.25;
+            # contrast = 1.2;
+            # brightness = 1.2;
+            # new_optimizations = true;
+            size = 6;
             passes = 3;
-            noise = 0.25;
-            contrast = 1.2;
-            brightness = 1.2;
             new_optimizations = true;
+            ignore_opacity = true;
+            noise = "0.18";
+            contrast = "1.2";
+            brightness = "1.2";
+            xray = true;
           };
         };
         animations = {

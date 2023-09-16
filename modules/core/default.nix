@@ -45,6 +45,7 @@
       ./../programs/utilities/zsh
       ./../programs/utilities/neofetch
       ./../programs/utilities/starship
+      ./../programs/utilities/btop
 
       # theme based programs
       ./../programs/theme/pywal

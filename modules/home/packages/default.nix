@@ -6,7 +6,7 @@
     unzip
     btop
     bleachbit
-    exa
+    eza
     playerctl
     gparted
     pamixer
