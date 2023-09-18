@@ -86,13 +86,6 @@
           shadow_render_power = 3;
           "col.shadow" = "rgba(00000099)";
           blur = {
-            # enabled = true;
-            # size = 5;
-            # passes = 3;
-            # noise = 0.25;
-            # contrast = 1.2;
-            # brightness = 1.2;
-            # new_optimizations = true;
             size = 6;
             passes = 3;
             new_optimizations = true;
@@ -197,7 +190,7 @@
         ];
         windowrule = [
           "size 700 450, pavucontrol"
-          "move 40 55%, pavucontrol"
+          "move 1200 72, pavucontrol"
           "float,title:^(Transmission)$"
           "float,title:^(Volume Control)$"
           "float, Nautilus"
