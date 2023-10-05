@@ -39,11 +39,6 @@
         "[typescript]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
-        "code-runner.runInTerminal" = true;
-        "code-runner.saveAllFilesBeforeRun" = true;
-        "code-runner.terminalRoot" = "/";
-        "[c]".editor.defaultFormatter = "xaver.clang-format";
-        "[cpp]".editor.defaultFormatter = "xaver.clang-format";
       };
       keybindings = [
         {
@@ -79,8 +74,6 @@
           jnoortheen.nix-ide
           catppuccin.catppuccin-vsc-icons
           tabnine.tabnine-vscode
-          llvm-vs-code-extensions.vscode-clangd
-          xaver.clang-format
           formulahendry.code-runner
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [

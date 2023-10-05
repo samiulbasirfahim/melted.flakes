@@ -34,6 +34,7 @@
       ./../development/javascript.nix
       ./../development/python.nix
       ./../development/rust.nix
+      ./../development/c.nix
 
       # editors
       ./../programs/editors/vscode
