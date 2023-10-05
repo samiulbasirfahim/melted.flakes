@@ -12,7 +12,6 @@
     pamixer
     xfce.thunar
     neofetch
-    zathura
     pcmanfm
 
     # Multimedia
@@ -34,18 +33,8 @@
     # Amd gpu
     radeontop
 
-
-    mongodb-compass
-
-    bettercap
-
-    nodePackages_latest.peerflix
-
     # monkeytype
     ttyper
-    cbonsai
-    wofi
     yt-dlp
-    youtube-tui
   ];
 }

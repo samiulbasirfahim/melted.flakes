@@ -31,14 +31,14 @@
       ./../programs/wayland/rofi
 
       # Packages for programming
-      ./../development/javascript.nix
-      ./../development/python.nix
-      ./../development/rust.nix
-      ./../development/c.nix
+      ./../development/languages/javascript.nix
+      ./../development/languages/python.nix
+      ./../development/languages/rust.nix
+      ./../development/languages/c.nix
 
       # editors
-      ./../programs/editors/vscode
-      ./../programs/editors/neovim
+      ./../development/editors/vscode
+      ./../development/editors/neovim
 
       # utility based programs
       ./../programs/utilities/git

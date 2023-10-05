@@ -22,9 +22,9 @@
         "tabnine.experimentalAutoImports" = true;
         "terminal.integrated.fontFamily" = "JetbrainsMono nerd font";
         "editor.fontLigatures" = true;
-        "terminal.integrated.fontSize" = 16;
+        "terminal.integrated.fontSize" = 14;
         "window.menuBarVisibility" = "hidden";
-        "window.zoomLevel" = 1.4;
+        "window.zoomLevel" = 1.2;
         "workbench.colorTheme" = "Wal";
         "workbench.iconTheme" = "catppuccin-mocha";
         "workbench.productIconTheme" = "Tabler";
@@ -88,6 +88,12 @@
             name = "tabler-icons";
             version = "0.2.2";
             sha256 = "UxMjXwfL9YMb7nGH41LoAu9R3b4dWdK66+w0tfGy8Lk=";
+          }
+          {
+            publisher = "ccls-project";
+            name = "ccls";
+            version = "0.1.29";
+            sha256 = "RjMYBLgbi+lgPqaqN7yh8Q8zr9euvQ+YLEoQaV3RDOA=";
           }
         ];
     };
