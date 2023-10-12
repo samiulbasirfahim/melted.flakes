@@ -12,7 +12,7 @@
                   --margin-right 150
   '';
 in {
-  imports = [(import ./wallpaper-picker.nix)] ++ [(import ./random-wall.nix)] ++ [(import ./reload.nix)] ++ [(import ./reload-discord.nix)];
+  imports = [(import ./wallpaper-picker.nix)] ++ [(import ./random-wall.nix)] ++ [(import ./reload.nix)] ++ [(import ./reload-discord.nix)] ++ [(import ./waybar_spawn.nix)];
   home.file.".config/cava/config1".text = "
 [general]
 ; mode = normal

@@ -75,6 +75,7 @@
           catppuccin.catppuccin-vsc-icons
           tabnine.tabnine-vscode
           formulahendry.code-runner
+          divyanshuagrawal.competitive-programming-helper
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
@@ -99,6 +100,7 @@
     };
     home.packages = with pkgs; [
       inputs.alejandra.defaultPackage.${system}
+      nil
     ];
   };
 }

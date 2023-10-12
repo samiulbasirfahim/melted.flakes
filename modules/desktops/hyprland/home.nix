@@ -64,8 +64,8 @@
           animate_mouse_windowdragging = false;
         };
         general = {
-          gaps_in = 8;
-          gaps_out = 16;
+          gaps_in = 12;
+          gaps_out = 25;
           border_size = 3;
           "col.inactive_border" = "rgba(000000ee)";
           apply_sens_to_raw = 1;
@@ -75,15 +75,15 @@
           preserve_split = true;
         };
         decoration = {
-          rounding = 1;
+          rounding = 0;
           active_opacity = 0.86;
           inactive_opacity = 0.83;
           multisample_edges = true;
           drop_shadow = true;
           shadow_ignore_window = true;
-          shadow_offset = "0 8";
-          shadow_range = 50;
-          shadow_render_power = 3;
+          shadow_offset = "0 4";
+          shadow_range = 30;
+          shadow_render_power = 2;
           "col.shadow" = "rgba(00000099)";
           blur = {
             size = 6;
@@ -129,7 +129,7 @@
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, X, exec, pkill wlogout || launch-wlogout"
-          "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped"
+          "$mainMod, B, exec, waybar_spawn &"
           "$mainMod SHIFT, c ,exec, hyprpicker -a"
           # screenshots bindings
           '',Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png''
@@ -220,6 +220,7 @@
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
+          "sleep 1 && pkill -SIGUSR1 .waybar-wrapped"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           "sleep 5 && discord --start-minimized &"

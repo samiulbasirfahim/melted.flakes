@@ -18,10 +18,10 @@
       font=JetbrainsMono nerd font 10
       width=300
       height=100
-      margin=17,16
+      margin=25,25
       padding=20
       border-size=3
-      border-radius=4
+      border-radius=0
       icons=1
       max-icon-size=48
       icon-location=left

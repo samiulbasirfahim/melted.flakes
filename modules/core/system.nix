@@ -31,7 +31,6 @@
     };
   };
 
-
   time.timeZone = "Asia/Dhaka";
   time.hardwareClockInLocalTime = false;
   i18n.defaultLocale = "en_US.UTF-8";
@@ -39,4 +38,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
   system.stateVersion = "23.05";
+
+  # -- waydroid -- #
+  virtualisation.waydroid.enable = true;
 }

@@ -34,7 +34,7 @@
 
         window {
             font-family: JetbrainsMono nerd font;
-            font-size: 14px;
+            font-size: 18px;
             color: #CED7F4;
             background-color: rgba(0, 0, 0, 0.5);
         }
@@ -54,7 +54,7 @@
         button:focus {
             background-color: @background;
             border: 3px solid @color2;
-            border-radius: 4px;
+            border-radius: 0px;
             color:#E2C0C0;
         }
         /** ********** Icons ********** **/

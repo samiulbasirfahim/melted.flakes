@@ -83,8 +83,7 @@
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         languagetool
-        news-feed-eradicator
-        tabliss
+        darkreader
         videospeed
         pywalfox
         duckduckgo-privacy-essentials

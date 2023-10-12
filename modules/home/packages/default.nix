@@ -28,13 +28,18 @@
     nix-prefetch-github
 
     # Programming
-    
 
     # Amd gpu
     radeontop
 
-    # monkeytype
     ttyper
     yt-dlp
+
+    # wine /for .exe
+    winetricks
+    wineWowPackages.waylandFull
+
+    tdesktop
+    playit-agent
   ];
 }

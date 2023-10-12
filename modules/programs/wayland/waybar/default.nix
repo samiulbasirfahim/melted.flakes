@@ -159,12 +159,12 @@ window#waybar {
   background-color: transparent;
 }
 window>box {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 25px;
+  margin-right: 25px;
   margin-top: 12px;
   margin-bottom: 0px;
   border: 3px solid @color2;
-  border-radius: 4px;
+  border-radius: 0px;
   background-color: @background;
 }
 #workspaces {
