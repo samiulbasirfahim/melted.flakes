@@ -122,14 +122,15 @@
           "$mainMod, mouse_down, workspace, e-1"
           "$mainMod, mouse_up, workspace, e+1"
           # shortcuts bindings
-          "$mainMod, Return, exec, foot"
-          "$mainMod SHIFT, Return, exec, foot --fullscreen"
+          "$mainMod, Return, exec, footclient"
+          "$mainMod SHIFT, Return, exec, footclient --fullscreen"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
           "$mainMod SHIFT, Z, exec, pkill rofi || rofi -show run"
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, X, exec, pkill wlogout || launch-wlogout"
           "$mainMod, B, exec, waybar_spawn &"
+          "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped &"
           "$mainMod SHIFT, c ,exec, hyprpicker -a"
           # screenshots bindings
           '',Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png''
@@ -190,7 +191,7 @@
         ];
         windowrule = [
           "size 700 450, pavucontrol"
-          "move 1200 72, pavucontrol"
+          "move 1192 80, pavucontrol"
           "float,title:^(Transmission)$"
           "float,title:^(Volume Control)$"
           "float, Nautilus"
@@ -216,11 +217,12 @@
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "foot --server"
           "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
-          "sleep 1 && pkill -SIGUSR1 .waybar-wrapped"
+          # "sleep 1 && pkill -SIGUSR1 .waybar-wrapped"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           "sleep 5 && discord --start-minimized &"

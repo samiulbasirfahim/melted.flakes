@@ -15,7 +15,7 @@
         "editor.cursorStyle" = "line";
         "editor.fontFamily" = "JetbrainsMono nerd font";
         "editor.fontSize" = 16;
-        "editor.lineHeight" = 2.3;
+        "editor.lineHeight" = 1.9;
         "editor.minimap.enabled" = false;
         "editor.formatOnSave" = true;
         "editor.mouseWheelZoom" = false;
