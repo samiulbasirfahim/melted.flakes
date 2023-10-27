@@ -1,10 +1,11 @@
-{pkgs, ...}: {
-  imports = [./theme.nix];
+{ pkgs, ... }: {
+  imports = [ ./theme.nix ];
 
   home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      maple-mono
     ];
     gtk = {
       enable = true;
@@ -16,11 +17,9 @@
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
-      font.name = "JetbrainsMono nerd font";
+      font.name = "Maple Mono";
       font.size = 11;
-      cursorTheme = {
-        name = "Catppuccin-Latte-Dark";
-      };
+      cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };
     home.pointerCursor = {
       package = pkgs.cattpuccin-dark-cursor;

@@ -8,20 +8,24 @@
         line_break.disabled = true;
         cmd_duration.disabled = true;
 
-        format = let
-          git = "$git_branch$git_metrics$git_commit$git_state$git_status";
-        in "$directory${git}$all";
+        format = "$directory$time\n$character";
 
         right_format = "$status";
 
         character = {
-          success_symbol = "[󱚥 ](cyan)";
-          error_symbol = "[󱚥 ](red)";
+          success_symbol = "[󰧂](#1161cb)";
+          error_symbol = "[󰧂](#c01c28)";
+          vimcmd_symbol = "[󰧀](#8ff0a4)";
         };
 
         directory = {
           format = "[$path]($style)( [$read_only]($read_only_style)) ";
           style = "cyan";
+          disabled = true;
+        };
+        time = {
+          format = "[$time]($style)";
+          style = "#9a9996";
           disabled = false;
         };
 
@@ -29,7 +33,7 @@
           format = "[$symbol]($style)";
           symbol = "[](red)";
           success_symbol = "[](green)";
-          disabled = false;
+          disabled = true;
         };
 
         git_branch = {

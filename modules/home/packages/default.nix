@@ -20,7 +20,11 @@
 
     # Chrome
     chromium
+    vscodium
+    qutebrowser
 
+
+    tmux
     # Email client
     # evolution
 

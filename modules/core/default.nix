@@ -20,6 +20,7 @@
       ./system.nix
       ./user.nix
       ./warp.nix
+      ./gaming.nix
       ./../desktops/hyprland
 
       # wayland based programs for hyprland
@@ -31,13 +32,13 @@
       ./../programs/wayland/rofi
 
       # Packages for programming
-      ./../development/languages/javascript.nix
-      ./../development/languages/python.nix
-      ./../development/languages/rust.nix
+      # ./../development/languages/javascript.nix
+      # ./../development/languages/python.nix
+      # ./../development/languages/rust.nix
       ./../development/languages/c.nix
 
       # editors
-      ./../development/editors/vscode
+      # ./../development/editors/vscode
       ./../development/editors/neovim
 
       # utility based programs
@@ -47,6 +48,7 @@
       ./../programs/utilities/neofetch
       ./../programs/utilities/starship
       ./../programs/utilities/btop
+      ./../programs/utilities/kitty
 
       # theme based programs
       ./../programs/theme/pywal

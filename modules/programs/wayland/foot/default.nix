@@ -4,10 +4,10 @@
       enable = true;
       settings = {
         main = {
-          font = "JetbrainsMono nerd font:size=13.5:line-height=12";
+          font = "JetbrainsMono nerd font:size=18.5:line-height=12";
           dpi-aware = "no";
           resize-delay-ms = 0;
-          pad = "20x20";
+          pad = "10x10";
           include = "~/.cache/wal/colors-foot.ini";
         };
         cursor = {

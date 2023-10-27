@@ -1,10 +1,7 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{ pkgs, inputs, ... }: {
   home-manager.users.xenoxanite = {
-    systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
+    systemd.user.targets.hyprland-session.Unit.Wants =
+      [ "xdg-desktop-autostart.target" ];
 
     home.packages = with pkgs; [
       hyprpicker
@@ -25,8 +22,6 @@
 
       #Security
       mate.mate-polkit
-
-      eww-wayland
     ];
     wayland.windowManager.hyprland = {
       enable = true;
@@ -37,12 +32,10 @@
       };
       settings = {
         "$mainMod" = "SUPER";
-        monitor = [
-          ",highres, auto, auto"
-          ",highrr,auto,auto"
-        ];
+        "$term" = "kitty";
+        monitor = [ ",highres, auto, auto" ",highrr,auto,auto" ];
         source = [
-          "/home/xenoxanite/.cache/wal/colors-hyprland.conf"
+          # "/home/xenoxanite/.cache/wal/colors-hyprland.conf"
         ];
         input = {
           kb_layout = "us";
@@ -64,35 +57,23 @@
           animate_mouse_windowdragging = false;
         };
         general = {
-          gaps_in = 12;
-          gaps_out = 25;
-          border_size = 3;
-          "col.inactive_border" = "rgba(000000ee)";
+          gaps_in = 0;
+          gaps_out = 0;
+          border_size = 0;
+          layout = "master";
+          no_border_on_floating = true;
           apply_sens_to_raw = 1;
-        };
-        dwindle = {
-          pseudotile = true;
-          preserve_split = true;
         };
         decoration = {
           rounding = 0;
-          active_opacity = 0.86;
-          inactive_opacity = 0.83;
-          multisample_edges = true;
-          drop_shadow = true;
-          shadow_ignore_window = true;
-          shadow_offset = "0 4";
-          shadow_range = 30;
-          shadow_render_power = 2;
-          "col.shadow" = "rgba(00000099)";
+          active_opacity = 0.9;
+          inactive_opacity = 0.9;
+          drop_shadow = false;
           blur = {
-            size = 6;
-            passes = 3;
+            enabled = true;
+            size = 1;
+            passes = 5;
             new_optimizations = true;
-            ignore_opacity = true;
-            noise = "0.18";
-            contrast = "1.2";
-            brightness = "1.2";
             xray = true;
           };
         };
@@ -100,42 +81,24 @@
           enabled = true;
           bezier = "overshot, 0.13, 0.99, 0.29, 1.1";
           animation = [
-            "windows, 1, 4, overshot, slide"
-            "windowsOut, 1, 4, overshot, slide"
+            "windows, 1, 4, overshot"
+            "windowsOut, 1, 4, overshot"
             "border, 1, 4, overshot"
             "fade, 1, 4, overshot"
             "workspaces, 1, 4, overshot"
             "specialWorkspace, 1, 5, overshot, slidevert"
           ];
         };
+        master = {
+          new_is_master = true;
+          no_gaps_when_only = true;
+          # special_scale_factor = 0.9 ;
+          mfact = 0.7;
+          orientation = "left";
+          always_center_master = true;
+        };
         bind = [
-          # basic bindings
-          "$mainMod, Q, killactive,"
-          "$mainMod, F, fullscreen,"
-          "$mainMod, Space, togglefloating,"
-          "$mainMod, P, pseudo,"
-          "$mainMod, Y, pin,"
-          "$mainMod, T, togglesplit,"
-          "$mainMod, C, exec, hyprctl dispatch centerwindow none"
-          "SUPER, M, movetoworkspace, special"
-          "$mainMod SHIFT, M, togglespecialworkspace"
-          "$mainMod, mouse_down, workspace, e-1"
-          "$mainMod, mouse_up, workspace, e+1"
-          # shortcuts bindings
-          "$mainMod, Return, exec, footclient"
-          "$mainMod SHIFT, Return, exec, footclient --fullscreen"
-          "$mainMod, Z, exec, pkill rofi || rofi -show drun"
-          "$mainMod SHIFT, Z, exec, pkill rofi || rofi -show run"
-          "$mainMod, W, exec, pkill rofi || wallpaper-picker"
-          "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-          "$mainMod, X, exec, pkill wlogout || launch-wlogout"
-          "$mainMod, B, exec, waybar_spawn &"
-          "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped &"
-          "$mainMod SHIFT, c ,exec, hyprpicker -a"
-          # screenshots bindings
-          '',Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png''
-          "$mainMod, Print, exec, grimblast --notify --cursor  copy area"
-          # switch workspaces bindings
+          # workspace
           "$mainMod, 1, workspace, 1"
           "$mainMod, 2, workspace, 2"
           "$mainMod, 3, workspace, 3"
@@ -145,7 +108,10 @@
           "$mainMod, 7, workspace, 7"
           "$mainMod, 8, workspace, 8"
           "$mainMod, 9, workspace, 9"
-          # move windows to workspace bindings
+          "$mainMod, mouse_down, workspace, e-1"
+          "$mainMod, mouse_up, workspace, e+1"
+
+          # move to workspace
           "$mainMod SHIFT, 1, movetoworkspace, 1"
           "$mainMod SHIFT, 2, movetoworkspace, 2"
           "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -155,11 +121,71 @@
           "$mainMod SHIFT, 7, movetoworkspace, 7"
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
-          # switch focus bindings
-          "$mainMod, h, movefocus, l"
-          "$mainMod, l, movefocus, r"
-          "$mainMod, k, movefocus, u"
-          "$mainMod, j, movefocus, d"
+          "$mainMod CTRL, 1, movetoworkspacesilent, 1"
+          "$mainMod CTRL, 2, movetoworkspacesilent, 2"
+          "$mainMod CTRL, 3, movetoworkspacesilent, 3"
+          "$mainMod CTRL, 4, movetoworkspacesilent, 4"
+          "$mainMod CTRL, 5, movetoworkspacesilent, 5"
+          "$mainMod CTRL, 6, movetoworkspacesilent, 6"
+          "$mainMod CTRL, 7, movetoworkspacesilent, 7"
+          "$mainMod CTRL, 8, movetoworkspacesilent, 8"
+          "$mainMod CTRL, 9, movetoworkspacesilent, 9"
+
+          # special workspaces
+          "$mainModSHIFT, m, movetoworkspace, special:default"
+          "$mainMod, m, togglespecialworkspace, default"
+
+          # move focus
+          "$mainMod, H, movefocus, l"
+          "$mainMod, J, movefocus, d"
+          "$mainMod, K, movefocus, u"
+          "$mainMod, L, movefocus, r"
+
+          # window resize bindings
+          "SUPER CTRL, h, resizeactive, -80 0"
+          "SUPER CTRL, l, resizeactive, 80 0"
+          "SUPER CTRL, k, resizeactive, 0 -80"
+          "SUPER CTRL, j, resizeactive, 0 80"
+
+          # volume control
+          ",XF86AudioRaiseVolume,exec, pamixer -i 5"
+          ",XF86AudioLowerVolume,exec, pamixer -d 5"
+          ",XF86AudioMute,exec, pamixer -t"
+
+          # music control
+          ",XF86AudioPlay,exec, playerctl play-pause"
+          ",XF86AudioNext,exec, playerctl next"
+          ",XF86AudioPrev,exec, playerctl previous"
+          ",XF86AudioStop, exec, playerctl stop"
+
+          # shortcut
+          "$mainMod, Return, exec, $term"
+          "$mainMod, N, exec, $term --class 'nvim' -e nvim"
+          "$mainMod, Z, exec, pkill rofi || rofi -show drun"
+          "$mainMod, W, exec, pkill rofi || wallpaper-picker"
+          "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "$mainMod, X, exec, pkill wlogout || launch-wlogout"
+          "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped &"
+          "$mainMod SHIFT, c ,exec, hyprpicker -a"
+
+          # basic controll
+          "$mainMod, Q, killactive,"
+          "$mainMod, F, fullscreen,"
+          "$mainMod, Space, togglefloating,"
+          "$mainMod, P, pin,"
+          "$mainMod, Y, fakefullscreen,"
+          "$mainMod, T, togglesplit,"
+          "$mainMod, C, exec, hyprctl dispatch centerwindow none"
+
+          "SUPER,period,layoutmsg,swapwithmaster"
+          "SUPER,A,layoutmsg,addmaster"
+          "SUPER,S,layoutmsg,removemaster"
+
+          # screenshots bindings
+          ''
+            ,Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png''
+          "$mainMod, Print, exec, grimblast --notify --cursor  copy area"
+
           # window move bindings
           "SUPER SHIFT, h, movewindow, l"
           "SUPER SHIFT, l, movewindow, r"
@@ -170,30 +196,41 @@
           "SUPER SHIFT, l, moveactive, 80 0"
           "SUPER SHIFT, k, moveactive, 0 -80"
           "SUPER SHIFT, j, moveactive, 0 80"
-          # window resize bindings
-          "SUPER CTRL, h, resizeactive, -80 0"
-          "SUPER CTRL, l, resizeactive, 80 0"
-          "SUPER CTRL, k, resizeactive, 0 -80"
-          "SUPER CTRL, j, resizeactive, 0 80"
-          # volume control bindings
-          ",XF86AudioRaiseVolume,exec, pamixer -i 5"
-          ",XF86AudioLowerVolume,exec, pamixer -d 5"
-          ",XF86AudioMute,exec, pamixer -t"
-          # music control bindings
-          ",XF86AudioPlay,exec, playerctl play-pause"
-          ",XF86AudioNext,exec, playerctl next"
-          ",XF86AudioPrev,exec, playerctl previous"
-          ", XF86AudioStop, exec, playerctl stop"
+
         ];
         bindm = [
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
         ];
         windowrule = [
+          "workspace 1, ^(firefox)$"
+          # "workspace 2 silent, ^(WebCord)$"
+          # "workspace 2 silent, ^(walc)$"
+          # "workspace 2 silent, ^(org.telegram.desktop)$"
+          # "workspace 2 silent, ^(TelegramDesktop)$"
+          # "workspace 3, ^(nvim)$"
+          # "workspace 4 silent, ^(Chromium)$"
+          # "workspace 4 silent, ^(chromium)$"
+          # "workspace 4 silent, ^(firefoxdeveloperedition)$"
+          # "workspace 4 silent, ^(min)$"
+          # "workspace 4 silent, ^(org.gnome.Epiphany)$"
+          # "workspace 5 silent, ^(Spotify)$"
+          "workspace 6 silent, ^(steamwebhelper)$"
+          "workspace 6 silent, ^(steam)$"
+          "workspace 6 silent, ^(heroic)$"
+          "workspace 6 silent, ^(lutris)$"
+          "workspace 6 silent, ^(csgo_linux64)$"
+          # "workspace 7 silent, ^(Todoist)$"
+          # "workspace 7 silent,  ^(obsidian)$"
+          # "workspace 7, ^(md)$"
+          # "workspace special:default, ^(todos)$"
+          # "workspace special:reminder, ^(reminder)$"
+
           "size 700 450, pavucontrol"
           "move 1192 80, pavucontrol"
           "float,title:^(Transmission)$"
           "float,title:^(Volume Control)$"
+          "float, title:^(Steam)"
           "float, Nautilus"
           "float, wlogout"
           "noanim, wlogout"
@@ -214,21 +251,21 @@
           "idleinhibit fullscreen, class:^(firefox)$"
           "idleinhibit focus, class:^(mpv)$"
         ];
+        layerrule = [ ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "foot --server"
           "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
-          # "sleep 1 && pkill -SIGUSR1 .waybar-wrapped"
+          # "waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/st.css"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           "sleep 5 && discord --start-minimized &"
         ];
       };
-      extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
+      # extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
     };
   };
 }
