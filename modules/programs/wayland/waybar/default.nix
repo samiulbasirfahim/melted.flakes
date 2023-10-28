@@ -19,10 +19,10 @@
         layer = "top";
         position = "top";
         modules-left = [ "clock" "custom/cava-internal" ];
-        modules-center = [ "wlr/workspaces" ];
+        modules-center = [ "hyprland/workspaces" ];
         modules-right =
           [ "network" "pulseaudio" "pulseaudio#microphone" "tray" ];
-        "wlr/workspaces" = {
+        "hyprland/workspaces" = {
           "format" = "{icon}";
           "on-click" = "activate";
           "on-scroll-up" = "hyprctl dispatch workspace e+1";

@@ -21,7 +21,6 @@
     # Chrome
     chromium
     vscodium
-    qutebrowser
 
 
     tmux
