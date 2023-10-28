@@ -1,7 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
+
   home.packages = with pkgs; [
     pavucontrol
-
     # utilites
     unzip
     btop
@@ -21,7 +21,6 @@
     # Chrome
     chromium
     vscodium
-
 
     tmux
     # Email client

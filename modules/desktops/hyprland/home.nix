@@ -262,7 +262,7 @@
           # "waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/st.css"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
-          "sleep 5 && discord --start-minimized &"
+          # "sleep 5 && discord --start-minimized &"
         ];
       };
       # extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";

@@ -1,13 +1,9 @@
 {
   imports = [
-    # ./discord
+    ./discord
     ./firefox
     ./packages
-
     ./scripts
-    # ./spotify
+    ./spotify
   ];
-  programs.qutebrowser = {
-    enable = true;
-  };
 }

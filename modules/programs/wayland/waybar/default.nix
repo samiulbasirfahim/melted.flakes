@@ -54,7 +54,7 @@
         };
         "pulseaudio#microphone" = {
           "format" = "{format_source}";
-          "format-source" = "󰍬 {volume}%";
+          "format-source" = " 󰍬 {volume}%";
           "format-source-muted" = "󰍭 Muted";
           "on-click" = "pamixer --default-source -t";
           "on-scroll-up" = "pamixer --default-source -i 5";
@@ -77,7 +77,7 @@
           "format" = " {usage}%";
         };
         "network" = {
-          "interval" = 1;
+          "interval" = 2;
           "format" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
         };
         "tray" = {
@@ -96,7 +96,7 @@
 
         window#waybar {
             opacity: 0.9;
-            background-color: #000000;
+            background-color: @background;
         }
 
         #clock {
@@ -157,18 +157,18 @@
 
         #workspaces button:hover {
             color: @color13;
-            background: #000000;
+            background: @background;
             border: 0;
         }
 
         #workspaces button.active:hover {
-            background-color: #000000;
+            background-color: @background;
             border-bottom: 2px solid @color13;
             border-top: 2px solid @color13;
         }
 
         tooltip {
-            background-color: #000000;
+            background-color: @background;
             opacity: 0.7;
             border-radius: 0px;
             border: 2px solid @color13;
