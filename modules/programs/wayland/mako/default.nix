@@ -15,10 +15,9 @@
       on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
       # STYLE OPTIONS
-      font=JetbrainsMono nerd font 10
+      font=Maple Mono 10
       width=300
       height=100
-      margin=25,25
       padding=20
       border-size=3
       border-radius=0
@@ -36,20 +35,20 @@
       anchor=top-right
 
       background-color={color0}
-      text-color={color7}
-      border-color={color1}
+      text-color={color13}
+      border-color={color10}
       progress-color=over {color8}
 
       [urgency=low]
-      border-color={color4}
+      border-color={color10}
       default-timeout=2000
 
       [urgency=normal]
-      border-color={color1}
+      border-color={color10}
       default-timeout=5000
 
       [urgency=high]
-      border-color={color3}
+      border-color={color10}
       text-color=#f38ba8
       default-timeout=0
 

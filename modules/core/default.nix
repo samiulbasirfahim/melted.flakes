@@ -28,7 +28,6 @@
       ./../programs/wayland/swaylock
       ./../programs/wayland/waybar
       ./../programs/wayland/wlogout
-      ./../programs/wayland/foot
       ./../programs/wayland/rofi
 
       # Packages for programming

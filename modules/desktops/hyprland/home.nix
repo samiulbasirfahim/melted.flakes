@@ -22,21 +22,24 @@
 
       #Security
       mate.mate-polkit
+
+      # qt
+      # qt6-wayland
+      # qt5-wayland
+
+      eww-wayland
     ];
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
       xwayland = {
         enable = true;
-        #       hidpi = true;
       };
       settings = {
         "$mainMod" = "SUPER";
         "$term" = "kitty";
         monitor = [ ",highres, auto, auto" ",highrr,auto,auto" ];
-        source = [
-          # "/home/xenoxanite/.cache/wal/colors-hyprland.conf"
-        ];
+        source = [ "/home/xenoxanite/.cache/wal/colors-hyprland.conf" ];
         input = {
           kb_layout = "us";
           numlock_by_default = true;
@@ -57,12 +60,12 @@
           animate_mouse_windowdragging = false;
         };
         general = {
-          gaps_in = 0;
-          gaps_out = 0;
-          border_size = 0;
-          layout = "master";
-          no_border_on_floating = true;
+          gaps_in = 6;
+          gaps_out = 10;
+          border_size = 2;
+          "col.inactive_border" = "rgba(000000ee)";
           apply_sens_to_raw = 1;
+          layout = "master";
         };
         decoration = {
           rounding = 0;
@@ -81,8 +84,8 @@
           enabled = true;
           bezier = "overshot, 0.13, 0.99, 0.29, 1.1";
           animation = [
-            "windows, 1, 4, overshot"
-            "windowsOut, 1, 4, overshot"
+            "windows, 1, 4, overshot, slide"
+            "windowsOut, 1, 4, overshot, slide"
             "border, 1, 4, overshot"
             "fade, 1, 4, overshot"
             "workspaces, 1, 4, overshot"
@@ -90,10 +93,7 @@
           ];
         };
         master = {
-          new_is_master = true;
-          no_gaps_when_only = true;
-          # special_scale_factor = 0.9 ;
-          mfact = 0.7;
+          mfact = 0.8;
           orientation = "left";
           always_center_master = true;
         };
@@ -203,35 +203,14 @@
           "$mainMod, mouse:273, resizewindow"
         ];
         windowrule = [
-          "workspace 1, ^(firefox)$"
-          # "workspace 2 silent, ^(WebCord)$"
-          # "workspace 2 silent, ^(walc)$"
-          # "workspace 2 silent, ^(org.telegram.desktop)$"
-          # "workspace 2 silent, ^(TelegramDesktop)$"
-          # "workspace 3, ^(nvim)$"
-          # "workspace 4 silent, ^(Chromium)$"
-          # "workspace 4 silent, ^(chromium)$"
-          # "workspace 4 silent, ^(firefoxdeveloperedition)$"
-          # "workspace 4 silent, ^(min)$"
-          # "workspace 4 silent, ^(org.gnome.Epiphany)$"
-          # "workspace 5 silent, ^(Spotify)$"
-          "workspace 6 silent, ^(steamwebhelper)$"
-          "workspace 6 silent, ^(steam)$"
-          "workspace 6 silent, ^(heroic)$"
-          "workspace 6 silent, ^(lutris)$"
-          "workspace 6 silent, ^(csgo_linux64)$"
-          # "workspace 7 silent, ^(Todoist)$"
-          # "workspace 7 silent,  ^(obsidian)$"
-          # "workspace 7, ^(md)$"
-          # "workspace special:default, ^(todos)$"
-          # "workspace special:reminder, ^(reminder)$"
-
+            "workspace 1, ^(firefox)$"
+            "workspace 6 silent, ^(steam)$"
           "size 700 450, pavucontrol"
-          "move 1192 80, pavucontrol"
+          "move 40 55%, pavucontrol"
           "float,title:^(Transmission)$"
           "float,title:^(Volume Control)$"
-          "float, title:^(Steam)"
           "float, Nautilus"
+          "float, title:^(Steam)"
           "float, wlogout"
           "noanim, wlogout"
           "float,mpv"
@@ -251,7 +230,6 @@
           "idleinhibit fullscreen, class:^(firefox)$"
           "idleinhibit focus, class:^(mpv)$"
         ];
-        layerrule = [ ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -259,13 +237,12 @@
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
-          # "waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/st.css"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           # "sleep 5 && discord --start-minimized &"
         ];
       };
-      # extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
+      extraConfig = "general:col.active_border = $color10 $color13";
     };
   };
 }
