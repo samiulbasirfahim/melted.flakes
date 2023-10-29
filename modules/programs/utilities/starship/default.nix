@@ -8,7 +8,7 @@
         line_break.disabled = true;
         cmd_duration.disabled = true;
 
-        format = "$directory$time\n$character";
+        format = "$directory$git_branch$status\n$character";
 
         right_format = "$status";
 
@@ -20,8 +20,8 @@
 
         directory = {
           format = "[$path]($style)( [$read_only]($read_only_style)) ";
-          style = "cyan";
-          disabled = true;
+          style = "#9a9996";
+          disabled = false;
         };
         time = {
           format = "[$time]($style)";

@@ -1,11 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
-  imports =
-    [(import ./userChrome.nix)]
-    ++ [(import ./userContent.nix)];
+{ pkgs, config, ... }: {
+  imports = [ (import ./userChrome.nix) ] ++ [ (import ./userContent.nix) ];
 
   programs.firefox = {
     enable = true;
@@ -41,24 +35,23 @@
         default = "DuckDuckGo";
         engines = {
           "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
+            urls = [{
+              template = "https://search.nixos.org/packages";
+              params = [
+                {
+                  name = "type";
+                  value = "packages";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }];
 
-            icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@np"];
+            icon =
+              "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
           };
           "Wikipedia".metaData.alias = "@wiki";
           "Google".metaData.alias = "@g";
@@ -82,6 +75,11 @@
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
+        sponsorblock
+        youtube-shorts-block
+        news-feed-eradicator
+        bitwarden
+        tridactyl
         languagetool
         darkreader
         videospeed
@@ -90,7 +88,5 @@
       ];
     };
   };
-  home.sessionVariables = {
-    MOZ_DISABLE_CONTENT_SANDBOX = 1;
-  };
+  home.sessionVariables = { MOZ_DISABLE_CONTENT_SANDBOX = 1; };
 }

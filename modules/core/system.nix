@@ -1,28 +1,21 @@
-{
-  self,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
+{ self, pkgs, lib, inputs, ... }: {
   nixpkgs = {
-    overlays = let
-      myOverlay = self: super: {
-        discord = super.discord.override {
-          withVencord = true;
-        };
-      };
-    in [
-      self.overlays.default
-      myOverlay
-      inputs.nur.overlay
-    ];
+    overlays =
+      let
+        myOverlay = self: super:
+          {
+            # discord = super.discord.override {
+            # withVencord = true;
+            # };
+          };
+      in
+      [ self.overlays.default myOverlay inputs.nur.overlay ];
   };
   systemd.network.wait-online.enable = false;
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
     };
     gc = {
       automatic = true;
@@ -41,4 +34,9 @@
 
   # -- waydroid -- #
   virtualisation.waydroid.enable = true;
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-openbangla-keyboard ];
+  };
 }

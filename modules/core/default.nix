@@ -32,7 +32,7 @@
 
       # Packages for programming
       # ./../development/languages/javascript.nix
-      # ./../development/languages/python.nix
+      ./../development/languages/python.nix
       # ./../development/languages/rust.nix
       ./../development/languages/c.nix
 
@@ -48,6 +48,7 @@
       ./../programs/utilities/starship
       ./../programs/utilities/btop
       ./../programs/utilities/kitty
+      ./../programs/utilities/tmux
 
       # theme based programs
       ./../programs/theme/pywal

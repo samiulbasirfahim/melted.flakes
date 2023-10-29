@@ -22,7 +22,6 @@
     chromium
     vscodium
 
-    tmux
     # Email client
     # evolution
 
@@ -41,7 +40,6 @@
     winetricks
     wineWowPackages.waylandFull
 
-    tdesktop
     playit-agent
   ];
 }

@@ -27,14 +27,11 @@
       # qt6-wayland
       # qt5-wayland
 
-      eww-wayland
     ];
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
-      xwayland = {
-        enable = true;
-      };
+      xwayland = { enable = true; };
       settings = {
         "$mainMod" = "SUPER";
         "$term" = "kitty";
@@ -191,6 +188,7 @@
           "SUPER SHIFT, l, movewindow, r"
           "SUPER SHIFT, k, movewindow, u"
           "SUPER SHIFT, j, movewindow, d"
+
           # window reposition bindings
           "SUPER SHIFT, h, moveactive,  -80 0"
           "SUPER SHIFT, l, moveactive, 80 0"
@@ -203,8 +201,8 @@
           "$mainMod, mouse:273, resizewindow"
         ];
         windowrule = [
-            "workspace 1, ^(firefox)$"
-            "workspace 6 silent, ^(steam)$"
+          "workspace 1, ^(firefox)$"
+          "workspace 6 silent, ^(steam)$"
           "size 700 450, pavucontrol"
           "move 40 55%, pavucontrol"
           "float,title:^(Transmission)$"
@@ -242,7 +240,7 @@
           # "sleep 5 && discord --start-minimized &"
         ];
       };
-      extraConfig = "general:col.active_border = $color10 $color13";
+      extraConfig = "general:col.active_border = $color13 $color10";
     };
   };
 }
