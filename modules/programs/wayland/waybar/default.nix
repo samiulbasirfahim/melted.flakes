@@ -204,7 +204,8 @@
         #network,
         #battery,
         #disk,
-        #idle_inhibitor
+        #idle_inhibitor,
+        #custom-cava-internal
         {
           padding-left: 8px;
           padding-right: 8px;

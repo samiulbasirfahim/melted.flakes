@@ -1,11 +1,6 @@
-{
-  inputs,
-  nixpkgs,
-  self,
-  ...
-}: {
+{ inputs, nixpkgs, self, ... }: {
   nixos = nixpkgs.lib.nixosSystem {
-    specialArgs = {inherit self inputs;};
+    specialArgs = { inherit self inputs; };
     system = "x86_64-linux";
     modules = [
       ./../../hosts/nixos/hardware-configuration.nix
@@ -20,18 +15,19 @@
       ./system.nix
       ./user.nix
       ./warp.nix
-      ./gaming.nix
-      ./../desktops/hyprland
+
+      # ./../desktops/hyprland
+      ./../desktops/dwm
 
       # wayland based programs for hyprland
-      ./../programs/wayland/mako
-      ./../programs/wayland/swaylock
-      ./../programs/wayland/waybar
-      ./../programs/wayland/wlogout
-      ./../programs/wayland/rofi
+      # ./../programs/wayland/mako
+      # ./../programs/wayland/swaylock
+      # ./../programs/wayland/waybar
+      # ./../programs/wayland/wlogout
+      # ./../programs/wayland/rofi
 
       # Packages for programming
-      # ./../development/languages/javascript.nix
+      ./../development/languages/javascript.nix
       ./../development/languages/python.nix
       # ./../development/languages/rust.nix
       ./../development/languages/c.nix

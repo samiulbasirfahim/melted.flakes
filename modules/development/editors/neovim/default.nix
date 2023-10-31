@@ -17,16 +17,14 @@
       # llvmPackages_16.clang-unwrapped
       ccls
       clang-tools
-      rnix-lsp
+      nil
       lua-language-server
-
+      nodePackages_latest.typescript-language-server
 
       # formatter
       stylua
       nixfmt
     ];
-    home.sessionVariables = {
-      EDITOR = "nvim";
-    };
+    home.sessionVariables = { EDITOR = "nvim"; };
   };
 }

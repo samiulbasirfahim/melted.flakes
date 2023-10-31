@@ -15,7 +15,7 @@
       on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
       # STYLE OPTIONS
-      font=Maple Mono 10
+      font=JetbrainsMono Nerd Font 10
       width=300
       height=100
       padding=20

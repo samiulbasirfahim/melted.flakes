@@ -1,11 +1,15 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
   hardware.opengl = {
     enable = true;
     package = pkgs.mesa.drivers;
     driSupport = true;
     driSupport32Bit = true;
     package32 = pkgs.pkgsi686Linux.mesa.drivers;
-    extraPackages = [pkgs.amdvlk];
+    extraPackages32 = with pkgs.pkgsi686Linux; [ vaapiIntel ];
+    extraPackages = with pkgs; [ amdvlk vaapiIntel vaapiVdpau libvdpau-va-gl ];
   };
   powerManagement = {
     enable = true;

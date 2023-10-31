@@ -156,8 +156,7 @@
           ",XF86AudioStop, exec, playerctl stop"
 
           # shortcut
-          "$mainMod, Return, exec, $term"
-          "$mainMod, N, exec, $term --class 'nvim' -e nvim"
+          "$mainMod, Return, exec, $term -e tmux new-session -A -s kitty"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
@@ -201,6 +200,7 @@
           "$mainMod, mouse:273, resizewindow"
         ];
         windowrule = [
+          "nofocus,^(Ibus-ui-gtk3)$"
           "workspace 1, ^(firefox)$"
           "workspace 6 silent, ^(steam)$"
           "size 700 450, pavucontrol"

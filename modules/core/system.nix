@@ -1,15 +1,13 @@
 { self, pkgs, lib, inputs, ... }: {
   nixpkgs = {
-    overlays =
-      let
-        myOverlay = self: super:
-          {
-            # discord = super.discord.override {
-            # withVencord = true;
-            # };
-          };
-      in
-      [ self.overlays.default myOverlay inputs.nur.overlay ];
+    overlays = let
+      myOverlay = self: super:
+        {
+          # discord = super.discord.override {
+          # withVencord = true;
+          # };
+        };
+    in [ self.overlays.default myOverlay inputs.nur.overlay ];
   };
   systemd.network.wait-online.enable = false;
   nix = {
@@ -33,10 +31,14 @@
   system.stateVersion = "23.05";
 
   # -- waydroid -- #
-  virtualisation.waydroid.enable = true;
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-openbangla-keyboard ];
+  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines;
+    [ openbangla-keyboard ];
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "ibus";
+    QT_IM_MODULE = "ibus";
+    XMODIFIERS = "@im=ibus";
+    INPUT_METHOD = "ibus";
+    SDL_IM_MODULE = "ibus";
   };
 }
