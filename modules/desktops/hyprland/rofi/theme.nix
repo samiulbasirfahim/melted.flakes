@@ -13,7 +13,7 @@
     programs.rofi.theme = {
       "@import" = "${config.xdg.cacheHome}/wal/colors-rofi.rasi";
       "*" = {
-        font = "JetbrainsMono nerd font 12";
+        font = "Iosevka nerd font 12";
       };
       window = {
         transparency = "real";

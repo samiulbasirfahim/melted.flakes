@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home-manager.users.xenoxanite = {
-    home.packages = [pkgs.libnotify pkgs.mako];
+    home.packages = [ pkgs.libnotify pkgs.mako ];
     xdg.configFile."mako/icons".source = ./icons;
     xdg.configFile."wal/templates/mako.conf".text = ''
       # GLOBAL CONFIGURATION OPTIONS
@@ -15,7 +15,7 @@
       on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
       # STYLE OPTIONS
-      font=JetbrainsMono Nerd Font 10
+      font=Iosevka nerd font 10
       width=300
       height=100
       padding=20

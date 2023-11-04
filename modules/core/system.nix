@@ -29,8 +29,15 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
   system.stateVersion = "23.05";
+  #
+  # i18n.inputMethod = {
+  #   enabled = "fcitx5";
+  #   fcitx5.addons = with pkgs; [
+  #     fcitx5-mozc
+  #     fcitx5-gtk
+  #   ];
+  # };
 
-  # -- waydroid -- #
   i18n.inputMethod.enabled = "ibus";
   i18n.inputMethod.ibus.engines = with pkgs.ibus-engines;
     [ openbangla-keyboard ];

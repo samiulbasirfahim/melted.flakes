@@ -262,13 +262,13 @@
       "locked": {
         "lastModified": 1698719191,
         "narHash": "sha256-QaqMBxMsNWDPtiYQ5kubsYjpPZOT4xEc8CRknxb2riU=",
-        "owner": "fortuneteller2k",
+        "owner": "moni-dz",
         "repo": "nixpkgs-f2k",
         "rev": "d2dc8298a46d30f8cd5d41dfb324f3192582773c",
         "type": "github"
       },
       "original": {
-        "owner": "fortuneteller2k",
+        "owner": "moni-dz",
         "repo": "nixpkgs-f2k",
         "type": "github"
       }

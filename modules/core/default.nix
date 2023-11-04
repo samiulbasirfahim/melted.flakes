@@ -16,15 +16,8 @@
       ./user.nix
       ./warp.nix
 
-      # ./../desktops/hyprland
-      ./../desktops/dwm
-
-      # wayland based programs for hyprland
-      # ./../programs/wayland/mako
-      # ./../programs/wayland/swaylock
-      # ./../programs/wayland/waybar
-      # ./../programs/wayland/wlogout
-      # ./../programs/wayland/rofi
+      ./../desktops/hyprland
+      # ./../desktops/dwm
 
       # Packages for programming
       ./../development/languages/javascript.nix
@@ -45,6 +38,7 @@
       ./../programs/utilities/btop
       ./../programs/utilities/kitty
       ./../programs/utilities/tmux
+      ./../programs/utilities/lf
 
       # theme based programs
       ./../programs/theme/pywal

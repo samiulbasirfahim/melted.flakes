@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./home.nix ];
+  imports = [ ./home.nix ./mako ./rofi ./waybar ./wlogout ./swaylock ];
   programs.hyprland.enable = true;
   xdg.portal = {
     enable = true;

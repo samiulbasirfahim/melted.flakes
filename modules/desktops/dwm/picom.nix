@@ -22,14 +22,15 @@
       activeOpacity = 0.9; # Transparency
       inactiveOpacity = 0.9;
       menuOpacity = 0.9;
-
+      opacityRule =
+        [ "100:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_FULLSCREEN'" ];
       settings = {
         daemon = true;
         use-damage = false; # Fixes Flickering
         resize-damage = 1;
         refresh-rate = 0;
         corner-radius = 0; # Corners
-        round-borders = 5;
+        round-borders = 0;
         # transition-length = 150; # Animations Jonaburg
         # transition-pow-x = 0.5;
         # transition-pow-y = 0.5;
@@ -70,7 +71,7 @@
           strength = 3.0;
           size = 10;
           background = true;
-          background-frame = false;
+          background-frame = true;
           background-fixed = false;
         };
       };

@@ -1,15 +1,13 @@
-{ pkgs, ... }:
-
 {
   home-manager.users.xenoxanite = {
     programs.kitty = {
       enable = true;
       settings = {
-        font_family = "JetbrainsMono nerd font";
+        font_family = "Iosevka nerd font";
         italic_font = "auto";
         bold_font = "auto";
         bold_italic_font = "auto";
-        font_size = 12;
+        font_size = 14;
         disable_ligatures = "never";
         confirm_os_window_close = 0;
         window_padding_width = 8;
@@ -18,7 +16,7 @@
         box_drawing_scale = "0.01, 0.8, 1.5, 2";
         mouse_hide_wait = 0;
         focus_follows_mouse = "no";
-        background_opacity = "0.8";
+        background_opacity = "0.85";
         # Performance
         repaint_delay = 20;
         input_delay = 2;

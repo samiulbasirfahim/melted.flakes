@@ -142,10 +142,11 @@
           background-color: transparent;
         }
         window>box {
-          margin-left: 10px;
-          margin-right: 10px;
-          margin-top: 8px;
-          border: 2px solid @color10;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+          border: 0px;
+          border-bottom: 2px solid @color10;
           border-radius: 0px;
           opacity: 0.85;
           background-color: @background;
@@ -226,7 +227,9 @@
 
         #tray {
           margin-right: 10px;
-          background-color: @color10;
+          background-color: @background;
+          margin: 2px;
+          
         }
 
         #memory {

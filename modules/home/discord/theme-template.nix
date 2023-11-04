@@ -10,7 +10,7 @@
     }
 
     * {
-        font-family: "JetbrainsMono nerd font";
+        font-family: "Iosevka nerd font";
     }
 
     .peopleColumn-1wMU14{

@@ -4,7 +4,7 @@
   home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "JetBrainsMono" "Iosevka" ]; })
       maple-mono
     ];
     gtk = {
@@ -17,7 +17,7 @@
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
-      font.name = "JetbrainsMono nerd font";
+      font.name = "Iosevka nerd font";
       font.size = 11;
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };
