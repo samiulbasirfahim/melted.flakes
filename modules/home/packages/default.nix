@@ -39,6 +39,7 @@
     # wine /for .exe
     winetricks
     wineWowPackages.waylandFull
+    
 
     playit-agent
   ];

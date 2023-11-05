@@ -14,6 +14,7 @@
       "@import" = "${config.xdg.cacheHome}/wal/colors-rofi.rasi";
       "*" = {
         font = "Iosevka nerd font 12";
+        font-weight = mkLiteral "bold";
       };
       window = {
         transparency = "real";

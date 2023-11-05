@@ -6,6 +6,7 @@
     home.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" "Iosevka" ]; })
       maple-mono
+      font-awesome
     ];
     gtk = {
       enable = true;
