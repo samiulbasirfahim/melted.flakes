@@ -12,8 +12,7 @@
     home.packages = with pkgs; [
       # utilities
       ripgrep
-      neovide
-
+ fd     neovide
       # language server
       # llvmPackages_16.clang-unwrapped
       ccls

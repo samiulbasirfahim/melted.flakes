@@ -15,18 +15,12 @@
       ./system.nix
       ./user.nix
       ./warp.nix
+      ./ibus.nix
 
       ./../desktops/hyprland
       # ./../desktops/dwm
 
-      # Packages for programming
-      ./../development/languages/javascript.nix
-      ./../development/languages/python.nix
-      # ./../development/languages/rust.nix
-      ./../development/languages/c.nix
-
       # editors
-      # ./../development/editors/vscode
       ./../development/editors/neovim
 
       # utility based programs
@@ -38,7 +32,7 @@
       ./../programs/utilities/btop
       ./../programs/utilities/kitty
       ./../programs/utilities/tmux
-      ./../programs/utilities/lf
+      ./../programs/utilities/direnv
 
       # theme based programs
       ./../programs/theme/pywal

@@ -19,7 +19,7 @@
       width=300
       height=100
       padding=20
-      border-size=3
+      border-size=2
       border-radius=0
       icons=1
       max-icon-size=48

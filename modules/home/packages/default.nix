@@ -1,11 +1,14 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
+    # freetube
     pavucontrol
-    # utilites
     unzip
+    shotcut
+    kdenlive
     btop
-    bleachbit
+
+    stacer
     eza
     playerctl
     gparted
@@ -13,12 +16,13 @@
     xfce.thunar
     neofetch
     pcmanfm
-
+    galculator
+    zathura-pywal
     # Multimedia
     mpv
     imv
 
-    # Chrome
+    croc # Chrome
     chromium
     vscodium
 
@@ -39,7 +43,6 @@
     # wine /for .exe
     winetricks
     wineWowPackages.waylandFull
-    
 
     playit-agent
   ];

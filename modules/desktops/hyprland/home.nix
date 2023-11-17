@@ -71,8 +71,8 @@
           drop_shadow = false;
           blur = {
             enabled = true;
-            size = 3;
-            passes = 5;
+            size = 5;
+            passes = 3;
             new_optimizations = true;
             xray = true;
           };
@@ -166,6 +166,7 @@
           "$mainMod, X, exec, pkill wlogout || launch-wlogout"
           "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped &"
           "$mainModSHIFT, c ,exec, hyprpicker -a"
+          "CTRL, Space, exec, ibus-toggle-layout"
 
           # basic controll
           "$mainMod, Q, killactive,"
@@ -202,13 +203,16 @@
           "workspace 1, ^(firefox)$"
           "workspace 2, ^(kitty)$"
           "workspace 3, ^(neovide)$"
-          "workspace 4, ^(discord)$"
+          "workspace 4 silent, ^(discord)$"
           "workspace 5, ^(Spotify)$"
-          "workspace 6 silent, ^(steam)$"
-          "fullscreen, ^(neovide)$"
+          "workspace 6, ^(org.pwmt.zathura)$"
+          "workspace 7, ^(Chromium-browser)$"
+          "workspace 8 silent, ^(steam)$"
+          # "fullscreen, ^(neovide)$"
           "size 700 450, pavucontrol"
           "move 40 55%, pavucontrol"
           "float,title:^(Transmission)$"
+          "float,title:^(galculator)$"
           "float,title:^(Volume Control)$"
           "float, Nautilus"
           "float, title:^(Steam)"
@@ -241,7 +245,8 @@
           "waybar &"
           "mako -c /home/xenoxanite/.cache/wal/mako.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
-          # "sleep 5 && discord --start-minimized &"
+          "sleep 5 && discord --start-minimized &"
+          # "sleep 5 && discord &"
         ];
       };
       extraConfig = "general:col.active_border = $color10";

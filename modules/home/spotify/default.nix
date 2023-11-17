@@ -11,6 +11,7 @@ in {
       fullAppDisplay
       hidePodcasts
       adblock
+      keyboardShortcut
     ];
   };
 }

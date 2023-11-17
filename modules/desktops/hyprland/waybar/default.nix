@@ -20,8 +20,15 @@
         position = "top";
         modules-left = [ "clock" "custom/cava-internal" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right =
-          [ "pulseaudio" "pulseaudio#microphone" "memory" "cpu" "disk" "tray" ];
+        modules-right = [
+          "pulseaudio"
+          "pulseaudio#microphone"
+          "memory"
+          "cpu"
+          "disk"
+          "custom/ibus-layout"
+          "tray"
+        ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
           "on-click" = "activate";
@@ -33,22 +40,22 @@
             "3" = "";
             "4" = "<span size='9pt'></span>";
             "5" = "";
-            "6" = "";
-            "7" = "";
-            "8" = "";
+            "6" = "<span size='11pt'></span>";
+            "7" = "";
+            "8" = "";
             "9" = "";
           };
         };
         "disk" = {
-          "format" = "<span size='10pt'></span> {free}";
+          "format" = "<span size='10pt'></span> {used}";
           "path" = "/";
           "interval" = 3;
         };
         "pulseaudio" = {
           "scroll-step" = 5;
-          "format" = "{icon} {volume}%";
+          "format" = "{icon}{volume}%";
           "format-muted" = "<span size='14pt'></span>";
-          "format-icons" = { "default" = [ "" "" "" ]; };
+          "format-icons" = { "default" = [ " " " " " " ]; };
           "on-click" = "pamixer -t";
           "on-click-right" = "pavucontrol";
         };
@@ -77,6 +84,11 @@
         };
         "custom/cava-internal" = {
           "exec" = "sleep 1s && cava-internal";
+          "tooltip" = false;
+        };
+        "custom/ibus-layout" = {
+          "exec" = "cat ~/.cache/ibus-layout";
+          "interval" = 1;
           "tooltip" = false;
         };
         "network" = {
@@ -114,6 +126,7 @@
 
 
         #workspaces { 
+          font-family: "Font awesome 5";
           padding: 0px; 
           margin: 4px; 
           border-radius: 0px; 
@@ -140,12 +153,12 @@
         }
 
         #clock, #custom-cava-internal {
-          margin-left: 20px;
+          margin-left: 15px;
           color: @color10;
         }
 
-        #pulseaudio, #memory, #cpu, #disk, #tray, #network {
-          margin-right: 20px;
+        #pulseaudio, #memory, #cpu, #disk, #tray, #network, #custom-ibus-layout {
+          margin-right: 15px;
           color: @color10;
         }
 
