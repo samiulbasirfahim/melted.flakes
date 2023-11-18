@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   home-manager.users.xenoxanite = {
     xdg.configFile."wlogout/icons".source = ./assets;
     programs.wlogout = {
@@ -33,7 +33,7 @@
         @import '../../.cache/wal/colors-waybar.css';
 
         window {
-            font-family: Iosevka nerd font;
+            font-family: FiraCode nerd font;
             font-size: 18px;
             color: #CED7F4;
             background-color: rgba(0, 0, 0, 0.5);

@@ -25,7 +25,7 @@
           "pulseaudio#microphone"
           "memory"
           "cpu"
-          "disk"
+          # "disk"
           "custom/ibus-layout"
           "tray"
         ];
@@ -106,7 +106,7 @@
       style = ''
                 @import '../../.cache/wal/colors-waybar.css';
         * {
-          font-family: "Iosevka nerd font";
+          font-family: "FiraCode nerd font";
           font-weight: bold;
           font-size: 14px;
           min-height: 0;
@@ -158,7 +158,7 @@
         }
 
         #pulseaudio, #memory, #cpu, #disk, #tray, #network, #custom-ibus-layout {
-          margin-right: 15px;
+          margin-right: 18px;
           color: @color10;
         }
 

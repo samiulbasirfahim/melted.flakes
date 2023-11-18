@@ -12,10 +12,11 @@
     home.packages = with pkgs; [
       # utilities
       ripgrep
- fd     neovide
+      fd
+      neovide
+
       # language server
-      # llvmPackages_16.clang-unwrapped
-      ccls
+      rust-analyzer
       clang-tools
       nil
       lua-language-server
@@ -23,6 +24,7 @@
 
       # formatter
       stylua
+      rustfmt
       nixfmt
     ];
     home.sessionVariables = { EDITOR = "nvim"; };

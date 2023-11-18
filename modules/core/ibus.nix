@@ -10,10 +10,10 @@ let
 
     if [ "$engine" == "xkb:us::eng" ]; then
       ibus engine OpenBangla - OpenBangla Keyboard 
-      echo "󰌌 BN" > $path
+      echo "󰌌 bn" > $path
     else
       ibus engine xkb:us::eng - English
-      echo "󰌌 EN" > $path
+      echo "󰌌 en" > $path
     fi  '';
 in {
   i18n.inputMethod.enabled = "ibus";

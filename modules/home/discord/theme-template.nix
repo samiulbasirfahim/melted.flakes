@@ -10,7 +10,7 @@
     }
 
     * {
-        font-family: "Iosevka nerd font";
+        font-family: "FiraCode nerd font";
     }
 
     .peopleColumn-1wMU14{

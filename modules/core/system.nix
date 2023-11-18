@@ -7,7 +7,12 @@
           # withVencord = true;
           # };
         };
-    in [ self.overlays.default myOverlay inputs.nur.overlay ];
+    in [
+      inputs.neovim-nightly-overlay.overlay
+      self.overlays.default
+      myOverlay
+      inputs.nur.overlay
+    ];
   };
   systemd.network.wait-online.enable = false;
   nix = {
@@ -37,7 +42,5 @@
   #     fcitx5-gtk
   #   ];
   # };
-
-  environment.systemPackages = with pkgs; [ gcc13 ];
 
 }
