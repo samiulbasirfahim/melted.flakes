@@ -13,7 +13,7 @@
       programs.rofi.theme = {
         "@import" = "${config.xdg.cacheHome}/wal/colors-rofi.rasi";
         "*" = {
-          font = "FiraCode nerd font 12";
+          font = "ComicShannsMono nerd font 12";
           font-weight = mkLiteral "bold";
         };
         window = {

@@ -10,7 +10,7 @@
     }
 
     * {
-        font-family: "FiraCode nerd font";
+        font-family: "ComicShannsMono nerd font";
     }
 
     .peopleColumn-1wMU14{

@@ -4,7 +4,7 @@
   home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = ["FiraCode"]; })
+      (nerdfonts.override { fonts = ["ComicShannsMono"]; })
       maple-mono
       font-awesome
     ];
@@ -18,7 +18,7 @@
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
-      font.name = "FiraCode nerd font";
+      font.name = "ComicShannsMono nerd font";
       font.size = 11;
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };

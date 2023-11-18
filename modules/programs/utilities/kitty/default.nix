@@ -3,7 +3,7 @@
     programs.kitty = {
       enable = true;
       settings = {
-        font_family = "FiraCode nerd font";
+        font_family = "ComicShannsMono nerd font";
         italic_font = "auto";
         bold_font = "auto";
         bold_italic_font = "auto";

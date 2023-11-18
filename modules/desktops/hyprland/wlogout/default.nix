@@ -33,7 +33,7 @@
         @import '../../.cache/wal/colors-waybar.css';
 
         window {
-            font-family: FiraCode nerd font;
+            font-family: ComicShannsMono nerd font;
             font-size: 18px;
             color: #CED7F4;
             background-color: rgba(0, 0, 0, 0.5);

@@ -106,7 +106,7 @@
       style = ''
                 @import '../../.cache/wal/colors-waybar.css';
         * {
-          font-family: "FiraCode nerd font";
+          font-family: "ComicShannsMono nerd font";
           font-weight: bold;
           font-size: 14px;
           min-height: 0;
