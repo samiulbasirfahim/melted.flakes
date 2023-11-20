@@ -24,7 +24,7 @@
           "pulseaudio"
           "pulseaudio#microphone"
           "memory"
-          "cpu"
+          # "cpu"
           # "disk"
           "custom/ibus-layout"
           "tray"
@@ -34,17 +34,17 @@
           "on-click" = "activate";
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
           "on-scroll-down" = "hyprctl dispatch workspace e-1";
-          "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "<span size='9pt'></span>";
-            "5" = "";
-            "6" = "<span size='11pt'></span>";
-            "7" = "";
-            "8" = "";
-            "9" = "";
-          };
+        #   "format-icons" = {
+        #     "1" = "";
+        #     "2" = "";
+        #     "3" = "";
+        #     "4" = "<span size='9pt'></span>";
+        #     "5" = "";
+        #     "6" = "<span size='11pt'></span>";
+        #     "7" = "";
+        #     "8" = "";
+        #     "9" = "";
+        #   };
         };
         "disk" = {
           "format" = "<span size='10pt'></span> {used}";
@@ -71,12 +71,12 @@
         };
         "clock" = {
           "interval" = 1;
-          "format" = "{:%I:%M %a %b %d}";
+          "format" = "{:%I:%M %b %d}";
           "tooltip-format" = "<tt>{calendar}</tt>";
         };
         "memory" = {
           "interval" = 3;
-          "format" = "<span size='10pt'></span> {used}G";
+          "format" = "<span size='9pt'></span> {used}G";
         };
         "cpu" = {
           "interval" = 3;
@@ -98,7 +98,7 @@
           "format-disconnected" = "󰣼 Disconnected";
         };
         "tray" = {
-          "icon-size" = 12;
+          "icon-size" = 13;
           "spacing" = 8;
         };
       }];
@@ -113,20 +113,21 @@
           transition-property: background-color;
           transition-duration: 0.5s;
         }
-         window>box {
-           margin-left: 0px;
-           margin-right: 0px;
-           margin-top: 0px;
-           border: 0px;
-           border-bottom: 2px solid @color13;
-           border-radius: 0px;
-           opacity: 0.90;
-           background-color: @background;
-         }
+        window#waybar {
+          background-color: transparent;
+        }
+        window>box {
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-top: 8px;
+          border: 2px solid @color10;
+          border-radius: 0px;
+          opacity: 0.85;
+          background-color: @background;
+        }
 
 
         #workspaces { 
-          font-family: "Font awesome 5";
           padding: 0px; 
           margin: 4px; 
           border-radius: 0px; 
@@ -136,7 +137,7 @@
         } 
         #workspaces button {
           padding: 0px 0px;
-          margin: 8px 10px;
+          margin: 8px 6px;
           border-radius: 0px;
           border-radius: 2px;
           color: @color10;

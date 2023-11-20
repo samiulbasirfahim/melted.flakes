@@ -72,7 +72,7 @@
           blur = {
             enabled = true;
             size = 5;
-            passes = 3;
+            passes = 4;
             new_optimizations = true;
             xray = true;
           };
@@ -91,10 +91,10 @@
           ];
         };
         master = {
-          mfact = 0.65;
+          mfact = 0.8;
           orientation = "left";
           always_center_master = true;
-          no_gaps_when_only = true;
+          # no_gaps_when_only = true;
         };
         bind = [
           # workspace
