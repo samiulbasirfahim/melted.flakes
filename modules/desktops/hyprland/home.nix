@@ -91,7 +91,7 @@
           ];
         };
         master = {
-          mfact = 0.8;
+          mfact = 0.7;
           orientation = "left";
           always_center_master = true;
           # no_gaps_when_only = true;
@@ -107,8 +107,6 @@
           "$mainMod, 7, workspace, 7"
           "$mainMod, 8, workspace, 8"
           "$mainMod, 9, workspace, 9"
-          "$mainMod, mouse_down, workspace, e-1"
-          "$mainMod, mouse_up, workspace, e+1"
 
           # move to workspace
           "$mainModSHIFT, 1, movetoworkspace, 1"
@@ -151,6 +149,10 @@
           ",XF86AudioLowerVolume,exec, pamixer -d 5"
           ",XF86AudioMute,exec, pamixer -t"
 
+          "SHIFT, F4,exec, pamixer --default-source -t"
+          "SHIFT, F3, exec, pamixer --default-source -i 5"
+          "SHIFT, F2, exec, pamixer --default-source -d 5"
+
           # music control
           ",XF86AudioPlay,exec, playerctl play-pause"
           ",XF86AudioNext,exec, playerctl next"
@@ -187,15 +189,11 @@
           "$mainMod, Print, exec, grimblast --notify --cursor  copy area"
 
           # window reposition bindings
-          "$mainModSHIFT, h, moveactive,  -80 0"
-          "$mainModSHIFT, l, moveactive, 80 0"
-          "$mainModSHIFT, k, moveactive, 0 -80"
-          "$mainModSHIFT, j, moveactive, 0 80"
+          "$mainModSHIFT, h, moveactive,  -100 0"
+          "$mainModSHIFT, l, moveactive, 100 0"
+          "$mainModSHIFT, k, moveactive, 0 -100"
+          "$mainModSHIFT, j, moveactive, 0 100"
 
-        ];
-        bindm = [
-          "$mainMod, mouse:272, movewindow"
-          "$mainMod, mouse:273, resizewindow"
         ];
         windowrule = [
           "nofocus,^(Ibus-ui-gtk3)$"
@@ -235,7 +233,7 @@
           "idleinhibit fullscreen, class:^(firefox)$"
           "idleinhibit focus, class:^(mpv)$"
         ];
-        blurls = [ "waybar" ];
+        # blurls = [ "waybar" ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

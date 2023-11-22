@@ -31,20 +31,18 @@
         ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
-          "on-click" = "activate";
-          "on-scroll-up" = "hyprctl dispatch workspace e+1";
-          "on-scroll-down" = "hyprctl dispatch workspace e-1";
-        #   "format-icons" = {
-        #     "1" = "";
-        #     "2" = "";
-        #     "3" = "";
-        #     "4" = "<span size='9pt'></span>";
-        #     "5" = "";
-        #     "6" = "<span size='11pt'></span>";
-        #     "7" = "";
-        #     "8" = "";
-        #     "9" = "";
-        #   };
+          "on-click" = "";
+          #   "format-icons" = {
+          #     "1" = "";
+          #     "2" = "";
+          #     "3" = "";
+          #     "4" = "<span size='9pt'></span>";
+          #     "5" = "";
+          #     "6" = "<span size='11pt'></span>";
+          #     "7" = "";
+          #     "8" = "";
+          #     "9" = "";
+          #   };
         };
         "disk" = {
           "format" = "<span size='10pt'></span> {used}";
@@ -52,22 +50,15 @@
           "interval" = 3;
         };
         "pulseaudio" = {
-          "scroll-step" = 5;
+          "scroll-step" = 0;
           "format" = "{icon}{volume}%";
           "format-muted" = "<span size='14pt'></span>";
           "format-icons" = { "default" = [ " " " " " " ]; };
-          "on-click" = "pamixer -t";
-          "on-click-right" = "pavucontrol";
         };
         "pulseaudio#microphone" = {
           "format" = "{format_source}";
           "format-source" = "<span></span> {volume}%";
           "format-source-muted" = "";
-          "on-click" = "pamixer --default-source -t";
-          "on-scroll-up" = "pamixer --default-source -i 5";
-          "on-scroll-down" = "pamixer --default-source -d 5";
-          "scroll-step" = 5;
-          "on-click-right" = "pavucontrol";
         };
         "clock" = {
           "interval" = 1;
@@ -122,7 +113,7 @@
           margin-top: 8px;
           border: 2px solid @color10;
           border-radius: 0px;
-          opacity: 0.85;
+          opacity: 0.95;
           background-color: @background;
         }
 
