@@ -31,7 +31,6 @@
         ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
-          "on-click" = "";
           #   "format-icons" = {
           #     "1" = "";
           #     "2" = "";
@@ -50,15 +49,22 @@
           "interval" = 3;
         };
         "pulseaudio" = {
-          "scroll-step" = 0;
+          "scroll-step" = 5;
           "format" = "{icon}{volume}%";
           "format-muted" = "<span size='14pt'></span>";
           "format-icons" = { "default" = [ " " " " " " ]; };
+          "on-click" = "pamixer -t";
+          "on-click-right" = "pavucontrol";
         };
         "pulseaudio#microphone" = {
           "format" = "{format_source}";
           "format-source" = "<span></span> {volume}%";
           "format-source-muted" = "";
+          "on-click" = "pamixer --default-source -t";
+          "on-scroll-up" = "pamixer --default-source -i 5";
+          "on-scroll-down" = "pamixer --default-source -d 5";
+          "scroll-step" = 5;
+          "on-click-right" = "pavucontrol";
         };
         "clock" = {
           "interval" = 1;

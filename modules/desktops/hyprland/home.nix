@@ -91,7 +91,7 @@
           ];
         };
         master = {
-          mfact = 0.7;
+          mfact = 0.7; 
           orientation = "left";
           always_center_master = true;
           # no_gaps_when_only = true;
