@@ -36,7 +36,6 @@
         "$mainMod" = "SUPER";
         "$term" = "kitty";
         monitor = [ ",highres, auto, auto" ",highrr, auto, auto" ];
-        source = [ "/home/xenoxanite/.cache/wal/colors-hyprland.conf" ];
         input = {
           kb_layout = "us";
           numlock_by_default = true;
@@ -60,14 +59,16 @@
           gaps_in = 6;
           gaps_out = 10;
           border_size = 2;
+          "col.active_border" = "0xff8cc1ff";
           "col.inactive_border" = "rgba(000000ee)";
           apply_sens_to_raw = 1;
           layout = "master";
         };
+
         decoration = {
           rounding = 0;
-          active_opacity = 0.9;
-          inactive_opacity = 0.9;
+          active_opacity = 0.96;
+          inactive_opacity = 0.96;
           drop_shadow = false;
           blur = {
             enabled = true;
@@ -91,7 +92,7 @@
           ];
         };
         master = {
-          mfact = 0.7; 
+          mfact = 0.7;
           orientation = "left";
           always_center_master = true;
           # no_gaps_when_only = true;
@@ -163,12 +164,13 @@
           "$mainMod, Return, exec, $term -e tmux new-session -A -s kitty"
           "$mainMod, N, exec, neovide"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
+          "$mainMod, TAB, exec, pkill rofi || rofi -show window"
           "$mainMod, W, exec, pkill rofi || wallpaper-picker"
           "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
           "$mainMod, X, exec, pkill wlogout || launch-wlogout"
           "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped &"
           "$mainModSHIFT, c ,exec, hyprpicker -a"
-          "CTRL, Space, exec, ibus-toggle-layout"
+          "$mainModSHIFT, Space, exec, ibus-toggle-layout"
 
           # basic controll
           "$mainMod, Q, killactive,"
@@ -247,7 +249,6 @@
           # "sleep 5 && discord &"
         ];
       };
-      extraConfig = "general:col.active_border = $color10";
     };
   };
 }

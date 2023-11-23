@@ -2,7 +2,7 @@
   home-manager.users.xenoxanite = {
     home.packages = [ pkgs.libnotify pkgs.mako ];
     xdg.configFile."mako/icons".source = ./icons;
-    xdg.configFile."wal/templates/mako.conf".text = ''
+    xdg.configFile."mako/config.conf".text = ''
       # GLOBAL CONFIGURATION OPTIONS
       max-history=100
       sort=-time
@@ -34,28 +34,13 @@
       layer=overlay
       anchor=top-right
 
-      background-color={color0}
-      text-color={color13}
-      border-color={color10}
-      progress-color=over {color8}
-
-      [urgency=low]
-      border-color={color10}
-      default-timeout=2000
-
-      [urgency=normal]
-      border-color={color10}
-      default-timeout=5000
+      background-color=#101419
+      text-color=#b6beca
+      border-color=#70a5eb
+      progress-color=over #22262e
 
       [urgency=high]
-      border-color={color10}
-      text-color=#f38ba8
-      default-timeout=0
-
-      [category=mpd]
-      border-color=#f9e2af
-      default-timeout=2000
-      group-by=category
+      border-color=#e05f65
     '';
   };
 }
