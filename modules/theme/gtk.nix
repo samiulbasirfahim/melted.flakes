@@ -1,18 +1,16 @@
 { pkgs, ... }: {
-  imports = [ ./theme.nix ];
-
   home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = ["ComicShannsMono"]; })
+      (nerdfonts.override { fonts = [ "ComicShannsMono" ]; })
       maple-mono
       font-awesome
     ];
     gtk = {
       enable = true;
       theme = {
-        name = "Catppuccin-Mocha-BL-LB";
-        package = pkgs.cattpuccin-mocha-gtk;
+        package = pkgs.rose-pine-gtk-theme;
+        name = "rose-pine";
       };
       iconTheme = {
         package = pkgs.papirus-icon-theme;

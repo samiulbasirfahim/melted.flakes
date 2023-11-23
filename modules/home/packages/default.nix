@@ -8,7 +8,7 @@
     kdenlive
     btop
 
-fzf
+    fzf
     stacer
     eza
     playerctl

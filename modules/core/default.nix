@@ -41,8 +41,8 @@
       ./../programs/utilities/direnv
 
       # theme based programs
-      ./../programs/theme/pywal
-      ./../programs/theme/gtk
+      ./../theme/gtk.nix
+      ./../theme/pywal.nix
     ];
   };
 }

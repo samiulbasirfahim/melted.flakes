@@ -39,7 +39,7 @@ in {
   home.packages = with pkgs; [
     xdg-utils
     xwaylandvideobridge
-    # (discord.override { withVencord = true; })
-    discord
+    (discord.override { withVencord = true; })
+    webcord
   ];
 }
