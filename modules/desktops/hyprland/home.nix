@@ -1,4 +1,6 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+let colors = import ../../theme/colors.nix { };
+in {
   home-manager.users.xenoxanite = {
     systemd.user.targets.hyprland-session.Unit.Wants =
       [ "xdg-desktop-autostart.target" ];
@@ -32,7 +34,7 @@
       enable = true;
       systemd.enable = true;
       xwayland = { enable = true; };
-      settings = {
+      settings = with colors; {
         "$mainMod" = "SUPER";
         "$term" = "kitty";
         monitor = [ ",highres, auto, auto" ",highrr, auto, auto" ];
@@ -59,14 +61,14 @@
           gaps_in = 6;
           gaps_out = 10;
           border_size = 2;
-          "col.active_border" = "0xff8cc1ff";
+          "col.active_border" = "0xff${green}";
           "col.inactive_border" = "rgba(000000ee)";
           apply_sens_to_raw = 1;
           layout = "master";
         };
 
         decoration = {
-          rounding = 0;
+          rounding = 2;
           active_opacity = 0.96;
           inactive_opacity = 0.96;
           drop_shadow = false;
@@ -235,7 +237,7 @@
           "idleinhibit fullscreen, class:^(firefox)$"
           "idleinhibit focus, class:^(mpv)$"
         ];
-        # blurls = [ "waybar" ];
+        blurls = [ "waybar" ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -243,7 +245,7 @@
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
-          "mako -c /home/xenoxanite/.cache/wal/mako.conf"
+          "mako -c /home/xenoxanite/.config/mako/config.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           "sleep 5 && discord --start-minimized &"
           # "sleep 5 && discord &"

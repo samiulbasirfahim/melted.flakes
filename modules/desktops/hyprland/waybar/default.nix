@@ -1,4 +1,6 @@
-{
+let colors = import ../../../theme/colors.nix { };
+
+in {
   nixpkgs.overlays = [
     (final: prev: {
       waybar = prev.waybar.overrideAttrs (oldAttrs: {
@@ -100,8 +102,7 @@
         };
       }];
 
-      style = ''
-                @import '../../.cache/wal/colors-waybar.css';
+      style = with colors; ''
         * {
           font-family: "ComicShannsMono nerd font";
           font-weight: bold;
@@ -111,21 +112,13 @@
           transition-duration: 0.5s;
         }
         window#waybar {
-          background-color: transparent;
-        }
-        window>box {
-          margin-left: 10px;
-          margin-right: 10px;
-          margin-top: 8px;
-          border: 2px solid @color10;
-          border-radius: 0px;
+          background: #${bg};
+          color: #${fg};
+          border-bottom: 2px solid #${green};
           opacity: 0.95;
-          background-color: @background;
         }
-
 
         #workspaces { 
-          padding: 0px; 
           margin: 4px; 
           border-radius: 0px; 
           margin: 2px 0px; 
@@ -159,7 +152,6 @@
           margin-right: 18px;
           color: @color10;
         }
-
       '';
     };
   };
