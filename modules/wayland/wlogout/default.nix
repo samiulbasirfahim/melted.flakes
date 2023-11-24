@@ -34,7 +34,7 @@ in {
       window {
           font-family: ComicShannsMono nerd font;
           font-size: 18px;
-          color: #${foreground};
+          color: #${blue};
           background-color: rgba(0, 0, 0, 0.5);
       }
       button {
@@ -55,7 +55,7 @@ in {
           background-color: #${background};
           border: 3px solid #${green};
           border-radius: 0px;
-          color: #${foreground};
+          color: #${blue};
       }
       /** ********** Icons ********** **/
       #lock {

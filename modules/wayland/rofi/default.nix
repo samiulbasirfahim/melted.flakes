@@ -21,6 +21,7 @@ in {
     * {
     	bg:				#${background};
     	fg:				#${foreground};
+      fg-sel:   #${blue};
     	accent:				#${green};
     	button:				#${brightblack};
 
@@ -98,6 +99,7 @@ in {
     element selected {
         	background-color:               @button;
         	border-radius:                  6px;
+        	text-color:                  @fg-sel;
     }
   '';
 }

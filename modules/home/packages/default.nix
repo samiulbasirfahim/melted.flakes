@@ -25,7 +25,7 @@
 
     croc # Chrome
     chromium
-    vscodium
+    vscode
 
     # Email client
     # evolution

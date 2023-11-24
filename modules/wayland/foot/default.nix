@@ -4,7 +4,7 @@ in {
     enable = true;
     settings = with colors; {
       main = {
-        font = "ComicShannsMono nerd font:size=14";
+        font = "ComicShannsMono nerd font:size=16";
         dpi-aware = "no";
         resize-delay-ms = 0;
         pad = "20x20";

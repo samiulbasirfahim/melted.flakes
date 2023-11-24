@@ -6,7 +6,7 @@ in with colors; {
     enable = true;
     font = "ComicShannsMono nerd font 10";
     anchor = "top-right";
-    textColor = "#${foreground}";
+    textColor = "#${blue}";
     backgroundColor = "#${background}";
     borderColor = "#${green}";
     borderRadius = 0;

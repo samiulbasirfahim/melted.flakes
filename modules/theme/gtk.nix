@@ -2,7 +2,7 @@
   home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "ComicShannsMono" ]; })
+      (nerdfonts.override { fonts = [ "ComicShannsMono"  ]; })
       maple-mono
       font-awesome
     ];
