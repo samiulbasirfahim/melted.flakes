@@ -4,7 +4,7 @@ in {
   home-manager.users.xenoxanite = with colors; {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "ComicShannsMono" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       maple-mono
       font-awesome
     ];

@@ -230,7 +230,7 @@ in {
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "sleep 1 && swww init && swaylock && notify-send 'Hey $USER, Welcome back' &"
+          "sleep 0.5 && swww init && sleep 0.5 && swaylock && notify-send 'Hey $USER, Welcome back' &"
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
