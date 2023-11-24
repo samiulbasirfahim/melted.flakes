@@ -4,7 +4,7 @@ in with colors; {
   home.packages = [ pkgs.libnotify ];
   services.mako = {
     enable = true;
-    font = "ComicShannsMono nerd font 10";
+    font = "${font} 10";
     anchor = "top-right";
     textColor = "#${blue}";
     backgroundColor = "#${background}";

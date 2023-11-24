@@ -31,4 +31,7 @@ rec {
   brightwhite = "e3e6eb";
   lavender = "a9acdb";
   accent = "78dba9";
+
+
+  font = "JetBrainsMono Nerd Font";
 }

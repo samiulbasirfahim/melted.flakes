@@ -6,10 +6,11 @@ in {
     package = pkgs.swaylock-effects;
     settings = with colors; {
       clock = true;
+      font = "${font}";
       screenshots = true;
       indicator = true;
       indicator-radius = 100;
-      indicator-thickness = 4;
+      indicator-thickness = 6;
       effect-blur = "7x5";
       effect-vignette = "0.5:0.5";
       ring-color = "${green}";

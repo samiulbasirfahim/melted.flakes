@@ -30,7 +30,7 @@ in {
     }
 
     body {
-        --font-display: ComicShannsMono Nerd Font;
+        --font-display: ${font};
     }
 
     .body-2wLx-E, .headerTop-3GPUSF, .bodyInnerWrapper-2bQs1k, .footer-3naVBw {

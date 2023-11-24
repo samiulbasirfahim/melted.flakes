@@ -32,7 +32,7 @@ in {
     ];
     style = with colors; ''
       window {
-          font-family: ComicShannsMono nerd font;
+          font-family: ${font};
           font-size: 18px;
           color: #${blue};
           background-color: rgba(0, 0, 0, 0.5);

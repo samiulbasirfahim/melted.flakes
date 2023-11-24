@@ -104,7 +104,7 @@ in {
 
       style = with colors; ''
         * {
-          font-family: "ComicShannsMono nerd font";
+          font-family: "${font}";
           font-weight: bold;
           font-size: 14px;
           min-height: 0;

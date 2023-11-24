@@ -1,8 +1,10 @@
-{ pkgs, ... }: {
-  home-manager.users.xenoxanite = {
+{ pkgs, ... }:
+let colors = import ./colors.nix { };
+in {
+  home-manager.users.xenoxanite = with colors; {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "ComicShannsMono"  ]; })
+      (nerdfonts.override { fonts = [ "ComicShannsMono" "JetBrainsMono" ]; })
       maple-mono
       font-awesome
     ];
@@ -16,7 +18,7 @@
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
-      font.name = "ComicShannsMono nerd font";
+      font.name = "${font}";
       font.size = 11;
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };

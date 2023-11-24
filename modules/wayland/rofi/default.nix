@@ -8,7 +8,7 @@ in {
   xdg.configFile."rofi/config.rasi".text = with colors; ''
     configuration {
     	modi:				"drun";
-    	font:				"ComicShannsMono nerd font 12";
+    	font:				"${font} 12";
     	show-icons:                     true;
     	icon-theme: 			"Reversal-dark";
     	display-drun: 			"";
