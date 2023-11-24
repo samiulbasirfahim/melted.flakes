@@ -9,8 +9,8 @@
     gtk = {
       enable = true;
       theme = {
-        package = pkgs.rose-pine-gtk-theme;
-        name = "rose-pine";
+        name = "Catppuccin-Mocha-BL-LB";
+        package = pkgs.cattpuccin-mocha-gtk;
       };
       iconTheme = {
         package = pkgs.papirus-icon-theme;

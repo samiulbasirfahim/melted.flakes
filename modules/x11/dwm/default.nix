@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./picom.nix ];
+  imports = [ ./../picom ];
   services.xserver = {
     enable = true;
     windowManager.dwm.enable = true;

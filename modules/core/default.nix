@@ -17,11 +17,11 @@
       ./warp.nix
       ./ibus.nix
 
-      ./../desktops/hyprland
-      # ./../desktops/dwm
-
       # editors
       ./../development/editors/neovim
+
+      # wayland
+      ./../wayland
 
       # lnguages
       ./../development/language/cpp.nix
@@ -36,7 +36,6 @@
       ./../programs/utilities/neofetch
       ./../programs/utilities/starship
       ./../programs/utilities/btop
-      ./../programs/utilities/kitty
       ./../programs/utilities/tmux
       ./../programs/utilities/direnv
 

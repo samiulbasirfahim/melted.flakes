@@ -1,4 +1,4 @@
-let colors = import ../../../theme/colors.nix { };
+let colors = import ../../theme/colors.nix { };
 
 in {
   nixpkgs.overlays = [
@@ -113,7 +113,7 @@ in {
         }
         window#waybar {
           background: #${background};
-          color: #${foreground};
+          color: #${teal};
           border-bottom: 2px solid #${green};
           opacity: 0.95;
         }
@@ -122,7 +122,7 @@ in {
           margin: 4px; 
           border-radius: 0px; 
           margin: 2px 0px; 
-          background-color: @background; 
+          background-color: #${background}; 
           border-radius: 2px; 
         } 
         #workspaces button {
@@ -130,7 +130,7 @@ in {
           margin: 8px 6px;
           border-radius: 0px;
           border-radius: 2px;
-          color: #${cursorline};
+          color: #${brightblack};
           font-size: 10pt;
         }
         #workspaces button.active {

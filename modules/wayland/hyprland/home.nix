@@ -22,12 +22,7 @@ in {
       wl-clipboard
       cliphist
 
-      #Security
       mate.mate-polkit
-
-      # qt
-      # qt6-wayland
-      # qt5-wayland
 
     ];
     wayland.windowManager.hyprland = {
@@ -36,7 +31,7 @@ in {
       xwayland = { enable = true; };
       settings = with colors; {
         "$mainMod" = "SUPER";
-        "$term" = "kitty";
+        "$term" = "footclient";
         monitor = [ ",highres, auto, auto" ",highrr, auto, auto" ];
         input = {
           kb_layout = "us";
@@ -62,20 +57,20 @@ in {
           gaps_out = 10;
           border_size = 2;
           "col.active_border" = "0xff${green}";
-          "col.inactive_border" = "rgba(000000ee)";
+          "col.inactive_border" = "0xff${cursor}";
           apply_sens_to_raw = 1;
           layout = "master";
         };
 
         decoration = {
-          rounding = 2;
+          rounding = 0;
           active_opacity = 0.96;
           inactive_opacity = 0.96;
           drop_shadow = false;
           blur = {
             enabled = true;
-            size = 5;
-            passes = 4;
+            size = 4;
+            passes = 3;
             new_optimizations = true;
             xray = true;
           };
@@ -84,12 +79,11 @@ in {
           enabled = true;
           bezier = "overshot, 0.13, 0.99, 0.29, 1.1";
           animation = [
-            "windows, 1, 4, overshot, slide"
-            "windowsOut, 1, 4, overshot, slide"
+            "windows, 1, 4, default, slide"
+            "windowsOut, 1, 4, default, slide"
             "border, 1, 4, overshot"
             "fade, 1, 4, overshot"
             "workspaces, 1, 4, overshot, slide"
-            # "workspaces,1,4,default,slidefade 40%"
             "specialWorkspace, 1, 4, overshot, slidevert"
           ];
         };
@@ -97,7 +91,7 @@ in {
           mfact = 0.7;
           orientation = "left";
           always_center_master = true;
-          # no_gaps_when_only = true;
+          no_gaps_when_only = true;
         };
         bind = [
           # workspace
@@ -121,18 +115,13 @@ in {
           "$mainModSHIFT, 7, movetoworkspace, 7"
           "$mainModSHIFT, 8, movetoworkspace, 8"
           "$mainModSHIFT, 9, movetoworkspace, 9"
-          "$mainMod CTRL, 1, movetoworkspacesilent, 1"
-          "$mainMod CTRL, 2, movetoworkspacesilent, 2"
-          "$mainMod CTRL, 3, movetoworkspacesilent, 3"
-          "$mainMod CTRL, 4, movetoworkspacesilent, 4"
-          "$mainMod CTRL, 5, movetoworkspacesilent, 5"
-          "$mainMod CTRL, 6, movetoworkspacesilent, 6"
-          "$mainMod CTRL, 7, movetoworkspacesilent, 7"
-          "$mainMod CTRL, 8, movetoworkspacesilent, 8"
-          "$mainMod CTRL, 9, movetoworkspacesilent, 9"
+
           # move between workspace
           "$mainMod, H, workspace, e-1"
           "$mainMod, L, workspace, e+1"
+          "$mainMod, mouse_down, workspace, e+1"
+          "$mainMod, mouse_up, workspace, e-1"
+
           # special workspaces
           "$mainModSHIFT, m, movetoworkspace, special:default"
           "$mainMod, m, togglespecialworkspace, default"
@@ -142,10 +131,16 @@ in {
           "$mainMod, K, movefocus, u"
 
           # window resize bindings
-          "$mainMod ALT, h, resizeactive, -80 0"
-          "$mainMod ALt, l, resizeactive, 80 0"
-          "$mainMod ALT, k, resizeactive, 0 -80"
-          "$mainMod ALT, j, resizeactive, 0 80"
+          "$mainMod ALT, h, resizeactive, -100 0"
+          "$mainMod ALt, l, resizeactive, 100 0"
+          "$mainMod ALT, k, resizeactive, 0 -100"
+          "$mainMod ALT, j, resizeactive, 0 100"
+
+          # window reposition bindings
+          "$mainModSHIFT, h, moveactive,  -100 0"
+          "$mainModSHIFT, l, moveactive, 100 0"
+          "$mainModSHIFT, k, moveactive, 0 -100"
+          "$mainModSHIFT, j, moveactive, 0 100"
 
           # volume control
           ",XF86AudioRaiseVolume,exec, pamixer -i 5"
@@ -163,7 +158,7 @@ in {
           ",XF86AudioStop, exec, playerctl stop"
 
           # shortcut
-          "$mainMod, Return, exec, $term -e tmux new-session -A -s kitty"
+          "$mainMod, Return, exec, $term -e tmux new-session -A -s tmux"
           "$mainMod, N, exec, neovide"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
           "$mainMod, TAB, exec, pkill rofi || rofi -show window"
@@ -192,18 +187,12 @@ in {
             ,Print, exec, grimblast --notify --cursor save area ~/Pictures/screenshots/screenshot_$(date +"%b_%-d_%Y_%H:%M:%S").png''
           "$mainMod, Print, exec, grimblast --notify --cursor  copy area"
 
-          # window reposition bindings
-          "$mainModSHIFT, h, moveactive,  -100 0"
-          "$mainModSHIFT, l, moveactive, 100 0"
-          "$mainModSHIFT, k, moveactive, 0 -100"
-          "$mainModSHIFT, j, moveactive, 0 100"
-
         ];
         windowrule = [
           "nofocus,^(Ibus-ui-gtk3)$"
           "animation slide up,wlogout"
           "workspace 1, ^(firefox)$"
-          "workspace 2, ^(kitty)$"
+          "workspace 2, ^(footclient)$"
           "workspace 3, ^(neovide)$"
           "workspace 4 silent, ^(discord)$"
           "workspace 5, ^(Spotify)$"
@@ -241,14 +230,14 @@ in {
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
+          "sleep 1 && swww init && swaylock && notify-send 'Hey $USER, Welcome back' &"
           "wl-paste --type text --watch cliphist store &"
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
+          "foot --server"
           "mako -c /home/xenoxanite/.config/mako/config.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           "sleep 5 && discord --start-minimized &"
-          # "sleep 5 && discord &"
         ];
       };
     };

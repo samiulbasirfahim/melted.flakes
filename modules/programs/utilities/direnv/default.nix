@@ -9,5 +9,4 @@
     };
     home.sessionVariables.DIRENV_LOG_FORMAT = "";
   };
-  # environment.sessionVariables.DIRENV_LOG_FORMAT = "";
 }
