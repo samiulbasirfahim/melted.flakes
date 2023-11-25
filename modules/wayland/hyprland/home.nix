@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }:
-let colors = import ../../theme/colors.nix { };
+let colors = import ../../theme/ui.nix { };
 in {
   home-manager.users.xenoxanite = {
     systemd.user.targets.hyprland-session.Unit.Wants =

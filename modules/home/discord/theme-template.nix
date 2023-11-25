@@ -1,4 +1,4 @@
-let colors = import ./../../theme/colors.nix { };
+let colors = import ./../../theme/ui.nix { };
 in {
   xdg.configFile."Vencord/themes/custom.css".text = with colors; ''
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');

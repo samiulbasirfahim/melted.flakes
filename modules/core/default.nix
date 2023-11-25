@@ -19,9 +19,12 @@
 
       # editors
       ./../development/editors/neovim
+      ./../development/editors/vscode
 
       # wayland
       ./../wayland
+
+      # ./../x11
 
       # lnguages
       ./../development/language/cpp.nix

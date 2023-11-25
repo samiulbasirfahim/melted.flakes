@@ -1,5 +1,5 @@
 { ... }:
-let colors = import ./../../theme/colors.nix { };
+let colors = import ./../../theme/ui.nix { };
 in {
   xdg.configFile."wlogout/icons".source = ./assets;
   programs.wlogout = {

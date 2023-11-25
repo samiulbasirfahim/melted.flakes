@@ -1,4 +1,4 @@
-let colors = import ./../../../theme/colors.nix { };
+let colors = import ./../../../theme/ui.nix { };
 in {
   xdg.configFile."nvim-colors.lua".text = with colors; ''
     local M = {}

@@ -1,5 +1,5 @@
 { pkgs, lib, ... }:
-let colors = import ./../../theme/colors.nix { };
+let colors = import ./../../theme/ui.nix { };
 in {
   programs.swaylock = {
     enable = true;
@@ -8,6 +8,9 @@ in {
       clock = true;
       font = "${font}";
       screenshots = true;
+      daemonize = true;
+      disable-caps-lock-text = true;
+      ignore-empty-password = true;
       indicator = true;
       indicator-radius = 100;
       indicator-thickness = 6;

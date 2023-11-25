@@ -48,7 +48,7 @@ let
   slighter = "1e1e1e";
 
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
-  colors = import ./../../theme/colors.nix { };
+  colors = import ./../../theme/ui.nix { };
 in {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "spotify" ];

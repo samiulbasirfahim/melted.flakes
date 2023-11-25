@@ -1,5 +1,5 @@
 { pkgs, ... }:
-let colors = import ./../../theme/colors.nix { };
+let colors = import ./../../theme/ui.nix { };
 in {
   programs.rofi = {
     enable = true;

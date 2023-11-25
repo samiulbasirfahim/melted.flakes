@@ -32,6 +32,6 @@ rec {
   lavender = "a9acdb";
   accent = "78dba9";
 
-
   font = "JetBrainsMono Nerd Font";
+  border-radius = 0;
 }

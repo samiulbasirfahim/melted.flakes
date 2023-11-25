@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  imports = [ ./../picom ];
   services.xserver = {
     enable = true;
     windowManager.dwm.enable = true;
@@ -20,8 +19,8 @@
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
-      dwmblocks = prev.dwmblocks.overrideAttrs (old: {
-        src = /home/xenoxanite/suckless/dwmblocks;
+      st = prev.dwmblocks.overrideAttrs (old: {
+        src = /home/xenoxanite/suckless/st;
         buildInputs = (old.buildInputs or [ ]) ++ [ ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
@@ -32,7 +31,7 @@
     home.packages = with pkgs; [
       dwm
       dmenu
-      dwmblocks
+      st
       xorg.libXft
       xorg.libXinerama
       xwallpaper

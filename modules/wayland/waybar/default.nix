@@ -1,4 +1,4 @@
-let colors = import ../../theme/colors.nix { };
+let colors = import ../../theme/ui.nix { };
 
 in {
   nixpkgs.overlays = [
@@ -33,7 +33,7 @@ in {
         ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
-          #   "format-icons" = {
+          #"format-icons" = {
           #     "1" = "";
           #     "2" = "";
           #     "3" = "";

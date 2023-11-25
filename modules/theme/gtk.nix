@@ -1,5 +1,5 @@
 { pkgs, ... }:
-let colors = import ./colors.nix { };
+let colors = import ./ui.nix { };
 in {
   home-manager.users.xenoxanite = with colors; {
     fonts.fontconfig.enable = true;
