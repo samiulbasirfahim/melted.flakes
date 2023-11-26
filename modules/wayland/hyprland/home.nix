@@ -188,6 +188,10 @@ in {
           "$mainMod, Print, exec, grimblast --notify --cursor  copy area"
 
         ];
+        bindm = [
+          "$mainMod, mouse:272, movewindow"
+          "$mainMod, mouse:273, resizewindow"
+        ];
         windowrule = [
           "nofocus,^(Ibus-ui-gtk3)$"
           "animation slide up,wlogout"
