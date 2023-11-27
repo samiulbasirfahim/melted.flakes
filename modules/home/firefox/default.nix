@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ (import ./userChrome.nix) ] ++ [ (import ./userContent.nix) ];
+  imports = [ ./userContent.nix ./userChrome.nix ];
 
   programs.firefox = {
     enable = true;

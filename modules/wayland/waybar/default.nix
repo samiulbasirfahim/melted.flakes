@@ -28,7 +28,7 @@ in {
           "memory"
           # "cpu"
           # "disk"
-          "custom/ibus-layout"
+          # "custom/ibus-layout"
           "tray"
         ];
         "hyprland/workspaces" = {
