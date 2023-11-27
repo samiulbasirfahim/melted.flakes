@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 let colors = import ./../../theme/ui.nix { };
 in {
   xdg.configFile."wlogout/icons".source = ./assets;
@@ -34,7 +34,7 @@ in {
       window {
           font-family: ${font};
           font-size: 18px;
-          color: #${blue};
+          color: #${foreground-color};
           background-color: rgba(0, 0, 0, 0.5);
       }
       button {
@@ -49,13 +49,12 @@ in {
       }
       button:hover {
           background-color: #${background};
-          opacity: 0.5;
       }
       button:focus {
           background-color: #${background};
-          border: 3px solid #${green};
-          border-radius: 0px;
-          color: #${blue};
+          border: ${toString border-size}px solid #${border-color};
+          border-radius: ${toString border-radius}px;
+          color: #${foreground-color};
       }
       /** ********** Icons ********** **/
       #lock {

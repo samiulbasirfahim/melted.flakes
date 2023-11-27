@@ -33,5 +33,8 @@ rec {
   accent = "78dba9";
 
   font = "JetBrainsMono Nerd Font";
-  border-radius = 0;
+  foreground-color = blue;
+  border-size = 2;
+  border-radius = 2;
+  border-color = green;
 }

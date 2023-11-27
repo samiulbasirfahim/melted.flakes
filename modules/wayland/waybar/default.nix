@@ -113,8 +113,8 @@ in {
         }
         window#waybar {
           background: #${background};
-          color: #${blue};
-          border-bottom: 2px solid #${green};
+          color: #${foreground-color};
+          border-bottom: ${toString border-size}px solid #${border-color};
           opacity: 0.95;
         }
 
@@ -135,7 +135,7 @@ in {
         }
         #workspaces button.active {
           background-color: @background;
-          color: #${blue};
+          color: #${foreground-color};
           
         }
         #workspaces button:hover {
@@ -144,13 +144,13 @@ in {
         }
 
         #clock, #custom-cava-internal {
-          margin-left: 15px;
-          color: #${blue};
+          margin-left: 20px;
+          color: #${foreground-color};
         }
 
         #pulseaudio, #memory, #cpu, #disk, #tray, #network, #custom-ibus-layout {
-          margin-right: 18px;
-          color: #${blue};
+          margin-right: 20px;
+          color: #${foreground-color};
         }
       '';
     };

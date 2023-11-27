@@ -7,7 +7,7 @@ in {
         font = "${font}:size=14";
         dpi-aware = "no";
         resize-delay-ms = 0;
-        pad = "20x5";
+        pad = "15x2";
       };
       cursor = {
         style = "beam";

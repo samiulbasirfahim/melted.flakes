@@ -6,11 +6,11 @@ in with colors; {
     enable = true;
     font = "${font} 10";
     anchor = "top-right";
-    textColor = "#${blue}";
+    textColor = "#${foreground-color}";
     backgroundColor = "#${background}";
-    borderColor = "#${green}";
-    borderRadius = 0;
-    borderSize = 2;
+    borderColor = "#${border-color}";
+    borderRadius = border-radius;
+    borderSize = border-size;
     defaultTimeout = 5000;
     height = 100;
     width = 300;

@@ -21,8 +21,8 @@ in {
     * {
     	bg:				#${background};
     	fg:				#${foreground};
-      fg-sel:   #${blue};
-    	accent:				#${green};
+      fg-sel:   #${foreground-color};
+    	accent:				#${border-color};
     	button:				#${brightblack};
 
     	background-color:		@bg;

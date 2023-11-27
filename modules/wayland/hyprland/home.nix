@@ -55,15 +55,15 @@ in {
         general = {
           gaps_in = 6;
           gaps_out = 10;
-          border_size = 2;
-          "col.active_border" = "0xff${green}";
+          border_size = border-size;
+          "col.active_border" = "0xff${border-color}";
           "col.inactive_border" = "0xff${cursor}";
           apply_sens_to_raw = 1;
           layout = "master";
         };
 
         decoration = {
-          rounding = 0;
+          rounding = border-radius;
           active_opacity = 0.96;
           inactive_opacity = 0.96;
           drop_shadow = false;
@@ -91,7 +91,6 @@ in {
           mfact = 0.7;
           orientation = "left";
           always_center_master = true;
-          no_gaps_when_only = true;
         };
         bind = [
           # workspace

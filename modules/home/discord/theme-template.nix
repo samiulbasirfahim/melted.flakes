@@ -32,6 +32,9 @@ in {
     body {
         --font-display: ${font};
     }
+    * {
+        font-family: ${font} !important;
+    }
 
     .body-2wLx-E, .headerTop-3GPUSF, .bodyInnerWrapper-2bQs1k, .footer-3naVBw {
         background-color: var(--background-tertiary);

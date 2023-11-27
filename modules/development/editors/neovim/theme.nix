@@ -6,7 +6,7 @@ in {
     function M.get_palette()
       return {
           background = "#${background}";
-          contrast = "#${background}";
+          contrast = "#${contrast}";
           statusline_bg = "#${statusline_bg}";
           lighter = "#${lighter}";
           foreground = "#${foreground}";

@@ -16,9 +16,9 @@ in {
       indicator-thickness = 6;
       effect-blur = "7x5";
       effect-vignette = "0.5:0.5";
-      ring-color = "${green}";
-      text-color = "${foreground}";
-      text-ver-color = "${blue}";
+      ring-color = "${border-color}";
+      text-color = "${foreground-color}";
+      text-ver-color = "${foreground-color}";
       text-wrong-color = "${red}";
       line-color = "00000000";
       inside-color = "${background}";

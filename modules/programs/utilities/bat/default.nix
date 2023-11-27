@@ -13,6 +13,6 @@
       };
     };
 
-   home.sessionVariables = { BAT_THEME = "Catppuccin-mocha"; };
+    home.sessionVariables = { BAT_THEME = "Catppuccin-mocha"; };
   };
 }

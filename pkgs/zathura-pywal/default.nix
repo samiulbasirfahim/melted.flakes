@@ -1,6 +1,8 @@
 { pkgs, stdenv, ... }:
 stdenv.mkDerivation rec {
   pname = "zathura-pywal";
+
+  
   version = "2019-10-21";
 
   src = pkgs.fetchFromGitHub {
