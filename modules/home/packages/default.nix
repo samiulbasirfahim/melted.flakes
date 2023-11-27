@@ -18,7 +18,6 @@
     neofetch
     pcmanfm
     galculator
-    zathura-pywal
     # Multimedia
     mpv
     imv

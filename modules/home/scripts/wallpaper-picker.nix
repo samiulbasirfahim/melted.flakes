@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   wallpaper-picker-dmenu = pkgs.writeShellScriptBin "wallpaper-picker-dmenu" ''
     launcher="rofi -dmenu"
     # launcher="sxiv -tio"
@@ -17,7 +18,6 @@
             fi
         elif [[ -f $wallpaper_folder/$temp_dir/$wallpaper_location ]]; then
             $wallpaper_daemon $wallpaper_folder/$temp_dir/$wallpaper_location &
-            wal -i $wallpaper_folder/$temp_dir/$wallpaper_location  && reload &
         else
             exit 1
         fi
@@ -28,12 +28,7 @@
     wallpaper_daemon="swww img"
     wallpaper_location=$(find $HOME/Pictures/wallpapers -name "*.png" -o -name "*.jpg" | sxiv -tio)
     $wallpaper_daemon $wallpaper_location
-    wal -i $wallpaper_location && reload &
   '';
 in {
-  home.packages = with pkgs; [
-    wallpaper-picker-dmenu
-    wallpaper-picker
-    sxiv
-  ];
+  home.packages = with pkgs; [ wallpaper-picker-dmenu wallpaper-picker sxiv ];
 }

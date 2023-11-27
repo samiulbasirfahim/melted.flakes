@@ -44,7 +44,6 @@
 
       # theme based programs
       ./../theme/gtk.nix
-      ./../theme/pywal.nix
     ];
   };
 }

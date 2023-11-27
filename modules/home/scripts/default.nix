@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   cava-internal = pkgs.writeShellScriptBin "cava-internal" ''
     cava -p ~/.config/cava/config1 | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
   '';
@@ -12,16 +13,18 @@
                   --margin-right 150
   '';
 in {
-  imports = [(import ./wallpaper-picker.nix)] ++ [(import ./random-wall.nix)] ++ [(import ./reload.nix)] ++ [(import ./reload-discord.nix)]; 
-  home.file.".config/cava/config1".text = "
-[general]
-bars = 12
-sleep_timer = 10
+  imports = [ (import ./wallpaper-picker.nix) ]
+    ++ [ (import ./random-wall.nix) ];
+  home.file.".config/cava/config1".text = ''
 
-[output]
-method = raw
-data_format = ascii
-ascii_max_range = 7
-";
-  home.packages = [cava-internal pkgs.cava launch-wlogout];
+    [general]
+    bars = 12
+    sleep_timer = 10
+
+    [output]
+    method = raw
+    data_format = ascii
+    ascii_max_range = 7
+  '';
+  home.packages = [ cava-internal pkgs.cava launch-wlogout ];
 }
