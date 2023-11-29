@@ -6,7 +6,7 @@ in with colors; {
     }
 
     * {
-      border-radius: 2px !important;
+      border-radius: ${toString colors.border-radius}px !important;
     }
     #webrtcIndicator {
       display: none !important;

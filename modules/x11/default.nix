@@ -1,1 +1,1 @@
-{ imports = [ ./dwm ./picom ]; }
+{ imports = [ ./gnome ]; }

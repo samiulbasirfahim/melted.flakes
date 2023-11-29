@@ -161,8 +161,8 @@ in {
           "$mainMod, N, exec, neovide"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
           "$mainMod, TAB, exec, pkill rofi || rofi -show window"
-          "$mainMod, W, exec, pkill rofi || wallpaper-picker"
-          "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "$mainMod, W, exec, pkill sxiv || wallpaper-picker"
+          "$mainMod, V, exec, cliphist list | rofi -dmenu -theme ~/.config/rofi/config-2.rasi | cliphist decode | wl-copy"
           "$mainMod, X, exec, pkill wlogout || launch-wlogout"
           "$mainMod, B, exec, pkill -SIGUSR1 .waybar-wrapped &"
           "$mainModSHIFT, c ,exec, hyprpicker -a"
@@ -229,7 +229,7 @@ in {
           "idleinhibit fullscreen, class:^(firefox)$"
           "idleinhibit focus, class:^(mpv)$"
         ];
-        blurls = [ "waybar" ];
+        # blurls = [ "waybar" ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

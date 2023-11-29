@@ -41,6 +41,7 @@
       ./../programs/utilities/btop
       ./../programs/utilities/tmux
       ./../programs/utilities/direnv
+      ./../programs/utilities/gaming
 
       # theme based programs
       ./../theme/gtk.nix

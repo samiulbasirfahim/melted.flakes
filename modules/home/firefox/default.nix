@@ -100,7 +100,6 @@
         languagetool
         darkreader
         videospeed
-        pywalfox
       ];
     };
   };

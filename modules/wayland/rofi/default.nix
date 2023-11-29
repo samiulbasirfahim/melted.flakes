@@ -55,7 +55,7 @@ in {
     	children:			[ prompt, entry ];
         	background-color:               @button;
         	expand:                         false;
-        	border-radius:                  6px;
+        	border-radius:                  ${toString colors.border-radius}px;
         	margin:                         0%;
         	padding:                        10px;
     }
@@ -98,8 +98,98 @@ in {
 
     element selected {
         	background-color:               @button;
-        	border-radius:                  6px;
+        	border-radius:                  ${toString colors.border-radius}px;
         	text-color:                  @fg-sel;
+    }
+  '';
+  xdg.configFile."rofi/config-2.rasi".text = with colors; ''
+    configuration {
+      display-drun: "  :";
+      display-window: "Windows: ";
+      drun-display-format: "{name}";
+      modi: "window,run,drun";
+      font: "${colors.font} 12";
+    }
+
+    @theme "/dev/null"
+
+    * {
+      red      : #${colors.red};
+      lred     : #${colors.brightred};
+      green    : #${colors.green};
+      lgreen   : #${colors.brightgreen};
+      yellow   : #${colors.yellow};
+      lyellow  : #${colors.brightyellow};
+      blue     : #${colors.blue};
+      lblue    : #${colors.brightblue};
+      magenta  : #${colors.magenta};
+      lmagenta : #${colors.brightmagenta};
+      cyan     : #${colors.cyan};
+      lcyan    : #${colors.brightcyan};
+
+      fg       : #${colors.foreground};
+      bg       : #${colors.background};
+
+      disabled : #${colors.lighter};
+
+      background-color: @bg;
+
+      margin: 0;
+      padding: 0;
+      spacing: 0;
+    }
+
+    window {
+      width: 30%;
+      padding: 12;
+
+      border: 2;
+      border-color: @lgreen;
+      border-radius:  ${toString colors.border-radius}px;
+    }
+
+    element {
+      padding: 8;
+      text-color: @fg;
+      border-radius:  ${toString colors.border-radius}px;
+    }
+
+    element selected {
+      text-color: #${border-color};
+      background: @bg; 
+    }
+
+    element-text {
+      background-color: #00000000;
+      text-color: inherit;
+      vertical-align: 0.5;
+    }
+
+
+    entry {
+      background-color: @bg;
+      padding: 12;
+      text-color: @fg;
+
+      margin-bottom: 50;
+    }
+
+    prompt {
+      background-color: @bg;
+      padding: 12;
+      text-color: @fg;
+
+      margin-bottom: 50;
+    }
+
+    inputbar {
+      children: [prompt, entry];
+    }
+
+    listview {
+      background-color: @bg;
+      columns: 1;
+      lines: 8;
     }
   '';
 }

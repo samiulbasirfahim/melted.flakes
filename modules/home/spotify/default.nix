@@ -66,44 +66,24 @@ in {
     };
     colorScheme = "custom";
     customColorScheme = {
-      text = colors.foreground;
+      text = colors.green;
       subtext = colors.blue;
-      extratext = gruvbox.fg2;
+      extratext = colors.blue;
       main = colors.background;
-      sidebar = colors.black;
-      player = colors.contrast;
+      sidebar = colors.background;
+      player = colors.background;
       sec-player = colors.brightblack;
-      card = colors.black;
-      sec-card = colors.blue;
-      shadow = blackish;
-      selected-row = gruvbox.bright.blue;
-      button = gruvbox.normal.green;
-      button-active = gruvbox.normal.green;
-      button-disabled = gruvbox.bg3;
-      tab-active = gruvbox.normal.orange;
-      notification = gruvbox.normal.orange;
-      notification-error = gruvbox.bright.red;
-      misc = gruvbox.normal.blue;
-
-      ### onepunch dark mode
-      # text               = d5c4a1
-      # subtext            = b8bb26
-      # extratext          = fabd2f
-      # main               = 1d2021
-      # sidebar            = 1d2021
-      # player             = 1d2021
-      # sec-player         = 32302f
-      # card               = 32302f
-      # sec-card           = fb4934
-      # shadow             = 1d2021
-      # selected-row       = d3869b
-      # button             = 8ec07c
-      # button-active      = 8ec07c
-      # button-disabled    = 665c54
-      # tab-active         = fb4934
-      # notification       = fb4934
-      # notification-error = cc2418
-      # misc               = 83a598
+      card = colors.contrast;
+      sec-card = colors.contrast;
+      shadow = colors.contrast;
+      selected-row = colors.green;
+      button = colors.green;
+      button-active = colors.green;
+      button-disabled = colors.lighter;
+      tab-active = colors.green;
+      notification = colors.lighter;
+      notification-error = colors.red;
+      misc = colors.lighter;
     };
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay

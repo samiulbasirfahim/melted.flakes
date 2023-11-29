@@ -115,7 +115,6 @@ in {
           background: #${background};
           color: #${foreground-color};
           border-bottom: ${toString border-size}px solid #${border-color};
-          opacity: 0.95;
         }
 
         #workspaces { 

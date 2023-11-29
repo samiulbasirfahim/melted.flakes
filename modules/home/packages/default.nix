@@ -7,8 +7,11 @@
     shotcut
     kdenlive
     btop
-
+    psutils
+    slides
     fzf
+
+    bleachbit
     stacer
     eza
     playerctl
@@ -39,11 +42,5 @@
 
     ttyper
     yt-dlp
-
-    # wine /for .exe
-    winetricks
-    wineWowPackages.waylandFull
-
-    playit-agent
   ];
 }

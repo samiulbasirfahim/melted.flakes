@@ -7,12 +7,14 @@ in {
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       maple-mono
       font-awesome
+      adw-gtk3
+      gradience
     ];
     gtk = {
       enable = true;
       theme = {
-        name = "Catppuccin-Mocha-BL-LB";
-        package = pkgs.cattpuccin-mocha-gtk;
+        name = "Dark-decay";
+        package = pkgs.dark-decay;
       };
       iconTheme = {
         package = pkgs.papirus-icon-theme;
