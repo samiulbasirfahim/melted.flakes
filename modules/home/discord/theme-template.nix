@@ -6,15 +6,15 @@ in {
     .theme-dark {
         --background-primary: #${background}; /* background of background of chat window */
         --background-secondary: #${contrast}; /* background of channel bar */
-        --background-secondary-alt: #${background};  /* background of profile */
-        --channeltextarea-background: #${black};  /* background of textarea */
+        --background-secondary-alt: #${contrast};  /* background of profile */
+        --channeltextarea-background: #${contrast};  /* background of textarea */
         --background-tertiary: #${statusline_bg};  /* background of channel bar */
-        --background-accent: #${yellow};
+        --background-accent: #${blue};
         --text-normal: #${foreground};
         --text-spotify: #${green};
         --text-muted: #${comments};
         --text-link: #${blue};
-        --background-floating: #${black};
+        --background-floating: #${statusline_bg};
         --header-primary: #${blue};
         --header-secondary: #${green};
         --header-spotify: #${green};
