@@ -11,7 +11,7 @@ in {
       };
       cursor = {
         style = "beam";
-        beam-thickness = "1px";
+        beam-thickness = "2px";
         color = "${background} ${green}";
       };
       colors = {

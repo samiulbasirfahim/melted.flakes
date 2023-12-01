@@ -1,6 +1,5 @@
 {
   description = "Xenoxanite's nixos configuration";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -11,6 +10,7 @@
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
   outputs = { nixpkgs, self, ... }@inputs:
     let selfPkgs = import ./pkgs;

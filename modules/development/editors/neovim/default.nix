@@ -22,6 +22,7 @@
       nil
       lua-language-server
       nodePackages_latest.typescript-language-server
+      nodePackages_latest.svelte-language-server
 
       # formatter
       stylua

@@ -32,6 +32,37 @@ rec {
   lavender = "a9acdb";
   accent = "78dba9";
 
+  # background = "1E1E2E";
+  # contrast = "181825";
+  # statusline_bg = "13171c";
+  # lighter = "1a1e23";
+  # foreground = "CDD6F4";
+  # cursorline = "242931";
+  # comments = "4d5768";
+  # cursor = "F5E0DC";
+  # black = "45475A";
+  # red = "F38BA8";
+  # orange = "E89777";
+  # yellow = "F9E2AF";
+  # pink = "f5c2e7";
+  # green = "A6E3A1";
+  # blue = "89B4FA";
+  # teal = "94e2d5";
+  # magenta = "F5C2E7";
+  # sky = "89dceb";
+  # cyan = "94E2D5";
+  # white = "BAC2DE";
+  # brightblack = "585B70";
+  # brightred = "F38BA8";
+  # brightgreen = "A6E3A1";
+  # brightyellow = "F9E2AF";
+  # brightblue = "89B4FA";
+  # brightmagenta = "cb8ff3";
+  # brightcyan = "F5C2E7";
+  # brightwhite = "A6ADC8";
+  # lavender = "a9acdb";
+  # accent = "78dba9";
+
   font = "JetBrainsMono Nerd Font";
   foreground-color = blue;
   border-size = 2;

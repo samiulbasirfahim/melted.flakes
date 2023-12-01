@@ -1,1 +1,1 @@
-{ imports = [ ./gnome ]; }
+{ imports = [ ./dwm ]; }

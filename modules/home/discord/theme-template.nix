@@ -8,7 +8,7 @@ in {
         --background-secondary: #${contrast}; /* background of channel bar */
         --background-secondary-alt: #${background};  /* background of profile */
         --channeltextarea-background: #${black};  /* background of textarea */
-        --background-tertiary: #${black};  /* background of channel bar */
+        --background-tertiary: #${statusline_bg};  /* background of channel bar */
         --background-accent: #${yellow};
         --text-normal: #${foreground};
         --text-spotify: #${green};
@@ -41,7 +41,7 @@ in {
     }
 
     .title-17SveM, .name-3Uvkvr{
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .panels-3wFtMD {
@@ -50,7 +50,7 @@ in {
 
     .username-h_Y3Us {
         font-family: var(--font-display);
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .peopleColumn-1wMU14, .panels-j1Uci_, .peopleColumn-29fq28, .peopleList-2VBrVI, .content-2hZxGK, .header-1zd7se, .root-g14mjS .small-23Atuv .fullscreenOnMobile-ixj0e3{

@@ -33,7 +33,7 @@ in {
     style = with colors; ''
       window {
           font-family: ${font};
-          font-size: 18px;
+          font-size: 16px;
           color: #${foreground-color};
           background-color: rgba(0, 0, 0, 0.5);
       }

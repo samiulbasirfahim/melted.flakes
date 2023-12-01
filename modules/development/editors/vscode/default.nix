@@ -18,7 +18,7 @@
         };
         window = {
           menuBarVisibility = "toggle";
-          zoomLevel = 2;
+          zoomLevel = 1;
         };
         workbench = {
           startupEditor = "none";

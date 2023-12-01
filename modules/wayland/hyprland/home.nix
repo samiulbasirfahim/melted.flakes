@@ -204,7 +204,7 @@ in {
           "workspace 8 silent, ^(steam)$"
           # "fullscreen, ^(neovide)$"
           "size 700 450, pavucontrol"
-          "move 40 55%, pavucontrol"
+          "move 1209 52, pavucontrol"
           "float,title:^(Transmission)$"
           "float,title:^(galculator)$"
           "float,title:^(Volume Control)$"
