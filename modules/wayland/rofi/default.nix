@@ -156,7 +156,7 @@ in {
 
     element selected {
       text-color: #${border-color};
-      background: @bg; 
+      background: #${colors.brightblack}; 
     }
 
     element-text {

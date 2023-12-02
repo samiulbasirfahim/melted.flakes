@@ -12,20 +12,21 @@ in {
     ];
     gtk = {
       enable = true;
+      theme = {
+        name = "Dark-decay";
+        package = pkgs.dark-decay;
+      };
+
       /* theme = {
-           name = "Dark-decay";
-           package = pkgs.dark-decay;
+           name = "Catppuccin-Mocha-Compact-Blue-Dark";
+           package = pkgs.catppuccin-gtk.override {
+             size = "compact";
+             accents = [ "blue" ];
+             variant = "mocha";
+             tweaks = [ "normal" ];
+           };
          };
       */
-      theme = {
-        name = "Catppuccin-Mocha-Compact-Blue-Dark";
-        package = pkgs.catppuccin-gtk.override {
-          size = "compact";
-          accents = [ "blue" ];
-          variant = "mocha";
-          tweaks = [ "normal" ];
-        };
-      };
 
       iconTheme = {
         package = pkgs.papirus-icon-theme;
@@ -55,8 +56,8 @@ in {
     };
     home.sessionVariables = {
       GTK_USE_PORTAL = 0;
-      GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
-      # GTK_THEME = "Dark-decay";
+      # GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
+      GTK_THEME = "Dark-decay";
     };
   };
 }

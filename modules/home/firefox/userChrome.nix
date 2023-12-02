@@ -1,12 +1,12 @@
 let colors = import ./../../theme/ui.nix { };
-in with colors; {
-  programs.firefox.profiles.default.userChrome = ''
+in {
+  programs.firefox.profiles.default.userChrome = with colors; ''
     #identity-box.extensionPage #identity-icon-label {
       display: none !important;
     }
 
     * {
-      border-radius: ${toString colors.border-radius}px !important;
+      border-radius: ${toString border-radius}px !important;
     }
     #webrtcIndicator {
       display: none !important;
@@ -78,21 +78,21 @@ in with colors; {
 
       /* Theme Colour Suggestions
          *                              Dark        Light   */
-      --window-colour: #${colors.background}; /* #FAFAFC; */
+      --window-colour: #${background}; /* #FAFAFC; */
 
-      --secondary-colour: #${colors.black}; /* #EAEAEC; */
-      --inverted-colour: #${colors.brightblack}; /* #1E2021; */
-      --blue: #${colors.blue};
+      --secondary-colour: #${black}; /* #EAEAEC; */
+      --inverted-colour: #${brightblack}; /* #1E2021; */
+      --blue: #${blue};
 
       /* Containter Tab Colours */
-      --uc-identity-color-blue: #${colors.blue};
-      --uc-identity-color-teal: #${colors.teal};
-      --uc-identity-color-green: #${colors.green};
-      --uc-identity-color-yellow: #${colors.yellow};
-      --uc-identity-color-orange: #${colors.orange};
-      --uc-identity-color-red: #${colors.red};
-      --uc-identity-color-pink: #${colors.pink};
-      --uc-identity-color-purple: #${colors.magenta};
+      --uc-identity-color-blue: #${blue};
+      --uc-identity-color-teal: #${teal};
+      --uc-identity-color-green: #${green};
+      --uc-identity-color-yellow: #${yellow};
+      --uc-identity-color-orange: #${orange};
+      --uc-identity-color-red: #${red};
+      --uc-identity-color-pink: #${pink};
+      --uc-identity-color-purple: #${magenta};
 
       /* URL colour in URL bar suggestions */
       --urlbar-popup-url-color: var(--inverted-colour) !important;
@@ -102,7 +102,7 @@ in with colors; {
          +---+---+---+---+---+---+---*/
 
       /* global border radius */
-      --uc-border-radius: ${toString colors.border-radius}px;
+      --uc-border-radius: ${toString border-radius}px;
 
 
       /* dynamic url bar width settings */

@@ -4,10 +4,11 @@ in {
     enable = true;
     settings = with colors; {
       main = {
-        font = "${font}:size=14";
+        font = "${font}:size=13";
         dpi-aware = "no";
         resize-delay-ms = 0;
-        pad = "15x2";
+        line-height = 19;
+        pad = "20x20";
       };
       cursor = {
         style = "beam";

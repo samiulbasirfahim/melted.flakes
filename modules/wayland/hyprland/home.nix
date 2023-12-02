@@ -88,7 +88,7 @@ in {
           ];
         };
         master = {
-          mfact = 0.7;
+          mfact = 0.65;
           orientation = "left";
           always_center_master = true;
         };

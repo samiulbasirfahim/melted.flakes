@@ -118,15 +118,14 @@ in {
         }
 
         #workspaces { 
-          margin: 4px; 
           border-radius: 0px; 
-          margin: 2px 0px; 
+          margin: 4px 0px; 
           background-color: #${background}; 
-          border-radius: 2px; 
+          border-radius: ${toString border-radius}px; 
         } 
         #workspaces button {
           padding: 0px 0px;
-          margin: 8px 6px;
+          margin: 6px 6px;
           border-radius: 0px;
           border-radius: 2px;
           color: #${brightblack};
