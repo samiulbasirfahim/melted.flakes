@@ -7,7 +7,7 @@ rec {
   lighter = "1a1e23";
   foreground = "b6beca";
   cursorline = "242931";
-  comments = "4d5768";
+  comments = "485263";
   cursor = "b6beca";
   black = "242931";
   red = "e05f65";
@@ -31,6 +31,7 @@ rec {
   brightwhite = "e3e6eb";
   lavender = "a9acdb";
   accent = "78dba9";
+  gtk-theme = "Dark-decay";
 
   /* background = "1E1E2E";
      contrast = "181825";
@@ -62,6 +63,7 @@ rec {
      brightwhite = "A6ADC8";
      lavender = "a9acdb";
      accent = "78dba9";
+     gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark";
   */
 
   font = "JetBrainsMono Nerd Font";

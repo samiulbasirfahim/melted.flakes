@@ -158,6 +158,7 @@ in {
 
           # shortcut
           "$mainMod, Return, exec, $term -e tmux new-session -A -s tmux"
+          "$mainModSHIFT, Return, exec, $term --title floating -e tmux new-session -A -s floating"
           "$mainMod, N, exec, neovide"
           "$mainMod, Z, exec, pkill rofi || rofi -show drun"
           "$mainMod, TAB, exec, pkill rofi || rofi -show window"
@@ -195,7 +196,7 @@ in {
           "nofocus,^(Ibus-ui-gtk3)$"
           "animation slide up,wlogout"
           "workspace 1, ^(firefox)$"
-          "workspace 2, ^(footclient)$"
+          "workspace 2, title:^(foot)$"
           "workspace 3, ^(neovide)$"
           "workspace 4 silent, ^(discord)$"
           "workspace 5, ^(Spotify)$"
@@ -217,15 +218,21 @@ in {
           "size 900 500,mpv"
           "idleinhibit focus,mpv"
           "float,imv"
+          "float, title:^(floating)$"
           "move 510 290,imv"
           "size 900 500,imv"
           "float,title:^(Firefox — Sharing Indicator)$"
           "move 0 0,title:^(Firefox — Sharing Indicator)$"
+          "stayfocused, title:^(File Upload)$"
+          "stayfocused, Xdg-desktop-portal-gtk"
+          "pin, title:^(floating)$"
+          "pin, title:^(Picture-in-Picture)$"
+          "float, title:^(Picture-in-Picture)$"
         ];
         windowrulev2 = [
+          "pin, title:^(Picture-in-Picture)$"
           "float, title:^(Picture-in-Picture)$"
           "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
-          "pin, title:^(Picture-in-Picture)$"
           "idleinhibit fullscreen, class:^(firefox)$"
           "idleinhibit focus, class:^(mpv)$"
         ];
