@@ -8,7 +8,7 @@ in {
       prefix = "C-a";
       terminal = "screen-256color";
       plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator ];
-      extraConfig = with ui;''
+      extraConfig = with ui.colors; ''
         # better split
         bind '"' split-window -h -c "#{pane_current_path}"
         bind '|' split-window -v -c "#{pane_current_path}"
@@ -27,9 +27,9 @@ in {
         set -g window-status-format ' #I #W '
         set -g window-status-current-format ' #W '
 
-        set -g status-style bg='#${ui.background}',fg='#${ui.blue}'
-        setw -g window-status-activity-style bg='#${ui.background}',fg='#${ui.blue}'
-        setw -g window-status-current-style  bg='#${ui.green}',fg='#${ui.background}'
+        set -g status-style bg='#${background}',fg='#${blue}'
+        setw -g window-status-activity-style bg='#${background}',fg='#${blue}'
+        setw -g window-status-current-style  bg='#${green}',fg='#${background}'
         setw -g pane-base-index 1
       '';
     };

@@ -1,13 +1,13 @@
 { pkgs, ... }:
-let colors = import ./../../theme/ui.nix { };
-in with colors; {
+let ui = import ./../../theme/ui.nix { };
+in with ui; {
   home.packages = [ pkgs.libnotify ];
   services.mako = {
     enable = true;
     font = "${font} 10";
     anchor = "top-right";
     textColor = "#${foreground-color}";
-    backgroundColor = "#${background}";
+    backgroundColor = "#${colors.background}";
     borderColor = "#${border-color}";
     borderRadius = border-radius;
     borderSize = border-size;
@@ -29,7 +29,7 @@ in with colors; {
       history=1
 
       [urgency=high]
-      border-color=#${red}
+      border-color=#${colors.red}
     '';
   };
 }

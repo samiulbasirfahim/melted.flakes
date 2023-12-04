@@ -1,7 +1,7 @@
 { pkgs, ... }:
-let colors = import ./ui.nix { };
+let ui = import ./ui.nix { };
 in {
-  home-manager.users.xenoxanite = with colors; {
+  home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -20,29 +20,18 @@ in {
     ];
     gtk = {
       enable = true;
-      theme.name = colors.gtk-theme;
+      theme.name = ui.colors.gtk-theme;
 
       iconTheme = {
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
       font = {
-        name = colors.font;
+        name = ui.font;
         size = 11;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };
-    /* qt = {
-         theme = {
-           name = "Catppuccin-Mocha-Dark";
-           package = pkgs.catppuccin-kde.override {
-             flavour = [ "mocha" ];
-             accents = [ "blue" ];
-             winDecStyles = [ "modern" ];
-           };
-         };
-       };
-    */
     home.pointerCursor = {
       package = pkgs.cattpuccin-dark-cursor;
       name = "Catppuccin-Latte-Dark";
@@ -50,7 +39,7 @@ in {
     };
     home.sessionVariables = {
       GTK_USE_PORTAL = 0;
-      GTK_THEME = colors.gtk-theme;
+      GTK_THEME = ui.colors.gtk-theme;
     };
   };
 }

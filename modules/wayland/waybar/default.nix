@@ -1,4 +1,4 @@
-let colors = import ../../theme/ui.nix { };
+let ui = import ../../theme/ui.nix { };
 
 in {
   nixpkgs.overlays = [
@@ -102,7 +102,7 @@ in {
         };
       }];
 
-      style = with colors; ''
+      style = with ui; ''
         * {
           font-family: "${font}";
           font-weight: bold;
@@ -112,7 +112,7 @@ in {
           transition-duration: 0.5s;
         }
         window#waybar {
-          background: #${background};
+          background: #${colors.background};
           color: #${foreground-color};
           border-bottom: ${toString border-size}px solid #${border-color};
         }
@@ -120,7 +120,7 @@ in {
         #workspaces { 
           border-radius: 0px; 
           margin: 4px 0px; 
-          background-color: #${background}; 
+          background-color: #${colors.background}; 
           border-radius: ${toString border-radius}px; 
         } 
         #workspaces button {
@@ -128,7 +128,7 @@ in {
           margin: 6px 6px;
           border-radius: 0px;
           border-radius: 2px;
-          color: #${brightblack};
+          color: #${colors.brightblack};
           font-size: 10pt;
         }
         #workspaces button.active {
@@ -137,7 +137,7 @@ in {
           
         }
         #workspaces button:hover {
-          background-color: #${background};
+          background-color: #${colors.background};
           border: none;
         }
 

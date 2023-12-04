@@ -7,7 +7,7 @@ let
     sha256 = "sha256-Q/LBS+bjt2WP/s43LE8hDjYHxPVorT/RA71esPraLOM=";
   };
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
-  colors = import ./../../theme/ui.nix { };
+  ui = import ./../../theme/ui.nix { };
 in {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "spotify" ];
@@ -24,25 +24,25 @@ in {
       sidebarConfig = true;
     };
     colorScheme = "custom";
-    customColorScheme = {
-      text = colors.green;
-      subtext = colors.blue;
-      extratext = colors.blue;
-      main = colors.background;
-      sidebar = colors.contrast;
-      player = colors.contrast;
-      sec-player = colors.statusline_bg;
-      card = colors.statusline_bg;
-      sec-card = colors.statusline_bg;
-      shadow = colors.contrast;
-      selected-row = colors.green;
-      button = colors.green;
-      button-active = colors.green;
-      button-disabled = colors.lighter;
-      tab-active = colors.green;
-      notification = colors.lighter;
-      notification-error = colors.red;
-      misc = colors.lighter;
+    customColorScheme = with ui.colors; {
+      text = green;
+      subtext = blue;
+      extratext = blue;
+      main = background;
+      sidebar = contrast;
+      player = contrast;
+      sec-player = statusline_bg;
+      card = statusline_bg;
+      sec-card = statusline_bg;
+      shadow = contrast;
+      selected-row = green;
+      button = green;
+      button-active = green;
+      button-disabled = lighter;
+      tab-active = green;
+      notification = lighter;
+      notification-error = red;
+      misc = lighter;
     };
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay

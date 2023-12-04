@@ -1,5 +1,5 @@
 { lib, ... }:
-let colors = import ./../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
   xdg.configFile."wlogout/icons".source = ./assets;
   programs.wlogout = {
@@ -30,7 +30,7 @@ in {
         keybind = "e";
       }
     ];
-    style = with colors; ''
+    style = with ui; ''
       window {
           font-family: ${font};
           font-size: 16px;
@@ -48,10 +48,10 @@ in {
           transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
       }
       button:hover {
-          background-color: #${background};
+          background-color: #${colors.background};
       }
       button:focus {
-          background-color: #${background};
+          background-color: #${colors.background};
           border: ${toString border-size}px solid #${border-color};
           border-radius: ${toString border-radius}px;
           color: #${foreground-color};

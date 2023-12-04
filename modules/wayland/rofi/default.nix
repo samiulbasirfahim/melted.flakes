@@ -1,14 +1,14 @@
 { pkgs, ... }:
-let colors = import ./../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
   };
-  xdg.configFile."rofi/config.rasi".text = with colors; ''
+  xdg.configFile."rofi/config.rasi".text = with ui.colors; ''
     configuration {
     	modi:				"drun";
-    	font:				"${font} 12";
+    	font:				"${ui.font} 12";
     	show-icons:                     true;
     	icon-theme: 			"Reversal-dark";
     	display-drun: 			"";
@@ -21,8 +21,8 @@ in {
     * {
     	bg:				#${background};
     	fg:				#${foreground};
-      fg-sel:   #${foreground-color};
-    	accent:				#${border-color};
+      fg-sel:   #${blue};
+    	accent:				#${green};
     	button:				#${brightblack};
 
     	background-color:		@bg;
@@ -55,7 +55,7 @@ in {
     	children:			[ prompt, entry ];
         	background-color:               @button;
         	expand:                         false;
-        	border-radius:                  ${toString colors.border-radius}px;
+        	border-radius:                  ${toString ui.border-radius}px;
         	margin:                         0%;
         	padding:                        10px;
     }
@@ -98,42 +98,23 @@ in {
 
     element selected {
         	background-color:               @button;
-        	border-radius:                  ${toString colors.border-radius}px;
+        	border-radius:                  ${toString ui.border-radius}px;
         	text-color:                  @fg-sel;
     }
   '';
-  xdg.configFile."rofi/config-2.rasi".text = with colors; ''
+  xdg.configFile."rofi/config-2.rasi".text = with ui.colors; ''
     configuration {
       display-drun: "  :";
       display-window: "Windows: ";
       drun-display-format: "{name}";
       modi: "window,run,drun";
-      font: "${colors.font} 12";
+      font: "${ui.font} 12";
     }
 
     @theme "/dev/null"
 
     * {
-      red      : #${colors.red};
-      lred     : #${colors.brightred};
-      green    : #${colors.green};
-      lgreen   : #${colors.brightgreen};
-      yellow   : #${colors.yellow};
-      lyellow  : #${colors.brightyellow};
-      blue     : #${colors.blue};
-      lblue    : #${colors.brightblue};
-      magenta  : #${colors.magenta};
-      lmagenta : #${colors.brightmagenta};
-      cyan     : #${colors.cyan};
-      lcyan    : #${colors.brightcyan};
-
-      fg       : #${colors.foreground};
-      bg       : #${colors.background};
-
-      disabled : #${colors.lighter};
-
       background-color: @bg;
-
       margin: 0;
       padding: 0;
       spacing: 0;
@@ -145,18 +126,18 @@ in {
 
       border: 2;
       border-color: @lgreen;
-      border-radius:  ${toString colors.border-radius}px;
+      border-radius:  ${toString ui.border-radius}px;
     }
 
     element {
       padding: 8;
       text-color: @fg;
-      border-radius:  ${toString colors.border-radius}px;
+      border-radius:  ${toString ui.border-radius}px;
     }
 
     element selected {
-      text-color: #${border-color};
-      background: #${colors.brightblack}; 
+      text-color: #${ui.border-color};
+      background: #${brightblack}; 
     }
 
     element-text {

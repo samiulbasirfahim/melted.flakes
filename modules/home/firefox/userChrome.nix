@@ -1,12 +1,12 @@
-let colors = import ./../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
-  programs.firefox.profiles.default.userChrome = with colors; ''
+  programs.firefox.profiles.default.userChrome = with ui.colors; ''
     #identity-box.extensionPage #identity-icon-label {
       display: none !important;
     }
 
     * {
-      border-radius: ${toString border-radius}px !important;
+      border-radius: ${toString ui.border-radius}px !important;
     }
     #webrtcIndicator {
       display: none !important;
@@ -102,7 +102,7 @@ in {
          +---+---+---+---+---+---+---*/
 
       /* global border radius */
-      --uc-border-radius: ${toString border-radius}px;
+      --uc-border-radius: ${toString ui.border-radius}px;
 
 
       /* dynamic url bar width settings */

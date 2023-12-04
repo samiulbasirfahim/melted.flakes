@@ -1,6 +1,6 @@
-let colors = import ./../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
-  xdg.configFile."Vencord/themes/custom.css".text = with colors; ''
+  xdg.configFile."Vencord/themes/custom.css".text = with ui.colors; ''
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
     .theme-dark {
@@ -30,10 +30,10 @@ in {
     }
 
     body {
-        --font-display: ${font};
+        --font-display: ${ui.font};
     }
     * {
-        font-family: ${font} !important;
+        font-family: ${ui.font} !important;
     }
 
     .body-2wLx-E, .headerTop-3GPUSF, .bodyInnerWrapper-2bQs1k, .footer-3naVBw {

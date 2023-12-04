@@ -1,6 +1,6 @@
-let colors = import ./../../../theme/ui.nix { };
+let ui = import ./../../../theme/ui.nix { };
 in {
-  xdg.configFile."nvim-colors.lua".text = with colors; ''
+  xdg.configFile."nvim-colors.lua".text = with ui.colors; ''
     local M = {}
 
     function M.get_palette()

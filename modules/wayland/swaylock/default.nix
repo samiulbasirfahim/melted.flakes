@@ -1,10 +1,10 @@
 { pkgs, lib, ... }:
-let colors = import ./../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
-    settings = with colors; {
+    settings = with ui; {
       clock = true;
       font = "${font}";
       screenshots = true;
@@ -19,11 +19,11 @@ in {
       ring-color = "${border-color}";
       text-color = "${foreground-color}";
       text-ver-color = "${foreground-color}";
-      text-wrong-color = "${red}";
+      text-wrong-color = "${colors.red}";
       line-color = "00000000";
-      inside-color = "${background}";
-      inside-ver-color = "${background}";
-      inside-wrong-color = "${background}";
+      inside-color = "${colors.background}";
+      inside-ver-color = "${colors.background}";
+      inside-wrong-color = "${colors.background}";
       separator-color = "00000000";
     };
   };

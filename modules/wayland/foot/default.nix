@@ -1,10 +1,10 @@
-let colors = import ./../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
   programs.foot = {
     enable = true;
-    settings = with colors; {
+    settings = with ui.colors; {
       main = {
-        font = "${font}:size=13";
+        font = "${ui.font}:size=13";
         dpi-aware = "no";
         resize-delay-ms = 0;
         line-height = 19;
