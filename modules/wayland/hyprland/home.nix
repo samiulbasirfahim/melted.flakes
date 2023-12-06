@@ -61,6 +61,7 @@ in {
           "col.active_border" = "0xff${ui.border-color}";
           "col.inactive_border" = "0xff${cursor}";
           apply_sens_to_raw = 1;
+          cursor_inactive_timeout = 1;
           layout = "master";
         };
 
@@ -249,7 +250,7 @@ in {
           "foot --server"
           "mako -c /home/xenoxanite/.config/mako/config.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
-          "sleep 5 && discord --start-minimized &"
+          # "sleep 5 && discord --start-minimized &"
         ];
       };
     };

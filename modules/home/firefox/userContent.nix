@@ -1,7 +1,5 @@
 {
   programs.firefox.profiles.default.userContent = ''
-
-
     @-moz-document url(about:blank), url(about:newtab), url(about:home) {
       body {
         --newtab-snippets-background-color: #242931 !important;

@@ -35,8 +35,8 @@ in {
       card = statusline_bg;
       sec-card = statusline_bg;
       shadow = contrast;
-      selected-row = green;
-      button = green;
+      selected-row = blue;
+      button = blue;
       button-active = green;
       button-disabled = lighter;
       tab-active = green;
