@@ -11,21 +11,13 @@ in {
       hyprpicker
       xdg-utils
       inputs.hyprland-contrib.packages.${pkgs.system}.hyprprop
-      # xwaylandvideobridge
-
-      # Wallpaper deamon
+      xwaylandvideobridge
       swww
-
-      # Screenshot and screen-record utility
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
       wf-recorder
-
-      # Clipboard manager
       wl-clipboard
       cliphist
-
       mate.mate-polkit
-
     ];
     wayland.windowManager.hyprland = {
       enable = true;
@@ -61,18 +53,17 @@ in {
           "col.active_border" = "0xff${ui.border-color}";
           "col.inactive_border" = "0xff${cursor}";
           apply_sens_to_raw = 1;
-          cursor_inactive_timeout = 1;
           layout = "master";
         };
 
         decoration = {
           rounding = ui.border-radius;
-          active_opacity = 0.96;
-          inactive_opacity = 0.96;
+          active_opacity = 0.95;
+          inactive_opacity = 0.95;
           drop_shadow = false;
           blur = {
             enabled = true;
-            size = 4;
+            size = 3;
             passes = 3;
             new_optimizations = true;
             xray = true;

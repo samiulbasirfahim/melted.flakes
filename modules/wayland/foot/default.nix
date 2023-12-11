@@ -4,7 +4,7 @@ in {
     enable = true;
     settings = with ui.colors; {
       main = {
-        font = "${ui.font}:size=13";
+        font = "${ui.nerd-font}:size=11";
         dpi-aware = "no";
         resize-delay-ms = 0;
         line-height = 19;

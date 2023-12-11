@@ -33,34 +33,34 @@ in {
         ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
-          #"format-icons" = {
-          #     "1" = "";
-          #     "2" = "";
-          #     "3" = "";
-          #     "4" = "<span size='9pt'></span>";
-          #     "5" = "";
-          #     "6" = "<span size='11pt'></span>";
-          #     "7" = "";
-          #     "8" = "";
-          #     "9" = "";
-          #   };
+          "format-icons" = {
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
+            "6" = "";
+            "7" = "";
+            "8" = "";
+            "9" = "";
+          };
         };
         "disk" = {
-          "format" = "<span size='10pt'></span> {used}";
+          "format" = " {used}";
           "path" = "/";
           "interval" = 3;
         };
         "pulseaudio" = {
           "scroll-step" = 5;
           "format" = "{icon}{volume}%";
-          "format-muted" = "<span size='14pt'></span>";
+          "format-muted" = "";
           "format-icons" = { "default" = [ " " " " " " ]; };
           "on-click" = "pamixer -t";
           "on-click-right" = "pavucontrol";
         };
         "pulseaudio#microphone" = {
           "format" = "{format_source}";
-          "format-source" = "<span></span> {volume}%";
+          "format-source" = " {volume}%";
           "format-source-muted" = "";
           "on-click" = "pamixer --default-source -t";
           "on-scroll-up" = "pamixer --default-source -i 5";
@@ -74,12 +74,12 @@ in {
           "tooltip-format" = "<tt>{calendar}</tt>";
         };
         "memory" = {
-          "interval" = 3;
-          "format" = "<span size='9pt'></span> {used}G";
+          "interval" = 2;
+          "format" = " {used}G";
         };
         "cpu" = {
-          "interval" = 3;
-          "format" = "<span size='10pt'></span> {usage}%";
+          "interval" = 2;
+          "format" = " {usage}%";
         };
         "custom/cava-internal" = {
           "exec" = "sleep 1s && cava-internal";
@@ -104,7 +104,7 @@ in {
 
       style = with ui; ''
         * {
-          font-family: "${font}";
+          font-family: ${font}, 'FontAwesome 6 Free';
           font-weight: bold;
           font-size: 14px;
           min-height: 0;
@@ -115,6 +115,7 @@ in {
           background: #${colors.background};
           color: #${foreground-color};
           border-bottom: ${toString border-size}px solid #${border-color};
+          opacity: 0.97;
         }
 
         #workspaces { 
@@ -125,7 +126,7 @@ in {
         } 
         #workspaces button {
           padding: 0px 0px;
-          margin: 6px 6px;
+          margin: 6px 10px;
           border-radius: 0px;
           border-radius: 2px;
           color: #${colors.brightblack};
@@ -142,12 +143,12 @@ in {
         }
 
         #clock, #custom-cava-internal {
-          margin-left: 20px;
+          margin-left: 22px;
           color: #${foreground-color};
         }
 
         #pulseaudio, #memory, #cpu, #disk, #tray, #network, #custom-ibus-layout {
-          margin-right: 20px;
+          margin-right: 22px;
           color: #${foreground-color};
         }
       '';

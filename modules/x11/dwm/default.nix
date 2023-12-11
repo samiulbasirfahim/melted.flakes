@@ -2,14 +2,13 @@
   services.xserver = {
     enable = true;
     windowManager.dwm.enable = true;
-    displayManager.gdm.enable = true;
+    displayManager.startx.enable = true;
     deviceSection = ''Option "TearFree" "true"'';
   };
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal ];
   };
-
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {

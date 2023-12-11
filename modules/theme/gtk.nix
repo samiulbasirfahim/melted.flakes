@@ -5,7 +5,7 @@ in {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      maple-mono
+      jetbrains-mono
       font-awesome
       adw-gtk3
       gradience
@@ -21,7 +21,6 @@ in {
     gtk = {
       enable = true;
       theme.name = ui.colors.gtk-theme;
-
       iconTheme = {
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
