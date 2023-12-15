@@ -27,6 +27,7 @@
 
     croc # Chrome
     chromium
+    qutebrowser
     vscode
 
     # Email client

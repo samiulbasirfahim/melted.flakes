@@ -14,7 +14,7 @@
       ./services.nix
       ./system.nix
       ./user.nix
-      ./warp.nix
+      # ./warp.nix
       ./ibus.nix
 
       # editors
@@ -23,9 +23,9 @@
       ./../development/editors/vscode
 
       # wayland
-      ./../wayland
+      # ./../wayland
 
-      # ./../x11
+      ./../x11
 
       # lnguages
       ./../development/language/cpp.nix

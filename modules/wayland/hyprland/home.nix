@@ -47,8 +47,8 @@ in {
           animate_mouse_windowdragging = false;
         };
         general = {
-          gaps_in = 6;
-          gaps_out = 10;
+          gaps_in = 8;
+          gaps_out = 13;
           border_size = ui.border-size;
           "col.active_border" = "0xff${ui.border-color}";
           "col.inactive_border" = "0xff${cursor}";
@@ -58,13 +58,13 @@ in {
 
         decoration = {
           rounding = ui.border-radius;
-          active_opacity = 0.95;
-          inactive_opacity = 0.95;
-          drop_shadow = false;
+          active_opacity = 0.96;
+          inactive_opacity = 0.96;
+          drop_shadow = false; 
           blur = {
             enabled = true;
-            size = 3;
-            passes = 3;
+            size = 10;
+            passes = 2;
             new_optimizations = true;
             xray = true;
           };
@@ -82,7 +82,7 @@ in {
           ];
         };
         master = {
-          mfact = 0.65;
+          mfact = 0.6;
           orientation = "left";
           always_center_master = true;
         };

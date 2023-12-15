@@ -1,0 +1,77 @@
+#!/bin/bash
+#  ____   _____        _______ ____       ____  __  __ _____ _   _ _   _
+# |  _ \ / _ \ \      / / ____|  _ \     |  _ \|  \/  | ____| \ | | | | |
+# | |_) | | | \ \ /\ / /|  _| | |_) |____| | | | |\/| |  _| |  \| | | | |
+# |  __/| |_| |\ V  V / | |___|  _ <_____| |_| | |  | | |___| |\  | |_| |
+# |_|    \___/  \_/\_/  |_____|_| \_\    |____/|_|  |_|_____|_| \_|\___/
+#
+# Script for power managing the system.
+
+# All supported choices.
+all=(shutdown reboot suspend hibernate logout lockscreen)
+
+# Font used by dmenu.
+font="JetbrainsMono Nerd Font:size=11"
+
+# Texts to be displayed in dmenu.
+declare -A messages
+messages[lockscreen]="Lockscreen"
+messages[logout]="Logout"
+messages[suspend]="Suspend"
+messages[hibernate]="Hibernate"
+messages[reboot]="Reboot"
+messages[shutdown]="Shutdown"
+
+# Unicode icons to be displayed in dmenu.
+declare -A icons
+icons[lockscreen]=$'\Uf023'
+icons[switchuser]=$'\Uf518'
+icons[logout]=$'\Uf842'
+icons[suspend]=$'\Uf9b1'
+icons[hibernate]=$'\Uf7c9'
+icons[reboot]=$'\Ufc07'
+icons[shutdown]=$'\Uf011'
+icons[cancel]=$'\U00d7'
+
+# Commands to be executed.
+declare -A actions
+actions[Lockscreen]="loginctl lock-session ${XDG_SESSION_ID-}"
+actions[Logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
+actions[Suspend]="systemctl suspend"
+actions[Hibernate]="systemctl hibernate"
+actions[Reboot]="systemctl reboot -i"
+actions[Shutdown]="systemctl poweroff"
+
+# Appends to the options array every message and its corresponding icon.
+for entry in "${all[@]}"
+do
+  options+=("${icons[$entry]} ${messages[$entry]}")
+done
+
+# Launches dmenu with each element of the options array as argument.
+choice=$(printf '%s\n' "${options[@]}" | dmenu -c -l 7 -h 35 -p 'Power menu' -fn "$font" | awk '{print $2}')
+
+if [ -n "$choice" ]; then
+  # Reboot, shutdown and logout commands need confirmation to be executed.
+  case "$choice" in
+    Reboot) confirmation=true ;;
+    Shutdown) confirmation=true ;;
+    Logout) confirmation=true ;;
+    *) confirmation=false ;;
+  esac
+
+  # Defines command.
+  action="${actions["$choice"]}"
+
+  # Executes command.
+  if [ "$confirmation" == "true" ]; then
+    confirmed=$(printf "Yes\nNo" | dmenu -c -h 32 -p 'Are you sure?')
+
+    [ "$confirmed" == "Yes" ] && $action
+  else
+    $action
+  fi
+fi
+
+
+

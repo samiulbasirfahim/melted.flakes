@@ -3,11 +3,13 @@
     enable = true;
     windowManager.dwm.enable = true;
     displayManager.startx.enable = true;
+    videoDrivers = [ "amdgpu" ];
     deviceSection = ''Option "TearFree" "true"'';
   };
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal ];
+    config.common.default = "*";
   };
   nixpkgs.overlays = [
     (final: prev: {
@@ -31,13 +33,12 @@
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
-      /* dwmblocks = prev.dwmblocks.overrideAttrs (old: {
-              src = /home/xenoxanite/.suckless/dwmblocks;
-              buildInputs = (old.buildInputs or [ ]) ++ [ ];
-              nativeBuildInputs = (old.nativeBuildInputs or [ ])
-                ++ [ pkgs.pkg-config ];
-            });
-      */
+      dwmblocks = prev.dwmblocks.overrideAttrs (old: {
+        src = /home/xenoxanite/.suckless/dwmblocks;
+        buildInputs = (old.buildInputs or [ ]) ++ [ ];
+        nativeBuildInputs = (old.nativeBuildInputs or [ ])
+          ++ [ pkgs.pkg-config ];
+      });
     })
 
   ];
@@ -51,6 +52,7 @@
       xcompmgr
       flameshot
       xclip
+      clipmenu
     ];
   };
 }

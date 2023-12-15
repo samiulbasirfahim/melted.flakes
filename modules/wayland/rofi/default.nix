@@ -32,7 +32,7 @@ in {
     window {
     	width:			    	37%;
     	padding: 			5px;
-      border: 2px;
+      border: ${toString ui.border-size}px;
       border-color: @accent;
     }
 

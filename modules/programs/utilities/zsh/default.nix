@@ -7,7 +7,8 @@
     loginShellInit = ''
       if [[ "$(tty)" == "/dev/tty1" ]]
       then
-        Hyprland
+        # Hyprland
+        startx
       fi
     '';
   };

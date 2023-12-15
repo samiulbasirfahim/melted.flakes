@@ -4,4 +4,5 @@
     {
       # qutebrowser = pkgs.qutebrowser.override { enableVulkan = true; };
     };
+  home.sessionPath = [ "$HOME/bin" "$HOME/.local/bin" ];
 }
