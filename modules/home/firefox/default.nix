@@ -26,6 +26,7 @@
         ExtensionRecommendations = false;
         SkipOnboarding = true;
       };
+
       DisableFormHistory = true;
       DontCheckDefaultBrowser = true;
 
@@ -34,10 +35,10 @@
         "ebay@search.mozilla.org".installation_mode = "blocked";
         "amazondotcom@search.mozilla.org".installation_mode = "blocked";
         "bing@search.mozilla.org".installation_mode = "blocked";
-        "ddg@search.mozilla.org".installation_mode = "blocked";
         "wikipedia@search.mozilla.org".installation_mode = "blocked";
       };
       Preferences = {
+        "browser.compactmode.show" = true;
         "browser.toolbars.bookmarks.visibility" = "never";
         "browser.fullscreen.autohide" = false;
         "media.ffmpeg.vaapi.enabled" = true;

@@ -4,8 +4,8 @@ in {
   home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      jetbrains-mono
+      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      fantasque-sans-mono
       font-awesome
       adw-gtk3
       gradience
@@ -26,7 +26,7 @@ in {
         name = "Papirus-Dark";
       };
       font = {
-        name = ui.font;
+        name = ui.nerd-font;
         size = 11;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
