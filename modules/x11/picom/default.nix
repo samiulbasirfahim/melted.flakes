@@ -18,9 +18,8 @@
       shadow = false; # Shadows
       fade = true;
       fadeDelta = 10;
-
-      activeOpacity = 0.9; # Transparency
-      inactiveOpacity = 0.9;
+      activeOpacity = 0.94; # Transparency
+      inactiveOpacity = 0.94;
       menuOpacity = 0.9;
       opacityRule =
         [ "100:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_FULLSCREEN'" ];
@@ -31,17 +30,10 @@
         refresh-rate = 0;
         corner-radius = 0; # Corners
         round-borders = 0;
-        # transition-length = 150; # Animations Jonaburg
-        # transition-pow-x = 0.5;
-        # transition-pow-y = 0.5;
-        # transition-pow-w = 0.5;
-        # transition-pow-h = 0.5;
-        # size-transition = true;
-
         animations = true;
         animation-stiffness = 150;
         animation-window-mass = 3;
-        animation-dampening = 21;
+        animation-dampening = 10;
         animation-clamping = true;
         animation-mass = 1;
         animation-for-open-window = "zoom";

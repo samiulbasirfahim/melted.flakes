@@ -71,7 +71,7 @@ let
 in rec {
   colors = decay;
   font = "JetBrains Mono";
-  nerd-font = "fantasqueSansM Nerd Font";
+  nerd-font = "JetBrainsMono Nerd Font";
   foreground-color = colors.teal;
   border-size = 3;
   border-radius = 0;

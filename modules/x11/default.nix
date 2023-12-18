@@ -1,1 +1,1 @@
-{ imports = [ ./dwm ]; }
+{ imports = [ ./dwm ./picom ]; }

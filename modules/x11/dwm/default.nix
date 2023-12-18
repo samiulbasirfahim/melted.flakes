@@ -15,7 +15,7 @@
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
         src = /home/xenoxanite/.suckless/dwm;
-        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.harfbuzz ];
+        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.imlib2 ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
@@ -52,7 +52,9 @@
       xcompmgr
       flameshot
       xclip
-      clipmenu
+      # clipmenu
+      copyq
+      slock
     ];
   };
 }
