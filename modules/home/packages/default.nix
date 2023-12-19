@@ -23,5 +23,6 @@
     vscode
 
     yt-dlp
+    bottles
   ];
 }

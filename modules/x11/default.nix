@@ -1,1 +1,7 @@
-{ imports = [ ./dwm ./picom ]; }
+{
+  imports = [
+    # ./dwm
+    # ./picom
+    ./kde
+  ];
+}
