@@ -73,7 +73,7 @@ in rec {
   font = "JetBrains Mono";
   nerd-font = "JetBrainsMono Nerd Font";
   foreground-color = colors.teal;
-  border-size = 3;
+  border-size = 2;
   border-radius = 0;
   border-color = colors.green;
 }

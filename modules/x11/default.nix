@@ -1,7 +1,8 @@
 {
   imports = [
-    # ./dwm
-    # ./picom
-    ./kde
+    ./dwm
+    ./picom
+    ./dunst
+    # ./kde
   ];
 }
