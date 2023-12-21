@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  home-manager.users.xenoxanite = { home.packages = with pkgs; [ ]; };
+  home-manager.users.fahim = { home.packages = with pkgs; [ ]; };
 }

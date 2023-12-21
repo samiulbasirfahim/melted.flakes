@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let ui = import ./ui.nix { };
 in {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

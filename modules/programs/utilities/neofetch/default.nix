@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     home.packages = [
       pkgs.neofetch
     ];

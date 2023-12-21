@@ -228,7 +228,7 @@
     };
     package = pkgs.firefox-beta;
     profiles.default = {
-      name = "xenoxanite";
+      name = "fahim";
       search = {
         engines = {
           "Nix Packages" = {

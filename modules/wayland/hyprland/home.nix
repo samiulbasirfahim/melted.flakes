@@ -3,7 +3,7 @@ let
   ui = import ../../theme/ui.nix { };
   colors = ui.colors;
 in {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     systemd.user.targets.hyprland-session.Unit.Wants =
       [ "xdg-desktop-autostart.target" ];
 
@@ -239,7 +239,7 @@ in {
           "wl-paste --type image --watch cliphist store &"
           "waybar &"
           "foot --server"
-          "mako -c /home/xenoxanite/.config/mako/config.conf"
+          "mako -c /home/fahim/.config/mako/config.conf"
           "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
           # "sleep 5 && discord --start-minimized &"
         ];

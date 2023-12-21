@@ -1,1 +1,1 @@
-{ home-manager.users.xenox = { }; }
+{ home-manager.users.fahim = { }; }

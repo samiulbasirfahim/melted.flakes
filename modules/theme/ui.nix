@@ -1,7 +1,7 @@
 { }:
 let
   decay = {
-    background = "101419";
+    background = "101420";
     contrast = "0e1217";
     statusline_bg = "13171c";
     lighter = "1a1e23";

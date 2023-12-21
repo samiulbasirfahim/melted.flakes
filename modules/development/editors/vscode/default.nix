@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;

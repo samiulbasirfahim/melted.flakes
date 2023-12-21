@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let ui = import ./../../../theme/ui.nix { };
 in {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     programs.tmux = {
       enable = true;
       baseIndex = 1;

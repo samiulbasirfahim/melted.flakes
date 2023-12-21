@@ -1,9 +1,9 @@
 { inputs, ... }: {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     imports = [ inputs.nix-doom-emacs.hmModule ];
     programs.doom-emacs = {
       enable = true;
-      doomPrivateDir = /home/xenoxanite/.config/doom;
+      doomPrivateDir = /home/fahim/.config/doom;
     };
   };
 }

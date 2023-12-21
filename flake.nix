@@ -1,5 +1,5 @@
 {
-  description = "Xenoxanite's nixos configuration";
+  description = "My very minimal nixos configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";

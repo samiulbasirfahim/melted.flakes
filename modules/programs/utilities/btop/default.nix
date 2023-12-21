@@ -1,5 +1,5 @@
 {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     xdg.configFile."btop/btop.conf".text = ''
       color_theme = "TTY"
       theme_background = False

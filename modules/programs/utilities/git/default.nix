@@ -11,10 +11,10 @@
     fi
   '';
 in {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     programs.git = {
       enable = true;
-      userName = "xenoxanite";
+      userName = "samiulbasirfahim";
       userEmail = "xenoxanite@gmail.com";
     };
 

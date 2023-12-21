@@ -2,7 +2,7 @@
 let ui = import ./../../theme/ui.nix { };
 in {
 
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     home.packages = [ pkgs.libnotify ];
     services.dunst = {
       package = pkgs.dunst;

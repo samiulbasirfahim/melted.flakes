@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     services.picom = {
       enable = true;
       package = pkgs.picom.overrideAttrs (o: {

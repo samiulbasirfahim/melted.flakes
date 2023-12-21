@@ -10,7 +10,7 @@ in {
       });
     })
   ];
-  home-manager.users.xenoxanite = {
+  home-manager.users.fahim = {
     programs.waybar = {
       enable = true;
       systemd = {

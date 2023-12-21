@@ -12,7 +12,7 @@
       fi
     '';
   };
-  home-manager.users.xenoxanite.programs.zsh = {
+  home-manager.users.fahim.programs.zsh = {
     enable = true;
     autocd = true;
     enableAutosuggestions = true;
@@ -20,7 +20,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/Flakes";
+      nrs = "sudo nixos-rebuild switch --flake /home/fahim/Flakes";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
       lsa = "eza -l --icons";
