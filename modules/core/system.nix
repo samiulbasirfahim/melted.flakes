@@ -5,7 +5,7 @@
         discord = super.discord.override { withVencord = true; };
       };
     in [
-      inputs.neovim-nightly-overlay.overlay
+#     inputs.neovim-nightly-overlay.overlay
       self.overlays.default
       myOverlay
       inputs.nur.overlay
