@@ -7,7 +7,7 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     hyprland-contrib.url = "github:hyprwm/contrib";
     nur.url = "github:nix-community/NUR";
-#   neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };

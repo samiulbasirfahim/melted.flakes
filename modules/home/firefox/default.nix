@@ -211,6 +211,7 @@
         "security.tls.version.enable-deprecated" = false;
         "extensions.webcompat-reporter.enabled" = false;
         "browser.startup.homepage_override.mstone" = "ignore";
+        "browser.startup.homepage" = "chrome://browser/content/blanktab.html";
         "browser.messaging-system.whatsNewPanel.enabled" = false;
         "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" =
           false;

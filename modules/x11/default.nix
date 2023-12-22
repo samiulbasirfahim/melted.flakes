@@ -4,5 +4,6 @@
     ./picom
     ./dunst
     # ./kde
+    # ./xserver.nix
   ];
 }

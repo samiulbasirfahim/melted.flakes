@@ -21,7 +21,7 @@
       activeOpacity = 0.94; # Transparency
       inactiveOpacity = 0.94;
       menuOpacity = 0.9;
-      opacityRule =
+      opacityRules =
         [ "100:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_FULLSCREEN'" ];
       settings = {
         daemon = true;

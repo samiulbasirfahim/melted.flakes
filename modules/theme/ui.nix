@@ -66,10 +66,9 @@ let
     lavender = "a9acdb";
     accent = "78dba9";
     gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark";
-
   };
 in rec {
-  colors = decay;
+  colors = catppuccin;
   font = "JetBrains Mono";
   nerd-font = "JetBrainsMono Nerd Font";
   foreground-color = colors.teal;
