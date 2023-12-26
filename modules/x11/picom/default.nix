@@ -31,11 +31,11 @@
         corner-radius = 0; # Corners
         round-borders = 0;
         animations = true;
-        animation-stiffness = 5;
-        animation-window-mass = 5;
-        animation-dampening = 5;
+        animation-stiffness = 3;
+        animation-window-mass = 3;
+        animation-dampening = 3;
         animation-clamping = true;
-        animation-mass = 5;
+        animation-mass = 3;
         animation-for-open-window = "slide-down";
         animation-for-menu-window = "slide-down";
         animation-for-transient-window = "slide-down";

@@ -5,6 +5,7 @@
     pavucontrol
     unzip
     btop
+    ytfzf
     fzf
 
     stacer

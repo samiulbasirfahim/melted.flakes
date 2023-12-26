@@ -47,6 +47,7 @@
       dwm
       dwmblocks
       dmenu
+      xdotool
       st
       xwallpaper
       xcompmgr

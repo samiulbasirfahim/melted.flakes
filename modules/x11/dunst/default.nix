@@ -10,7 +10,7 @@ in {
       settings = with ui.colors; {
         global = {
           font = ui.nerd-font;
-          font-size = 9;
+          font_size = 9;
           markup = "full";
           format = ''
             %s
@@ -34,7 +34,7 @@ in {
           sticky_history = "yes";
           history_length = 20;
           show_indicators = "no";
-          line_height = 4;
+          line_height = 2;
           separator_height = 4;
           padding = 20;
           horizontal_padding = 20;

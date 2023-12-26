@@ -7,9 +7,6 @@ in {
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       jetbrains-mono
       font-awesome
-      adw-gtk3
-      gradience
-      dark-decay
       (catppuccin-gtk.override {
         size = "compact";
         accents = [ "green" ];
