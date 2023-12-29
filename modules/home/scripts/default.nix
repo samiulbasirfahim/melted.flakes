@@ -12,6 +12,16 @@ let
                   --margin-left 150 \
                   --margin-right 150
   '';
+  load-wallpaper = pkgs.writeShellScriptBin "load-wallpaper" ''
+    wal -i $(grep -o "'/[^']*'" <<< cat $HOME/.fehbg | cut -d "'" -f 2) 
+  '';
+  auto-power-off = pkgs.writeShellScriptBin "auto-power-off" ''
+    shutdown -P 23:00 &
+    time=$(date '+%H')
+    if [ "$time" -gt 22 ] || [ "$time" -lt 5 ]; then
+      shutdown now
+    fi
+  '';
 in {
   imports = [ (import ./wallpaper-picker.nix) ]
     ++ [ (import ./random-wall.nix) ];
@@ -26,5 +36,6 @@ in {
     data_format = ascii
     ascii_max_range = 7
   '';
-  home.packages = [ cava-internal pkgs.cava launch-wlogout ];
+  home.packages =
+    [ cava-internal pkgs.cava launch-wlogout load-wallpaper auto-power-off ];
 }

@@ -1,9 +1,1 @@
-{
-  imports = [
-    ./dwm
-    ./picom
-    ./dunst
-    # ./kde
-    # ./xserver.nix
-  ];
-}
+{ imports = [ ./dwm ./dunst ]; }

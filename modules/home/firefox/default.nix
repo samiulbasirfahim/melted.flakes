@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./userChrome.nix ];
+  imports = [ ./userChrome-pywal.nix ];
   programs.firefox = {
     enable = true;
     policies = {
@@ -263,6 +263,7 @@
         languagetool
         darkreader
         videospeed
+        pywalfox
       ];
     };
   };

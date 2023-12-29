@@ -22,7 +22,7 @@
         };
         workbench = {
           startupEditor = "none";
-          colorTheme = "Dark Decay";
+          colorTheme = "Wal";
           productIconTheme = "el-vsc-v1-icons";
           statusBar.visible = false;
         };
@@ -35,10 +35,10 @@
           naumovs.color-highlight
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
-            name = "decay";
-            version = "1.0.9";
-            publisher = "decaycs";
-            sha256 = "TwDq8K757CTFEBBBGbP5eOC5nMrQzgf/XYIHi9UCAkU=";
+            name = "wal-theme";
+            version = "1.2.0";
+            publisher = "dlasagno";
+            sha256 = "X16N5ClNVLtWST64ybJUEIRo6WgDCzODhBA9ScAHI5w=";
           }
           {
             name = "el-vsc-product-icon-theme";

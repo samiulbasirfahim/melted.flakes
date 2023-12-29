@@ -8,9 +8,11 @@ in {
     * {
       border-radius: ${toString ui.border-radius}px !important;
     }
+
     #webrtcIndicator {
       display: none !important;
     }
+
     #identity-box.extensionPage
       #identity-icon[tooltiptext="Loaded by extension: Tabliss"]
       ~ #identity-icon-label {

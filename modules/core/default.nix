@@ -14,12 +14,12 @@
       ./services.nix
       ./system.nix
       ./user.nix
-      # ./warp.nix
+      ./warp.nix
       ./ibus.nix
 
       # editors
       ./../development/editors/neovim
-      # ./../development/editors/emacs
+      ./../development/editors/emacs
       ./../development/editors/vscode
 
       # wayland

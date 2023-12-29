@@ -2,12 +2,15 @@
 
   home.packages = with pkgs; [
     # freetube
-    pavucontrol
     unzip
     btop
     ytfzf
+    pulsemixer
+    cmus
+    calcurse
     fzf
-
+    ffmpeg
+    
     stacer
     eza
     playerctl

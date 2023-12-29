@@ -9,7 +9,6 @@
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
   outputs = { nixpkgs, self, ... }@inputs:
     let selfPkgs = import ./pkgs;

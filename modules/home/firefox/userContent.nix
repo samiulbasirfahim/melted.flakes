@@ -1,33 +1,42 @@
 {
   programs.firefox.profiles.default.userContent = ''
+    /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
+    /* Hide page scrollbars */
+    html {
+      scrollbar-width: none !important;
+    }
+
     @-moz-document url(about:blank), url(about:newtab), url(about:home) {
       body {
-        --newtab-snippets-background-color: #242931 !important;
-        --newtab-contextmenu-button-color: #101419 !important;
-        --newtab-contextmenu-background-color: #242931 !important;
+        --pywalfox-font-size: 1rem;
+        --pywalfox-font-size-sm: 0.8rem;
+        --pywalfox-accent: var(--lwt-sidebar-highlight-background-color);
+        --pywalfox-background: var(--newtab-background-color);
+        --pywalfox-background-light: var(--lwt-sidebar-background-color);
+
+        --newtab-snippets-background-color: var(--pywalfox-background-light) !important;
+        --newtab-contextmenu-button-color: var(--pywalfox-background) !important;
+        --newtab-contextmenu-background-color: var(--pywalfox-background-light) !important;
 
         /* Firefox 89 */
-        --newtab-topsites-background-color: #242931 !important;
-        --newtab-textbox-background-color: #242931 !important;
-        --customize-menu-background: #242931 !important;
-        --customize-menu-secondary-action-background: #101419 !important;
-        --customize-menu-secondary-action-background-hover: #101419 !important;
-        --newtab-primary-action-background: #70a5eb !important;
-        --newtab-primary-action-background-off: #101419 !important;
-        --customize-menu-line-color: #70a5eb !important;
-        --newtab-background-button-color: #242931 !important;
-        --newtab-background-button-hover-color: #242931 !important;
+        --newtab-topsites-background-color: var(--pywalfox-background-light) !important;
+        --newtab-textbox-background-color: var(--pywalfox-background-light) !important;
+        --customize-menu-background: var(--pywalfox-background-light) !important;
+        --customize-menu-secondary-action-background: var(--pywalfox-background) !important;
+        --customize-menu-secondary-action-background-hover: var(--pywalfox-background) !important;
+        --newtab-primary-action-background: var(--pywalfox-accent) !important;
+        --newtab-primary-action-background-off: var(--pywalfox-background) !important;
+        --customize-menu-line-color: var(--pywalfox-accent) !important;
+        --newtab-background-button-color: var(--pywalfox-background-light) !important;
+        --newtab-background-button-hover-color: var(--pywalfox-background-light) !important;
       }
 
       /* Add bold text to most text */
-      .top-site-outer .title span,
-      .top-site-outer .default-icon[data-fallback]::before,
-      .top-site-outer .search-topsite[data-fallback]::before,
-      .context-menu > ul > li > a,
-      .top-site-outer .default-icon,
-      .top-site-outer .search-topsite {
+      .top-site-outer .title span, .top-site-outer .default-icon[data-fallback]::before,
+      .top-site-outer .search-topsite[data-fallback]::before, .context-menu > ul > li > a,
+      .top-site-outer .default-icon, .top-site-outer .search-topsite {
         font-weight: bold !important;
-        font-size: 12px;
+        font-size: var(--pywalfox-font-size-sm);
       }
 
       /* Bold text to activity card page labels */
@@ -42,45 +51,37 @@
 
       /* Highlights card image placeholder */
       [lwt-newtab-brighttext] .card-outer .card-preview-image-outer {
-        background-color: #70a5eb !important;
+        background-color: var(--pywalfox-accent) !important;
       }
 
       /* Top sites card hover border */
-      [lwt-newtab-brighttext]
-        .ds-top-sites
-        .top-sites
-        .top-site-outer
-        .top-site-inner
-        > a:-moz-any(:hover)
-        .tile {
-        box-shadow: 0 0 0 3px #242931 !important;
+      [lwt-newtab-brighttext] .ds-top-sites .top-sites .top-site-outer .top-site-inner > a:-moz-any(:hover) .tile {
+        box-shadow: 0 0 0 3px var(--pywalfox-background-light) !important;
       }
 
       /* Clock icon in new tab highlight cards */
       [lwt-newtab-brighttext] .card > .card-details > .card-context {
         clip-path: none !important;
-        background-color: #242931 !important;
+        background-color: var(--pywalfox-background-light) !important;
       }
 
       /* "Highlights" domain name */
       .card-outer .card-host-name {
-        color: #70a5eb !important;
+        color: var(--pywalfox-accent) !important;
       }
 
       /* "Highlights" context icon */
       .card-outer .card-context-icon {
-        fill: #70a5eb !important;
+        fill: var(--pywalfox-accent) !important;
       }
 
       /* "Top sites" and "Highlights" titles */
-      .ds-header,
-      .ds-layout .section-title span {
+      .ds-header, .ds-layout .section-title span {
         color: var(--newtab-text-primary-color) !important;
       }
 
       /* "Top sites" and "Highlights" icons */
-      .ds-header .icon,
-      .ds-layout .section-title span .icon {
+      .ds-header .icon, .ds-layout .section-title span .icon {
         fill: var(--newtab-text-primary-color) !important;
       }
 
@@ -89,13 +90,12 @@
       [lwt-newtab-brighttext] .search-wrapper input,
       [lwt-newtab-brighttext] .top-site-outer .top-site-icon,
       [lwt-newtab-brighttext] .ds-highlights .section .section-list .card-outer {
-        background-color: #242931 !important;
+        background-color: var(--pywalfox-background-light) !important;
       }
 
       /* Card border when hovering in dark mode */
-      [lwt-newtab-brighttext]
-        .card-outer:-moz-any(:hover, :focus, .active):not(.placeholder) {
-        box-shadow: 0 0 0 5px #242931 !important;
+      [lwt-newtab-brighttext] .card-outer:-moz-any(:hover, :focus, .active):not(.placeholder) {
+        box-shadow: 0 0 0 5px var(--pywalfox-background-light) !important;
       }
 
       /* Card border when hovering in light mode */
@@ -126,39 +126,6 @@
         filter: brightness(120%);
       }
     }
-
-    @-moz-document url(about:home),
-          url(about:newtab),
-          url(about:privatebrowsing) {
-      .click-target-container *,
-      .top-sites-list * {
-        color: var(--foreground) !important;
-        text-shadow: 2px 2px 2px var(--background) !important;
-      }
-
-      body::before {
-        content: "";
-        z-index: -1;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: var(--background);
-        background-size: cover;
-        width: 100vw;
-        height: 100vh;
-      }
-
-      main .logo-and-wordmark {
-        display: none !important;
-      }
-
-      main button {
-        border: 2px solid var(--color2) !important;
-        border-radius: 50px !important;
-        box-shadow: none !important;
-        outline: none !important;
-      }
-    }
-
+    /********************* END PYWALFOX CUSTOM CSS *********************/
   '';
 }
