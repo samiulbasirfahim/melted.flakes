@@ -69,8 +69,8 @@ let
   };
 in rec {
   colors = decay;
-  font = "JetBrains Mono";
-  nerd-font = "JetBrainsMono Nerd Font";
+  font = "Maple Mono";
+  nerd-font = "Maple Mono";
   foreground-color = colors.teal;
   border-size = 2;
   border-radius = 0;

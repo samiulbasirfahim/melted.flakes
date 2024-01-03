@@ -12,6 +12,7 @@ in {
         tweaks = [ "normal" ];
       })
 
+      maple-mono
     ];
     gtk = {
       enable = true;

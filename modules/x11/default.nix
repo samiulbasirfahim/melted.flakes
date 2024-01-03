@@ -2,7 +2,7 @@
   imports = [ ./dwm ./dunst ];
   home-manager.users.fahim = { pkgs, ... }: {
     services.picom = {
-      enable = true;
+      enable = false;
       package = pkgs.picom.overrideAttrs (o: {
         buildInputs = (o.buildInputs or [ ])
           ++ [ pkgs.pcre2 pkgs.xorg.xcbutil ];
@@ -25,8 +25,10 @@
       menuOpacity = 0.92;
       opacityRules =
         [ "100:_NET_WM_STATE@[0]:32a = '_NET_WM_STATE_FULLSCREEN'" ];
-      settings = {
-        daemon = true;
+      
+settings = {
+        daemon = true;        
+        fading = false;
         use-damage = false; # Fixes Flickering
         resize-damage = 1;
         refresh-rate = 0;

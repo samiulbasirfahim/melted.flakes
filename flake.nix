@@ -19,3 +19,4 @@
         import ./modules/core/default.nix { inherit self nixpkgs inputs; };
     };
 }
+

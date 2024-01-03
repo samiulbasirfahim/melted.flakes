@@ -6,3 +6,4 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
   boot.initrd.kernelModules = [ "amdgpu" ];
 }
+
