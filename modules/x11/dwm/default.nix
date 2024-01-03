@@ -39,18 +39,8 @@
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
-      slock = prev.slock.overrideAttrs (old: {
-        src = /home/fahim/.suckless/slock;
-        buildInputs = (old.buildInputs or [ ]) ++ [ ];
-        nativeBuildInputs = (old.nativeBuildInputs or [ ])
-          ++ [ pkgs.pkg-config ];
-      });
-
     })
-
   ];
-  programs.slock.enable = true;
-
   home-manager.users.fahim = {
     home.packages = with pkgs; [
       dwmblocks
@@ -62,8 +52,8 @@
       flameshot
       xclip
       copyq
+      betterlockscreen
       xautolock
     ];
   };
-  # security.wrappers = [ pkgs.slock ];
 }

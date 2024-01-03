@@ -31,8 +31,8 @@ let
     brightwhite = "e3e6eb";
     lavender = "a9acdb";
     accent = "78dba9";
-    gtk-theme = "Dark-decay";
-
+    # gtk-theme = "Dark-decay";
+    gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark";
   };
   catppuccin = {
     background = "1E1E2E";
@@ -68,7 +68,7 @@ let
     gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark";
   };
 in rec {
-  colors = catppuccin;
+  colors = decay;
   font = "JetBrains Mono";
   nerd-font = "JetBrainsMono Nerd Font";
   foreground-color = colors.teal;

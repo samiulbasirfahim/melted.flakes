@@ -9,14 +9,16 @@
     cmus
     calcurse
     fzf
-    ffmpeg
-    
+    zathura-pywal
+    ffmpeg-full
+
     stacer
     eza
     playerctl
     gparted
     pamixer
-    xfce.thunar
+    xarchiver
+    pcmanfm
     neofetch
     galculator
     # Multimedia

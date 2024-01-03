@@ -1,42 +1,34 @@
-let ui = import ./../../../theme/ui.nix { };
-in {
-  xdg.configFile."nvim-colors.lua".text = with ui.colors; ''
-    local M = {}
+{
+  xdg.configFile."nvimc.lua".text = ''
+local M = {}
 
-    function M.get_palette()
-      return {
-          background = "#${background}";
-          contrast = "#${contrast}";
-          statusline_bg = "#${statusline_bg}";
-          lighter = "#${lighter}";
-          foreground = "#${foreground}";
-          cursorline = "#${cursorline}";
-          comments = "#${comments}";
-          cursor = "#${cursor}";
-          black = "#${black}";
-          red = "#${red}";
-          orange = "#${orange}";
-          yellow = "#${yellow}";
-          pink = "#${pink}";
-          green = "#${green}";
-          blue = "#${blue}";
-          teal = "#${teal}";
-          magenta = "#${magenta}";
-          cyan = "#${cyan}";
-          sky = "#${sky}";
-          white = "#${white}";
-          brightblack = "#${brightblack}";
-          brightred = "#${brightred}";
-          brightgreen = "#${brightgreen}";
-          brightyellow = "#${brightyellow}";
-          brightblue = "#${brightblue}";
-          brightmagenta = "#${brightmagenta}";
-          brightcyan = "#${brightcyan}";
-          brightwhite = "#${brightwhite}";
-          lavender = "#${lavender}";
-          accent = "#${accent}";
-      }
-    end
-    return M
-  '';
+function M.get_palette()
+	vim.cmd([[ source $HOME/.cache/wal/colors-wal.vim ]])
+	return {
+		background = vim.g.background,
+		foreground = vim.g.foreground,
+    lighter = "#1a1e23";
+		cursorline = "#313244",
+		comments = vim.g.color8,
+		cursor = vim.g.cursor,
+		black = vim.g.color0,
+		red = vim.g.color1,
+		green = vim.g.color3,
+		yellow = vim.g.color3,
+		blue = vim.g.color4,
+		magenta = vim.g.color5,
+		cyan = vim.g.color6,
+		white = vim.g.color7,
+		brightblack = vim.g.color8,
+		brightred = vim.g.color9,
+		brightgreen = vim.g.color10,
+		brightyellow = vim.g.color11,
+		brightblue = vim.g.color12,
+		brightmagenta = vim.g.color13,
+		brightcyan = vim.g.color14,
+		brightwhite = vim.g.color15,
+	}
+end
+
+return M '';
 }

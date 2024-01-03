@@ -4,7 +4,7 @@ in with ui; {
   home.packages = [ pkgs.libnotify ];
   services.mako = {
     enable = true;
-    font = "${font} 10";
+    font = "${nerd-font} 10";
     anchor = "top-right";
     textColor = "#${foreground-color}";
     backgroundColor = "#${colors.background}";

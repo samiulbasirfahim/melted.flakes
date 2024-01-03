@@ -30,10 +30,10 @@ in {
     }
 
     body {
-        --font-display: ${ui.font};
+        --font-display: ${ui.nerd-font};
     }
     * {
-        font-family: ${ui.font} !important;
+        font-family: ${ui.nerd-font} !important;
     }
 
     .body-2wLx-E, .headerTop-3GPUSF, .bodyInnerWrapper-2bQs1k, .footer-3naVBw {

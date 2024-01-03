@@ -1,30 +1,22 @@
 { pkgs, ... }:
 let
-  ibus-toggle-layout = pkgs.writeShellScriptBin "ibus-toggle-layout" ''
-    engine=$(ibus engine)
-    path=$HOME/.cache/ibus-layout
-
-    if [ ! -f $path ]; then
-      touch $path
-    fi
-
-    if [ "$engine" == "xkb:us::eng" ]; then
-      ibus engine OpenBangla - OpenBangla Keyboard 
-      echo "󰌌 bn" > $path
-    else
-      ibus engine xkb:us::eng - English
-      echo "󰌌 en" > $path
-    fi  '';
-in {
-  i18n.inputMethod.enabled = "ibus";
-  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines;
-    [ openbangla-keyboard ];
-  environment.sessionVariables = {
-    GTK_IM_MODULE = "ibus";
-    QT_IM_MODULE = "ibus";
-    XMODIFIERS = "@im=ibus";
-    INPUT_METHOD = "ibus";
-    SDL_IM_MODULE = "ibus";
+  openbangla-keyboard-overlay = final: prev: {
+    openbangla-keyboard = prev.fcitx5-openbangla-keyboard.overrideAttrs (old: {
+      version = "develop-2023-11-05";
+      src = final.fetchFromGitHub {
+        owner = "asifakonjee";
+        repo = "openbangla-keyboard";
+        rev = "73012424cfb4db310250836e63cd87ac84106c1b";
+        hash = "sha256-3moWzvuCD952sJGQct97k3Ls05S1ZavWhtH4LEdjUTI=";
+        fetchSubmodules = true;
+      };
+    });
   };
-  environment.systemPackages = [ ibus-toggle-layout ];
+
+in {
+  nixpkgs.overlays = [ openbangla-keyboard-overlay ];
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ openbangla-keyboard ];
+  };
 }

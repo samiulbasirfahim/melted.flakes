@@ -12,6 +12,9 @@ let
         dunst &
         # firefox
         pywalfox update &
+        betterlockscreen -u $wallpaper_location
+        ln -sf ~/.cache/wal/betterlockscreenrc ~/.config/betterlockscreen/betterlockscreenrc
+	ln -sf ~/.cache/wal/colors.Xresources ~/.Xresources
     fi
   '';
 in { home.packages = with pkgs; [ wallpaper-picker sxiv ]; }

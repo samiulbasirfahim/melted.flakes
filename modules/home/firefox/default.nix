@@ -257,13 +257,13 @@
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
-        youtube-shorts-block
         vimium-c
         news-feed-eradicator
         languagetool
         darkreader
         videospeed
         pywalfox
+        df-youtube
       ];
     };
   };

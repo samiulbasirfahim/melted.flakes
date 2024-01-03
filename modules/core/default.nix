@@ -14,8 +14,9 @@
       ./services.nix
       ./system.nix
       ./user.nix
-      ./warp.nix
+      # ./warp.nix
       ./ibus.nix
+      ./hosts.nix
 
       # editors
       ./../development/editors/neovim

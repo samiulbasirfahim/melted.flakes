@@ -5,8 +5,6 @@ in {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      jetbrains-mono
-      font-awesome
       (catppuccin-gtk.override {
         size = "compact";
         accents = [ "green" ];
@@ -23,7 +21,7 @@ in {
         name = "Papirus-Dark";
       };
       font = {
-        name = ui.font;
+        name = ui.nerd-font;
         size = 11;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
