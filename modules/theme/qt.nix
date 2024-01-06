@@ -1,8 +1,10 @@
 {
   home-manager.users.fahim = { pkgs, ... }: {
-    qt.enable = true;
-    qt.platformTheme = "qtct";
-    qt.style.name = "kvantum";
+    qt = {
+      enable = true;
+      platformTheme = "qtct";
+      style.name = "kvantum";
+    };
 
     home.packages = with pkgs;
       [

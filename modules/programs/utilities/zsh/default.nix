@@ -21,6 +21,7 @@
     oh-my-zsh.enable = true;
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake /home/fahim/Flakes";
+      nvim-dev = "NVIM_APPNAME=nvim-dev nvim";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
       lsa = "eza -l --icons";

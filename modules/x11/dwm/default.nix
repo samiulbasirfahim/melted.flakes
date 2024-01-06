@@ -21,7 +21,7 @@
       });
       dmenu = prev.dmenu.overrideAttrs (old: {
         src = /home/fahim/.suckless/dmenu;
-        buildInputs = (old.buildInputs or [ ]) ++ [ ];
+        buildInputs = old.buildInputs or [ ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
@@ -35,7 +35,7 @@
       });
       dwmblocks = prev.dwmblocks.overrideAttrs (old: {
         src = /home/fahim/.suckless/dwmblocks;
-        buildInputs = (old.buildInputs or [ ]) ++ [ ];
+        buildInputs = old.buildInputs or [ ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });

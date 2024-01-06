@@ -20,6 +20,7 @@
 
       # editors
       ./../development/editors/neovim
+      ./../development/editors/helix
       ./../development/editors/vscode
 
       # wayland

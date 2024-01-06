@@ -24,11 +24,13 @@
     # Multimedia
     mpv
     imv
+    tree
 
     chromium
     vscode
 
     yt-dlp
     bottles
+    vesktop
   ];
 }

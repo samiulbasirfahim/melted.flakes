@@ -6,39 +6,33 @@
   environment.variables.EDITOR = "nvim";
   home-manager.users.fahim = { pkgs, ... }: {
     imports = [ ./theme.nix ];
-    programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-    home.packages = with pkgs; [
-      # utilities
-      ripgrep
-      fd
-      neovide
 
-      # language server
-      rust-analyzer
-      codeium-ls
-      clang-tools
-      nil
-      lua-language-server
-      python311Packages.jedi-language-server
-      nodePackages_latest.typescript-language-server
-      nodePackages_latest.svelte-language-server
+    programs.neovim.enable = true;
+    programs.neovim.defaultEditor = true;
 
-      # formatter
-      stylua
-      rustfmt
-      python310Packages.black
-      nixfmt
-    ];
-    home.file = {
-      ".config/nvim/lua/util/nix.lua".text = ''
-        return {
-          codeium = "${pkgs.codeium-ls}/bin/codeium-ls_server_linux_x64",
-        }
-      '';
+    home = {
+      packages = with pkgs; [
+        # utilities
+        ripgrep
+        fd
+        neovide
+
+        # language server
+        rust-analyzer
+        clang-tools
+        nil
+        lua-language-server
+
+        # formatter
+        stylua
+        rustfmt
+        nixfmt
+
+        # lints
+        statix
+        eslint_d
+      ];
+      sessionVariables = { EDITOR = "nvim"; };
     };
-    home.sessionVariables = { EDITOR = "nvim"; };
   };
 }
