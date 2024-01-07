@@ -31,6 +31,5 @@
 
     yt-dlp
     bottles
-    vesktop
   ];
 }

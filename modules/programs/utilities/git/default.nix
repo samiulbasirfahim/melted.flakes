@@ -14,7 +14,7 @@ in {
   home-manager.users.xenoxanite = {
     programs.git = {
       enable = true;
-      userName = "samiulbasirfahim";
+      userName = "xenoxanite";
       userEmail = "xenoxanite@gmail.com";
     };
 

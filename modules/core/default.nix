@@ -5,7 +5,7 @@
     modules = [
       ./../../hosts/nixos/hardware-configuration.nix
       ./bootloader.nix
-      ./hardware.nix
+      # ./hardware.nix
       ./home-manager.nix
       ./network.nix
       ./pipewire.nix
@@ -15,12 +15,12 @@
       ./system.nix
       ./user.nix
       # ./warp.nix
-      ./ibus.nix
+      ./fcitx5.nix
       ./hosts.nix
 
       # editors
       ./../development/editors/neovim
-      ./../development/editors/helix
+      # ./../development/editors/helix
       ./../development/editors/vscode
 
       # wayland
@@ -30,9 +30,9 @@
 
       # lnguages
       ./../development/language/cpp.nix
-      ./../development/language/rust.nix
-      ./../development/language/python.nix
-      ./../development/language/javascript.nix
+      # ./../development/language/rust.nix
+      # ./../development/language/python.nix
+      # ./../development/language/javascript.nix
 
       # utility based programs
       ./../programs/utilities/git

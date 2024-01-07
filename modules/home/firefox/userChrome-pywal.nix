@@ -1,9 +1,8 @@
 {
   programs.firefox.profiles.default.userChrome = ''
+
     /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
     #main-window {
-        --pywalfox-font-size: 13px;
-        --pywalfox-font-size-sm: calc(var(--pywalfox-font-size) * 0.9);
         --pywalfox-background: var(--lwt-accent-color);
         --pywalfox-background-light: var(--arrowpanel-background);
         --pywalfox-text: var(--arrowpanel-color);
@@ -11,7 +10,6 @@
         --pywalfox-unselected-tab-opacity: 0.8;
         --pywalfox-darker-background: rgba(0, 0, 0, 0.4);
         --pywalfox-padding: 4px 8px;
-        font-size: var(--pywalfox-font-size) !important;
       }
 
       /* Disable default appearance of certain elements to be able to override shadow DOM attributes */
@@ -29,7 +27,6 @@
         -moz-appearance: none !important;
         background-color: var(--pywalfox-background) !important;
         color: var(--pywalfox-text-focus) !important;
-        padding: 4px 4px !important;
       }
       /* Separators in dropwdown menus */
       menuseparator {
@@ -51,6 +48,7 @@
       textbox, panelview, .tabbrowser-tab, #sidebar-header,
       .findbar-container, toolbar[overflowable] > .customization-target {
         font-weight: bold !important;
+        /* margin-top: -3px !important; */
       }
 
       /* Decrease opacity of unselected tabs to match the default Firefox theme */
@@ -68,10 +66,6 @@
         background-color: transparent !important;
       }
 
-      /* Smaller font size in panel dropdown menus */
-      panelmultiview {
-        font-size: var(--pywalfox-font-size-sm) !important;
-      }
 
       /* Change the grey background color seen e.g. when opening a bookmark in a newtab */
       #tabbrowser-tabpanels {
@@ -174,6 +168,10 @@
           -moz-appearance: none !important;
           border: none !important;
           box-shadow: none !important;
+      }
+
+      #navigator-toolbox{
+        margin-top: -8px !important;
       }
 
       /* grey out ccons inside the toolbar to make it

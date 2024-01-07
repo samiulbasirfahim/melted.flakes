@@ -227,7 +227,6 @@
         "security.pki.sha1_enforcement_level" = 1;
       };
     };
- #   package = pkgs.floorp-unwrapped;
     profiles.default = {
       name = "xenoxanite";
       search = {

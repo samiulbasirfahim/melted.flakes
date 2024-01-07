@@ -4,6 +4,5 @@
     {
       # qutebrowser = pkgs.qutebrowser.override { enableVulkan = true; };
     };
-  "home".sessionPath =
-    [ "$HOME/bin" "$HOME/.local/bin" "$HOME/.config/emacs/bin" ];
+  "home".sessionPath = [ "$HOME/bin" "$HOME/.local/bin" ];
 }

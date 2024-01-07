@@ -69,8 +69,8 @@ let
   };
 in rec {
   colors = decay;
-  font = "JetBrains Mono";
-  nerd-font = "JetBrainsMono Nerd Font";
+  font = "FantasqueSansM Nerd Font";
+  nerd-font = "FantasqueSansM Nerd Font";
   foreground-color = colors.teal;
   border-size = 2;
   border-radius = 0;

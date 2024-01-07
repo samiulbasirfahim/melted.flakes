@@ -20,7 +20,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/Flakes";
+      nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/flakes";
       nvim-dev = "NVIM_APPNAME=nvim-dev nvim";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";

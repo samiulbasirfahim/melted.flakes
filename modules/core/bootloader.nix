@@ -1,9 +1,11 @@
 { pkgs, ... }: {
-  boot.loader.timeout = 0;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.systemd.network.wait-online.enable = false;
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot = {
+    loader = {
+      timeout = 0;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd.systemd.network.wait-online.enable = false;
+    initrd.kernelModules = [ "amdgpu" ];
+  };
 }
-

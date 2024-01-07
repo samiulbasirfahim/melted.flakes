@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let ui = import ./../../theme/ui.nix { };
+in {
   home-manager.users.xenoxanite = {
     home.packages = [ pkgs.libnotify pkgs.dunst ];
     xdg.configFile."wal/templates/dunstrc".text = ''
@@ -10,7 +12,7 @@
           frame_color = "{color2}"
           frame_width = 2
           idle_threshold = 120
-          font = JetBrainsMono Nerd Font 10
+          font = ${ui.nerd-font} 13
           alignment = center
           word_wrap = yes
           format = "<b>%s</b>: %b"

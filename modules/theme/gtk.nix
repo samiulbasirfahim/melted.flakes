@@ -5,7 +5,9 @@ in {
     fonts.fontconfig.enable = true;
     home = {
       packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+
+        fantasque-sans-mono
         (catppuccin-gtk.override {
           size = "compact";
           accents = [ "green" ];
@@ -33,7 +35,7 @@ in {
       };
       font = {
         name = ui.nerd-font;
-        size = 11;
+        size = 12;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };

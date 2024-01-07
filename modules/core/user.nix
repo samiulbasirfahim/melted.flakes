@@ -1,7 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   users.users.xenoxanite = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"];
+    description = "xenoxanite";
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
   };
 }
