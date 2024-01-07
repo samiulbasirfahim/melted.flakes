@@ -1,5 +1,5 @@
 {
-  home-manager.users.fahim = { pkgs, ... }: {
+  home-manager.users.xenoxanite = { pkgs, ... }: {
     qt = {
       enable = true;
       platformTheme = "qtct";

@@ -1,6 +1,6 @@
 {
   imports = [ ./dwm ./dunst ];
-  home-manager.users.fahim = { pkgs, ... }: {
+  home-manager.users.xenoxanite = { pkgs, ... }: {
     services.picom = {
       enable = false;
       package = pkgs.picom.overrideAttrs (o: {

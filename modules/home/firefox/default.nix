@@ -229,7 +229,7 @@
     };
  #   package = pkgs.floorp-unwrapped;
     profiles.default = {
-      name = "fahim";
+      name = "xenoxanite";
       search = {
         engines = {
           "Nix Packages" = {

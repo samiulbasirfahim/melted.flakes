@@ -99,7 +99,7 @@
           --container-tabs-indicator-margin: 0px;
 
           /* dynamic url bar width settings */
-          --uc-urlbar-width: clamp(200px, 40vw, 500px);
+          --uc-urlbar-width: clamp(150px, 40vw, 500px);
 
           /* dynamic tab width settings */
           --uc-active-tab-width: clamp(60px, 18vw, 220px);

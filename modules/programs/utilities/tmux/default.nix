@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     programs.tmux = {
       enable = true;
       baseIndex = 1;

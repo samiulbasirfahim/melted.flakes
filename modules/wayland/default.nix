@@ -1,6 +1,6 @@
 {
   imports = [ ./waybar ./hyprland ];
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     imports = [ ./foot ./mako ./rofi ./wlogout ./swaylock ];
   };
 }

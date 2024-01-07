@@ -1,5 +1,5 @@
 { pkgs, lib, ... }: {
-  home-manager.users.fahim = let package = pkgs.bat;
+  home-manager.users.xenoxanite = let package = pkgs.bat;
   in {
     programs.bat = {
       enable = true;

@@ -1,5 +1,5 @@
 {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     programs = {
       direnv = {
         enable = true;

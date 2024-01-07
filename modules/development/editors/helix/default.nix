@@ -1,1 +1,1 @@
-{ home-manager.users.fahim = { programs.helix = { enable = true; }; }; }
+{ home-manager.users.xenoxanite = { programs.helix = { enable = true; }; }; }

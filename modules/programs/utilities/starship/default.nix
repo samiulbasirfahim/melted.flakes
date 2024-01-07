@@ -1,6 +1,6 @@
 let ui = import ./../../../theme/ui.nix { };
 in {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     programs.starship = {
 
       enable = true;

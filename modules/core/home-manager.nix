@@ -4,11 +4,11 @@
     useUserPackages = true;
     useGlobalPkgs = true;
     extraSpecialArgs = {inherit inputs;};
-    users.fahim = {
+    users.xenoxanite = {
       imports = [(import ./../home)];
       home = {
-        username = "fahim";
-        homeDirectory = "/home/fahim";
+        username = "xenoxanite";
+        homeDirectory = "/home/xenoxanite";
         stateVersion = "22.11";
       };
       programs.home-manager.enable = true;

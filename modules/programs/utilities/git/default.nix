@@ -11,7 +11,7 @@
     fi
   '';
 in {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     programs.git = {
       enable = true;
       userName = "samiulbasirfahim";

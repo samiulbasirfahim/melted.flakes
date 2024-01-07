@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let ui = import ./ui.nix { };
 in {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     fonts.fontconfig.enable = true;
     home = {
       packages = with pkgs; [

@@ -5,7 +5,7 @@ let
   '';
 in {
   environment.systemPackages = with pkgs; [ pywal pywalfox-native ];
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
 
     home.file.".mozilla/native-messaging-hosts/pywalfox.json".text =
       builtins.replaceStrings [ "<path>" ]

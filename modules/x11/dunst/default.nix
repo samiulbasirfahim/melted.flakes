@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     home.packages = [ pkgs.libnotify pkgs.dunst ];
     xdg.configFile."wal/templates/dunstrc".text = ''
       [global]

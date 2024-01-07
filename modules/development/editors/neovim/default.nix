@@ -4,7 +4,7 @@
     defaultEditor = true;
   };
   environment.variables.EDITOR = "nvim";
-  home-manager.users.fahim = { pkgs, ... }: {
+  home-manager.users.xenoxanite = { pkgs, ... }: {
     imports = [ ./theme.nix ];
 
     programs.neovim.enable = true;

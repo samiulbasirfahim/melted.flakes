@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     home.packages = with pkgs; [ cargo rustc ];
   };
 }

@@ -14,19 +14,19 @@
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
-        src = /home/fahim/.suckless/dwm;
+        src = /home/xenoxanite/.suckless/dwm;
         buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.imlib2 ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
       dmenu = prev.dmenu.overrideAttrs (old: {
-        src = /home/fahim/.suckless/dmenu;
+        src = /home/xenoxanite/.suckless/dmenu;
         buildInputs = old.buildInputs or [ ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
       st = prev.st.overrideAttrs (old: {
-        src = /home/fahim/.suckless/st;
+        src = /home/xenoxanite/.suckless/st;
         buildInputs = with pkgs;
           (old.buildInputs or [ ])
           ++ [ pkg-config xorg.libX11 xorg.libXft fontconfig harfbuzz gd glib ];
@@ -34,14 +34,14 @@
           ++ [ pkgs.pkg-config ];
       });
       dwmblocks = prev.dwmblocks.overrideAttrs (old: {
-        src = /home/fahim/.suckless/dwmblocks;
+        src = /home/xenoxanite/.suckless/dwmblocks;
         buildInputs = old.buildInputs or [ ];
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
     })
   ];
-  home-manager.users.fahim = {
+  home-manager.users.xenoxanite = {
     home.packages = with pkgs; [
       dwmblocks
       dmenu
