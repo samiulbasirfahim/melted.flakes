@@ -1,6 +1,5 @@
 {
   programs.firefox.profiles.default.userChrome = ''
-
     /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
     #main-window {
         --pywalfox-background: var(--lwt-accent-color);
@@ -9,7 +8,6 @@
         --pywalfox-text-focus: var(--toolbar-color);
         --pywalfox-unselected-tab-opacity: 0.8;
         --pywalfox-darker-background: rgba(0, 0, 0, 0.4);
-        --pywalfox-padding: 4px 8px;
       }
 
       /* Disable default appearance of certain elements to be able to override shadow DOM attributes */
@@ -33,10 +31,6 @@
         height: 1px;
       }
 
-      /* Elements where we set appearance to none, we need to set padding manually */
-      notification, button, search-textbox {
-        padding: var(--pywalfox-padding) !important;
-      }
 
       /* Fix background color of elements that can not be targeted via the Theme API */
       notification, menupopup {
@@ -44,12 +38,6 @@
         color: var(--pywalfox-text) !important;
       }
 
-      /* Apply bold text to elements */
-      textbox, panelview, .tabbrowser-tab, #sidebar-header,
-      .findbar-container, toolbar[overflowable] > .customization-target {
-        font-weight: bold !important;
-        /* margin-top: -3px !important; */
-      }
 
       /* Decrease opacity of unselected tabs to match the default Firefox theme */
       .tabbrowser-tab:not([visuallyselected="true"]) {
@@ -65,7 +53,6 @@
       .sidebar-splitter {
         background-color: transparent !important;
       }
-
 
       /* Change the grey background color seen e.g. when opening a bookmark in a newtab */
       #tabbrowser-tabpanels {
@@ -168,10 +155,6 @@
           -moz-appearance: none !important;
           border: none !important;
           box-shadow: none !important;
-      }
-
-      #navigator-toolbox{
-        margin-top: -8px !important;
       }
 
       /* grey out ccons inside the toolbar to make it
