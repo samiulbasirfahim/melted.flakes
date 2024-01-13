@@ -5,9 +5,10 @@
   };
   environment.variables.EDITOR = "nvim";
   home-manager.users.xenoxanite = { pkgs, ... }: {
-
-    programs.neovim.enable = true;
-    programs.neovim.defaultEditor = true;
+    programs = {
+      neovim.enable = true;
+      neovim.defaultEditor = true;
+    };
 
     home = {
       packages = with pkgs; [
@@ -21,6 +22,9 @@
         clang-tools
         nil
         lua-language-server
+        nodePackages_latest.svelte-language-server
+        typescript
+        tailwindcss-language-server
 
         # formatter
         stylua

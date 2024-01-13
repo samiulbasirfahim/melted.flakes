@@ -2,6 +2,7 @@
 
   home.packages = with pkgs; [
     # freetube
+    pstree
     unzip
     btop
     ytfzf

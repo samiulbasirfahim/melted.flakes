@@ -4,7 +4,7 @@ let
     ${pkgs.pywalfox-native}/bin/pywalfox start
   '';
 in {
-  environment.systemPackages = with pkgs; [ pywal pywalfox-native ];
+  environment.systemPackages = with pkgs; [ pywal pywalfox-native];
   home-manager.users.xenoxanite = {
 
     home.file.".mozilla/native-messaging-hosts/pywalfox.json".text =

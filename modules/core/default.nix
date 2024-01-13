@@ -31,8 +31,8 @@
       # lnguages
       ./../development/language/cpp.nix
       # ./../development/language/rust.nix
-      # ./../development/language/python.nix
-      # ./../development/language/javascript.nix
+      ./../development/language/python.nix
+      ./../development/language/javascript.nix
 
       # utility based programs
       ./../programs/utilities/git

@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 let
   ui = import ../../theme/ui.nix { };
-  colors = ui.colors;
+  inherit (ui) colors;
 in {
   home-manager.users.xenoxanite = {
     systemd.user.targets.hyprland-session.Unit.Wants =

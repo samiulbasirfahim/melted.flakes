@@ -4,6 +4,7 @@ in {
     with ui.colors; ''
       @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
       @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css);
+
       .theme-dark {
           --background-primary: #${background}; /* background of background of chat window */
           --background-secondary: #${contrast}; /* background of channel bar */

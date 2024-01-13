@@ -16,7 +16,7 @@ in {
       pointerCursor = {
         package = pkgs.cattpuccin-dark-cursor;
         name = "Catppuccin-Latte-Dark";
-        size = 15;
+        size = 12;
       };
       sessionVariables = {
         GTK_USE_PORTAL = 0;
@@ -32,7 +32,7 @@ in {
       };
       font = {
         name = ui.nerd-font;
-        size = 11;
+        size = 10;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };

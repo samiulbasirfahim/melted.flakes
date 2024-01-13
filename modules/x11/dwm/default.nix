@@ -45,13 +45,13 @@
     home.packages = with pkgs; [
       dwmblocks
       dmenu
+      haskellPackages.greenclip
       xdotool
       st
       xwallpaper
       xcompmgr
-      flameshot
+      maim
       xclip
-      copyq
       betterlockscreen
       xautolock
     ];

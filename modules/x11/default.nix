@@ -1,8 +1,1 @@
-{
-  imports = [ ./dwm 
-
-   ./dunst 
-
-  ];
-
-}
+{ imports = [ ./dwm ./dunst ]; }
