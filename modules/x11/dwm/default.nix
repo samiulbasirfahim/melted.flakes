@@ -50,7 +50,7 @@
       st
       xwallpaper
       xcompmgr
-      maim
+      scrot
       xclip
       betterlockscreen
       xautolock

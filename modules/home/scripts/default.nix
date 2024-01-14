@@ -21,21 +21,6 @@ let
   clipboard_dmenu = pkgs.writeShellScriptBin "clipboard_dmenu"
     "\ngreenclip print | sed '/^$/d' | dmenu -c | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
 
-  screenshot_dmenu = let
-    output = "$HOME/Pictures/screenshots/$(date '+%y%m%d-%H%M-%S').png";
-    xclip_cmd = "xclip -selection clipboard -t image/png -i";
-  in pkgs.writeShellScriptBin "screenshot_dmenu" ''
-    #!/bin/sh
-    case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | dmenu -c)" in
-      "a selected area") maim -s "${output}" ;;
-      "current window") maim -q -d 0.2 -i "$(xdotool getactivewindow)" "${output}" ;;
-      "full screen") maim -q -d 0.2 "${output}" ;;
-      "a selected area (copy)") maim -s | ${xclip_cmd} ;;
-      "current window (copy)") maim -q -d 0.2 -i "$(xdotool getactivewindow)" | ${xclip_cmd} ;;
-      "full screen (copy)") maim -q -d 0.2 | ${xclip_cmd} ;;
-    esac
-
-  '';
   auto-power-off = pkgs.writeShellScriptBin "auto-power-off" ''
     shutdown -P 23:00 &
     time=$(date '+%H')
@@ -46,26 +31,29 @@ let
 in {
   imports = [ (import ./wallpaper-picker.nix) ]
     ++ [ (import ./random-wall.nix) ];
-  home.file.".config/cava/config1".text = ''
+  home = {
+    file = {
+      ".config/cava/config1".text = ''
+        [general]
+        bars = 12
+        sleep_timer = 10
+        [output]
+        method = raw
+        data_format = ascii
+        ascii_max_range = 7
+      '';
 
-    [general]
-    bars = 12
-    sleep_timer = 10
-
-    [output]
-    method = raw
-    data_format = ascii
-    ascii_max_range = 7
-  '';
-  home.packages = [
-    cava-internal
-    pkgs.cava
-    launch-wlogout
-    load-wallpaper
-    auto-power-off
-    screenshot_dmenu
-    desktop_dmenu
-    clipboard_dmenu
-  ];
-  home.file.".local/bin/dmenu_recent".source = ./dmenu_recent;
+      ".local/bin/dmenu_recent".source = ./dmenu_recent;
+      ".local/bin/screenshot_dmenu".source = ./screenshot_dmenu;
+    };
+    packages = [
+      cava-internal
+      pkgs.cava
+      launch-wlogout
+      load-wallpaper
+      auto-power-off
+      desktop_dmenu
+      clipboard_dmenu
+    ];
+  };
 }

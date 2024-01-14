@@ -1,0 +1,25 @@
+#!/bin/sh
+
+SCSH_FORMAT="%Y-%m-%d_$wx$h.png"
+SCSH_DIR="$HOME/Pictures/screenshots/"
+
+mkdir -p $SCSH_DIR
+
+AREA_OPTS=" save\n copy"
+CAP_OPTS=" screen\n󰋃 selection"
+
+SCHSH_AREA=$(echo -e $AREA_OPTS | dmenu -c )
+[[ -z $SCHSH_AREA ]] && echo "screenshot aborted" && exit 0
+
+SCHSH_CAP=$(echo -e $CAP_OPTS | dmenu -c )
+[[ -z $SCHSH_CAP ]] && echo "screenshot aborted" && exit 0
+
+
+if [[ $SCHSH_AREA == " save" ]]; then
+  [[ $SCHSH_CAP == " screen" ]] && scrot -i -F $SCSH_DIR/$SCSH_FORMAT && notify-send "screenshot" "saved to $SCSH_DIR"
+  [[ $SCHSH_CAP == "󰋃 selection" ]] && scrot -i -s -F $SCSH_DIR/$SCSH_FORMAT && notify-send "selection" "saved to $SCSH_DIR"
+elif [[ $SCHSH_AREA == " copy" ]]; then
+  [[ $SCHSH_CAP == " screen" ]] && scrot -i -e 'xclip -selection clipboard -t image/png -i $f' && notify-send "screen" "copied to clipboard"
+  [[ $SCHSH_CAP == "󰋃 selection" ]] && scrot -i -s -e 'xclip -selection clipboard -t image/png -i $f' && notify-send "selection" "copied to clipboard"
+fi
+
