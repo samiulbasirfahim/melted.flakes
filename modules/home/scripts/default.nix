@@ -19,7 +19,7 @@ let
   '';
   desktop_dmenu = pkgs.writeShellScriptBin "desktop_dmenu" "dmenu_recent -c";
   clipboard_dmenu = pkgs.writeShellScriptBin "clipboard_dmenu"
-    "\ngreenclip print | sed '/^$/d' | dmenu -c | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
+    "\ngreenclip print | sed '/^$/d' | dmenu -bw 0 | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
 
   auto-power-off = pkgs.writeShellScriptBin "auto-power-off" ''
     shutdown -P 23:00 &
@@ -29,8 +29,7 @@ let
     fi
   '';
 in {
-  imports = [ (import ./wallpaper-picker.nix) ]
-    ++ [ (import ./random-wall.nix) ];
+  imports = [ (import ./set-wallpaper.nix) ] ++ [ (import ./random-wall.nix) ];
   home = {
     file = {
       ".config/cava/config1".text = ''

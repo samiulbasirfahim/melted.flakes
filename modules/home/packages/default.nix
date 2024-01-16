@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-
+  imports = [ ./media.nix ];
   home.packages = with pkgs; [
     # freetube
     pstree
@@ -11,7 +11,6 @@
     calcurse
     fzf
     zathura-pywal
-    ffmpeg-full
 
     stacer
     eza
@@ -23,14 +22,11 @@
     neofetch
     galculator
     # Multimedia
-    mpv
-    imv
     tree
 
     chromium
     vscode
-
+    kitty
     yt-dlp
-    bottles
   ];
 }

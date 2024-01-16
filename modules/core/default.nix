@@ -5,10 +5,11 @@
     modules = [
       ./../../hosts/nixos/hardware-configuration.nix
       ./bootloader.nix
+      ./virt-manager.nix
       # ./hardware.nix
       ./home-manager.nix
       ./network.nix
-      ./pipewire.nix
+      ./pulseaudio.nix
       ./programs.nix
       ./security.nix
       ./services.nix

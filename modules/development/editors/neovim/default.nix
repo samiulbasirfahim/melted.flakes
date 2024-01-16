@@ -6,8 +6,11 @@
   environment.variables.EDITOR = "nvim";
   home-manager.users.xenoxanite = { pkgs, ... }: {
     programs = {
-      neovim.enable = true;
-      neovim.defaultEditor = true;
+      neovim = {
+        enable = true;
+        defaultEditor = true;
+        # extraLuaPackages = ps: [ ps.magick ];
+      };
     };
 
     home = {

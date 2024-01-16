@@ -6,6 +6,7 @@ in {
     home = {
       packages = with pkgs; [
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        # (google-fonts.override { fonts = [ "Tiro-Bangla" ]; })
         (catppuccin-gtk.override {
           size = "compact";
           accents = [ "green" ];

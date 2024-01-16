@@ -42,6 +42,15 @@
     })
   ];
   home-manager.users.xenoxanite = {
+    home.file.".xinitrc".text = ''
+      dunst &
+      xcompmgr &
+      greenclip daemon &
+      auto-power-off &
+      dwmblocks &
+      load-wallpaper &
+      exec dwm
+    '';
     home.packages = with pkgs; [
       dwmblocks
       dmenu
@@ -50,7 +59,7 @@
       st
       xwallpaper
       xcompmgr
-      scrot
+      maim
       xclip
       betterlockscreen
       xautolock

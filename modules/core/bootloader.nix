@@ -5,7 +5,10 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    initrd.systemd.network.wait-online.enable = false;
-    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    initrd = {
+      systemd.network.wait-online.enable = false;
+      kernelModules = [ "amdgpu" ];
+    };
   };
 }

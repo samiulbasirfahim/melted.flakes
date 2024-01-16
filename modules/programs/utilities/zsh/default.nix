@@ -22,14 +22,14 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/flakes";
       nvim-dev = "NVIM_APPNAME=nvim-dev nvim";
+      record = "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0 -f alsa -i default";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
       lsa = "eza -l --icons";
       cat = "bat -p";
       v =
         "fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim";
-      record =
-        "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
+      # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
     };
   };
 }
