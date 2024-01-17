@@ -21,7 +21,7 @@ let
   clipboard_dmenu = pkgs.writeShellScriptBin "clipboard_dmenu"
     "\ngreenclip print | sed '/^$/d' | dmenu -bw 0 | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
 
-  auto-power-off = pkgs.writeShellScriptBin "auto-power-off" ''
+  schedule-power-off = pkgs.writeShellScriptBin "schedule-power-off" ''
     shutdown -P 23:00 &
     time=$(date '+%H')
     if [ "$time" -gt 22 ] || [ "$time" -lt 5 ]; then
@@ -50,7 +50,7 @@ in {
       pkgs.cava
       launch-wlogout
       load-wallpaper
-      auto-power-off
+      schedule-power-off
       desktop_dmenu
       clipboard_dmenu
     ];
