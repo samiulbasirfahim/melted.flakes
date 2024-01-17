@@ -50,7 +50,7 @@ in {
       pkgs.cava
       launch-wlogout
       load-wallpaper
-      schedule-power-off
+      # schedule-power-off
       desktop_dmenu
       clipboard_dmenu
     ];

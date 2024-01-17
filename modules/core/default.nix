@@ -16,7 +16,7 @@
       ./system.nix
       ./user.nix
       # ./warp.nix
-      ./fcitx5.nix
+      ./ibus.nix
       ./hosts.nix
 
       # editors

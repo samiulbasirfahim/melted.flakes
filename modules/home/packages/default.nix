@@ -5,29 +5,17 @@
     pstree
     unzip
     btop
-    ytfzf
     pulsemixer
-    cmus
     calcurse
     fzf
     zathura-pywal
-    keepassxc
 
-    stacer
     eza
     playerctl
-    gparted
     pamixer
-    xarchiver
-    pcmanfm
     neofetch
-    galculator
-    # Multimedia
-    tree
 
     chromium
-    vscode
-    kitty
     yt-dlp
   ];
 }

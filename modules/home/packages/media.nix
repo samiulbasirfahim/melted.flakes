@@ -5,6 +5,8 @@
     darktable
     imv
     mpv
+    ytfzf
+    ani-cli
     ffmpeg-full
   ];
 }
