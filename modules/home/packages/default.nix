@@ -11,6 +11,7 @@
     calcurse
     fzf
     zathura-pywal
+    keepassxc
 
     stacer
     eza

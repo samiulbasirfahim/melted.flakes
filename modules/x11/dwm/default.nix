@@ -60,7 +60,7 @@
       xwallpaper
       xcompmgr
       maim
-      xclip
+      xsel
       betterlockscreen
       xautolock
     ];
