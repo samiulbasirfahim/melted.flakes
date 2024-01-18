@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   home-manager.users.xenoxanite = {
-    programs.zellij.enable = true;
     programs.tmux = {
       enable = true;
       baseIndex = 1;

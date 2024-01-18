@@ -20,16 +20,33 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
     shellAliases = {
+      ls = "exa --icons";
+      ll = "ls -l";
+      la = "ls -a";
+      lla = "ls -la";
+      lt = "ls --tree";
+      lta = "ls --tree -a";
+
       nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/flakes";
       nvim-dev = "NVIM_APPNAME=nvim-dev nvim";
-      record = "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0";
+      record =
+        "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
-      lsa = "eza -l --icons";
       cat = "bat -p";
       v =
         "fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim";
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
     };
+    plugins = [{
+      name = "zsh-nix-shell";
+      file = "nix-shell.plugin.zsh";
+      src = pkgs.fetchFromGitHub {
+        owner = "chisui";
+        repo = "zsh-nix-shell";
+        rev = "v0.8.0";
+        sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+      };
+    }];
   };
 }

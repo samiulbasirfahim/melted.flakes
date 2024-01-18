@@ -18,7 +18,6 @@
         # utilities
         ripgrep
         fd
-        neovide
 
         # language server
         rust-analyzer

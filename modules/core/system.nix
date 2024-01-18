@@ -13,7 +13,6 @@
       inputs.nur.overlay
     ];
   };
-  nixpkgs.config.joypixels.acceptLicense = true;
   systemd.network.wait-online.enable = false;
   nix = {
     settings = {

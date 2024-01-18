@@ -5,7 +5,7 @@ in {
     fonts.fontconfig.enable = true;
     home = {
       packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
         # (google-fonts.override { fonts = [ "Tiro-Bangla" ]; })
         (catppuccin-gtk.override {
           size = "compact";
@@ -21,19 +21,19 @@ in {
       };
       sessionVariables = {
         GTK_USE_PORTAL = 0;
-        GTK_THEME = ui.colors.gtk-theme;
+        GTK_THEME = ui.gtk-theme;
       };
     };
     gtk = {
       enable = true;
-      theme.name = ui.colors.gtk-theme;
+      theme.name = ui.gtk-theme;
       iconTheme = {
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
       font = {
-        name = ui.nerd-font;
-        size = 10;
+        name = ui.font;
+        size = 11;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };

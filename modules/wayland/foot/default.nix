@@ -16,8 +16,8 @@ in {
         color = "${background} ${green}";
       };
       colors = {
-        foreground = foreground;
-        background = background;
+        inherit foreground;
+        inherit background;
         regular0 = black;
         regular1 = red;
         regular2 = green;

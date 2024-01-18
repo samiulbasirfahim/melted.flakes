@@ -17,7 +17,6 @@ let
     wal -i $(grep -o "'/[^']*'" <<< cat $HOME/.fehbg | cut -d "'" -f 2)
     xdotool key super+F5
   '';
-  desktop_dmenu = pkgs.writeShellScriptBin "desktop_dmenu" "dmenu_recent -c";
   clipboard_dmenu = pkgs.writeShellScriptBin "clipboard_dmenu"
     "\ngreenclip print | sed '/^$/d' | dmenu -bw 0 | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
 
@@ -32,16 +31,7 @@ in {
   imports = [ (import ./set-wallpaper.nix) ] ++ [ (import ./random-wall.nix) ];
   home = {
     file = {
-      ".config/cava/config1".text = ''
-        [general]
-        bars = 12
-        sleep_timer = 10
-        [output]
-        method = raw
-        data_format = ascii
-        ascii_max_range = 7
-      '';
-
+      ".local/bin/autolock".source = ./autolock;
       ".local/bin/dmenu_recent".source = ./dmenu_recent;
       ".local/bin/screenshot_dmenu".source = ./screenshot_dmenu;
     };
@@ -51,7 +41,6 @@ in {
       launch-wlogout
       load-wallpaper
       # schedule-power-off
-      desktop_dmenu
       clipboard_dmenu
     ];
   };

@@ -12,7 +12,7 @@ in {
           frame_color = "{color2}"
           frame_width = 2
           idle_threshold = 120
-          font = ${ui.nerd-font} 11
+          font = ${ui.nerd-font} 10
           alignment = center
           word_wrap = yes
           format = "<b>%s</b>: %b"

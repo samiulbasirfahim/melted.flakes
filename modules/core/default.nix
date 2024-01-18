@@ -9,7 +9,7 @@
       # ./hardware.nix
       ./home-manager.nix
       ./network.nix
-      ./pulseaudio.nix
+      ./pipewire.nix
       ./programs.nix
       ./security.nix
       ./services.nix
