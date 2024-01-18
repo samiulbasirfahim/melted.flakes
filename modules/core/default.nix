@@ -37,7 +37,6 @@
 
       # utility based programs
       ./../programs/utilities/git
-      ./../programs/utilities/bat
       ./../programs/utilities/zsh
       ./../programs/utilities/neofetch
       ./../programs/utilities/starship
