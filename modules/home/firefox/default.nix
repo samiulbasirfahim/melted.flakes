@@ -253,16 +253,13 @@
         "privacy.cpd.cookies" = false;
         "privacy.sanitize.timeSpan" = 0;
         "privacy.resistFingerprinting" = true;
-        "privacy.resistFingerprinting.block_mozAddonManager" = true;
-        "privacy.resistFingerprinting.letterboxing" = true;
-        "browser.startup.blankWindow" = false;
-        "browser.display.use_system_colors" = false;
         "widget.non-native-theme.enabled" = true;
         "browser.link.open_newwindow" = 3;
         "browser.link.open_newwindow.restriction" = 0;
         "webgl.disabled" = false;
         "extensions.blocklist.enabled" = true;
         "network.http.referer.spoofSource" = false;
+        "security.dialog_enable_delay" = 1000;
         "privacy.firstparty.isolate" = false;
         "extensions.webcompat.enable_shims" = true;
         "security.tls.version.enable-deprecated" = false;
@@ -284,12 +281,20 @@
         "toolkit.telemetry.hybridContent.enabled" = false;
         "toolkit.telemetry.reportingpolicy.firstRun" = false;
         "browser.crashReports.unsubmittedCheck.enabled" = false;
+        # Don't ask for saving passwords
         "signon.rememberSignons" = false;
+        # Hide 'Firefox View'
         "browser.tabs.firefox-view" = false;
+        # Compact mode
+        # Dark theme
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+
+        # Default to dark theme in DevTools panel
         "devtools.theme" = "dark";
         "app.update.auto" = false;
         "app.update.service.enabled" = false;
+        # Enable ETP for decent security (makes firefox containers and many
+        # common security/privacy add-ons redundant).
         "privacy.donottrackheader.value" = 1;
         "privacy.purge_trackers.enabled" = true;
         "browser.search.region" = "CA";
