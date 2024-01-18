@@ -253,8 +253,6 @@
         "privacy.cpd.cookies" = false;
         "privacy.sanitize.timeSpan" = 0;
         "privacy.resistFingerprinting" = true;
-        "privacy.window.maxInnerWidth" = 1600;
-        "privacy.window.maxInnerHeight" = 900;
         "privacy.resistFingerprinting.block_mozAddonManager" = true;
         "privacy.resistFingerprinting.letterboxing" = true;
         "browser.startup.blankWindow" = false;
@@ -265,7 +263,6 @@
         "webgl.disabled" = false;
         "extensions.blocklist.enabled" = true;
         "network.http.referer.spoofSource" = false;
-        "security.dialog_enable_delay" = 1000;
         "privacy.firstparty.isolate" = false;
         "extensions.webcompat.enable_shims" = true;
         "security.tls.version.enable-deprecated" = false;
@@ -287,9 +284,10 @@
         "toolkit.telemetry.hybridContent.enabled" = false;
         "toolkit.telemetry.reportingpolicy.firstRun" = false;
         "browser.crashReports.unsubmittedCheck.enabled" = false;
-        # Don't ask for saving passwords
         "signon.rememberSignons" = false;
         "browser.tabs.firefox-view" = false;
+        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+        "devtools.theme" = "dark";
         "app.update.auto" = false;
         "app.update.service.enabled" = false;
         "privacy.donottrackheader.value" = 1;
