@@ -90,6 +90,8 @@
         "devtools.chrome.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "browser.newtabpage.enabled" = false;
+        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+        "ui.systemUsesDarkTheme" = 1;
         # enable HTTPS-Only Mode
         "dom.security.https_only_mode_ever_enabled" = true;
         # Privacy Settings
@@ -237,21 +239,6 @@
           true;
         "privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage" =
           false;
-        "privacy.sanitize.sanitizeOnShutdown" = true;
-        "privacy.clearOnShutdown.cache" = false;
-        "privacy.clearOnShutdown.downloads" = false;
-        "privacy.clearOnShutdown.formdata" = true;
-        "privacy.clearOnShutdown.history" = false;
-        "privacy.clearOnShutdown.sessions" = false;
-        "privacy.clearOnShutdown.cookies" = false;
-        "privacy.clearOnShutdown.offlineApps" = true;
-        "privacy.cpd.cache" = true;
-        "privacy.cpd.formdata" = true;
-        "privacy.cpd.history" = true;
-        "privacy.cpd.sessions" = true;
-        "privacy.cpd.offlineApps" = false;
-        "privacy.cpd.cookies" = false;
-        "privacy.sanitize.timeSpan" = 0;
         "privacy.resistFingerprinting" = true;
         "widget.non-native-theme.enabled" = true;
         "browser.link.open_newwindow" = 3;
@@ -281,20 +268,11 @@
         "toolkit.telemetry.hybridContent.enabled" = false;
         "toolkit.telemetry.reportingpolicy.firstRun" = false;
         "browser.crashReports.unsubmittedCheck.enabled" = false;
-        # Don't ask for saving passwords
         "signon.rememberSignons" = false;
-        # Hide 'Firefox View'
         "browser.tabs.firefox-view" = false;
-        # Compact mode
-        # Dark theme
-        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-
-        # Default to dark theme in DevTools panel
         "devtools.theme" = "dark";
         "app.update.auto" = false;
         "app.update.service.enabled" = false;
-        # Enable ETP for decent security (makes firefox containers and many
-        # common security/privacy add-ons redundant).
         "privacy.donottrackheader.value" = 1;
         "privacy.purge_trackers.enabled" = true;
         "browser.search.region" = "CA";
@@ -317,8 +295,6 @@
         "services.sync.engine.prefs" = false;
         "services.sync.engineStatusChanged.prefs" = true;
         "services.sync.prefs.sync.browser.uiCustomization.state" = true;
-        "browser.urlbar.shortcuts.bookmarks" = false;
-        "browser.urlbar.shortcuts.history" = false;
         "browser.urlbar.shortcuts.tabs" = false;
         "browser.urlbar.showSearchSuggestionsFirst" = false;
         "browser.newtabpage.activity-stream.enabled" = false;
@@ -350,108 +326,8 @@
         "extensions.formautofill.creditCards.enabled" = false;
         "extensions.formautofill.heuristics.enabled" = false;
 
-        "ui.systemUsesDarkTheme" = 1;
-        "font.name.serif.x-western" = "MonoLisa Custom";
-
-        # Firefox hardening using preferences (automated)
-        "app.normandy.first_run" = false;
-        "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-        "browser.newtabpage.activity-stream.feeds.topsites" = false;
-        "doh-rollout.disable-heuristics" = true;
-        "dom.forms.autocomplete.formautofill" = true;
-        "identity.fxaccounts.enabled" = false;
-        "layout.spellcheckDefault" =
-          1; # Used to disable spellchecker… set to `0` for increased privacy
-        "network.cookie.cookieBehavior" = 1;
-        "network.trr.mode" = 5;
-        "places.history.enabled" = false;
-        "privacy.history.custom" = true;
-        "signon.management.page.breach-alerts.enabled" = false;
-
-        # GeoLocation
-        "geo.provider.ms-windows-location" = false;
-
-        # Disable extension recommendations
-        "browser.shopping.experience2023.enabled" = false;
-
-        # Disable telemetry
-        "browser.urlbar.search.suggest.enabled" = false;
-        "browser.urlbar.trending.featureGate" = false;
-        "browser.urlbar.addons.featureGate" = false;
-        "browser.urlbar.mdn.featureGate" = false;
-        "browser.urlbar.pocket.featureGate" = false;
-        "browser.urlbar.weather.featureGate" = false;
-
-        # Seperate Private Search Engines
-        "browser.search.separatePrivateDefault" = true;
-        "browser.search.separatePrivateDefault.ui.enabled" = true;
-        "dom.scurity.https_only_mode_send_http_background_request" = false;
-
-        # Downloads
-        # "browser.download.useDownloadDir" = false; # This can be annoying
-        "browses.download.alwaysOpenPanel" = false;
-        # "browser.download.always_ask_before_handling_new_types" = false; # This can be annoying
-
-        "browser.urlbar.showSearchTerms.enabled" = false;
-        "gfx.webrender.all" = true; # Enforce hardware WebRender (Default false)
-        "media.av1.enabled" =
-          true; # Enable AV1 Decoding (already assumming new enough hardware) (Default true)
-        "gfx.x11-egl.force-enabled" =
-          true; # Enforce the EGL backend (Default false)
-        "widget.dmabuf.force-enabled" = true; # Enforce DMABUF (Default false)
-
-        # Fonts
-        # From Firefox Arch Wiki: https://wiki.archlinux.org/title/Firefox#Font_troubleshooting
-        "gfx.font_rendering.fontconfig.max_generic_substitutions" =
-          127; # Increase the maximum number of generic substitutions (127 is the highest possible value)
-        "font.name-list.emoji" = "emoji"; # Use system emoji font
-        "gfx.font_rendering.opentype_svg.enabled" =
-          false; # Prevent Mozilla font from interfering with system emoji font
-
-        "layout.css.has-selector.enabled" = true;
-
-        # Misc
-        "accessibility.blockautorefresh" = true;
-        "accessibility.typeaheadfind.enablesound" = false;
-        "accessibility.typeaheadfind.flashBar" = 0;
-        "browser.chrome.toolbar_tips" = false;
-        "browser.newtabpage.activity-stream.discoverystream.enabled" = false;
-        "browser.newtabpage.activity-stream.topSitesRows" = 3;
-        "font.default.x-western" = "sans-serif";
-        "privacy.userContext.extension" = "@contain-facebook";
-        "network.trr.custom_uri" = "https://dns.quad9.net/dns-query";
-        "network.trr.uri" = "https://dns.quad9.net/dns-query";
-        # Restore previous session
-        "browser.sessionstore.restore_on_demand" = true;
-        "devtools.dom.enabled" = true;
-        "devtools.toolbox.host" = "right";
-        "widget.use-xdg-desktop-portal" = true;
-        "privacy.popups.disable_from_plugins" = 1;
-        "browser.backspace_action" = 1;
-        "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
-        "browser.safebrowsing.malware.enabled" = false;
-        "browser.safebrowsing.phishing.enabled" = false;
-        "dom.event.clipboardevents.enabled" = false;
-        "geo.wifi.uri" =
-          "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
-        "network.http.sendSecureXSiteReferrer" = false;
-        "device.sensors.ambientLight.enabled" = false; # default
-        "browser.newtabpage.activity-stream.feeds.snippets" = false; # default
-        "browser.newtabpage.activity-stream.feeds.discoverystreamfeed" = false;
-        "captivedetect.canonicalContent" = "";
-        "security.cert_pinning.enforcement_leve" = 2;
-        "security.insecure_connection_text.enabled" = true;
-        "media.autoplay.blocking_policy" = 1;
-        "dom.allow_cut_copy" = false;
-        "dom.vibrator.enabled" = false;
-        "javascript.options.asmjs" = false;
-        "dom.vr.enabled" = false; # default
-        "permissions.default.xr" = 2; # default = 0
-        "browser.tabs.warnOnClose" = false;
-        "general.autoScroll" = true;
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        i-dont-care-about-cookies
         ublock-origin
         vimium-c
         darkreader

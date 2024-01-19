@@ -1,6 +1,6 @@
 _: rec {
-  font = "FantasqueSansM Nerd Font";
-  nerd-font = "FantasqueSansM Nerd Font";
+  font = "JetbrainsMono Nerd Font";
+  nerd-font = "JetbrainsMono Nerd Font";
   border-size = 2;
   border-radius = 0;
   gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark";

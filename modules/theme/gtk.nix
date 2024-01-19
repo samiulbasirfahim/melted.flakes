@@ -5,8 +5,8 @@ in {
     fonts.fontconfig.enable = true;
     home = {
       packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-        # (google-fonts.override { fonts = [ "Tiro-Bangla" ]; })
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        (google-fonts.override { fonts = [ "Tiro Bangla" ]; })
         (catppuccin-gtk.override {
           size = "compact";
           accents = [ "green" ];
@@ -20,7 +20,7 @@ in {
         size = 12;
       };
       sessionVariables = {
-        GTK_USE_PORTAL = 0;
+        GTK_USE_PORTAL = 1;
         GTK_THEME = ui.gtk-theme;
       };
     };
@@ -33,7 +33,7 @@ in {
       };
       font = {
         name = ui.font;
-        size = 11;
+        size = 10;
       };
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };
