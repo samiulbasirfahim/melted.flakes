@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SCSH_FORMAT="%Y-%m-%d_$wx$h.png"
+SCSH_FORMAT="$(date +%Y-%m-%d_%T).png"
 SCSH_DIR="$HOME/Pictures/screenshots/"
 
 mkdir -p $SCSH_DIR
@@ -17,7 +17,7 @@ SCHSH_CAP=$(echo -e $CAP_OPTS | dmenu -c )
 
 if [[ $SCHSH_AREA == " save" ]]; then
   [[ $SCHSH_CAP == " screen" ]] && maim $SCSH_DIR/$SCSH_FORMAT && notify-send "screenshot" "saved to $SCSH_DIR"
-  [[ $SCHSH_CAP == " screen" ]] && maim -i $(xdotool getactivewindow) $SCSH_DIR/$SCSH_FORMAT && notify-send "window" "saved to $SCSH_DIR"
+  [[ $SCHSH_CAP == "󱂬 window" ]] && maim -i $(xdotool getactivewindow) $SCSH_DIR/$SCSH_FORMAT && notify-send "window" "saved to $SCSH_DIR"
   [[ $SCHSH_CAP == "󰋃 selection" ]] && maim -s $SCSH_DIR/$SCSH_FORMAT && notify-send "selection" "saved to $SCSH_DIR"
 elif [[ $SCHSH_AREA == " copy" ]]; then
   [[ $SCHSH_CAP == " screen" ]] && maim | xclip -selection clipboard -t image/png && notify-send "screen" "copied to clipboard"

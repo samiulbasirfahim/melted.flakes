@@ -20,7 +20,7 @@ in {
         size = 12;
       };
       sessionVariables = {
-        GTK_USE_PORTAL = 1;
+        GTK_USE_PORTAL = 0;
         GTK_THEME = ui.gtk-theme;
       };
     };

@@ -1,4 +1,4 @@
-let ui = import ./../../../theme/ui.nix { };
+let ui = import ./../../theme/ui.nix { };
 in {
   home-manager.users.xenoxanite = {
     programs.starship = {

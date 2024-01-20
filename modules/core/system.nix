@@ -14,6 +14,8 @@
     ];
   };
   systemd.network.wait-online.enable = false;
+  # services.tailscale.enable = true;
+  # services.openssh.enable = true;
   nix = {
     settings = {
       auto-optimise-store = true;

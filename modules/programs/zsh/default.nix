@@ -1,14 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   environment.shells = with pkgs; [ zsh ];
   environment.pathsToLink = [ "/share/zsh" ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
     enable = true;
     loginShellInit = ''
-      if [[ "$(tty)" == "/dev/tty1" ]]
-      then
-        # Hyprland
-        startx
+      if [[ "$(tty)" == "/dev/tty1" ]] then
+        ${
+          if config.services.xserver.displayManager.startx.enable then
+            "startx"
+          else
+            (if config.programs.hyprland.enable then "Hyprland" else "")
+        }
       fi
     '';
   };
@@ -29,13 +32,17 @@
 
       nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/flakes";
       nvim-dev = "NVIM_APPNAME=nvim-dev nvim";
-      record =
-        "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
       v =
         "fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim";
-      # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
+      record = if config.services.xserver.displayManager.startx.enable then
+        "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0 $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')"
+      else
+        (if config.programs.hyprland.enable then
+          "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')"
+        else
+          "");
     };
     plugins = [{
       name = "zsh-nix-shell";

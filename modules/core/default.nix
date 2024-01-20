@@ -4,6 +4,7 @@
     system = "x86_64-linux";
     modules = [
       ./../../hosts/nixos/hardware-configuration.nix
+      ./../../hosts/nixos/configuration.nix
       ./bootloader.nix
       ./virt-manager.nix
       # ./hardware.nix
@@ -17,7 +18,7 @@
       ./user.nix
       # ./warp.nix
       ./ibus.nix
-      ./hosts.nix
+      # ./hosts.nix
 
       # editors
       ./../development/editors/neovim
@@ -36,14 +37,15 @@
       ./../development/language/javascript.nix
 
       # utility based programs
-      ./../programs/utilities/git
-      ./../programs/utilities/zsh
-      ./../programs/utilities/neofetch
-      ./../programs/utilities/starship
-      ./../programs/utilities/btop
-      ./../programs/utilities/tmux
-      ./../programs/utilities/direnv
-      # ./../programs/utilities/gaming
+      ./../programs/git
+      ./../programs/zsh
+      ./../programs/neofetch
+      ./../programs/starship
+      ./../programs/btop
+      ./../programs/tmux
+      ./../programs/direnv
+      ./../programs/firefox
+      # ./../programs/gaming
 
       # theme based programs
       ./../theme/gtk.nix
