@@ -29,8 +29,7 @@
       lla = "ls -la";
       lt = "ls --tree";
       lta = "ls --tree -a";
-
-      nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/flakes";
+      nrs = "sudo nixos-rebuild switch --flake /home/xenoxanite/dev/flakes";
       nvim-dev = "NVIM_APPNAME=nvim-dev nvim";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
@@ -43,6 +42,15 @@
           "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')"
         else
           "");
+    };
+    dirHashes = {
+      docs = "$HOME/docs";
+      notes = "$HOME/docs/notes";
+      dots = "$HOME/dev/flakes";
+      dl = "$HOME/downloads";
+      vids = "$HOME/vids";
+      pix = "$HOME/pix";
+      media = "/run/media/$USER";
     };
     plugins = [{
       name = "zsh-nix-shell";

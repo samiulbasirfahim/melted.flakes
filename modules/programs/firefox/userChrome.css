@@ -1,6 +1,3 @@
-let ui = import ./../../theme/ui.nix { };
-in {
-  programs.firefox.profiles.default.userChrome = with ui.colors; ''
     #identity-box.extensionPage #identity-icon-label {
       display: none !important;
     }
@@ -482,5 +479,3 @@ in {
       --identity-tab-color: var(--uc-identity-color-purple) !important;
       --identity-icon-color: var(--uc-identity-color-purple) !important;
     }
-  '';
-}

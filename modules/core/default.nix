@@ -16,13 +16,10 @@
       ./services.nix
       ./system.nix
       ./user.nix
-      # ./warp.nix
       ./ibus.nix
-      # ./hosts.nix
 
       # editors
       ./../development/editors/neovim
-      # ./../development/editors/helix
       ./../development/editors/vscode
 
       # wayland

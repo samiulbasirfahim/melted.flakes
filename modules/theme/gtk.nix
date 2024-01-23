@@ -35,6 +35,7 @@ in {
         name = ui.font;
         size = 10;
       };
+
       cursorTheme = { name = "Catppuccin-Latte-Dark"; };
     };
   };

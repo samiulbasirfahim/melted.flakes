@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   push = pkgs.writeShellScriptBin "push" ''
     git_directory=$PWD/.git
     if [[ -d $git_directory ]];then
@@ -16,12 +17,21 @@ in {
       enable = true;
       userName = "xenoxanite";
       userEmail = "xenoxanite@gmail.com";
+      ignores = [
+        ".cache/"
+        ".DS_Store"
+        ".idea/"
+        "*.swp"
+        "*.elc"
+        "auto-save-list"
+        ".direnv/"
+        "node_modules"
+        "result"
+        "result-*"
+      ];
+
     };
 
-    home.packages = with pkgs; [
-      gh
-      push
-      lazygit
-    ];
+    home.packages = with pkgs; [ gh push lazygit ];
   };
 }

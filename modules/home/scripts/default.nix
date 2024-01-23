@@ -21,9 +21,9 @@ let
     "\ngreenclip print | sed '/^$/d' | dmenu -bw 0 | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
 
   schedule-power-off = pkgs.writeShellScriptBin "schedule-power-off" ''
-    shutdown -P 23:00 &
+    shutdown -P 22:00 &
     time=$(date '+%H')
-    if [ "$time" -gt 22 ] || [ "$time" -lt 5 ]; then
+    if [ "$time" -gt 21 ] || [ "$time" -lt 5 ]; then
       shutdown now
     fi
   '';

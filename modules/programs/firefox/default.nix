@@ -2,10 +2,6 @@
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
     home-manager.users.xenoxanite = {
-      imports = if config.firefox.enable then
-        [ ./userChrome-pywal.nix ]
-      else
-        [ ./userChrome.nix ];
       programs.firefox = {
         enable = true;
         policies = {
@@ -40,51 +36,11 @@
           ExtensionSettings = {
             "ebay@search.mozilla.org".installation_mode = "blocked";
             "amazondotcom@search.mozilla.org".installation_mode = "blocked";
-            "google@search.mozilla.org".installation_mode = "blocked";
             "bing@search.mozilla.org".installation_mode = "blocked";
             "wikipedia@search.mozilla.org".installation_mode = "blocked";
           };
-        };
-        profiles.default = {
-          name = "xenoxanite";
-          search = {
-            engines = {
-              "Bing".metaData.hidden = true;
-              "Amazon".metaData.hidden = true;
-              "Amazon.ca".metaData.hidden = true;
-              "Google".metaData.hidden = true;
-              "eBay".metaData.hidden = true;
-              "Wikipedia".metaData.hidden = true;
-
-              "DuckDuckGo".metaData.alias = "@d";
-
-              "Nix Packages" = {
-                urls = [{
-                  template = "https://search.nixos.org/packages";
-                  params = [
-                    {
-                      name = "type";
-                      value = "packages";
-                    }
-                    {
-                      name = "query";
-                      value = "{searchTerms}";
-                    }
-                  ];
-                }];
-                icon =
-                  "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                definedAliases = [ "@np" ];
-              };
-            };
-            force = true;
-            default = "DuckDuckGo";
-            order = [ "DuckDuckGo" "Nix Packages" ];
-          };
-
-          settings = {
+          Preferences = {
             "browser.compactmode.show" = true;
-            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
             "browser.toolbars.bookmarks.visibility" = "never";
             "browser.fullscreen.autohide" = false;
             "media.ffmpeg.vaapi.enabled" = true;
@@ -95,31 +51,8 @@
             "layout.css.devPixelsPerPx" = "-1.0";
             "devtools.debugger.remote-enabled" = true;
             "devtools.chrome.enabled" = true;
+            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
             "browser.newtabpage.enabled" = false;
-            "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-            "ui.systemUsesDarkTheme" = 1;
-            # enable HTTPS-Only Mode
-            "dom.security.https_only_mode_ever_enabled" = true;
-            # Privacy Settings
-            "privacy.donottrackheader.enabled" = true;
-            "privacy.trackingprotection.enabled" = true;
-            "privacy.trackingprotection.socialtracking.enabled" = true;
-            "privacy.partition.network_state.ocsp_cache" = true;
-            # Disable all sorts of telemetry
-            # As well as Firefox 'experiments'
-            "experiments.activeExperiment" = false;
-            "experiments.enabled" = false;
-            "experiments.supported" = false;
-            "network.allow-experiments" = false;
-            # Disable Pocket Integration
-            "browser.newtabpage.activity-stream.section.highlights.includePocket" =
-              false;
-            "extensions.pocket.enabled" = false;
-            "extensions.pocket.api" = "";
-            "extensions.pocket.oAuthConsumerKey" = "";
-            "extensions.pocket.showHome" = false;
-            "extensions.pocket.site" = "";
-            # Arkenfox stuff
             # https://github.com/arkenfox/user.js/wiki/
             "browser.aboutConfig.showWarning" = false;
             "browser.shell.checkDefaultBrowser" = false;
@@ -245,7 +178,29 @@
               true;
             "privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage" =
               false;
+            "privacy.sanitize.sanitizeOnShutdown" = true;
+            "privacy.clearOnShutdown.cache" = false;
+            "privacy.clearOnShutdown.downloads" = false;
+            "privacy.clearOnShutdown.formdata" = true;
+            "privacy.clearOnShutdown.history" = false;
+            "privacy.clearOnShutdown.sessions" = false;
+            "privacy.clearOnShutdown.cookies" = false;
+            "privacy.clearOnShutdown.offlineApps" = true;
+            "privacy.cpd.cache" = true;
+            "privacy.cpd.formdata" = true;
+            "privacy.cpd.history" = true;
+            "privacy.cpd.sessions" = true;
+            "privacy.cpd.offlineApps" = false;
+            "privacy.cpd.cookies" = false;
+            "privacy.sanitize.timeSpan" = 0;
             "privacy.resistFingerprinting" = true;
+            "privacy.window.maxInnerWidth" = 1600;
+            "privacy.window.maxInnerHeight" = 900;
+            "privacy.resistFingerprinting.block_mozAddonManager" = true;
+            "privacy.resistFingerprinting.letterboxing" = true;
+            "browser.startup.blankWindow" = false;
+            "browser.display.use_system_colors" = false;
+            "widget.non-native-theme.enabled" = true;
             "browser.link.open_newwindow" = 3;
             "browser.link.open_newwindow.restriction" = 0;
             "webgl.disabled" = false;
@@ -271,69 +226,48 @@
             "security.password_lifetime" = 5;
             "dom.storage.next_gen" = true;
             "network.cookie.lifetimePolicy" = 0;
-            "toolkit.telemetry.hybridContent.enabled" = false;
-            "toolkit.telemetry.reportingpolicy.firstRun" = false;
-            "browser.crashReports.unsubmittedCheck.enabled" = false;
-            "signon.rememberSignons" = false;
-            "browser.tabs.firefox-view" = false;
-            "devtools.theme" = "dark";
-            "app.update.auto" = false;
-            "app.update.service.enabled" = false;
-            "privacy.donottrackheader.value" = 1;
-            "privacy.purge_trackers.enabled" = true;
-            "browser.search.region" = "CA";
-            "browser.search.countryCode" = "CA";
-            "browser.search.isUS" = false;
-            "browser.ctrlTab.recentlyUsedOrder" = false;
-            "browser.bookmarks.showMobileBookmarks" = true;
-            "browser.uidensity" = 1;
-            "browser.urlbar.placeholderName" = "DuckDuckGo";
-            "browser.urlbar.update1" = true;
-            "distribution.searchplugins.defaultLocale" = "en-CA";
-            "general.useragent.locale" = "en-CA";
-            "identity.fxaccounts.account.device.name" = "xenoxanite";
-            "privacy.trackingprotection.socialtracking.annotate.enabled" = true;
-            "reader.color_scheme" = "sepia";
-            "services.sync.declinedEngines" = "addons,passwords,prefs";
-            "services.sync.engine.addons" = false;
-            "services.sync.engineStatusChanged.addons" = true;
-            "services.sync.engine.passwords" = false;
-            "services.sync.engine.prefs" = false;
-            "services.sync.engineStatusChanged.prefs" = true;
-            "services.sync.prefs.sync.browser.uiCustomization.state" = true;
-            "browser.urlbar.shortcuts.tabs" = false;
-            "browser.urlbar.showSearchSuggestionsFirst" = false;
-            "browser.newtabpage.activity-stream.enabled" = false;
-            "browser.newtabpage.enhanced" = false;
-            "browser.newtabpage.introShown" = true;
-            "browser.newtab.preload" = false;
-            "browser.newtabpage.directory.ping" = "";
-            "browser.urlbar.trimURLs" = false;
-            "browser.disableResetPrompt" =
-              true; # "Looks like you haven't started Firefox in a while."
-            "browser.onboarding.enabled" =
-              false; # "New to Firefox? Let's get started!" tour
-            "media.videocontrols.picture-in-picture.video-toggle.enabled" =
-              false;
-            "extensions.shield-recipe-client.enabled" = false;
-            "reader.parse-on-load.enabled" = false; # "reader view"
             "security.pki.sha1_enforcement_level" = 1;
-            "geo.provider.network.url" =
-              "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
-            "browser.newtabpage.activity-stream.asrouter.userprefs.cfr" = false;
-            "extensions.htmlaboutaddons.discover.enabled" = false;
-            "browser.sessionstore.interval" = "1800000";
-            "dom.battery.enabled" = false;
-            "browser.send_pings" = false;
-            "dom.gamepad.enabled" = false;
-            "datareporting.healthreport.service.enabled" = false;
-            "extensions.formautofill.addresses.enabled" = false;
-            "extensions.formautofill.available" = "off";
-            "extensions.formautofill.creditCards.available" = false;
-            "extensions.formautofill.creditCards.enabled" = false;
-            "extensions.formautofill.heuristics.enabled" = false;
-
           };
+        };
+        profiles.default = {
+          name = "xenoxanite";
+          search = {
+            engines = {
+              "Bing".metaData.hidden = true;
+              "Amazon".metaData.hidden = true;
+              "Amazon.com".metaData.hidden = true;
+              "Google".metaData.hidden = true;
+              "eBay".metaData.hidden = true;
+              "Wikipedia".metaData.hidden = true;
+
+              "DuckDuckGo".metaData.alias = "@d";
+              "Nix Packages" = {
+                urls = [{
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }];
+                icon =
+                  "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@np" ];
+              };
+            };
+            force = true;
+            default = "DuckDuckGo";
+            order = [ "DuckDuckGo" "Nix Packages" ];
+          };
+          userChrome = if config.pywal.enable then
+            builtins.readFile (./userChrome-pywal.css)
+          else
+            builtins.readFile (./userChrome.css);
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             ublock-origin
             vimium-c
@@ -341,6 +275,7 @@
             videospeed
             pywalfox
             df-youtube
+            multi-account-containers
           ];
         };
       };

@@ -1,5 +1,3 @@
-{
-  programs.firefox.profiles.default.userChrome = ''
     /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
     #main-window {
         --pywalfox-background: var(--lwt-accent-color);
@@ -266,6 +264,3 @@
               margin: calc((var(--urlbar-min-height) * -1) - 10px) calc(100vw - var(--uc-urlbar-width)) 0 0 !important;
          }
       }
-
-  '';
-}

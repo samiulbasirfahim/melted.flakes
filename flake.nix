@@ -8,7 +8,7 @@
     hyprland-contrib.url = "github:hyprwm/contrib";
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify.url = "github:the-argus/spicetify-nix";
   };
   outputs = { nixpkgs, self, ... }@inputs:
     let selfPkgs = import ./pkgs;
@@ -19,4 +19,3 @@
         import ./modules/core/default.nix { inherit self nixpkgs inputs; };
     };
 }
-
