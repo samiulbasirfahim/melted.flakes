@@ -166,6 +166,7 @@
             "network.protocol-handler.external.ms-windows-store" = false;
             "permissions.delegation.enabled" = false;
             "browser.download.useDownloadDir" = true;
+            "browser.download.dir" = "/home/xenoxanite/downloads";
             "browser.download.alwaysOpenPanel" = false;
             "browser.download.manager.addToRecentDocs" = false;
             "browser.download.always_ask_before_handling_new_types" = true;

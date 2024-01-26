@@ -5,12 +5,14 @@ let
 
     wallpaper_daemon="wal -i"
     if [ -f "$1" ]; then
+      xwallpaper --stretch $1 
       $wallpaper_daemon $1
       reload-wm
       betterlockscreen -u $wallpaper_location &
     else
       wallpaper_location=$(find $HOME/pix/wallpapers -name "*.png" -o -name "*.jpg" -o -name "*.gif" | sxiv -tio)
       if [ -f "$wallpaper_location" ]; then
+        xwallpaper --stretch $wallpaper_location 
         $wallpaper_daemon $wallpaper_location
         reload-wm
         betterlockscreen -u $wallpaper_location &

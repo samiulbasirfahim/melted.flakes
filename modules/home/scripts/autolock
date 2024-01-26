@@ -12,23 +12,17 @@ is_fullscreen() {
 should_lock() {
     id=$(xprop -root | awk '$1 ~ /_NET_ACTIVE_WINDOW/ { print $5 }')
     title=$(xprop -id $id | awk -F '=' '$1 ~ /_NET_WM_NAME\(UTF8_STRING\)/ { print $2 }')
-
+    if is_fullscreen $id; then
+      return 1
+    fi
     for i in "${LIST_OF_WINDOW_TITLES_THAT_PREVENT_LOCKING[@]}"; do
       if [[ $title =~ $i ]]; then
           return 1
       fi
     done
-    if is_fullscreen $id; then
-        return 1
-    else
-        return 0
-    fi
 }
 
-autolock() {
-  if should_lock; then
+if should_lock; then
     betterlockscreen --lock blur dim
-  fi
-}
+fi
 
-xautolock -time 1 -locker autolock 

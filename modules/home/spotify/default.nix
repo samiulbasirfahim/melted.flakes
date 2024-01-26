@@ -16,6 +16,7 @@ in {
 
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
+      keyboardShortcut
       shuffle
       hidePodcasts
       playlistIcons

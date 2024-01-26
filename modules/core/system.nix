@@ -1,4 +1,4 @@
-{ self, pkgs, lib, inputs, ... }: {
+{ self,  inputs, ... }: {
   nixpkgs = {
     overlays = let
       myOverlay = self: super: {
@@ -7,7 +7,7 @@
       };
 
     in [
-      inputs.neovim-nightly-overlay.overlay
+     inputs.neovim-nightly-overlay.overlay
       self.overlays.default
       myOverlay
       inputs.nur.overlay

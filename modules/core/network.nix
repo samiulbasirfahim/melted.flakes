@@ -7,7 +7,15 @@ let
   };
 
 in {
-  environment.etc."hosts" = { source = lib.mkForce hosts; };
+  environment = {
+    etc."hosts" = { source = lib.mkForce hosts; };
+    systemPackages = with pkgs; [ cloudflare-warp ];
+  };
+  systemd = {
+    services."warp-svc".wantedBy = [ "multi-user.target" ];
+    user.services."warp-taskbar".wantedBy = [ "tray.target" ];
+    packages = with pkgs; [ cloudflare-warp ];
+  };
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;

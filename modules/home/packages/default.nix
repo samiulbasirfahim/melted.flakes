@@ -2,6 +2,7 @@
   imports = [ ./media.nix ];
   home.packages = with pkgs; [
     # freetube
+    telegram-desktop
     wget
     pstree
     unzip
