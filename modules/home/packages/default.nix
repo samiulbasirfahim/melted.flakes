@@ -1,9 +1,9 @@
 { pkgs, ... }: {
   imports = [ ./media.nix ];
   home.packages = with pkgs; [
-    # freetube
-    telegram-desktop
+    pcmanfm
     wget
+    tgpt
     pstree
     unzip
     btop
@@ -19,5 +19,13 @@
 
     chromium
     yt-dlp
+
+    libsForQt5.kdenlive
+    glaxnimate
+    imv
+    mpv
+    ytfzf
+    ani-cli
+    ffmpeg_5
   ];
 }

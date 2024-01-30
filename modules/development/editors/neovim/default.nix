@@ -15,7 +15,6 @@
           fd
 
           # language server
-          rust-analyzer
           clang-tools
           nil
           lua-language-server

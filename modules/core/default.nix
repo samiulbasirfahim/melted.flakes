@@ -29,7 +29,7 @@
 
       # lnguages
       ./../development/language/cpp.nix
-      # ./../development/language/rust.nix
+      ./../development/language/rust.nix
       ./../development/language/python.nix
       ./../development/language/javascript.nix
 

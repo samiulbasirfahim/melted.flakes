@@ -1,13 +1,11 @@
-{ self,  inputs, ... }: {
+{ self, inputs, pkgs, ... }: {
   nixpkgs = {
     overlays = let
       myOverlay = self: super: {
         discord = super.discord.override { withVencord = true; };
-
       };
-
     in [
-     inputs.neovim-nightly-overlay.overlay
+      inputs.neovim-nightly-overlay.overlay
       self.overlays.default
       myOverlay
       inputs.nur.overlay

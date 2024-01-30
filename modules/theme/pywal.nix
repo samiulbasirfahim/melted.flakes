@@ -16,11 +16,6 @@ in {
           builtins.replaceStrings [ "<path>" ]
           [ "${pywalfox_wrapper}/bin/pywalfox_wrapper" ] (builtins.readFile
             "${pkgs.pywalfox-native}/lib/python3.11/site-packages/pywalfox/assets/manifest.json");
-
-        ".local/share/wal-telegram".source = builtins.fetchGit {
-          url = "https://github.com/guillaumeboehm/wal-telegram";
-          rev = "47e1a18f6d60d08ebaabbbac4b133a6158bacadd";
-        };
       };
     };
   };

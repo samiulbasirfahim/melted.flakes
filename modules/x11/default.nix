@@ -1,1 +1,7 @@
-{ imports = [ ./dwm ./dunst ]; }
+{
+  imports = [
+    ./dwm
+    # ./dwm/picom.nix 
+    ./dunst
+  ];
+}

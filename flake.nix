@@ -9,6 +9,10 @@
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     spicetify.url = "github:the-argus/spicetify-nix";
+    hardened-firefox = {
+      url = "github:arkenfox/user.js";
+      flake = false;
+    };
   };
   outputs = { nixpkgs, self, ... }@inputs:
     let selfPkgs = import ./pkgs;

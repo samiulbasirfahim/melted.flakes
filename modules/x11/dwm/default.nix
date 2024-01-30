@@ -52,12 +52,11 @@
       xdotool
       st
       xwallpaper
-      xcompmgr
       maim
       xsel
       betterlockscreen
       xautolock
-      # xclip-pre
+      xcompmgr
     ];
   };
 }

@@ -1,5 +1,5 @@
 { pkgs, ... }: {
   home-manager.users.xenoxanite = {
-    home.packages = with pkgs; [ cargo rustc ];
+    home.packages = with pkgs; [ rustup ];
   };
 }

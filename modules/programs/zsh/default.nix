@@ -36,10 +36,10 @@
       v =
         "fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim";
       record = if config.services.xserver.displayManager.startx.enable then
-        "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0 $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')"
+        "ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+0,0 $HOME/vids/$(date +'%Y%m%d%H%M%S_1.mp4')"
       else
         (if config.programs.hyprland.enable then
-          "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')"
+          "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/vids/$(date +'%Y%m%d%H%M%S_1.mp4')"
         else
           "");
     };
