@@ -23,9 +23,9 @@
       ./../development/editors/vscode
 
       # wayland
-      # ./../wayland
+      ./../wayland
 
-      ./../x11
+      # ./../x11
 
       # lnguages
       ./../development/language/cpp.nix
