@@ -3,5 +3,6 @@
         pulsemixer
         tmux
         pamixer
+        nix-prefetch-git
     ];
 }

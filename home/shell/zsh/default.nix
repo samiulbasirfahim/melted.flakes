@@ -13,7 +13,8 @@
       lla = "ls -la";
       lt = "ls --tree";
       lta = "ls --tree -a";
-      rebuild = "sudo nixos-rebuild switch --flake /home/xenoxanite/dev/flakes";
+      rebuild = "sudo nixos-rebuild switch --flake /home/xenoxanite/dev/flakes#oxygen";
+      update = "sudo nix flake update /home/xenoxanite/dev/flakes";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
       v =
