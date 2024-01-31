@@ -1,1 +1,1 @@
-{ imports = [ ./X11 ]; }
+{ imports = [ ./X11 ./services.nix ]; }

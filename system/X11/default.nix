@@ -11,5 +11,19 @@
     extraPortals = with pkgs; [ xdg-desktop-portal ];
     config.common.default = "*";
   };
-  environment.systemPackages = with pkgs; [ xsel xwallpaper maim xcompmgr xclip ];
+  programs.zsh.loginShellInit = ''
+    if [[ "$(tty)" == "/dev/tty1" ]] then
+      startx
+    fi
+  '';
+  environment.systemPackages = with pkgs; [
+    xsel
+    xwallpaper
+    maim
+    xcompmgr
+    xclip
+    sxiv
+    xdotool
+    haskellPackages.greenclip
+  ];
 }

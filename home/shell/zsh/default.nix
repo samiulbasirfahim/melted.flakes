@@ -14,7 +14,6 @@
       lt = "ls --tree";
       lta = "ls --tree -a";
       rebuild = "sudo nixos-rebuild switch --flake /home/xenoxanite/dev/flakes";
-      update = "nix flake update /home/xenoxanite/dev/flakes";
       ncg =
         "nix-collect-garbage -d && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
       v =

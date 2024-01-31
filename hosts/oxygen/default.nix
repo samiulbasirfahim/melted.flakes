@@ -1,9 +1,10 @@
 { inputs, self, pkgs, ... }: {
-  imports =
-    [ ../../home ./configuration.nix ./hardware-configuration.nix ../../system ]
-    ++ [
+  imports = [
+    ../../home
+    ./configuration.nix
+    ./hardware-configuration.nix
+    ../../system
+  ];
 
-    ];
-
-  nixpkgs.overlays = [ self.overlays.default ];
+  nixpkgs.overlays = [ self.overlays.default inputs.nur.overlay ];
 }
