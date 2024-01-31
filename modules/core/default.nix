@@ -25,8 +25,6 @@
       # wayland
       ./../wayland
 
-      # ./../x11
-
       # lnguages
       ./../development/language/cpp.nix
       ./../development/language/rust.nix
