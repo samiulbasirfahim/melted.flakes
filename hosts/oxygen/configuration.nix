@@ -40,22 +40,13 @@
     password = "rainy";
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
-      neovim
-      rnix-lsp
       eza
       git
       gh
-      st
-      dmenu
-
-      ripgrep
-      nil
-      nixfmt
-      statix
 
       qutebrowser
       cloudflare-warp
-        gcc
+      gcc
     ];
   };
   system.stateVersion = "23.11"; # Did you read the comment?

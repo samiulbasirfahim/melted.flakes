@@ -5,7 +5,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users.xenoxanite = {
-      imports = [ ./neovim ./packages ./gtk ];
+      imports = [ ./dev/editor/neovim ./packages ./ui/gtk ./ui/pywal ./shell/zsh ./shell/starship ];
       home = {
         username = "xenoxanite";
         homeDirectory = "/home/xenoxanite";
