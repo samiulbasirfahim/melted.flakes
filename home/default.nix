@@ -1,4 +1,4 @@
-{ inputs, user, ... }: {
+{ inputs, self, user, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;
@@ -7,6 +7,7 @@
     users.${user} = {
       imports = [
         ./dev/editor/neovim
+        ./dev/languages
         ./packages
         ./ui/gtk
         ./ui/pywal
@@ -14,8 +15,10 @@
         ./shell/starship
         ./scripts
         ./programs/firefox
+        ./programs/dunst
+        ./programs/btop
+        ./programs/git
       ];
-
       firefox.enable = true;
       pywal.enable = true;
       home = {

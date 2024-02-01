@@ -1,3 +1,1 @@
-{
-imports = [./c-cpp.nix ./rust.nix ./python.nix];
-}
+{ imports = [ ./c-cpp.nix ./rust.nix ./python.nix ]; }

@@ -6,7 +6,7 @@
       owner = "xenoxanite";
       repo = "dwm";
       rev = "main";
-      hash = "sha256-YTTTYyByw4pNK2SbVDvvNIG3btYKUCPfKkJc8qoSZew=";
+      hash = "sha256-cmjJWV7SjH6XEtlxa5nA546AyeA3yUafQLtpoUQeX/8=";
     };
     buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.imlib2 ];
     nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.pkg-config ];

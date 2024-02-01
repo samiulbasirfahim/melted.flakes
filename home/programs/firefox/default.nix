@@ -126,7 +126,7 @@
             "Amazon.com".metaData.hidden = true;
             "eBay".metaData.hidden = true;
             "Google".metaData.hidden = true;
-            "Wikipedia".metaData.hidden = true;
+            "Wikipedia (en)".metaData.hidden = true;
             "DuckDuckGo".metaData.alias = "@d";
             "Nix Packages" = {
               urls = [{
@@ -239,6 +239,11 @@
         ];
       };
     };
-    home = { sessionVariables = { MOZ_DISABLE_CONTENT_SANDBOX = 1; }; };
+    home = {
+      sessionVariables = {
+        BROWSER = "firefox";
+        MOZ_DISABLE_CONTENT_SANDBOX = 1;
+      };
+    };
   };
 }

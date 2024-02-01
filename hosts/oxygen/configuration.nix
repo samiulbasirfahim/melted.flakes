@@ -5,20 +5,6 @@
 { pkgs, inputs, user, ... }:
 
 {
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "oxygen"; # Define your hostname.
   networking.useDHCP = true;
 
@@ -36,7 +22,7 @@
     isNormalUser = true;
     password = "rainy";
     extraGroups = [ "wheel" ];
-    packages = with pkgs; [ eza git gh gcc ];
+    packages = with pkgs; [ eza gcc ];
   };
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11";
 }
