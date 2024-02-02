@@ -28,10 +28,6 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hycov = {
-      url = "github:DreamMaoMao/hycov";
-      inputs.hyprland.follows = "hyprland";
-    };
     hyprpicker.url = "github:hyprwm/hyprpicker";
     hypr-contrib.url = "github:hyprwm/contrib";
   };

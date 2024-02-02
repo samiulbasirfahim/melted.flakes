@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   fonts.fontconfig.enable = true;
   home = {
+
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
@@ -21,14 +22,21 @@
       name = "Catppuccin-Latte-Dark";
       size = 12;
     };
+
     sessionVariables = {
       GTK_USE_PORTAL = 0;
-      GTK_THEME = "Catppuccin-Mocha-Compact-Green-Dark";
+      QT_QPA_PLATFORMTHEME = "gtk3";
+      GTK_THEME = "Nordic";
     };
+
+    pointerCursor.gtk.enable = true;
   };
   gtk = {
     enable = true;
-    theme.name = "Catppuccin-Mocha-Compact-Green-Dark";
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
@@ -38,6 +46,18 @@
       size = 10;
     };
 
+    gtk3.extraConfig = {
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintslight";
+      gtk-xft-rgba = "rgb";
+    };
+    gtk2.extraConfig = ''
+      gtk-xft-antialias=1
+      gtk-xft-hinting=1
+      gtk-xft-hintstyle="hintslight"
+      gtk-xft-rgba="rgb"
+    '';
     cursorTheme = { name = "Catppuccin-Latte-Dark"; };
   };
 }

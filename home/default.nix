@@ -15,12 +15,17 @@
         ./shell/starship
         ./scripts
         ./programs/firefox
-        ./programs/dunst
+        ./programs/mako
+        ./programs/launcher
+        ./programs/tmux
         ./programs/btop
         ./programs/git
+        ./wm/hyprland
+        ./terminals
       ];
       firefox.enable = true;
       pywal.enable = true;
+      tmux.enable = true;
       home = {
         username = "${user}";
         homeDirectory = "/home/${user}";

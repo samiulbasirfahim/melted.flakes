@@ -11,22 +11,28 @@
       block = [ "fakenews" "gambling" "porn" "social" ];
     };
   };
-
+  programs = {
+    zsh.loginShellInit = ''
+      if [[ "$(tty)" == "/dev/tty1" ]] then
+        Hyprland
+      fi
+    '';
+    hyprland.enable = true;
+    dconf.enable = true;
+    zsh.enable = true;
+  };
   time.timeZone = "Asia/Dhaka";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  programs = { dconf.enable = true; };
-
   security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;
-  programs.zsh.enable = true;
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   users.users.${user} = {
     isNormalUser = true;
     password = "rainy";
     extraGroups = [ "wheel" ];
-    packages = with pkgs; [ eza gcc ];
+    packages = with pkgs; [ eza gcc cloudflare-warp ];
   };
   system.stateVersion = "23.11";
 }
