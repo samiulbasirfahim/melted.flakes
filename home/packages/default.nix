@@ -9,6 +9,6 @@
     btop
     calcurse
     vesktop
-    tdesktop
+    telegram-desktop
   ];
 }

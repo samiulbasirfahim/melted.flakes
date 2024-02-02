@@ -183,8 +183,6 @@
           "browser.cache.memory.enable" = true;
           "browser.cache.memory.capacity" = 1048576; # 1GiB
 
-          # Disable fullscreen
-          "full-screen-api.ignore-widgets" = true;
 
           # Autoplay
           "media.autoplay.block-event.enabled" = true;

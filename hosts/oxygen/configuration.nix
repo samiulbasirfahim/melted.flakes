@@ -5,8 +5,12 @@
 { pkgs, inputs, user, ... }:
 
 {
-  networking.hostName = "oxygen"; # Define your hostname.
-  networking.useDHCP = true;
+  networking = {
+    stevenblack = {
+      enable = true; # don't touch hosts file on a server
+      block = [ "fakenews" "gambling" "porn" "social" ];
+    };
+  };
 
   time.timeZone = "Asia/Dhaka";
   i18n.defaultLocale = "en_US.UTF-8";

@@ -1,4 +1,5 @@
 { self, inputs, ... }: {
+  imports = [ inputs.hosts.nixosModule ];
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -17,6 +18,11 @@
       allowUnsupportedSystem = true;
       allowUnfree = true;
     };
-    overlays = [ self.overlays.default inputs.nur.overlay ];
+    overlays = with inputs; [
+      self.overlays.default
+      nur.overlay
+      neovim-nightly-overlay.overlay
+      rust-overlay.overlays.default
+    ];
   };
 }
