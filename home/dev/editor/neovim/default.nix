@@ -19,6 +19,7 @@
         stylua
         rustfmt
         nixfmt
+        prettierd
 
         # lints
         statix

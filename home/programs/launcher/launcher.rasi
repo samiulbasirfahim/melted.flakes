@@ -1,13 +1,13 @@
+@import "~/.cache/wal/rofi-colors.rasi"
+
 configuration {
   font:                       "JetBrainsMono Nerd Font 12";
-  show-icons:                 true;
   icon-theme:                 "Papirus";
   display-drun:               "";
   drun-display-format:        "{name}";
   disable-history:            false;
   sidebar-mode:               false;
 }
-@import "colors.rasi"
 
 window {
   transparency:               "real";
@@ -15,7 +15,7 @@ window {
   text-color:                 @fg;
   border:                     0px;
   border-color:               @ac;
-  border-radius:              0;
+  border-radius:              0px;
   width:                      25%;
   location:                   center;
   x-offset:                   0;
@@ -23,16 +23,15 @@ window {
 }
 
 prompt {
-  enabled:                    true;
+  enabled:                    false;
   padding:                    0.30% 1% 0% -0.5%;
   background-color:           @al;
-  text-color:                 #81A1C1;
   font:                       "JetBrainsMono Nerd Font 16";
 }
 
 entry {
   background-color:           @al;
-  text-color:                 #87CEFA;
+  text-color:                 @se;
   placeholder-color:          @bg;
   expand:                     true;
   horizontal-align:           0;
@@ -50,21 +49,21 @@ inputbar {
   border-radius:              0px;
   border-color:               @ac;
   margin:                     0% 0% 0% 0%;
-  padding:                    1.5%;
+  padding:                    0.8%;
 }
 
-listview {
+listview {  
   background-color:           @al;
   padding:                    0px;
   columns:                    1;
-  lines:                      5;
+  lines:                      8;
   spacing:                    0%;
   cycle:                      false;
   dynamic:                    true;
   layout:                     vertical;
 }
 
-mainbox {
+mainbox {  
   background-color:           @al;
   border:                     0% 0% 0% 0%;
   border-radius:              0% 0% 0% 0%;
@@ -76,13 +75,13 @@ mainbox {
 
 element {
   background-color:           @al;
-  text-color:                 #FAF4FC;
+  text-color:                 @ac;
   orientation:                horizontal;
   border-radius:              0%;
-  padding:                    1% 0.5% 1% 0.5%;
+  padding:                    0.6%;
 }
 
-element-icon {
+element-icon {  
   background-color:           inherit;
   text-color:                 inherit;
   horizontal-align:           0.5;

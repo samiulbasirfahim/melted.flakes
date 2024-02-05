@@ -5,19 +5,27 @@
 { pkgs, inputs, user, ... }:
 
 {
+
   networking = {
     stevenblack = {
       enable = true; # don't touch hosts file on a server
       block = [ "fakenews" "gambling" "porn" "social" ];
     };
   };
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines;
+      [ # any engine you want, for example
+        openbangla-keyboard
+      ];
+  };
   programs = {
-    zsh.loginShellInit = ''
-      if [[ "$(tty)" == "/dev/tty1" ]] then
-        Hyprland
-      fi
-    '';
-    hyprland.enable = true;
+    # zsh.loginShellInit = ''
+    #   if [[ "$(tty)" == "/dev/tty1" ]] then
+    #     Hyprland
+    #   fi
+    # '';
+    # hyprland.enable = true;
     dconf.enable = true;
     zsh.enable = true;
   };
@@ -32,7 +40,7 @@
     isNormalUser = true;
     password = "rainy";
     extraGroups = [ "wheel" ];
-    packages = with pkgs; [ eza gcc cloudflare-warp ];
+    packages = with pkgs; [ eza gcc ];
   };
   system.stateVersion = "23.11";
 }

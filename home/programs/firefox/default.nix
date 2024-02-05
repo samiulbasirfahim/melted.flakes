@@ -183,7 +183,6 @@
           "browser.cache.memory.enable" = true;
           "browser.cache.memory.capacity" = 1048576; # 1GiB
 
-
           # Autoplay
           "media.autoplay.block-event.enabled" = true;
           "media.autoplay.default" = 5;
@@ -233,6 +232,7 @@
           videospeed
           pywalfox
           df-youtube
+          search-by-image
           multi-account-containers
         ];
       };

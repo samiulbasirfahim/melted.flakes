@@ -6,13 +6,13 @@
     mpv
     tgpt
     btop
+    yt-dlp
+    ytfzf
     calcurse
-    vesktop
-    telegram-desktop
-    cava
-    wl-clipboard
-    cliphist
-    libnotify
+    gparted
+    # telegram-desktop
     cinnamon.nemo
+    unzip
+    hugo
   ];
 }

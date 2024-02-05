@@ -18,10 +18,10 @@
   '';
   environment.systemPackages = with pkgs; [
     xsel
+    xclip
     xwallpaper
     maim
     xcompmgr
-    xclip
     sxiv
     xdotool
     haskellPackages.greenclip

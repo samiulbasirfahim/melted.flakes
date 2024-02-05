@@ -2,12 +2,13 @@
 
   services.xserver.windowManager.dwm.enable = true;
   services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs (old: {
-    src = pkgs.fetchFromGitHub {
-      owner = "xenoxanite";
-      repo = "dwm";
-      rev = "main";
-      hash = "sha256-cmjJWV7SjH6XEtlxa5nA546AyeA3yUafQLtpoUQeX/8=";
-    };
+    # src = pkgs.fetchFromGitHub {
+    #   owner = "xenoxanite";
+    #   repo = "dwm";
+    #   rev = "main";
+    #   hash = "sha256-cmjJWV7SjH6XEtlxa5nA546AyeA3yUafQLtpoUQeX/8=";
+    # };
+    src = /home/xenoxanite/.suckless/dwm;
     buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.imlib2 ];
     nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.pkg-config ];
   });

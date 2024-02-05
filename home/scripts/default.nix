@@ -5,8 +5,9 @@ let
     wal -i $(grep -o "'/[^']*'" <<< cat $HOME/.fehbg | cut -d "'" -f 2)
     xdotool key super+F5
   '';
-  clipboard_dmenu = pkgs.writeShellScriptBin "clipboard_dmenu"
-    "\ngreenclip print | sed '/^$/d' | dmenu -bw 0 | xargs -r -d'\n' -I '{}' greenclip print '{}'\n  ";
+  clipboard_dmenu = pkgs.writeShellScriptBin "clipboard_dmenu" ''
+    greenclip print | sed "/^$/d" | rofi -dmenu -theme ~/.config/rofi/launcher.rasi | xargs -r -d"\n" -I "{}" greenclip print "{}"
+  '';
 
   schedule-power-off = pkgs.writeShellScriptBin "schedule-power-off" ''
     shutdown -P 22:00 &
@@ -19,16 +20,15 @@ let
     #!/bin/sh
 
     wallpaper_daemon="wal -i"
-    
     if [ -f "$1" ]; then
-      swww img $1
+      xwallpaper --stretch $1 
       $wallpaper_daemon $1
       reload-wm
       betterlockscreen -u $wallpaper_location &
     else
       wallpaper_location=$(find $HOME/pix/wallpapers -name "*.png" -o -name "*.jpg" -o -name "*.gif" | sxiv -tio)
       if [ -f "$wallpaper_location" ]; then
-        swww img $wallpaper_location
+        xwallpaper --stretch $wallpaper_location 
         $wallpaper_daemon $wallpaper_location
         reload-wm
         betterlockscreen -u $wallpaper_location &
@@ -36,14 +36,17 @@ let
     fi
   '';
   reload-wm = pkgs.writeShellScriptBin "reload-wm" ''
-    hyprctl reload &
-    pkill -SIGUSR2 waybar &
-    reload-discord &
-    pywalfox update &
-    pkill mako && setsid mako -c /home/xenoxanite/.cache/wal/mako.conf &
+    ln -sf ~/.cache/wal/discord.css ~/.config/VencordDesktop/VencordDesktop/themes/discord.css & 
+    ln -sf ~/.cache/wal/colors.Xresources ~/.Xresources &                                        
+    ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc &                                       
+    xdotool key super+F5
+    pkill dwmblocks && dwmblocks &
+    pkill dunst && dunst &
+    pywalfox update
   '';
 in {
   home = {
+    file = { ".local/bin/screenshot_dmenu".source = ./screenshot_dmenu; };
     packages = [
       load-wallpaper
       # schedule-power-off

@@ -8,10 +8,10 @@ mkdir -p $SCSH_DIR
 AREA_OPTS=" save\n copy"
 CAP_OPTS=" screen\n󱂬 window\n󰋃 selection"
 
-SCHSH_AREA=$(echo -e $AREA_OPTS | dmenu -c )
+SCHSH_AREA=$(echo -e $AREA_OPTS | rofi -dmenu -theme ~/.config/rofi/launcher.rasi )
 [[ -z $SCHSH_AREA ]] && echo "screenshot aborted" && exit 0
 
-SCHSH_CAP=$(echo -e $CAP_OPTS | dmenu -c )
+SCHSH_CAP=$(echo -e $CAP_OPTS | rofi -dmenu -theme ~/.config/rofi/launcher.rasi )
 [[ -z $SCHSH_CAP ]] && echo "screenshot aborted" && exit 0
 
 

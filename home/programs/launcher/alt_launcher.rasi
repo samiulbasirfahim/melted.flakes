@@ -1,3 +1,5 @@
+@import "~/.cache/wal/rofi-colors.rasi"
+
 configuration {
   font:                           "JetBrainsMono Nerd Font 12";
   drun-display-format:            "{name}";
@@ -5,7 +7,6 @@ configuration {
   sidebar-mode:                   false;
 }
 
-@import "colors.rasi"
 
 window {
   transparency:                   "real";
@@ -21,7 +22,7 @@ window {
 }
 
 prompt {
-  enabled:                        true;
+  enabled:                        false;
   padding:                        0.30% 1% 0% -0.5%;
   background-color:               @al;
   text-color:                     #81A1C1;
