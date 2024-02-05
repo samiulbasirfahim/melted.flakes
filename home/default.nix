@@ -7,21 +7,20 @@
     users.${user} = {
       imports = [
         ./dev/editor/neovim
-        # ./dev/languages
-        # ./packages
-        # ./ui/gtk
+        ./dev/languages
+        ./packages
+        ./ui/gtk
         ./ui/pywal
-        # ./shell/zsh
-        # ./shell/starship
-        # ./scripts
+        ./shell/zsh
+        ./shell/starship
+        ./scripts
         ./programs/firefox
-        # ./programs/dunst
+        ./programs/dunst
         ./programs/launcher
-        # ./programs/tmux
-        # ./programs/btop
-        # ./programs/git
+        ./programs/tmux
+        ./programs/btop
+        ./programs/git
         ./programs/discord
-        # ./wm/hyprland
       ];
       firefox.enable = true;
       programs.discord = {
@@ -29,7 +28,7 @@
         wrapDiscord = true;
       };
       pywal.enable = true;
-      # tmux.enable = true;
+      tmux.enable = true;
       home = {
         username = "${user}";
         homeDirectory = "/home/${user}";

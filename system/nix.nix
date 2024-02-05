@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  imports = [ inputs.hosts.nixosModule inputs.hyprland.nixosModules.default ];
+  imports = [ inputs.hosts.nixosModule ];
   nix = {
     settings = {
       auto-optimise-store = true;

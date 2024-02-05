@@ -20,12 +20,6 @@
       ];
   };
   programs = {
-    # zsh.loginShellInit = ''
-    #   if [[ "$(tty)" == "/dev/tty1" ]] then
-    #     Hyprland
-    #   fi
-    # '';
-    # hyprland.enable = true;
     dconf.enable = true;
     zsh.enable = true;
   };

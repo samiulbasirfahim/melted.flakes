@@ -24,12 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hosts.url = "github:StevenBlack/hosts";
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprpicker.url = "github:hyprwm/hyprpicker";
-    hypr-contrib.url = "github:hyprwm/contrib";
   };
   outputs = { nixpkgs, self, ... }@inputs:
     let
