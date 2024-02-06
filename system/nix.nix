@@ -18,7 +18,12 @@
       allowUnsupportedSystem = true;
       allowUnfree = true;
     };
-    overlays = with inputs; [
+    overlays = let
+      myOverlay = self: super: {
+        discord = super.discord.override { withVencord = true; };
+      };
+    in with inputs; [
+      myOverlay
       self.overlays.default
       nur.overlay
       neovim-nightly-overlay.overlay

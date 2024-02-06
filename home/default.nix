@@ -21,6 +21,7 @@
         ./programs/btop
         ./programs/git
         ./programs/discord
+        ./programs/qutebrowser
       ];
       firefox.enable = true;
       programs.discord = {

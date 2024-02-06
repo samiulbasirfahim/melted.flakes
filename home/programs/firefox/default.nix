@@ -103,6 +103,7 @@
             keyword = "pt";
             url = "https://phitron.io/dashboard";
           }
+
           {
             name = "Nix sites";
             toolbar = true;
@@ -128,6 +129,11 @@
             "Google".metaData.hidden = true;
             "Wikipedia (en)".metaData.hidden = true;
             "DuckDuckGo".metaData.alias = "@d";
+            "MyNixOS" = {
+              urls =
+                [{ template = "https://mynixos.com/search?q={searchTerms}"; }];
+              definedAliases = [ "@mn" ];
+            };
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";

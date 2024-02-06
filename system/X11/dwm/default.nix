@@ -15,12 +15,6 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      dmenu = prev.dmenu.overrideAttrs (old: {
-        src = /home/xenoxanite/.suckless/dmenu;
-        buildInputs = old.buildInputs or [ ];
-        nativeBuildInputs = (old.nativeBuildInputs or [ ])
-          ++ [ pkgs.pkg-config ];
-      });
       st = prev.st.overrideAttrs (old: {
         src = /home/xenoxanite/.suckless/st;
         buildInputs = with pkgs;
@@ -37,5 +31,5 @@
       });
     })
   ];
-  environment.systemPackages = with pkgs; [ dwmblocks st dmenu ];
+  environment.systemPackages = with pkgs; [ dwmblocks st ];
 }
