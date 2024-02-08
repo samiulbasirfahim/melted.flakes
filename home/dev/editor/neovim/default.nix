@@ -11,9 +11,6 @@
         clang-tools
         nil
         lua-language-server
-        nodePackages_latest.svelte-language-server
-        typescript
-        tailwindcss-language-server
 
         # formatter
         stylua

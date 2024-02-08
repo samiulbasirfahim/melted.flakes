@@ -13,6 +13,7 @@
     # telegram-desktop
     cinnamon.nemo
     unzip
-    hugo
+    fzf
+    wget
   ];
 }
