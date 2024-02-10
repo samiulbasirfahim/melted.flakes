@@ -19,10 +19,6 @@
       url = "github:arkenfox/user.js";
       flake = false;
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hosts.url = "github:StevenBlack/hosts";
   };
   outputs = { nixpkgs, self, ... }@inputs:

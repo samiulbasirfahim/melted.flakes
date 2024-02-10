@@ -1,14 +1,14 @@
-{
+{ user, ... }: {
   programs = {
     gh.enable = true;
     git = {
       enable = true;
-      userName = "Xenoxanite";
-      userEmail = "xenoxanite@gmail.com";
+      userName = "${user}";
+      userEmail = "{user}@gmail.com";
       extraConfig = {
         url = {
-          "ssh://git@github.com:xenoxanite" = {
-            insteadOf = "https://github.com/xenoxanite/";
+          "ssh://git@github.com:${user}" = {
+            insteadOf = "https://github.com/${user}/";
           };
         };
       };

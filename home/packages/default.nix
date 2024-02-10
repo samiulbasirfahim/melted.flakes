@@ -15,5 +15,6 @@
     unzip
     fzf
     wget
+    ncdu
   ];
 }

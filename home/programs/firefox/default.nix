@@ -1,4 +1,4 @@
-{ pkgs, config, lib, inputs, ... }: {
+{ pkgs, config, lib, inputs, user, ... }: {
   options.firefox.enable = lib.mkEnableOption "Firefox";
   config = lib.mkIf config.firefox.enable {
     programs.firefox = {
@@ -93,7 +93,7 @@
         };
       };
       profiles.default = {
-        name = "xenoxanite";
+        name = "${user}";
         isDefault = true;
         extraConfig = builtins.readFile "${inputs.hardened-firefox}/user.js";
         bookmarks = [

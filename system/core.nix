@@ -6,6 +6,7 @@
       efi.canTouchEfiVariables = true;
     };
   };
+  programs.nano.enable = false;
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "performancee";

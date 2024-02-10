@@ -8,16 +8,15 @@
 
   networking = {
     stevenblack = {
-      enable = true; # don't touch hosts file on a server
+      enable = true;
       block = [ "fakenews" "gambling" "porn" "social" ];
     };
   };
+  environment.systemPackages = with pkgs; [ cloudflare-warp ];
+  systemd.packages = with pkgs; [ cloudflare-warp ];
   i18n.inputMethod = {
     enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines;
-      [ # any engine you want, for example
-        openbangla-keyboard
-      ];
+    ibus.engines = with pkgs.ibus-engines; [ openbangla-keyboard ];
   };
   programs = {
     dconf.enable = true;

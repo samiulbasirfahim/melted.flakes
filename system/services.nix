@@ -1,7 +1,7 @@
 { user, ... }: {
   services = {
     dbus.enable = true;
-    getty.autologinUser = "${user}";
+    # getty.autologinUser = "${user}";
     gvfs.enable = true;
     pipewire = {
       enable = true;
@@ -10,4 +10,5 @@
       pulse.enable = true;
     };
   };
+
 }

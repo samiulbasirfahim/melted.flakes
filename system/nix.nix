@@ -1,5 +1,4 @@
 { self, inputs, ... }: {
-  imports = [ inputs.hosts.nixosModule ];
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -12,6 +11,7 @@
       options = "--delete-older-than 7d";
     };
   };
+  imports = with inputs; [ hosts.nixosModule ];
   nixpkgs = {
     config = {
       allowBroken = true;
@@ -27,7 +27,6 @@
       self.overlays.default
       nur.overlay
       neovim-nightly-overlay.overlay
-      rust-overlay.overlays.default
     ];
   };
 }

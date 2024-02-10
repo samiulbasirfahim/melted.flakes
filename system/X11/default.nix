@@ -1,8 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+
+  sddmTheme = import ../../pkgs/sddm-theme { inherit pkgs; };
+in {
   imports = [ ./dwm ];
   services.xserver = {
     enable = true;
-    displayManager.startx.enable = true;
+    dpi = 96;
+    # desktopManager.plasma5.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "${sddmTheme}";
+    };
     videoDrivers = [ "amdgpu" ];
     deviceSection = ''Option "TearFree" "true"'';
   };
@@ -11,19 +20,8 @@
     extraPortals = with pkgs; [ xdg-desktop-portal ];
     config.common.default = "*";
   };
-  programs.zsh.loginShellInit = ''
-    if [[ "$(tty)" == "/dev/tty1" ]] then
-      startx
-    fi
-  '';
   environment.systemPackages = with pkgs; [
-    xsel
-    xclip
-    xwallpaper
-    maim
-    xcompmgr
-    sxiv
-    xdotool
-    haskellPackages.greenclip
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.qt5.qtgraphicaleffects
   ];
 }

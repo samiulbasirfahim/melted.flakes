@@ -3,12 +3,13 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs user; };
     users.${user} = {
       imports = [
         ./dev/editor/neovim
         ./dev/languages
         ./packages
+        ./xdg/dir.nix
         ./ui/gtk
         ./ui/pywal
         ./shell/zsh
@@ -21,7 +22,6 @@
         ./programs/btop
         ./programs/git
         ./programs/discord
-        ./programs/qutebrowser
       ];
       firefox.enable = true;
       programs.discord = {
