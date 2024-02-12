@@ -24,7 +24,6 @@
         ./programs/git
         ./programs/discord
         ./programs/spotify
-        ./programs/qutebrowser
       ] ++ [ inputs.spicetify-nix.homeManagerModule ];
       firefox.enable = true;
       spotify.enable = true;

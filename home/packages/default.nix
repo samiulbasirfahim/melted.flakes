@@ -1,8 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     pulsemixer
-    pamixer
-    nix-prefetch-git
+    bc
     mpv
     tgpt
     btop
@@ -10,12 +9,12 @@
     ytfzf
     calcurse
     gparted
-    # telegram-desktop
     cinnamon.nemo
     unzip
     fzf
     wget
     ncdu
     yazi
+    ani-cli
   ];
 }
