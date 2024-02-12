@@ -16,5 +16,6 @@
     fzf
     wget
     ncdu
+    yazi
   ];
 }

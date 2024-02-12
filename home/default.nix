@@ -16,14 +16,18 @@
         ./shell/starship
         ./scripts
         ./programs/firefox
+        ./programs/kitty
         ./programs/dunst
         ./programs/launcher
         ./programs/tmux
         ./programs/btop
         ./programs/git
         ./programs/discord
-      ];
+        ./programs/spotify
+        ./programs/qutebrowser
+      ] ++ [ inputs.spicetify-nix.homeManagerModule ];
       firefox.enable = true;
+      spotify.enable = true;
       programs.discord = {
         enable = true;
         wrapDiscord = true;

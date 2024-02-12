@@ -1,7 +1,11 @@
-{ user, ... }: {
+{ user, lib, config, ... }:
+
+with lib; {
   services = {
     dbus.enable = true;
-    # getty.autologinUser = "${user}";
+    getty = mkIf config.services.xserver.displayManager.startx.enable {
+      autologinUser = "${user}";
+    };
     gvfs.enable = true;
     pipewire = {
       enable = true;

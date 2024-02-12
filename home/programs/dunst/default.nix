@@ -6,7 +6,7 @@
         separator_height = 0
         padding = 24
         horizontal_padding = 24
-        frame_color = "{color4}"
+        frame_color = "{color1}"
         frame_width = 2
         idle_threshold = 120
         font = JetBrainsMono Nerd Font 10
@@ -16,11 +16,11 @@
         markup = full
     [urgency_low]
         background = "{background}"
-        foreground = "{color4}"
+        foreground = "{color1}"
 
     [urgency_normal]
         background = "{background}"
-        foreground = "{color4}"
+        foreground = "{color1}"
 
     [urgency_critical]
         background = "{background}"

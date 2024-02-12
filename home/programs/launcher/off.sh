@@ -24,7 +24,7 @@ icons[shutdown]="\U2B58"
 icons[cancel]="\U274C"
 
 declare -A actions
-actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
+actions[logout]="loginctl kill-session self"
 actions[hibernate]="systemctl hibernate"
 actions[suspend]="systemctl suspend"
 actions[reboot]="systemctl reboot"

@@ -4,7 +4,7 @@
 #  - Use python3.withPackages > writePython3Bin
 #  - Copy + alter discord's .desktop file
 { config, pkgs, lib, ... }:
-
+with lib;
 let
   cfg = config.programs.discord;
 
@@ -34,7 +34,7 @@ in {
       lib.mkEnableOption "wrap Discord to patch and enable Krisp audio support";
   };
 
-  config = {
+  config = mkIf cfg.enable {
     home.packages =
       if cfg.wrapDiscord then [ wrappedDiscord ] else [ pkgs.discord ];
   };

@@ -12,6 +12,7 @@ in {
       plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator ];
       extraConfig = ''
         # better split
+        TERM=screen-256color
         bind '"' split-window -h -c "#{pane_current_path}"
         bind '|' split-window -v -c "#{pane_current_path}"
 

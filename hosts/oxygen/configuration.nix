@@ -5,15 +5,18 @@
 { pkgs, inputs, user, ... }:
 
 {
-
   networking = {
     stevenblack = {
       enable = true;
       block = [ "fakenews" "gambling" "porn" "social" ];
     };
   };
-  environment.systemPackages = with pkgs; [ cloudflare-warp ];
-  systemd.packages = with pkgs; [ cloudflare-warp ];
+  systemd = {
+    packages = [ pkgs.cloudflare-warp ];
+    services."warp-svc".wantedBy = [ "multi-user.target" ];
+    user.services."warp-taskbar".wantedBy = [ "tray.target" ];
+  };
+  environment.systemPackages = [ pkgs.cloudflare-warp ];
   i18n.inputMethod = {
     enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ openbangla-keyboard ];
