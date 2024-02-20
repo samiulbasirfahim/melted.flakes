@@ -33,7 +33,7 @@ in {
     wrapDiscord =
       lib.mkEnableOption "wrap Discord to patch and enable Krisp audio support";
   };
-
+  imports = [ ./theme.nix ];
   config = mkIf cfg.enable {
     home.packages =
       if cfg.wrapDiscord then [ wrappedDiscord ] else [ pkgs.discord ];

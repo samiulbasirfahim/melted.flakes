@@ -42,6 +42,7 @@ let
     xdotool key super+F5
     pkill dwmblocks && dwmblocks &
     pkill dunst && dunst &
+    reload-discord &
     pywalfox update
   '';
 in {

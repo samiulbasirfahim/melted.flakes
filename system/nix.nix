@@ -17,6 +17,7 @@
       allowBroken = true;
       allowUnsupportedSystem = true;
       allowUnfree = true;
+
     };
     overlays = let
       myOverlay = self: super: {

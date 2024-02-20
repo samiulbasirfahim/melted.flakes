@@ -19,6 +19,10 @@
       url = "github:arkenfox/user.js";
       flake = false;
     };
+    picom = {
+      url = "github:Arian8j2/picom-jonaburg-fix";
+      flake = false;
+    };
     hosts.url = "github:StevenBlack/hosts";
   };
   outputs = { nixpkgs, self, ... }@inputs:

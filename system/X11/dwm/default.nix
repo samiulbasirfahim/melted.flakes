@@ -29,11 +29,19 @@
         nativeBuildInputs = (old.nativeBuildInputs or [ ])
           ++ [ pkgs.pkg-config ];
       });
+
+      dmenu  = prev.dmenu.overrideAttrs (old: {
+        src = /home/${user}/.suckless/dmenu;
+        buildInputs = old.buildInputs or [ ];
+        nativeBuildInputs = (old.nativeBuildInputs or [ ])
+          ++ [ pkgs.pkg-config ];
+      });
     })
   ];
   environment.systemPackages = with pkgs; [
     dwmblocks
     st
+    dmenu
     xsel
     xclip
     xwallpaper

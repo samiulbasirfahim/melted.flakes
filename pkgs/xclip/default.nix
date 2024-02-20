@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "xclip";
-  version = "0.14";
+  version = "0.15";
 
   src = fetchFromGitHub {
     owner = "astrand";

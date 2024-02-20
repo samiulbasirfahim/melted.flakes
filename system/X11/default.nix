@@ -20,7 +20,6 @@ in {
           else
             true;
       };
-
       videoDrivers = [ "amdgpu" ];
       deviceSection = ''Option "TearFree" "true"'';
     };

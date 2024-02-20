@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     pulsemixer
+    playerctl
     bc
+    mediainfo
     mpv
     tgpt
     btop
@@ -16,5 +18,7 @@
     ncdu
     yazi
     ani-cli
+    google-chrome
+    telegram-desktop
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     loader = {
@@ -11,7 +11,7 @@
     enable = true;
     cpuFreqGovernor = "performancee";
   };
-  # amd_performance_level = "high";
+  environment.sessionVariables = { TZ = "${config.time.timeZone}"; };
   services.udev.extraRules = ''
     KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
   '';

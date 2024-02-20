@@ -7,14 +7,12 @@
         extraPrefs = ''
           // Show more ssl cert infos
           lockPref("security.identityblock.show_extended_validation",true);
-
           lockPref("browser.EULA.override",true);
           lockPref("browser.tabs.inTitlebar",0);
           lockPref("browser.tabs.tabmanager.enabled",false);
           lockPref("gfx.webrender.all",true);
           // Allow search shortcuts
           lockPref("keyword.enabled",true);
-
           lockPref("webgl.disabled",false);
           lockPref("media.ffmpeg.vaapi.enabled",true);
           lockPref("media.ffvpx.enabled",true);
@@ -96,30 +94,6 @@
         name = "${user}";
         isDefault = true;
         extraConfig = builtins.readFile "${inputs.hardened-firefox}/user.js";
-        bookmarks = [
-          {
-            name = "Phitron";
-            tags = [ "pt" ];
-            keyword = "pt";
-            url = "https://phitron.io/dashboard";
-          }
-
-          {
-            name = "Nix sites";
-            toolbar = true;
-            bookmarks = [
-              {
-                name = "homepage";
-                url = "https://nixos.org/";
-              }
-              {
-                name = "wiki";
-                tags = [ "wiki" "nix" ];
-                url = "https://nixos.wiki/";
-              }
-            ];
-          }
-        ];
         search = {
           engines = {
             "Bing".metaData.hidden = true;
@@ -171,9 +145,9 @@
           "general.useragent.locale" = "en-US";
           "browser.bookmarks.showMobileBookmarks" = true;
           # Fix big fonts in 1080p screen
-          "layout.css.devPixelsPerPx" = 0.95;
+          "layout.css.devPixelsPerPx" = 0.98;
           # Downloading random PDFs from http website is super annoing with this.
-          "dom.block_download_insecure" = false;
+          # "dom.block_download_insecure" = false;
 
           # Always use XDG portals for stuff
           "widget.use-xdg-desktop-portal.file-picker" = 2;
