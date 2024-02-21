@@ -20,5 +20,6 @@
     ani-cli
     google-chrome
     telegram-desktop
+    zathura
   ];
 }

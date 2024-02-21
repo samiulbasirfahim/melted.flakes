@@ -47,7 +47,7 @@
     xwallpaper
     maim
     xcompmgr
-    sxiv
+    nsxiv
     xdotool
     haskellPackages.greenclip
   ];

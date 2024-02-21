@@ -26,7 +26,7 @@ let
       reload-wm
       betterlockscreen -u $wallpaper_location &
     else
-      wallpaper_location=$(find $HOME/pix/wallpapers -name "*.png" -o -name "*.jpg" -o -name "*.gif" | sxiv -tio)
+      wallpaper_location=$(find $HOME/pix/wallpapers -name "*.png" -o -name "*.jpg" -o -name "*.gif" | nsxiv -tio)
       if [ -f "$wallpaper_location" ]; then
         xwallpaper --stretch $wallpaper_location 
         $wallpaper_daemon $wallpaper_location

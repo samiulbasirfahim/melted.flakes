@@ -7,6 +7,7 @@
     users.${user} = {
       imports = [
         ./dev/editor/neovim
+        ./dev/editor/codium
         ./dev/languages
         ./packages
         ./xdg/dir.nix
