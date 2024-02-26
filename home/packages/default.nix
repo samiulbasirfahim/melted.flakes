@@ -3,6 +3,7 @@
     pulsemixer
     nsxiv
     playerctl
+    pamixer
     bc
     mediainfo
     mpv
@@ -22,6 +23,6 @@
     google-chrome
     telegram-desktop
     zathura
-revolt-desktop
+    revolt-desktop
   ];
 }

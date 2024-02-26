@@ -21,27 +21,22 @@ let
 
     wallpaper_daemon="wal -i"
     if [ -f "$1" ]; then
-      xwallpaper --stretch $1 
+      swww img "$($1)"
       $wallpaper_daemon $1
       reload-wm
-      betterlockscreen -u $wallpaper_location &
     else
       wallpaper_location=$(find $HOME/pix/wallpapers -name "*.png" -o -name "*.jpg" -o -name "*.gif" | nsxiv -tio)
       if [ -f "$wallpaper_location" ]; then
-        xwallpaper --stretch $wallpaper_location 
+        swww img $wallpaper_location
         $wallpaper_daemon $wallpaper_location
         reload-wm
-        betterlockscreen -u $wallpaper_location &
       fi
     fi
   '';
   reload-wm = pkgs.writeShellScriptBin "reload-wm" ''
-    ln -sf ~/.cache/wal/discord.css ~/.config/VencordDesktop/VencordDesktop/themes/discord.css & 
-    ln -sf ~/.cache/wal/colors.Xresources ~/.Xresources &                                        
-    ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc &                                       
-    xdotool key super+F5
-    pkill dwmblocks && dwmblocks &
-    pkill dunst && dunst &
+    # xdotool key super+F5
+    # pkill dwmblocks && dwmblocks &
+    # pkill dunst && dunst &
     reload-discord &
     pywalfox update
   '';

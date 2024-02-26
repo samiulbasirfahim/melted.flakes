@@ -17,9 +17,10 @@
         ./shell/starship
         ./scripts
         ./programs/firefox
-        ./programs/kitty
+        ./programs/foot
         ./programs/dunst
         ./programs/launcher
+        ./programs/cava
         ./programs/tmux
         ./programs/btop
         ./programs/git

@@ -19,7 +19,10 @@
       url = "github:arkenfox/user.js";
       flake = false;
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hosts.url = "github:StevenBlack/hosts";
   };
   outputs = { nixpkgs, self, ... }@inputs:
