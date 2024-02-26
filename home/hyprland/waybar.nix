@@ -37,7 +37,7 @@
         margin-left: 0px;
         margin-right: 0px;
         margin-top: 0px;
-        border-bottom: 2px solid @color4;
+        border-bottom: 2px solid @color1;
         background-color: @background;
       }
       #workspaces {
@@ -52,7 +52,7 @@
         color: #d8dee9;
       }
       #workspaces button.active {
-        background-color: @color4;
+        background-color: @color1;
         color: rgb(26, 24, 38);
       }
       #workspaces button.urgent {
@@ -90,7 +90,7 @@
       #custom-cava-internal {
         padding-left: 10px;
         padding-right: 10px;
-        color: @color4;
+        color: @color1;
       }
       #network.disconnected {
         color: #cccccc;

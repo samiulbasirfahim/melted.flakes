@@ -36,7 +36,9 @@ let
   reload-wm = pkgs.writeShellScriptBin "reload-wm" ''
     # xdotool key super+F5
     # pkill dwmblocks && dwmblocks &
-    # pkill dunst && dunst &
+    pkill dunst && dunst &
+    hyprctl reload &
+    pkill -SIGUSR2 waybar &
     reload-discord &
     pywalfox update
   '';

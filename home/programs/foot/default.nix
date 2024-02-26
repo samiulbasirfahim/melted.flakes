@@ -3,7 +3,7 @@
     [colors]
     foreground	= {foreground.strip}
     background	= {background.strip}
-    alpha		=  0.95
+    alpha		=  0.93
 
     regular0	= {color0.strip}
     regular1	= {color1.strip}
