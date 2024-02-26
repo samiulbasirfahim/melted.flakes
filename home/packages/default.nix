@@ -21,5 +21,6 @@
     google-chrome
     telegram-desktop
     zathura
+revolt-desktop
   ];
 }

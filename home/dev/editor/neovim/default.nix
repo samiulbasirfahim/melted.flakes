@@ -1,29 +1,31 @@
+
 { pkgs, ... }: {
-  programs = {
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      extraPackages = with pkgs; [
-        ripgrep
-        fd
 
-        # language server
-        clang-tools
-        nil
-        lua-language-server
+ programs = {
+   neovim = {
+     enable = true;
+     defaultEditor = true;
+     extraPackages = with pkgs; [
+       ripgrep
+       fd
+     ];
+   };
+ };
 
-        # formatter
-        stylua
-        rustfmt
-        nixfmt
-        prettierd
+ home.packages = with pkgs; [
+       # language server
+       clang-tools
+       nil
+       lua-language-server
 
-        # lints
-        statix
-        eslint_d
-      ];
-    };
-  };
+       # formatter
+       stylua
+       nixfmt
+       prettierd
 
+       # lints
+       statix
+       eslint_d
+];
   home = { sessionVariables = { EDITOR = "nvim"; }; };
 }
