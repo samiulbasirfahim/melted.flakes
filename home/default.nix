@@ -25,8 +25,10 @@
         ./programs/git
         ./programs/discord
         ./programs/spotify
+        ./hyprland
       ] ++ [ inputs.spicetify-nix.homeManagerModule ];
       firefox.enable = true;
+      hyprland.enable = true;
       spotify.enable = true;
       programs.discord = {
         enable = true;

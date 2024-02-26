@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     pulsemixer
+    nsxiv
     playerctl
     bc
     mediainfo

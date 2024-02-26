@@ -11,8 +11,15 @@
     enable = true;
     cpuFreqGovernor = "performancee";
   };
+  programs.hyprland.enable = true;
   environment.sessionVariables = { TZ = "${config.time.timeZone}"; };
   services.udev.extraRules = ''
     KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
   '';
+  programs.zsh.loginShellInit = ''
+    if [[ "$(tty)" == "/dev/tty1" ]] then
+      # Hyprland
+    fi
+  '';
+
 }
