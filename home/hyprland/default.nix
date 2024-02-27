@@ -1,5 +1,5 @@
 { inputs, pkgs, lib, ... }: {
-  imports = [ inputs.hyprland.homeManagerModules.default ./waybar.nix ];
+  imports = [ inputs.hyprland.homeManagerModules.default ./waybar.nix ./foot.nix ];
   options.hyprland = { enable = lib.mkEnableOption "Enable hyprland"; };
   config = {
     xdg.configFile."wal/templates/colors-hyprland.conf".text =
@@ -60,16 +60,17 @@
           swallow_regex = "";
           focus_on_activate = true;
         };
-
         animations = {
           enabled = true;
-          bezier = "overshot, 0.13, 0.99, 0.29, 1.1";
+          bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
           animation = [
-            "windows, 1, 4, overshot, slide"
-            "windowsOut, 1, 5, default, popin 80%"
-            "border, 1, 5, default"
-            "fade, 1, 8, default"
-            "workspaces, 1, 6, overshot, slidevert"
+            "windows, 1, 7, myBezier"
+            "windowsOut, 1, 7, myBezier, popin 80%"
+            "border, 1, 10, myBezier"
+            "borderangle, 1, 8, myBezier"
+            "fade, 1, 7, myBezier"
+            "workspaces, 1, 6, myBezier, slidevert"
+            "specialWorkspace, 1, 6, myBezier, slidevert"
           ];
         };
         bind = [
@@ -111,16 +112,51 @@
           "$mainMod CTRL,k,resizeactive,0 -80"
           "$mainMod CTRL,j,resizeactive,0 80"
 
+          # volume control
+          ",XF86AudioRaiseVolume,exec, pamixer -i 5"
+          ",XF86AudioLowerVolume,exec, pamixer -d 5"
+          ",XF86AudioMute,exec, pamixer -t"
+
+          # music control bindings
+          ",XF86AudioPlay,exec, playerctl play-pause"
+          ",XF86AudioNext,exec, playerctl next"
+          ",XF86AudioPrev,exec, playerctl previous"
+          ", XF86AudioStop, exec, playerctl stop"
         ] ++ (builtins.concatLists (builtins.genList (x:
           let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in [
             "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
-            "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            "ALT, ${ws}, movetoworkspace, ${toString (x + 1)}"
           ]) 10));
 
         bindm =
           [ "$mainMod,mouse:272,movewindow" "$mainMod,mouse:273,resizewindow" ];
+        windowrule = [
+          "workspace 3, ^(firefox)$"
+          "workspace 1, title:^(foot)$"
+          "workspace 4 silent, ^(discord)$"
+          "workspace 5, ^(Spotify)$"
+          "float,title:^(Transmission)$"
+          "float,title:^(galculator)$"
+          "float,title:^(Volume Control)$"
+          "float, nemo"
+          "float,mpv"
+          "move 510 290,mpv"
+          "size 900 500,mpv"
+          "idleinhibit focus,mpv"
+          "float,imv"
+          "float, title:^(floating)$"
+          "move 510 290,imv"
+          "size 900 500,imv"
+          "float,title:^(Firefox — Sharing Indicator)$"
+          "move 0 0,title:^(Firefox — Sharing Indicator)$"
+          "stayfocused, title:^(File Upload)$"
+          "stayfocused, Xdg-desktop-portal-gtk"
+          "pin, title:^(floating)$"
+          "pin, title:^(Picture-in-Picture)$"
+          "float, title:^(Picture-in-Picture)$"
+        ];
         exec-once = [
           "hyprctl setcursor Catppuccin-Latte-Dark 16 &"
           "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

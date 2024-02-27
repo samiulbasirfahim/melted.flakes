@@ -3,7 +3,7 @@
     [colors]
     foreground	= {foreground.strip}
     background	= {background.strip}
-    alpha		=  0.93
+    alpha		=  0.95
 
     regular0	= {color0.strip}
     regular1	= {color1.strip}
@@ -30,8 +30,8 @@
 
     settings = {
       main = {
-        font = "JetbrainsMono Nerd Font:size=18";
-        pad = "4x4";
+        font = "JetbrainsMono Nerd Font:size=16";
+        pad = "3x3";
         include = "~/.cache/wal/foot";
       };
       cursor = {

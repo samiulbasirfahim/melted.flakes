@@ -13,7 +13,7 @@
         alignment = center
         ignore_newline = no
         separator_height = 3
-        origin = bottom-right
+        origin = top-right
         offset = 7x50
         indicate_hidden = yes
         shrink = yes

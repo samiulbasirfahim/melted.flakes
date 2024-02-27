@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./X11
+    ./X11
     ./services.nix
     ./nix.nix
     ./core.nix

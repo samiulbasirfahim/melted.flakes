@@ -9,7 +9,7 @@
       @import '../../.cache/wal/colors-waybar.css';
       * {
         font-family: "JetBrainsMono Nerd Font";
-        font-size: 12pt;
+        font-size: 14px;
         font-weight: bold;
         border-radius: 0px;
         transition-property: background-color;
@@ -49,7 +49,7 @@
         padding-bottom: 5px;
         padding-left: 6px;
         padding-right: 6px;
-        color: #d8dee9;
+        color: @color1;
       }
       #workspaces button.active {
         background-color: @color1;
@@ -184,7 +184,7 @@
       };
       "tray" = {
         "icon-size" = 15;
-        "spacing" = 5;
+        "spacing" = 6;
       };
     }];
   };
