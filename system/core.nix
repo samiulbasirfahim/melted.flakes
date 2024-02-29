@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, user, ... }: {
   boot = {
     # kernelPackages = pkgs.linuxPackages_xanmod_latest;
     loader = {
@@ -10,16 +10,11 @@
     enable = true;
     cpuFreqGovernor = "performancee";
   };
-  programs = {
-    nano.enable = false;
-    hyprland.enable = true;
+  programs = { nano.enable = false; };
+  virtualisation.libvirtd.enable = true;
 
-    zsh.loginShellInit = ''
-      if [[ "$(tty)" == "/dev/tty1" ]] then
-        Hyprland
-      fi
-    '';
-  };
+  users.users."${user}".extraGroups = [ "libvirtd" ];
+  programs.virt-manager.enable = true;
   environment.sessionVariables = { TZ = "${config.time.timeZone}"; };
   services.udev.extraRules = ''
     KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
